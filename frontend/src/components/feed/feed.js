@@ -1,5 +1,8 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+
+import "./feed.css"
+import NavbarContainer from '../navbar/navbar_container';
+
 
 class Feed extends React.Component {
   constructor(props) {
@@ -8,7 +11,9 @@ class Feed extends React.Component {
 
   render() {
     return (
-      <div>Feed</div>
+      <div className="feed-wrapper">
+        <NavbarContainer />
+      </div>
     )
   }
 }

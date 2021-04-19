@@ -1,0 +1,10 @@
+
+.feed-wrapper {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+
+  margin-left: -5vw;
+  margin-right: -5vw;
+  padding: 0 0;
+}
