@@ -1,12 +1,13 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
-
+import { Switch, Route } from 'react-router-dom';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import FeedContainer from './feed/feed_container';
 
 const App = () => (
   <div>
     <p>Hello pets</p>
     <Switch>
-      
+      <Route exact path="/feed" component={FeedContainer} />
       
     </Switch>
   </div>
