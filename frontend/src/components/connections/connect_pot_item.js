@@ -1,9 +1,7 @@
 import React from 'react';
 
 class ConnectPotItem extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+
 
   render() {
     return (
