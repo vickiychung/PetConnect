@@ -14,10 +14,6 @@ const PetSchema = new Schema({
     type: String,
     required: true
   },
-  age: {
-    type: Number,
-    required: true
-  },
   gender: {
     type: String,
     required: true
@@ -34,13 +30,17 @@ const PetSchema = new Schema({
     type: String,
     required: false
   },
-   shelter: {
+  shelter: {
     type: String,
     required: false
   },
   shelterZip: {
     type: Number,
     required: false
+  },
+  age: {
+    type: Number,
+    required: true
   }
 });
 
