@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import Feed from './feed'
 
+import Navbar from './navbar';
 
 const mSTP = state => ({
   state: state
@@ -10,4 +10,4 @@ const mDTP = dispatch => ({
 
 });
 
-export default connect(mSTP, mDTP)(Feed)
+export default connect(mSTP, mDTP)(Navbar)

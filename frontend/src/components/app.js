@@ -5,7 +5,7 @@ import FeedContainer from './feed/feed_container';
 
 const App = () => (
   <div>
-    <p>Hello pets</p>
+    
     <Switch>
       <Route exact path="/feed" component={FeedContainer} />
       
