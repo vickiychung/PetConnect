@@ -42,6 +42,8 @@ const PetSchema = new Schema({
     type: Number,
     required: true
   }
+}, {
+  timestamps: true
 });
 
 module.exports = Pet = mongoose.model('pet', PetSchema);
