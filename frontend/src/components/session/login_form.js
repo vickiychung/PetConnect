@@ -12,10 +12,16 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.demoUser = this.demoUser.bind(this);
   }
 
   componentDidMount(){
     this.props.resetSessionErrors();
+  }
+
+  demoUser(e) {
+    e.preventDefault();
+    this.props.demoUser({username: 'Demo User', password: '123456'})
   }
 
   update(field) {
@@ -32,11 +38,12 @@ class LoginForm extends React.Component {
   }
 
   renderErrors() {
+    if(!this.props.errors) return null;
     return(
       <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
+        {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
-            {this.state.errors[error]}
+            {this.props.errors[error]}
           </li>
         ))}
       </ul>
@@ -60,10 +67,12 @@ class LoginForm extends React.Component {
                 placeholder="Password"
               />
             <br/>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Log In" />
             {this.renderErrors()}
           </div>
+          <div className='login-link'>{this.props.navLink}</div>
         </form>
+
       </div>
     );
   }
