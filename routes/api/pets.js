@@ -3,8 +3,8 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 
-const Pet = require('../models/Pet');
-const validatePetInput = require('../validation/pets');
+const Pet = require('../../models/Pet');
+const validatePetInput = require('../../validation/pets');
 
 router.get('/', (req, res) => {
     Pet.find()
@@ -30,7 +30,7 @@ router.get('/:id', (req, res) => {
         );
 });
 
-router.post('/',
+router.post('/register',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
       const { errors, isValid } = validatePetInput(req.body);
