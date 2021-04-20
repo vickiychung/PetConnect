@@ -43,3 +43,49 @@
 .pet-list-element {
   cursor: pointer;
 }
+
+.pet-list-element {
+	cursor: pointer;
+	margin-left: 20px;
+	margin-right: 20px;
+	padding: 20px;
+	border-radius: 10px;
+	height: 180px;
+}
+
+.pet-individual {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+}
+
+.pet-icon-add {
+	width: 80px;
+	height: 70px;
+	font-size: 60px;
+	border: 1px solid rgb(110, 189, 253);
+	background-color: rgb(110, 189, 253);
+	border-radius: 100px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+}
+
+.home-newpet-name {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.pet-individual:hover .pet-icon-add {
+  border: 1px solid #00B9D3;
+	background-color: #00B9D3;
+}
+
+.pet-individual:hover .home-newpet-name {
+  color: gray;
+}
