@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const fetchPets = () => {
-  return axios.Cancel.get('/api/pets')
+  return axios.get('/api/pets')
 };
 
 export const fetchUserPets = id => {
