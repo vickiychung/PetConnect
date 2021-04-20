@@ -12,9 +12,9 @@ module.exports = function validatePetInput(data) {
   data.personality = validText(data.personality) ? data.personality : '';
   data.shelter = validText(data.shelter) ? data.shelter : '';
 
-  if (!Validator.isMongoId(data.user)) {
-    errors.user = 'Invalid user ID';
-  }
+  // if (!Validator.isMongoId(data.user)) {
+  //   errors.user = 'Invalid user ID';
+  // }
 
   if (!Validator.isLength(data.species, { min: 2, max: 30 })) {
     errors.species = 'Species must be between 2 and 30 characters';
@@ -40,9 +40,9 @@ module.exports = function validatePetInput(data) {
     errors.age = "Age has to be a number";
   }
 
-  if (Validator.isEmpty(data.user)) {
-    errors.user = 'User field is required';
-  }
+  // if (Validator.isEmpty(data.user)) {
+  //   errors.user = 'User field is required';
+  // }
 
   if (Validator.isEmpty(data.species)) {
     errors.species = 'Species field is required';
