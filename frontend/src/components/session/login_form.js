@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { logout } from '../../actions/session_actions';
 
-// import './logo.PNG'
+import logo from './logo2.PNG'
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -60,7 +60,7 @@ class LoginForm extends React.Component {
     return (
       <div className='login-page'>
         <div className='login-content'>
-          <div className='logo'><img src=""/> </div>
+          <div className='logo'><img src={logo}/> </div>
           <div className='login-container'>
             <div className='login-inner'>
               <form onSubmit={this.handleSubmit}>
