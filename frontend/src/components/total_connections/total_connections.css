@@ -1,0 +1,28 @@
+
+
+.tc-cont {
+  height: 9vh;
+}
+
+.tc-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  width: 400px;
+  background-color: aliceblue;
+
+ 
+  font-size: 20px;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.tc-text, .tc-name {
+  margin: 5px;
+}
+
+.tc-name {
+  font-weight: 700;
+  color: darkblue;
+}
