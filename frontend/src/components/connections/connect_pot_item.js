@@ -7,7 +7,7 @@ class ConnectPotItem extends React.Component {
     return (
       <li>
         <span>
-          {this.props.name}
+          {this.props.pet.name}
         </span>
       </li>
     )

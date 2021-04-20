@@ -6,7 +6,8 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
-import {fetchPets, fetchUserPets, fetchPet, registerPet} from './util/pet_api_util';
+// import {fetchPets, fetchUserPets, fetchPet, registerPet} from './util/pet_api_util';
+import {fetchPets, fetchUserPets, fetchPet, registerPet} from './actions/pet_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
