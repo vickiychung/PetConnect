@@ -1,4 +1,5 @@
 import React from 'react';
+import './create_pet_form.css'
 
 class CreatePetForm extends React.Component {
   constructor(props) {
@@ -57,7 +58,7 @@ class CreatePetForm extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="create-pet-form">
           <input 
             type="text"
             value={this.state.name}
