@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class PetsNearYou extends React.Component {
   constructor(props) {
@@ -18,9 +19,6 @@ class PetsNearYou extends React.Component {
     let pets = this.props.pets
 
 
-
-    
-
     let matchZip = (pets) => {
       let matches = [];
 
@@ -36,16 +34,38 @@ class PetsNearYou extends React.Component {
       return matches
     }
 
-    return (
-      <div>
-        <div>
-          Pets Near You
-        </div>
-        <div>
-          {matchZip(pets)}
-        </div>
-      </div>
-    )
+    let isMatch = () => {
+      if (this.props.pet.shelterZip === this.props.user.zipcode) {
+        return true
+      }
+      return false
+    }
+    console.log(this.props.pet)
+
+    let showPet = () => {
+      return (
+        <li className="pets-near-index">
+          <Link className="pets-near-index-redirect" to="" >
+            <div className="pets-near-name">
+              <span>
+                {this.props.pet.name}
+              </span>
+            </div>
+            <div>
+
+            </div>
+          </Link>
+          <span className="pets-near-details">
+            Age: <span className="pets-near-age">{this.props.pet.age}</span>
+          </span>
+          <span className="pets-near-details">
+            Personality: <span className="pets-near-age">{this.props.pet.personality}</span>
+          </span>
+        </li>
+      )
+    }
+
+    return isMatch ? showPet() : null
   }
 }
 
