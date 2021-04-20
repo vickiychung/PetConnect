@@ -16,7 +16,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     logout: () => dispatch(logout()),
     fetchUserPets: id => dispatch(fetchUserPets(id)),
-    registerPet: data => dispatch(registerPet(data))
+    registerPet: data => dispatch(registerPet(data)),
+    openModal: () => dispatch(openModal()),
+    closeModal: () => dispatch(closeModal())
   }
 }
 
