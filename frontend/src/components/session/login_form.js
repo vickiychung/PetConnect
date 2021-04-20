@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
+
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
@@ -9,7 +10,7 @@ class LoginForm extends React.Component {
       email: '',
       password: ''
     };
-
+    
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.demoUser = this.demoUser.bind(this);
@@ -21,7 +22,7 @@ class LoginForm extends React.Component {
 
   demoUser(e) {
     e.preventDefault();
-    this.props.demoUser({username: 'Demo User', password: '123456'})
+    this.props.demoUser({email: 'demo@user.com', password: '123456'})
   }
 
   update(field) {
@@ -34,16 +35,19 @@ class LoginForm extends React.Component {
       email: this.state.email,
       password: this.state.password
     };
-    this.props.login(user); 
+    this.props.login(user)
+    .then(action => {
+      return this.props.history.push(`/pick_pet`)
+  })  
   }
 
   renderErrors() {
     if(!this.props.errors) return null;
     return(
       <ul>
-        {this.props.errors.map((error, i) => (
+        {Object.values(this.props.errors).map((error, i) => (
           <li key={`error-${i}`}>
-            {this.props.errors[error]}
+            {error}
           </li>
         ))}
       </ul>
@@ -68,11 +72,13 @@ class LoginForm extends React.Component {
               />
             <br/>
             <input type="submit" value="Log In" />
+            <button className="demo-user-submit" onClick={this.demoUser}>Demo User</button>
             {this.renderErrors()}
           </div>
-          <div className='login-link'>{this.props.navLink}</div>
+          
+          {/* <div className='login-link'>{this.props.navLink}</div> */}
         </form>
-
+        <button onClick={() => this.props.openModal('signup')}>Create New Account</button>
       </div>
     );
   }
