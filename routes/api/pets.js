@@ -5,6 +5,7 @@ const passport = require('passport');
 
 const Pet = require('../../models/Pet');
 const validatePetInput = require('../../validation/pets');
+const validatePetUpdate = require('../../validation/pet-update');
 
 router.get('/', (req, res) => {
     Pet.find()
@@ -59,7 +60,7 @@ router.post('/register',
 router.patch('/:id',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    const { errors, isValid } = validatePetInput(req.body);
+    const { errors, isValid } = validatePetUpdate(req.body);
 
     if (!isValid) {
       return res.status(400).json(errors);
@@ -71,7 +72,7 @@ router.patch('/:id',
       {new: true}, 
       (err, result) => {
         if(err) {
-          return res.status(400).json(errors);
+          return res.status(400).json(err);
         }
         res.send("Updated");
     });
