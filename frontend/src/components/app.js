@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
+import { Switch, Redirect } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import FeedContainer from './feed/feed_container';
 
@@ -13,9 +13,14 @@ const App = () => (
     {/* <p>Hello pets</p> */}
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
-      <ProtectedRoute exact path="/feed" component={FeedContainer} />
       <ProtectedRoute exact path="/pick_pet" component={PickPetContainer} />
+      <ProtectedRoute exact path="/feed" component={FeedContainer} />
       
+      <Redirect exact from="/*" to="/login" />
+      <Redirect exact from="/login/*" to="/login" />
+      <Redirect exact from="/feed/*" to="/feed" />
+      <Redirect exact from="/pick_pet/*" to="/pick_pet" />
+
     </Switch>
   </div>
 );
