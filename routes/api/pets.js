@@ -82,11 +82,11 @@ router.patch('/:id',
   }
 );
 
-router.delete('/',
+router.delete('/:id',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
     Pet.findByIdAndDelete(
-      req.body.id,
+      req.params.id,
       (err, result) => {
         if (err) {
           return res.status(400).json(err);
