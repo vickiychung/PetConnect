@@ -1,7 +1,17 @@
 
+.create-pet-form-wrapper {
+  height: 100%;
+}
+
 .create-pet-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+}
+
+.create-pet-form-title {
+  font-size: 30px;
+  margin: 0;
+  margin-bottom: 20px;
+  margin-left: 20px;
 }
