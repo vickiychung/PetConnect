@@ -1,7 +1,7 @@
 import React from 'react';
 import PickPetItem from './pick_pet_item'
 import CreatePetFormContainer from '../../pets/create/create_pet_form_container';
-
+import CreatePetFormModal from '../../pets/create/create_pet_form_modal';
 import './pick_pet.css'
 
 class PickPet extends React.Component {
@@ -41,7 +41,7 @@ class PickPet extends React.Component {
             ))
           }
         </ul>
-        <CreatePetFormContainer />
+        <CreatePetFormModal />
       </div>
     )
   }

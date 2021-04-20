@@ -1,0 +1,40 @@
+.create-pet-modal-background {
+	transition: all 500ms ease;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(39, 50, 64, 0.6);
+	position: fixed;
+	left: 0;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 2000;
+	cursor: default;
+}
+
+.create-pet-modal {
+	width: 400px;
+	height: 500px;
+	background-color: white;
+	color: black;
+	position: relative;
+	z-index: 10;
+	border-radius: 10px;
+}
+
+.close-icon-container {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.close-icon {
+	font-size: 24px;
+	cursor: pointer;
+	margin: 15px;
+}
+
+.close-icon:hover {
+	transition: all 250ms ease;
+	color: rgb(110, 253, 165);
+}
