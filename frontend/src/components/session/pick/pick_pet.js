@@ -2,6 +2,8 @@ import React from 'react';
 import PickPetItem from './pick_pet_item'
 import CreatePetFormContainer from '../../pets/create/create_pet_form_container';
 
+import './pick_pet.css'
+
 class PickPet extends React.Component {
   constructor(props) {
     super(props);
@@ -16,21 +18,23 @@ class PickPet extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.pets !== this.props.pets) {
+    if (prevProps !== this.props) {
       this.setState({pets: this.props.pets})
     }
   }
 
 
   render() {
-    console.log(this.props)
-    let pets = this.state.pets;
+    
+    let pets = this.props.pets;
     if (typeof pets === "object") {
       pets = Object.values(this.state.pets);
+    } else if (pets === undefined || pets === null) {
+      pets = [];
     }
     return (
-      <div>
-        <ul>
+      <div className="user-pet-list-wrapper">
+        <ul className="user-pet-list">
           {
             pets.map((pet, index) => (
               <PickPetItem key={index} pet={pet} /> 
