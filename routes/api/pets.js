@@ -8,22 +8,25 @@ const validatePetInput = require('../../validation/pets');
 const validatePetUpdate = require('../../validation/pet-update');
 
 router.get('/', (req, res) => {
-    Pet.find()
-        .sort({ date: -1 })
-        .then(pets => res.json(pets))
-        .catch(err => res.status(404).json({ nopetsfound: 'No pets found' }));
+  passport.authenticate('jwt', { session: false }),
+  Pet.find()
+      .sort({ date: -1 })
+      .then(pets => res.json(pets))
+      .catch(err => res.status(404).json({ nopetsfound: 'No pets found' }));
 });
 
 router.get('/user/:user_id', (req, res) => {
-    Pet.find({user: req.params.user_id})
-        .then(pets => res.json(pets))
-        .catch(err =>
-            res.status(404).json({ nopetsfound: 'No pets found from that user' }
-        )
-    );
+  passport.authenticate('jwt', { session: false }),
+  Pet.find({user: req.params.user_id})
+      .then(pets => res.json(pets))
+      .catch(err =>
+          res.status(404).json({ nopetsfound: 'No pets found from that user' }
+      )
+  );
 });
 
 router.get('/:id', (req, res) => {
+  passport.authenticate('jwt', { session: false }),
   Pet.findById(req.params.id)
       .then(pet => res.json(pet))
       .catch(err =>
@@ -78,5 +81,20 @@ router.patch('/:id',
     });
   }
 );
+
+router.delete('/:id',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Pet.findByIdAndDelete(
+      req.params.id,
+      (err, result) => {
+        if (err) {
+          return res.status(400).json(err);
+        } else {
+          res.send("Deleted");
+        }
+    });
+  }
+)
 
 module.exports = router;
