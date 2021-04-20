@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { logout } from '../../actions/session_actions';
 
+// import './logo.PNG'
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -56,29 +58,39 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-              <input type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                placeholder="Email"
-              />
-            <br/>
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                placeholder="Password"
-              />
-            <br/>
-            <input type="submit" value="Log In" />
-            <button className="demo-user-submit" onClick={this.demoUser}>Demo User</button>
-            {this.renderErrors()}
+      <div className='login-page'>
+        <div className='login-content'>
+          <div className='logo'><img src=""/> </div>
+          <div className='login-container'>
+            <div className='login-inner'>
+              <form onSubmit={this.handleSubmit}>
+                <div >
+                  <input className='login-text-input'
+                    type="text"
+                    value={this.state.email}
+                    onChange={this.update('email')}
+                    placeholder="Email"
+                  />
+                  <input className='login-text-input'
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.update('password')}
+                    placeholder="Password"
+                  />
+                  <input className='login-button' type="submit" value="Log In" />
+                  <button className="demo-user-button" onClick={this.demoUser}>Demo User</button>
+                </div>
+              </form>
+              <div className='login-signup-button-container'>
+                <button onClick={() => this.props.openModal('signup')}>Create New Account</button>
+              </div>
+              <div className='login-errors'>{this.renderErrors()}</div>
+            </div>
+            
           </div>
-          
-          {/* <div className='login-link'>{this.props.navLink}</div> */}
-        </form>
-        <button onClick={() => this.props.openModal('signup')}>Create New Account</button>
+        </div>
+        
+        
       </div>
     );
   }
