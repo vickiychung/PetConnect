@@ -1,7 +1,7 @@
 import React from 'react';
-import ConnectPotItem from './connect_pot_item';
+import PickPetItem from './pick_pet_item'
 
-class ConnectPot extends React.Component {
+class PickPet extends React.Component {
   constructor(props) {
     super(props);
 
@@ -11,7 +11,7 @@ class ConnectPot extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchPets();
+    this.props.fetchUserPets(this.props.currentUser);
   }
 
   componentDidUpdate(prevProps) {
@@ -25,19 +25,21 @@ class ConnectPot extends React.Component {
     if (typeof pets === "object") {
       pets = Object.values(this.state.pets);
     }
-
     return (
       <div>
         <ul>
           {
             pets.map((pet, index) => (
-              <ConnectPotItem key={index} pet={pet} /> 
+              <PickPetItem key={index} pet={pet} /> 
             ))
           }
         </ul>
       </div>
     )
-  };
-};
+  }
+}
 
-export default ConnectPot;
+
+export default PickPet;
+
+

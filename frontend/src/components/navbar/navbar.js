@@ -6,15 +6,15 @@ import logo from './logo-petconnect.png'
 import TotalConnections from '../total_connections/total_connections'
 
 class Navbar extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+
 
   render() {
     return (
       <header className="navbar">
         <div className="feed-logo">
-          <img src={logo} alt="PetConnect" />
+          <Link to="/feed">
+            <img src={logo} alt="PetConnect" />
+          </Link>
         </div>
         
         <TotalConnections />
