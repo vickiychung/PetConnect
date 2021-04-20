@@ -31,21 +31,25 @@ class SignupForm extends React.Component {
     e.preventDefault();
     let user = {
       email: this.state.email,
-      handle: this.state.handle,
+      username: this.state.username,
+      zipcode: this.state.zipcode,
       password: this.state.password,
       password2: this.state.password2
     };
 
-    this.props.signup(user, this.props.history); 
+    this.props.signup(user, this.props.history)
+    .then(action => {
+      this.props.closeModal()
+    })
   }
 
   renderErrors() {
     if(!this.props.errors) return null;
     return(
       <ul>
-        {this.props.errors.map((error, i) => (
+        {Object.values(this.props.errors).map((error, i) => (
           <li key={`error-${i}`}>
-            {this.props.errors[error]}
+            {error}
           </li>
         ))}
       </ul>
@@ -88,7 +92,7 @@ class SignupForm extends React.Component {
                 placeholder="Confirm Password"
               />
             <br/>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Sign Up" />
             {this.renderErrors()}
           </div>
         </form>
