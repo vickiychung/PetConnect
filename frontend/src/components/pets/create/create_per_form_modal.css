@@ -15,7 +15,7 @@
 
 .create-pet-modal {
 	width: 400px;
-	height: 500px;
+	height: 670px;
 	background-color: white;
 	color: black;
 	position: relative;
@@ -38,4 +38,8 @@
 .close-icon:hover {
 	transition: all 250ms ease;
 	color: rgb(110, 253, 165);
+}
+
+.pet-list-element {
+  cursor: pointer;
 }

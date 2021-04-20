@@ -40,8 +40,9 @@ class PickPet extends React.Component {
               <PickPetItem key={index} pet={pet} /> 
             ))
           }
+          <CreatePetFormModal />
         </ul>
-        <CreatePetFormModal />
+        
       </div>
     )
   }
