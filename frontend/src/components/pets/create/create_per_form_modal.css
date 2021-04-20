@@ -31,7 +31,8 @@
 .close-icon {
 	font-size: 24px;
 	cursor: pointer;
-	margin: 15px;
+	margin-top: 15px;
+  margin-right: 15px;
 }
 
 .close-icon:hover {

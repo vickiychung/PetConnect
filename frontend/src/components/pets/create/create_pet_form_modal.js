@@ -38,7 +38,7 @@ const CreatePetFormModal = (props) => {
             <FontAwesomeIcon icon={faPlus} />
           </div>
           <div className="home-newpet-name">  
-            New Pet
+            Add Pet
           </div>
         </div>
       </li>
