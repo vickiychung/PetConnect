@@ -2,6 +2,8 @@ import React from 'react';
 import PickPetItem from './pick_pet_item'
 import CreatePetFormContainer from '../../pets/create/create_pet_form_container';
 
+import './pick_pet.css'
+
 class PickPet extends React.Component {
   constructor(props) {
     super(props);
@@ -31,8 +33,8 @@ class PickPet extends React.Component {
       pets = [];
     }
     return (
-      <div>
-        <ul>
+      <div className="user-pet-list-wrapper">
+        <ul className="user-pet-list">
           {
             pets.map((pet, index) => (
               <PickPetItem key={index} pet={pet} /> 
