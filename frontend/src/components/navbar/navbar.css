@@ -1,0 +1,38 @@
+
+.navbar {
+  min-height: 9vh;
+  width: 100%;
+  background-color: #30D8F0;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  
+
+  border-bottom: 1px solid #9AE4E8;
+	box-shadow: 0 5px 20px 0 rgba(21, 27, 38, 8%);
+}
+
+
+.feed-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 200px;  
+}
+
+.feed-logo img {
+  max-height: 9vh;
+}
+
+.nav-buttons {
+  min-width: 200px;  
+  display: flex;
+  justify-content: flex-end;
+}
+
