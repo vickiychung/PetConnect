@@ -4,6 +4,8 @@ import Root from './components/root';
 import configureStore from './store/store';
 import jwt_decode from 'jwt-decode';
 
+import {fetchPets, fetchUserPets, fetchPet, registerPet} from './util/pet_api_util';
+
 document.addEventListener('DOMContentLoaded', () => {
   let store;
 
@@ -26,6 +28,16 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore({});
   }
+
+
+  window.store = store;
+
+  window.fetchPets = fetchPets;
+  window.fetchUserPets = fetchUserPets;
+  window.fetchPet = fetchPet;
+  window.registerPet = registerPet;
+
+
   const root = document.getElementById('root');
 
   ReactDOM.render(<Root store={store} />, root);
