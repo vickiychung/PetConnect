@@ -10,6 +10,7 @@ export const receivePets = pets => ({
   pets
 });
 
+
 export const receiveUserPets = pets => ({
   type: RECEIVE_USER_PETS,
   pets

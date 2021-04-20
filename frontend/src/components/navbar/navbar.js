@@ -21,7 +21,7 @@ class Navbar extends React.Component {
         
         <div className="nav-buttons">
           <span>
-            Hello, User
+            <button onClick={()=>this.props.logout()}>Log out</button>
           </span>
         </div>
 
