@@ -5,7 +5,7 @@ import FeedContainer from './feed/feed_container';
 
 import Modal from './session/modal';
 import LoginFormContainer from './session/login_form_container';
-import PickPetContainer from './session/pick_pet_container'
+import PickPetContainer from './session/pick/pick_pet_container'
 
 const App = () => (
   <div>
