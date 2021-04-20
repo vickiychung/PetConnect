@@ -64,16 +64,6 @@ module.exports = function validatePetUpdate(data) {
     data.shelter = validText(data.shelter) ? data.shelter : '';
   }
 
-  if (data.user) {
-    if (!Validator.isMongoId(data.user)) {
-      errors.user = 'Invalid user ID';
-    }
-
-    if (Validator.isEmpty(data.user)) {
-      errors.user = 'User field is required';
-    }
-  }
-
   if (data.shelterZip) {
     if (!Validator.isLength(data.shelterZip, { min: 5, max: 5 })) {
       errors.shelterZip = 'Shelter zip code must be 5 characters';
