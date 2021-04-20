@@ -1,10 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const mongoose = require('mongoose');
+const passport = require('passport');
 
 const Connection = require('../../models/Connection');
 
 router.post('/',
+  passport.authenticate('jwt', { session: false }),
   (req, res) => {
     const newConnection = new Connection({
       pet1: req.body.pet1,
@@ -14,6 +16,21 @@ router.post('/',
     newConnection.save()
       .then(connection => res.json(connection))
       .catch(err => res.json(err))
+  }
+);
+
+router.delete('/',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Connection.findByIdAndDelete(
+      req.body.id,
+      (err, result) => {
+        if (err) {
+          return res.status(400).json(err);
+        } else {
+          res.send("Deleted");
+        }
+    });
   }
 );
 
