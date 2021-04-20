@@ -18,9 +18,9 @@ class LoginForm extends React.Component {
     this.demoUser = this.demoUser.bind(this);
   }
 
-  componentDidMount(){
-    this.props.resetSessionErrors();
-  }
+  // componentWillUnmount(){
+  //   this.props.resetSessionErrors();
+  // }
 
   demoUser(e) {
     e.preventDefault();
@@ -45,15 +45,18 @@ class LoginForm extends React.Component {
 
   renderErrors() {
     if(!this.props.errors) return null;
-    return(
-      <ul>
-        {Object.values(this.props.errors).map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
+    if(this.props.ui.modal === null){
+      return(
+        <ul>
+          {Object.values(this.props.errors).map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+    
   }
 
   render() {

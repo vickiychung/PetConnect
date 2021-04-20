@@ -6,6 +6,7 @@ import { openModal } from '../../actions/modal_actions';
 const mapStateToProps = (state) => {
   return {
     errors: state.errors.session,
+    ui: state.ui
   };
 };
 
