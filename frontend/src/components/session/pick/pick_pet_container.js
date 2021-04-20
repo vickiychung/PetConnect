@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import PickPet from './pick_pet';
 import { logout } from '../../../actions/session_actions';
 import { fetchUserPets, registerPet } from '../../../actions/pet_actions';
+import { openModal, closeModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
   return {
