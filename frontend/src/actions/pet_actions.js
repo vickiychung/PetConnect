@@ -41,9 +41,17 @@ export const fetchPet = petId => dispatch => (
   .then(pet => dispatch(receivePet(pet)))
 );
 
+// export const registerPet = data => dispatch => (
+//   PetApiUtil.registerPet(data)
+//     .then(pet => dispatch(receivePet(pet)),
+//       err => (dispatch(receivePetErrors(err.responseJSON)))
+//     )
+// );
+
 export const registerPet = data => dispatch => (
   PetApiUtil.registerPet(data)
-    .then(pet => dispatch(receivePet(pet)),
-      err => (dispatch(receivePetErrors(err.responseJSON)))
-    )
+    .then(pet => dispatch(receivePet(pet)))
+    .catch(err => dispatch(receivePetErrors(err)))
+    
 );
+

@@ -1,5 +1,6 @@
 import React from 'react';
 import PickPetItem from './pick_pet_item'
+import CreatePetFormContainer from '../../pets/create/create_pet_form_container';
 
 class PickPet extends React.Component {
   constructor(props) {
@@ -34,6 +35,7 @@ class PickPet extends React.Component {
             ))
           }
         </ul>
+        <CreatePetFormContainer />
       </div>
     )
   }
