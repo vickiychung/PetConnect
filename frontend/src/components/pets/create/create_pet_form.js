@@ -35,6 +35,17 @@ class CreatePetForm extends React.Component {
     }
 
     this.props.registerPet(pet);
+    this.setState({
+      name: "",
+      species: "",
+      breed: "",
+      size: "",
+      age: "",
+      personality: "",
+      gender: "",
+      shelter: "",
+      shelterZip: ""
+    })
   }
 
   update(field) {
