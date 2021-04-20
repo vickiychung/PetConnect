@@ -17,17 +17,21 @@ class PetsNearYou extends React.Component {
     }
     let pets = this.props.pets
 
+
+
+    
+
     let matchZip = (pets) => {
       let matches = [];
 
       for (let i = 0; i < pets.length; i++) {
         let pet = pets[i];
-        // if (this.props.user.zipcode === pet.shelterZip) {
-        //   matches.push(pet.name)
-        // }
-        if (94063 === pet.shelterZip) {
+        if (this.props.user.zipcode === pet.shelterZip) {
           matches.push(pet.name)
         }
+        // if (94063 === pet.shelterZip) {
+        //   matches.push(pet.name)
+        // }
       }
       return matches
     }
