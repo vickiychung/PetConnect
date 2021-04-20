@@ -10,3 +10,66 @@
   margin-right: -5vw;
   padding: 0 0;
 }
+
+.pets-near-index {
+  list-style :none;
+
+}
+
+.pets-near-you-list {
+  height: 100%;
+  width: 350px;
+  /* border: 5px solid darkblue; */
+  border: 5px solid #30D8F0;
+  border-radius: 10px;
+  background-color: #EEFCFF;
+  min-height: 500px;
+  display: inline-block;
+}
+
+.pets-near-name {
+  color: darkblue;
+  font-weight: 600;
+  font-size: 25px;
+  text-decoration: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.pets-near-index-redirect {
+  text-decoration: none;
+}
+
+.pets-near-details {
+  color: #30D8F0;
+  display: block;
+  padding-bottom: 5px;
+}
+
+.pets-near-age {
+  color: darkblue;
+  font-weight: 600;
+}
+
+.middle-feed {
+  height: 100%;
+  width: 350px;
+  border: 5px solid darkblue;
+  border-radius: 10px;
+  background-color: #EEFCFF;
+  min-height: 500px;
+  display: inline-block;
+}
+
+
+
+.pets-shelter-list {
+  height: 100%;
+  width: 350px;
+  /* border: 5px solid darkblue; */
+  border: 5px solid #30D8F0;
+  border-radius: 10px;
+  background-color: #EEFCFF;
+  min-height: 500px;
+  display: inline-block;
+}

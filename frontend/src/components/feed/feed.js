@@ -7,8 +7,14 @@ import PetsNearYouContainer from './pets_near_you/pets_near_you_container'
 
 class Feed extends React.Component {
 
+  componentDidMount() {
+    this.props.fetchPets()
+  }
 
   render() {
+    if (this.props.pets === undefined) {
+      return null
+    }
 
     return (
       <div className="feed-wrapper">
@@ -17,10 +23,24 @@ class Feed extends React.Component {
           <div>
             <ConnectPotContainer />
           </div>
-          <div>
-            <PetsNearYouContainer />
-          </div>
         </div>
+        <div className="pets-near-you-list">
+          <ul>
+            {this.props.pets.map(pet => (
+              <PetsNearYouContainer key={pet._id} pet={pet}/>
+            ))}
+          </ul>
+        </div>
+
+        {/* <div className="middle-feed">
+
+        </div> */}
+
+        <div className="pets-shelter-list">
+
+        </div>
+
+
       </div>
     )
   }
