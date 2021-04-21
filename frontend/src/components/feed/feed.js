@@ -16,14 +16,12 @@ class Feed extends React.Component {
       return null
     }
 
+    console.log(this.props.pets)
+
     return (
       <div className="feed-wrapper">
         <NavbarContainer/>
-        <div>
-          <div>
-            <ConnectPotContainer />
-          </div>
-        </div>
+       
         <div className="feed-lists-wrapper">
           <div className="pets-near-you-list">
             <ul>

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Feed from './feed'
-import { fetchPets } from '../../actions/pet_actions'
+import { fetchPets, fetchUserPets } from '../../actions/pet_actions'
 
 
 const mSTP = state => ({
@@ -9,7 +9,8 @@ const mSTP = state => ({
 });
 
 const mDTP = dispatch => ({
-  fetchPets: () => dispatch(fetchPets())
+  fetchPets: () => dispatch(fetchPets()),
+  fetchUserPets: id => dispatch(fetchUserPets(id))
 });
 
 export default connect(mSTP, mDTP)(Feed)
