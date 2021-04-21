@@ -117,7 +117,7 @@ router.patch('/:id',
           return res.status(400).json(err);
         }
         res.send("Updated");
-    });
+    });jhn
   }
 );
 
