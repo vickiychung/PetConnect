@@ -9,10 +9,12 @@ const path = require('path')
 
 const users = require("./routes/api/users");
 const pets = require("./routes/api/pets");
+const shelters = require("./routes/api/shelters");
 const connections = require("./routes/api/connections");
 require('./config/passport')(passport);
-// const petfinder = require('pet-finder-api')('O3VtZUBdrAEgZNMxDVaJ4xtpBgb9DhqzJHZJBiAS1X92hQW1dM','rqux2BJLdfcABwqyDXa2ha6cESV0dunp8Wfo4ox2');
-// let client = new petfinder.Client({apiKey: "my-api-key", secret: "my-api-secret"});
+
+
+app.use(cors());
 
 app.use(cors());
 
@@ -23,11 +25,6 @@ mongoose
 
 // app.get("/", (req, res) => res.send("Hello World!!"));
 
-// app.get("/shelters", (req, res) => {
-//   res.send(petfinder.getBreedList('cat', function(err, breeds) {
-//     console.log(breeds)
-//   }));
-// })
 
 app.use(passport.initialize());
 
@@ -36,6 +33,7 @@ app.use(express.json());
 app.use("/api/users", users);
 app.use("/api/pets", pets);
 app.use("/api/connections", connections);
+app.use("/api/shelters", shelters);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
