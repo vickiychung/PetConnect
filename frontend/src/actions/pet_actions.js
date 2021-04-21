@@ -45,4 +45,5 @@ export const registerPet = data => dispatch => (
   PetApiUtil.registerPet(data)
     .then(pet => dispatch(receivePet(pet)))
     .catch(err => dispatch(receivePetErrors(err)))
+    
 );
