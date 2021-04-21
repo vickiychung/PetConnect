@@ -100,6 +100,7 @@ router.post('/register',
 
 router.patch('/:id',
   passport.authenticate('jwt', { session: false }),
+  upload.single("file"),
   (req, res) => {
     const { errors, isValid } = validatePetUpdate(req.body);
 
@@ -107,15 +108,46 @@ router.patch('/:id',
       return res.status(400).json(errors);
     }
 
-    Pet.findByIdAndUpdate(
-      req.params.id, 
-      {$set: req.body}, 
-      {new: true}, 
-      (err, result) => {
-        if(err) {
-          return res.status(400).json(err);
-        }
-        res.send("Updated");
+    const file = req.file;
+    const s3FileURL = process.env.AWS_Uploaded_File_URL_LINK;
+
+    let s3bucket = new AWS.S3({
+      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+      region: process.env.AWS_REGION
+    });
+
+    const params = {
+      Bucket: process.env.AWS_BUCKET_NAME,
+      Key: file.originalname,
+      Body: file.buffer,
+      ContentType: file.mimetype,
+      ACL: "public-read"
+    };
+
+    let newFileUploaded = {};
+
+    s3bucket.upload(params, function(err, data) {
+      if (err) {
+        res.status(500).json({ error: true, Message: err });
+      } else {
+        newFileUploaded = {
+          fileLink: s3FileURL + file.originalname,
+          s3_key: params.Key
+        };
+
+        Pet.findByIdAndUpdate(
+          req.params.id, 
+          {$set: req.body, photoUrl: newFileUploaded.fileLink }, 
+          {new: true}, 
+          (err, result) => {
+            if(err) {
+              return res.status(400).json(err);
+            }
+            res.send("Updated");
+          }
+        );
+      }
     });
   }
 );
