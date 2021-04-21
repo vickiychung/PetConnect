@@ -18,7 +18,7 @@ class LoginForm extends React.Component {
     this.demoUser = this.demoUser.bind(this);
   }
 
-  // componentWillUnmount(){
+  // componentDidMount(){
   //   this.props.resetSessionErrors();
   // }
 
