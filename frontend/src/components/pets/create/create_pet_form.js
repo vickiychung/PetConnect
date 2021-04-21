@@ -23,9 +23,6 @@ class CreatePetForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     
-    
-    
-
     let pet = {
       name: this.state.name,
       species: this.state.species,
@@ -128,7 +125,7 @@ class CreatePetForm extends React.Component {
               type="text"
               value={this.state.shelter}
               onChange={this.update("shelter")}
-              placeholder="Shelter"
+              placeholder="Shelter (optional)"
             />
           </div>
 
@@ -137,7 +134,7 @@ class CreatePetForm extends React.Component {
               type="number"
               value={this.state.shelterZip}
               onChange={this.update("shelterZip")}
-              placeholder="Shelter Zip"
+              placeholder="Shelter Zip (optional)"
             />
           </div>
 
