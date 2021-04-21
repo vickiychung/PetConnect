@@ -20,7 +20,23 @@
 	right: 140px;
 	padding: 5px;
 	cursor: pointer;
-	border: .5px solid rgb(255, 103, 82);
-	background-color: rgb(255, 226, 224);
+	border: .5px solid rgb(0, 0, 0);
+	background-color: rgb(255, 255, 255);
 	border-radius: 4px;
+
+	display: flex;
+	flex-direction: column;
 }
+
+.dd-pet-name-container{
+	display: flex;
+	justify-content: flex-end;
+}
+
+.dd-logout {
+	border-top: 1px dotted blue;
+	margin-top: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
