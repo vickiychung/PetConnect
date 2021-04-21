@@ -1,4 +1,3 @@
-
 .dd-button {
   font-size: 25px;
   cursor: pointer;
@@ -19,8 +18,36 @@
 	top: 45px;
 	right: 140px;
 	padding: 5px;
-	cursor: pointer;
-	border: .5px solid rgb(255, 103, 82);
-	background-color: rgb(255, 226, 224);
+  border: 2px solid rgba(151,194,185);
+  background-color: rgb(204, 235, 241);
+  color: rgba(20, 26, 24, 0.726);
 	border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px;
+  padding-top: 0px;
+}
+
+.dd-list li:first-of-type {
+  padding-top: 10px;
+}
+
+.dd-my-pet {
+  border-bottom: 1px solid rgba(20, 26, 24, 0.726);
+  padding-bottom: 5px;
+  width: 100%;
+  font-weight: 600;
+  color: rgba(20, 26, 24, 0.726);
+}
+
+.dd-logout {
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 600;
 }
