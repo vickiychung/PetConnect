@@ -9,15 +9,20 @@ ul {
   color: #1c1e21;
   line-height: 1.34;
   padding: 92px 0px 132px 0px;
+  /* background-image: url("background.jpg");
+  background-size: 2500px 800px; */
 }
 
 .login-content{
-  width: 980px;
+  /* width: 980px; */
+  width: 1250px;
   display: flex;
   margin: auto;
+  
 }
 
 .logo{
+  margin-right: 100px;
   padding-right: 48px;
   min-width: 536px;
 }

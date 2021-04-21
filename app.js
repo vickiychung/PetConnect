@@ -4,12 +4,15 @@ const app = express();
 const db = require('./config/keys_dev.js').mongoURI;
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const passport = require('passport');
+const path = require('path')
+
 const users = require("./routes/api/users");
 const pets = require("./routes/api/pets");
 const connections = require("./routes/api/connections");
-const passport = require('passport');
 require('./config/passport')(passport);
-const path = require('path')
+// const petfinder = require('pet-finder-api')('O3VtZUBdrAEgZNMxDVaJ4xtpBgb9DhqzJHZJBiAS1X92hQW1dM','rqux2BJLdfcABwqyDXa2ha6cESV0dunp8Wfo4ox2');
+// let client = new petfinder.Client({apiKey: "my-api-key", secret: "my-api-secret"});
 
 app.use(cors());
 
@@ -18,15 +21,28 @@ mongoose
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
 
-app.get("/", (req, res) => res.send("Hello World!!"));
+// app.get("/", (req, res) => res.send("Hello World!!"));
+
+// app.get("/shelters", (req, res) => {
+//   res.send(petfinder.getBreedList('cat', function(err, breeds) {
+//     console.log(breeds)
+//   }));
+// })
 
 app.use(passport.initialize());
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.use("/api/users", users);
 app.use("/api/pets", pets);
 app.use("/api/connections", connections);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('frontend/build'));
+  app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  })
+}

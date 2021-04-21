@@ -18,12 +18,13 @@ class LoginForm extends React.Component {
     this.demoUser = this.demoUser.bind(this);
   }
 
-  // componentWillUnmount(){
+  // componentDidMount(){
   //   this.props.resetSessionErrors();
   // }
 
   demoUser(e) {
     e.preventDefault();
+    // this.props.login({email: 'demo@user.com', password: '123456'})
     this.props.demoUser({email: 'demo@user.com', password: '123456'})
   }
 
