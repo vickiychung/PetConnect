@@ -27,6 +27,7 @@ class Navbar extends React.Component {
             <NavDropdown 
               logout={this.props.logout}
               userPets={this.props.userPets}
+              username={this.props.username}
             />
           </span>
         </div>
