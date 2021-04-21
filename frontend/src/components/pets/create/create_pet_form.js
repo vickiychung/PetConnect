@@ -22,6 +22,10 @@ class CreatePetForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    
+    
+    
+
     let pet = {
       name: this.state.name,
       species: this.state.species,
@@ -31,22 +35,14 @@ class CreatePetForm extends React.Component {
       personality: this.state.personality,
       gender: this.state.gender,
       shelter: this.state.shelter,
-      shelterZip: this.state.shelterZip,
-      // user: this.props.currentUser  
+      shelterZip: this.state.shelterZip,  
     }
 
+    if (!this.state.shelterZip) {
+      pet.shelterZip = "00000";
+    }
+    
     this.props.registerPet(pet);
-    this.setState({
-      name: "",
-      species: "",
-      breed: "",
-      size: "",
-      age: "",
-      personality: "",
-      gender: "",
-      shelter: "",
-      shelterZip: ""
-    })
   }
 
   update(field) {
