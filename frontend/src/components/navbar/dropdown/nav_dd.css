@@ -1,0 +1,26 @@
+
+.dd-button {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.dd-button:focus, .dd-button:active {
+  border: none;
+  outline: none;
+}
+
+.dd-button:hover {
+  color: #DDFFCC;
+  transition: all 250ms ease;
+}
+
+.dd-list {
+	position: absolute;
+	top: 45px;
+	right: 140px;
+	padding: 5px;
+	cursor: pointer;
+	border: .5px solid rgb(255, 103, 82);
+	background-color: rgb(255, 226, 224);
+	border-radius: 4px;
+}

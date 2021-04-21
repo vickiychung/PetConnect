@@ -19,14 +19,14 @@ class PickPet extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
-      this.setState({pets: this.props.pets})
+      this.setState({pets: this.props.userPets})
     }
   }
 
 
   render() {
     
-    let pets = this.props.pets;
+    let pets = this.props.userPets;
     if (typeof pets === "object") {
       pets = Object.values(this.state.pets);
     } else if (pets === undefined || pets === null) {
@@ -40,7 +40,9 @@ class PickPet extends React.Component {
               <PickPetItem key={index} pet={pet} /> 
             ))
           }
-          <CreatePetFormModal />
+          {
+            pets.length < 5 ? <CreatePetFormModal /> : null
+          }
         </ul>
         
       </div>
