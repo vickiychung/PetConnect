@@ -1,6 +1,7 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
-const db = require('./config/keys').mongoURI;
+const db = require('./config/keys_dev.js').mongoURI;
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
@@ -12,6 +13,8 @@ const connections = require("./routes/api/connections");
 require('./config/passport')(passport);
 // const petfinder = require('pet-finder-api')('O3VtZUBdrAEgZNMxDVaJ4xtpBgb9DhqzJHZJBiAS1X92hQW1dM','rqux2BJLdfcABwqyDXa2ha6cESV0dunp8Wfo4ox2');
 // let client = new petfinder.Client({apiKey: "my-api-key", secret: "my-api-secret"});
+
+app.use(cors());
 
 mongoose
   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
