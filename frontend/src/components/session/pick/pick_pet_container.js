@@ -8,7 +8,7 @@ const mapStateToProps = (state) => {
   return {
     state: state,
     currentUser: state.session.user.id,
-    pets: state.entities.pets.data
+    userPets: state.entities.pets.data
   };
 };
 

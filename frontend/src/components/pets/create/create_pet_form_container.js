@@ -4,7 +4,8 @@ import CreatePetForm from './create_pet_form';
 
 
 const mSTP = state => ({
-  currentUser: state.session.user.id
+  currentUser: state.session.user.id,
+  petErrors: state.errors.petErrors
 });
 
 const mDTP = dispatch => ({
