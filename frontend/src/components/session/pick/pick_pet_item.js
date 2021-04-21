@@ -1,19 +1,22 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faPaw } from '@fortawesome/free-solid-svg-icons';
 
 class PickPetItem extends React.Component {
   render() {
     return (
-      <li className="user-pet-item">
-        <div>
-          <div>
-            <FontAwesomeIcon icon={faPaw} />
-          </div>
-          <span className="user-pet-item-name">
-            {this.props.pet.name}
-          </span>
-        </div> 
+      <li className="pet-list-element">
+        <Link to="/feed">
+          <div className="pet-individual">
+            <div className="pet-icon">
+              <FontAwesomeIcon icon={faPaw} />
+            </div>
+            <span className="home-newpet-name">
+              {this.props.pet.name}
+            </span>
+          </div>   
+        </Link>
       </li>
     )
   }

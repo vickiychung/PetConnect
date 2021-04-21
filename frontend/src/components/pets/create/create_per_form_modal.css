@@ -48,7 +48,6 @@
 	cursor: pointer;
 	margin-left: 20px;
 	margin-right: 20px;
-	padding: 20px;
 	border-radius: 10px;
 	height: 180px;
 }
@@ -61,12 +60,12 @@
 	width: 100px;
 }
 
-.pet-icon-add {
+.pet-icon-add, .pet-icon{
 	width: 80px;
 	height: 70px;
 	font-size: 60px;
-	border: 1px solid rgb(110, 189, 253);
-	background-color: rgb(110, 189, 253);
+	border: 1px solid #00B9D3;
+	background-color: #00B9D3;
 	border-radius: 100px;
 	padding-bottom: 5px;
 	padding-top: 5px;
@@ -79,13 +78,16 @@
 .home-newpet-name {
   margin-top: 10px;
   font-size: 20px;
+  font-weight: bold;
 }
 
 .pet-individual:hover .pet-icon-add {
-  border: 1px solid #00B9D3;
-	background-color: #00B9D3;
+  border: 1px solid rgb(110, 189, 253);
+	background-color: rgb(110, 189, 253);
+  transition: all 500ms ease;
 }
 
 .pet-individual:hover .home-newpet-name {
   color: gray;
+  transition: all 500ms ease;
 }
