@@ -34,6 +34,7 @@ class PickPet extends React.Component {
     }
     return (
       <div className="user-pet-list-wrapper">
+        <button onClick={this.props.logout}>Logout</button>
         <ul className="user-pet-list">
           {
             pets.map((pet, index) => (

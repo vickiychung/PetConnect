@@ -36,4 +36,8 @@ router.post('/register', (req, res) => {
   newShelter.save().then(shelter => res.json(shelter));
 })
 
+<<<<<<< HEAD
 module.exports = router;
+=======
+module.exports = router;
+>>>>>>> 8f8dce0401bfd0d18429ca7008e07ffc70b48f98

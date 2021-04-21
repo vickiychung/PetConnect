@@ -3,12 +3,12 @@ import * as ShelterApiUtil from '../util/shelter_api_util';
 export const RECEIVE_SHELTERS = "RECEIVE_SHELTERS";
 export const RECEIVE_SHELTER = "RECEIVE_SHELTER";
 
-export const receiveShelters = shelters => ({
+const receiveShelters = shelters => ({
   type: RECEIVE_SHELTERS,
   shelters
 }); 
 
-export const receiveShelter = shelter => ({
+const receiveShelter = shelter => ({
   type: RECEIVE_SHELTER,
   shelter
 });
