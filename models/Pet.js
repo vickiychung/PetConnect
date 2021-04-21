@@ -41,6 +41,10 @@ const PetSchema = new Schema({
   age: {
     type: Number,
     required: true
+  },
+  photoUrl: {
+    type: String,
+    required: false
   }
 }, {
   timestamps: true
