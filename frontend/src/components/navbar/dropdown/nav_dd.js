@@ -1,6 +1,8 @@
 import React from 'react';
 import './nav_dd.css';
 
+import {Link} from 'react-router-dom';
+
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
@@ -53,11 +55,12 @@ class NavDropdown extends React.Component {
           <ul className="dd-list">
             {
               this.props.userPets.map(pet => (
-                <div>
+                <li key={pet._id} >
                   {pet.name}
-                </div>
+                </li>
               ))
             }
+            <Link to="/pick_pet">My Pets</Link>
             <div onClick={()=>this.props.logout()}>Log out</div>
           </ul>
         )}

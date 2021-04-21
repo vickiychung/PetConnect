@@ -46,10 +46,10 @@
 
 .pet-list-element {
 	cursor: pointer;
-	margin-left: 20px;
-	margin-right: 20px;
+	margin-left: 25px;
+	margin-right: 25px;
 	border-radius: 10px;
-	height: 180px;
+	height: 100px;
 }
 
 .pet-individual {
@@ -73,6 +73,7 @@
 	align-items: center;
 	justify-content: center;
 	color: white;
+	transition: all 500ms ease;
 }
 
 .home-newpet-name {
