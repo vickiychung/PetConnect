@@ -4,7 +4,7 @@ import PetsNearYou from './pets_near_you';
 
 
 const mapStateToProps = (state) => {
-  console.log(state)
+  
 return {
   pets: state.entities.pets.data,
   user: state.session.user
