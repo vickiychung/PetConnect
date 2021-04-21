@@ -10,16 +10,17 @@ class LoginForm extends React.Component {
     this.state = {
       email: '',
       password: '',
-      modal: null
+      errors: {}
     };
     
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.demoUser = this.demoUser.bind(this);
+    this.clearErrorsAndOpenModal = this.clearErrorsAndOpenModal.bind(this);
   }
 
-  componentDidMount(){
-    this.props.resetSessionErrors();
+  componentWillReceiveProps(nextProps) {
+    this.setState({errors: nextProps.errors})
   }
 
   demoUser(e) {
@@ -43,6 +44,11 @@ class LoginForm extends React.Component {
   })  
   }
 
+  clearErrorsAndOpenModal(){
+    this.props.openModal('signup');
+    this.props.resetSessionErrors();
+
+  }
   
 
   renderErrors() {
@@ -88,7 +94,7 @@ class LoginForm extends React.Component {
                   </div>
                 </form>
                 <div className='login-signup-button-container'>
-                  <button onClick={() => this.props.openModal('signup')}>Create New Account</button>
+                  <button onClick={this.clearErrorsAndOpenModal}>Create New Account</button>
                 </div>
                 <div className='login-errors'>{this.renderErrors()}</div>
               </div>

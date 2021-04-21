@@ -10,14 +10,26 @@ class SignupForm extends React.Component {
       username: '',
       zipcode: '',
       password: '',
-      password2: ''
+      password2: '',
+      errors: {}
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.clearErrorsAndCloseModal = this.clearErrorsAndCloseModal.bind(this);
+    // this.clearedErrors = false;
   }
 
-  componentDidMount(){
-    this.props.resetSessionErrors();
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.signedIn === true) {
+      this.props.closeModal();
+      let user = {
+        email: this.state.email,
+        password: this.state.password
+      }
+      this.props.login(user)
+    }
+
+    this.setState({errors: nextProps.errors})
   }
 
   
@@ -39,21 +51,7 @@ class SignupForm extends React.Component {
     };
 
     this.props.signup(user, this.props.history)
-    // if(this.props.user){
-    //   this.props.login(user)
-    // }
-      // .then()
-    //
-       
-     
-    // if(this.props.user.length){
-    //   this.props.closeModal()
-    // }
   }
-
-  // closeRefresh(){
-    
-  // }
 
   renderErrors() {
     if(!this.props.errors) return null;
@@ -68,12 +66,18 @@ class SignupForm extends React.Component {
     );
   }
 
+  clearErrorsAndCloseModal(){
+    this.props.closeModal();
+    this.props.resetSessionErrors();
+
+  }
+
   render() {
     return (
       <div className="signup-container">
         <div className='signup-title'>
           <h1>Sign Up</h1>
-          <div className='signup-close' onClick={this.props.closeModal}>X</div>
+          <div className='signup-close' onClick={this.clearErrorsAndCloseModal}>X</div>
         </div>
         <form className='signup-form' onSubmit={this.handleSubmit}>
           <div className="signup-inputs">
