@@ -25,7 +25,7 @@ class PickPet extends React.Component {
 
 
   render() {
-    console.log(this.props);
+    
     let pets = this.props.userPets;
     if (typeof pets === "object") {
       pets = Object.values(this.state.pets);
