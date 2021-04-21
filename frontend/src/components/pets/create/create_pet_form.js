@@ -48,7 +48,17 @@ class CreatePetForm extends React.Component {
     });
   }
 
+  clearErrs() {
+    this.props.petErrors.response.data = [];
+  }
+
   render() {
+    
+    // if (!this.props.showModal) {
+    //   this.clearErrs();
+    // }
+
+    // console.log(this.props)
     
     let errs;
     if (this.props.petErrors.response) {

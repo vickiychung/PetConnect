@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect, useCallback} from 'react';
+import React, { useRef } from 'react';
 import CreatePetFormContainer from './create_pet_form_container';
 
 import './create_per_form_modal.css'
@@ -10,23 +10,21 @@ const CreatePetFormModal = (props) => {
   const modalRef = useRef();
 
   const modalContents = () => {
-    console.log(props)
-    return (
-      <div className="create-pet-modal-background" ref={modalRef}>
-        <div className="create-pet-modal">
-          <div className="close-icon-container">
-            <div className="close-icon" onClick={() => props.closeModal()}>
-              <FontAwesomeIcon icon={faTimes} />
-            </div>
+  
+  return (
+    <div className="create-pet-modal-background" ref={modalRef} onClick={() => props.closeModal()}>
+      <div className="create-pet-modal"  onClick={e => e.stopPropagation()}>
+        <div className="close-icon-container">
+          <div className="close-icon" onClick={() => props.closeModal()}>
+            <FontAwesomeIcon icon={faTimes} />
           </div>
-          <CreatePetFormContainer
-            showModal={props.showModal} 
-            openModal={props.openModal}
-            closeModal={props.closeModal}
-          />
         </div>
+        <CreatePetFormContainer
+          showModal={props.showModal} 
+        />
       </div>
-    )
+    </div>
+  )
   }
 
   const modalButton = () => {
