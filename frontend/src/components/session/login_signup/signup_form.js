@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './session.css'
 
+
 class SignupForm extends React.Component {
   constructor(props) {
     super(props);
@@ -15,11 +16,23 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.clearErrorsAndCloseModal = this.clearErrorsAndCloseModal.bind(this);
+    // this.clearErrorsAndCloseModal = this.clearErrorsAndCloseModal.bind(this);
     // this.clearedErrors = false;
   }
 
-  // componentDidUpdate(nextProps) {
+  componentDidUpdate(nextProps) {
+    if (nextProps.session !== this.props.session) {
+      let user = {
+        email: this.state.email,
+        password: this.state.password
+      }
+      this.props.login(user)
+    }
+
+  
+  }
+
+  // componentWillReceiveProps(nextProps) {
   //   if (nextProps.signedIn === true) {
   //     this.props.closeModal();
   //     let user = {
@@ -31,20 +44,6 @@ class SignupForm extends React.Component {
 
   //   this.setState({errors: nextProps.errors})
   // }
-
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.signedIn === true) {
-      this.props.closeModal();
-      let user = {
-        email: this.state.email,
-        password: this.state.password
-      }
-      this.props.login(user)
-    }
-
-    this.setState({errors: nextProps.errors})
-  }
 
   
 
@@ -64,7 +63,7 @@ class SignupForm extends React.Component {
       password2: this.state.password2
     };
 
-    this.props.signup(user, this.props.history)
+    this.props.signup(user)
   }
 
   renderErrors() {
@@ -80,18 +79,19 @@ class SignupForm extends React.Component {
     );
   }
 
-  clearErrorsAndCloseModal(){
-    this.props.closeModal();
-    this.props.resetSessionErrors();
+  // clearErrorsAndCloseModal(){
+  //   this.props.closeModal();
+  //   this.props.resetSessionErrors();
 
-  }
+  // }
 
   render() {
+    console.log(this.props)
     return (
       <div className="signup-container">
         <div className='signup-title'>
           <h1>Sign Up</h1>
-          <div className='signup-close' onClick={this.clearErrorsAndCloseModal}>X</div>
+          <div className='signup-close' onClick={() => this.props.closeModal()}>X</div>
         </div>
         <form className='signup-form' onSubmit={this.handleSubmit}>
           <div className="signup-inputs">

@@ -27,7 +27,7 @@
 
 .create-pet-entry {
   width: 100%;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .create-pet-entry input {
@@ -48,7 +48,7 @@
 .submit-pet-entry {
   height: 40px;
   width: 100%;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .submit-pet-entry input {
@@ -67,4 +67,11 @@
 .submit-pet-entry input:hover {
   background-color: #7fe9f3;
   transition: all 500ms ease;
+}
+
+.pet-create-error {
+  margin-left: 5px;
+  font-size: 12px;
+  color: red;
+  height: 12px;
 }

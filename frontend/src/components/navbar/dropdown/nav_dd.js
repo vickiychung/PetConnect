@@ -61,12 +61,23 @@ class NavDropdown extends React.Component {
             {
               this.props.userPets.map(pet => (
                 <li key={pet._id} >
-                  {pet.name}
+                  <div className="dd-pet-name-container">
+                    <div className="dd-pet-name">
+                      {pet.name}
+                    </div>
+                  </div>
                 </li>
               ))
             }
 
-            <div className="dd-logout" onClick={()=>this.props.logout()}>Log out</div>
+            <div 
+              onClick={()=>this.props.logout()}
+              className="dd-logout"
+            >
+              <span>
+                Log out
+              </span>
+            </div>
           </ul>
         )}
       </div>
