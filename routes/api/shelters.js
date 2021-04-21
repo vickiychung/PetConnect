@@ -1,62 +1,39 @@
-// router.get("/shelters", (req, res) => res.json({
-  
-// }))
-// const express = require("express");
-// const router = express.Router();
+const express = require("express");
+const router = express.Router();
+const mongoose = require('mongoose');
+const passport = require('passport');
+const Shelter = require('../../models/Shelter')
 
-// const petfinder = require("@petfinder/petfinder-js");
-// const petfinder = require('pet-finder-api')('O3VtZUBdrAEgZNMxDVaJ4xtpBgb9DhqzJHZJBiAS1X92hQW1dM','rqux2BJLdfcABwqyDXa2ha6cESV0dunp8Wfo4ox2');
-// import { Client } from "@petfinder/petfinder-js";
+const validateShelterInput = require('../../validation/shelters');
 
-// petfinder.getBreedList('cat', function(err, breeds) {
-//   console.log(breeds)
-// });
+router.get('/', (req, res) => {
+  passport.authenticate('jwt', { session: false }),
+  Shelter.find()
+    .sort({ date: -1 })
+    .then(shelters => res.json(shelters))
+    .catch(err => res.status(404).json({ nosheltersfound: 'No shelters found '}));
+});
 
-// const client = new Client({
-//   apiKey: "O3VtZUBdrAEgZNMxDVaJ4xtpBgb9DhqzJHZJBiAS1X92hQW1dM",
-//   secret: "rqux2BJLdfcABwqyDXa2ha6cESV0dunp8Wfo4ox2",
-//   token: "my-access-token",
-// });
+router.get('/:id', (req, res) => {
+  passport.authenticate('jwt', { session: false }),
+  Shelter.findById(req.params.id)
+    .then(shelter => res.json(shelter))
+    .catch(err => res.status(404).json({ noshelterfound: "No shelter found with that ID"}));
+})
 
-// client.authenticate()
-//   .then(resp => {
-//     const token = resp.data.access_token;
-//     const expires = resp.data.expires_in;
-//   });
+router.post('/register', (req, res) => {
+  const { errors, isValid } = validateShelterInput(req.body);
 
-// router.get("/") 
-// client.animal.search()
-//   .then(function (response) {
-//     console.log(response.data.animals)
-//   })
-//   .catch(function (error) {
-//     console.log(error)
-//   })
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
 
+  const newShelter = new Shelter({
+    name: req.body.name,
+    zipcode: req.body.zipcode
+  });
 
-// async function showAnimals(animalType, searchBreed) {
-//   let page = 1;
-//   do {
-//     apiResult = await client.animal.search({
-//       type: animalType,
-//       breed: searchBreed,
-//       page,
-//       limit: 100,
-//     });
-//     let dogIdx = (page - 1) * 100;
-//     apiResult.data.animals.forEach(function(animal) {
-//       console.log(` -- ${++dogIdx}: ${animal.name} id: ${animal.id} url: ${animal.url}`);
-//     });
+  newShelter.save().then(shelter => res.json(shelter));
+})
 
-//     page++;
-//   } while(apiResult.data.pagination && apiResult.data.pagination.total_pages >= page);
-// }
-
-// (async function() {
-//   await showAnimals("Dog", "Bernedoodle");
-// })();
-
-
-
-
-// module.exports = router;
+module.exports = router;
