@@ -12,12 +12,23 @@
   list-style-type: none;
 }
 
-.user-pet-item {
-  margin: 20px;
-  width: 50px;
-  height: 60px;
-  background-color: aliceblue ;
-
-  display: flex;
-  
+.pet-icon {
+  border: 1px solid rgb(110, 189, 253);
+	background-color: rgb(110, 189, 253);
+	border-radius: 10px;
 }
+
+.pet-individual:hover .pet-icon {
+  border: 1px solid #00B9D3;
+	background-color: #00B9D3;
+  transition: all 500ms ease;
+}
+
+a {
+  color: black;
+}
+
+a, a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+}
+
