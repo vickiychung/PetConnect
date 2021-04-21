@@ -24,6 +24,7 @@ class LoginForm extends React.Component {
 
   demoUser(e) {
     e.preventDefault();
+    // this.props.login({email: 'demo@user.com', password: '123456'})
     this.props.demoUser({email: 'demo@user.com', password: '123456'})
   }
 
