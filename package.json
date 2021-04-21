@@ -23,13 +23,16 @@
   },
   "homepage": "https://github.com/vickiychung/PetConnect#readme",
   "dependencies": {
+    "aws-sdk": "^2.889.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "concurrently": "^6.0.2",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.4",
+    "multer": "^1.4.2",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "validator": "^13.5.2"

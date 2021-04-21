@@ -22,6 +22,7 @@ class CreatePetForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    
     let pet = {
       name: this.state.name,
       species: this.state.species,
@@ -31,22 +32,14 @@ class CreatePetForm extends React.Component {
       personality: this.state.personality,
       gender: this.state.gender,
       shelter: this.state.shelter,
-      shelterZip: this.state.shelterZip,
-      // user: this.props.currentUser  
+      shelterZip: this.state.shelterZip,  
     }
 
+    if (!this.state.shelterZip) {
+      pet.shelterZip = "00000";
+    }
+    
     this.props.registerPet(pet);
-    this.setState({
-      name: "",
-      species: "",
-      breed: "",
-      size: "",
-      age: "",
-      personality: "",
-      gender: "",
-      shelter: "",
-      shelterZip: ""
-    })
   }
 
   update(field) {
@@ -56,6 +49,12 @@ class CreatePetForm extends React.Component {
   }
 
   render() {
+    
+    let errs;
+    if (this.props.petErrors.response) {
+      errs = this.props.petErrors.response.data
+    }
+    console.log(errs)
     return (
       <div className="create-pet-form-wrapper">
         <div className="create-pet-form-title">
@@ -65,6 +64,7 @@ class CreatePetForm extends React.Component {
         </div>
         <form onSubmit={this.handleSubmit} className="create-pet-form">
           <div className="create-pet-entry">
+            {errs ? <div> {errs.name} </div> : null} 
             <input 
               type="text"
               value={this.state.name}
@@ -132,7 +132,7 @@ class CreatePetForm extends React.Component {
               type="text"
               value={this.state.shelter}
               onChange={this.update("shelter")}
-              placeholder="Shelter"
+              placeholder="Shelter (optional)"
             />
           </div>
 
@@ -141,7 +141,7 @@ class CreatePetForm extends React.Component {
               type="number"
               value={this.state.shelterZip}
               onChange={this.update("shelterZip")}
-              placeholder="Shelter Zip"
+              placeholder="Shelter Zip (optional)"
             />
           </div>
 

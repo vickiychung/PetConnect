@@ -11,7 +11,7 @@ const petsReducer = (state = {}, action) => {
     case RECEIVE_PETS:
       return action.pets;
     case RECEIVE_USER_PETS:
-      return action.pets;
+      return action.userPets;
     case RECEIVE_PET:
       // const newPet = { [action.pet.id]: action.pet.data };
 
