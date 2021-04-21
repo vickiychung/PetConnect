@@ -5,6 +5,7 @@ import { fetchPets, fetchUserPets } from '../../actions/pet_actions'
 
 const mSTP = state => ({
   state: state,
+  currentUser: state.session.user.id,
   pets: state.entities.pets.data
 });
 

@@ -12,11 +12,11 @@ class Feed extends React.Component {
   }
 
   render() {
-    if (this.props.pets === undefined) {
+    if (!this.props.pets) {
       return null
     }
 
-    console.log(this.props.pets)
+    console.log(this.props)
 
     return (
       <div className="feed-wrapper">
@@ -26,7 +26,9 @@ class Feed extends React.Component {
           <div className="pets-near-you-list">
             <ul>
               {this.props.pets.map(pet => (
+                pet.user !== this.props.currentUser ? 
                 <PetsNearYouContainer key={pet._id} pet={pet}/>
+                : null
               ))}
             </ul>
           </div>
