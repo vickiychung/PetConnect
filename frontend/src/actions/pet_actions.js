@@ -1,5 +1,4 @@
 import * as PetApiUtil from '../util/pet_api_util';
-import { openModal, closeModal } from '../actions/modal_actions';
 
 export const RECEIVE_PETS = "RECEIVE_PETS";
 export const RECEIVE_USER_PETS = "RECEIVE_USER_PETS";
@@ -45,8 +44,6 @@ export const fetchPet = petId => dispatch => (
 export const registerPet = data => dispatch => (
   PetApiUtil.registerPet(data)
     .then(pet => dispatch(receivePet(pet)))
-    .then(() => dispatch(closeModal()))
     .catch(err => dispatch(receivePetErrors(err)))
     
 );
-
