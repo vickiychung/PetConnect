@@ -15,7 +15,7 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <ProtectedRoute exact path="/pick_pet" component={PickPetContainer} />
       <ProtectedRoute exact path="/feed" component={FeedContainer} />
-      
+    
       <Redirect exact from="/*" to="/login" />
       <Redirect exact from="/login/*" to="/login" />
       <Redirect exact from="/feed/*" to="/feed" />
