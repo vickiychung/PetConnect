@@ -10,21 +10,20 @@ const CreatePetFormModal = (props) => {
   const modalRef = useRef();
 
   const modalContents = () => {
-  
-  return (
-    <div className="create-pet-modal-background" ref={modalRef} onClick={() => props.closeModal()}>
-      <div className="create-pet-modal"  onClick={e => e.stopPropagation()}>
-        <div className="close-icon-container">
-          <div className="close-icon" onClick={() => props.closeModal()}>
-            <FontAwesomeIcon icon={faTimes} />
+    return (
+      <div className="create-pet-modal-background" ref={modalRef} onClick={() => props.closeModal()}>
+        <div className="create-pet-modal"  onClick={e => e.stopPropagation()}>
+          <div className="close-icon-container">
+            <div className="close-icon" onClick={() => props.closeModal()}>
+              <FontAwesomeIcon icon={faTimes} />
+            </div>
           </div>
+          <CreatePetFormContainer
+            showModal={props.showModal} 
+          />
         </div>
-        <CreatePetFormContainer
-          showModal={props.showModal} 
-        />
       </div>
-    </div>
-  )
+    )
   }
 
   const modalButton = () => {
