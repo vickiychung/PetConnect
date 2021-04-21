@@ -3,14 +3,12 @@ export const CLOSE_MODAL = 'CLOSE_MODAL';
 
 export const openModal = () => {
   return {
-    type: OPEN_MODAL,
-    showModal: true
+    type: OPEN_MODAL
   };
 };
 
 export const closeModal = () => {
   return {
-    type: CLOSE_MODAL,
-    showModal: false
+    type: CLOSE_MODAL
   };
 };
