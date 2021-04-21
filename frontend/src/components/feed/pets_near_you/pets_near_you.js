@@ -15,19 +15,18 @@ class PetsNearYou extends React.Component {
   //   this.props.fetchUsers()
   // }
 
-  componentWillMount() {
-    this.props.fetchUsers()
-  }
+  petsNearYou() {
+    if (this.props.pets === undefined) {
+      return null
+    }
 
-  componentWillReceiveProps(newState) {
-    this.setState({ users: newState.users });
-  }  
+    // console.log()
+  }
 
   render() {
     if (this.props.pets === undefined) {
       return null
     }
-    console.log(this.state)
     let pets = this.props.pets
 
 
@@ -52,7 +51,6 @@ class PetsNearYou extends React.Component {
       }
       return false
     }
-    // console.log(this.props)
 
     let showPet = () => {
       return (

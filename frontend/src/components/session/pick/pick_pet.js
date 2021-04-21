@@ -23,6 +23,9 @@ class PickPet extends React.Component {
     }
   }
 
+  // componentWillUnmount() {
+  //   this.props.fetchPets()
+  // }
 
   render() {
     
