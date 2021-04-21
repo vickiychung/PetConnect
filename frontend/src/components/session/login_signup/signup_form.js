@@ -51,6 +51,10 @@ class SignupForm extends React.Component {
     // }
   }
 
+  // closeRefresh(){
+    
+  // }
+
   renderErrors() {
     if(!this.props.errors) return null;
     return(

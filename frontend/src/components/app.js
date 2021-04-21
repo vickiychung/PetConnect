@@ -3,9 +3,9 @@ import { Switch, Redirect } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import FeedContainer from './feed/feed_container';
 
-import Modal from './session/modal';
-import LoginFormContainer from './session/login_form_container';
-import PickPetContainer from './session/pick/pick_pet_container'
+import Modal from './session/login_signup/modal';
+import LoginFormContainer from './session/login_signup/login_form_container';
+import PickPetContainer from './session/pick/pick_pet_container';
 
 const App = () => (
   <div>

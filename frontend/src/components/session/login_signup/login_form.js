@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { logout } from '../../actions/session_actions';
 
 import logo from './pet_connect_logo.png'
 
@@ -10,7 +9,8 @@ class LoginForm extends React.Component {
 
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      modal: null
     };
     
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,13 +18,12 @@ class LoginForm extends React.Component {
     this.demoUser = this.demoUser.bind(this);
   }
 
-  // componentDidMount(){
-  //   this.props.resetSessionErrors();
-  // }
+  componentDidMount(){
+    this.props.resetSessionErrors();
+  }
 
   demoUser(e) {
     e.preventDefault();
-    // this.props.login({email: 'demo@user.com', password: '123456'})
     this.props.demoUser({email: 'demo@user.com', password: '123456'})
   }
 
@@ -43,6 +42,8 @@ class LoginForm extends React.Component {
       return this.props.history.push(`/pick_pet`)
   })  
   }
+
+  
 
   renderErrors() {
     if(!this.props.errors) return null;
