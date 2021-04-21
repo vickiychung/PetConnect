@@ -5,15 +5,14 @@ import SignupForm from './signup_form_container'
 import { resetSessionErrors } from '../../../actions/session_actions';
 
 
-function Modal({modal, closeModal}) {
+function Modal({modal, closeModal, resetSessionErrors}) {
   if (!modal) {
     return null;
   }
   let component;
   const closeAndClear = () =>{
-    resetSessionErrors()
-    closeModal()
-
+    resetSessionErrors();
+    closeModal();
   }
   switch (modal) {
     case 'signup':
