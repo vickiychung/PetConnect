@@ -1,4 +1,5 @@
 import React from 'react';
+import './create_pet_form.css'
 
 class CreatePetForm extends React.Component {
   constructor(props) {
@@ -56,64 +57,97 @@ class CreatePetForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <input 
-            type="text"
-            value={this.state.name}
-            onChange={this.update("name")}
-            placeholder="Name"
-          />
-          <input 
-            type="text"
-            value={this.state.species}
-            onChange={this.update("species")}
-            placeholder="Species"
-          />
-          <input 
-            type="text"
-            value={this.state.breed}
-            onChange={this.update("breed")}
-            placeholder="Breed"
-          />
-          <input 
-            type="text"
-            value={this.state.size}
-            onChange={this.update("size")}
-            placeholder="Size"
-          />
-          <input 
-            type="number"
-            value={this.state.age}
-            onChange={this.update("age")}
-            placeholder="Age"
-          />
-          <input 
-            type="text"
-            value={this.state.personality}
-            onChange={this.update("personality")}
-            placeholder="Personality"
-          />
-          <input 
-            type="text"
-            value={this.state.gender}
-            onChange={this.update("gender")}
-            placeholder="Gender"
-          />
-          <input 
-            type="text"
-            value={this.state.shelter}
-            onChange={this.update("shelter")}
-            placeholder="Shelter"
-          />
-          <input 
-            type="number"
-            value={this.state.shelterZip}
-            onChange={this.update("shelterZip")}
-            placeholder="Shelter Zip"
-          />
+      <div className="create-pet-form-wrapper">
+        <div className="create-pet-form-title">
+          <h1 > 
+            Add a Pet
+          </h1>
+        </div>
+        <form onSubmit={this.handleSubmit} className="create-pet-form">
+          <div className="create-pet-entry">
+            <input 
+              type="text"
+              value={this.state.name}
+              onChange={this.update("name")}
+              placeholder="Name"
+            />
+          </div>
 
-          <input type="submit" value="Submit" />
+          <div className="create-pet-entry">
+            <input 
+              type="text"
+              value={this.state.species}
+              onChange={this.update("species")}
+              placeholder="Species"
+            />
+          </div>
+
+          <div className="create-pet-entry">
+            <input 
+              type="text"
+              value={this.state.breed}
+              onChange={this.update("breed")}
+              placeholder="Breed"
+            />
+          </div>
+
+          <div className="create-pet-entry">
+            <input 
+              type="text"
+              value={this.state.size}
+              onChange={this.update("size")}
+              placeholder="Size"
+            />
+          </div>
+
+          <div className="create-pet-entry">
+            <input 
+              type="number"
+              value={this.state.age}
+              onChange={this.update("age")}
+              placeholder="Age"
+            />
+          </div>
+
+          <div className="create-pet-entry">
+            <input 
+              type="text"
+              value={this.state.personality}
+              onChange={this.update("personality")}
+              placeholder="Personality"
+            />
+          </div>
+
+          <div className="create-pet-entry">
+            <input 
+              type="text"
+              value={this.state.gender}
+              onChange={this.update("gender")}
+              placeholder="Gender"
+            />
+          </div>
+
+          <div className="create-pet-entry">
+            <input 
+              type="text"
+              value={this.state.shelter}
+              onChange={this.update("shelter")}
+              placeholder="Shelter"
+            />
+          </div>
+
+          <div className="create-pet-entry">
+            <input 
+              type="number"
+              value={this.state.shelterZip}
+              onChange={this.update("shelterZip")}
+              placeholder="Shelter Zip"
+            />
+          </div>
+
+          <div className="submit-pet-entry">
+            <input type="submit" value="Add" />
+          </div>
         </form>
       </div>
     );
