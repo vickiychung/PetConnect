@@ -24,20 +24,22 @@ class Feed extends React.Component {
             <ConnectPotContainer />
           </div>
         </div>
-        <div className="pets-near-you-list">
-          <ul>
-            {this.props.pets.map(pet => (
-              <PetsNearYouContainer key={pet._id} pet={pet}/>
-            ))}
-          </ul>
-        </div>
+        <div className="feed-lists-wrapper">
+          <div className="pets-near-you-list">
+            <ul>
+              {this.props.pets.map(pet => (
+                <PetsNearYouContainer key={pet._id} pet={pet}/>
+              ))}
+            </ul>
+          </div>
 
-        {/* <div className="middle-feed">
+          {/* <div className="middle-feed">
 
-        </div> */}
+          </div> */}
 
-        <div className="pets-shelter-list">
+          <div className="pets-shelter-list">
 
+          </div>
         </div>
 
 
