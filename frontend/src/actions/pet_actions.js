@@ -11,9 +11,9 @@ export const receivePets = pets => ({
 });
 
 
-export const receiveUserPets = pets => ({
+export const receiveUserPets = userPets => ({
   type: RECEIVE_USER_PETS,
-  pets
+  userPets
 });
 
 export const receivePet = pet => ({
@@ -33,20 +33,13 @@ export const fetchPets = () => dispatch => (
 
 export const fetchUserPets = id => dispatch => (
   PetApiUtil.fetchUserPets(id)
-  .then(pets => dispatch(receiveUserPets(pets)))
+  .then(userPets => dispatch(receiveUserPets(userPets)))
 );
 
 export const fetchPet = petId => dispatch => (
   PetApiUtil.fetchPet(petId)
   .then(pet => dispatch(receivePet(pet)))
 );
-
-// export const registerPet = data => dispatch => (
-//   PetApiUtil.registerPet(data)
-//     .then(pet => dispatch(receivePet(pet)),
-//       err => (dispatch(receivePetErrors(err.responseJSON)))
-//     )
-// );
 
 export const registerPet = data => dispatch => (
   PetApiUtil.registerPet(data)
