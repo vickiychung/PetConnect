@@ -40,7 +40,7 @@ class PetsNearYou extends React.Component {
       }
       return false
     }
-    // console.log(this.props.pet)
+    // console.log(this.props)
 
     let showPet = () => {
       return (

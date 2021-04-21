@@ -2,7 +2,6 @@ import React from 'react';
 
 import "./feed.css"
 import NavbarContainer from '../navbar/navbar_container';
-import ConnectPotContainer from '../connections/connect_pot_container';
 import PetsNearYouContainer from './pets_near_you/pets_near_you_container'
 
 class Feed extends React.Component {
@@ -16,19 +15,24 @@ class Feed extends React.Component {
       return null
     }
 
-    console.log(this.props)
+    const userPets = [];
+    const otherPets = [];
+    this.props.pets.map(pet => (
+      pet.user === this.props.currentUser ? (
+        userPets.push(pet)
+      ) :
+      otherPets.push(pet)
+    ));
 
     return (
       <div className="feed-wrapper">
-        <NavbarContainer/>
+        <NavbarContainer userPets={userPets}/>
        
         <div className="feed-lists-wrapper">
           <div className="pets-near-you-list">
             <ul>
-              {this.props.pets.map(pet => (
-                pet.user !== this.props.currentUser ? 
+              {otherPets.map(pet => (
                 <PetsNearYouContainer key={pet._id} pet={pet}/>
-                : null
               ))}
             </ul>
           </div>
