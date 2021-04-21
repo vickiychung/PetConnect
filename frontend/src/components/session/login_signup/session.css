@@ -51,9 +51,7 @@ ul {
   min-width: 536px;
 }
 
-.logo img{
-  
-} 
+
 
 .login-container{
   margin-top: 40;
@@ -67,10 +65,6 @@ ul {
   word-wrap: break-word;
 }
 
-.login-inner form{
-  
-
-}
 
 .login-text-input{
   cursor: pointer;
@@ -181,6 +175,11 @@ ul {
 
 .login-errors{
   color: red;
+}
+
+
+.login-errors ul {
+  padding: 0;
 }
 
 .signup-container{

@@ -47,4 +47,3 @@ export const registerPet = data => dispatch => (
     .catch(err => dispatch(receivePetErrors(err)))
     
 );
-

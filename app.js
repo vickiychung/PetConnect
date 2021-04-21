@@ -13,7 +13,6 @@ const shelters = require("./routes/api/shelters");
 const connections = require("./routes/api/connections");
 require('./config/passport')(passport);
 
-
 app.use(cors());
 
 mongoose
