@@ -1,5 +1,6 @@
 import React from 'react';
 import './nav_dd.css';
+import '../../app.css';
 
 import {Link} from 'react-router-dom';
 
@@ -53,6 +54,10 @@ class NavDropdown extends React.Component {
         </div>
         { this.state.open && (
           <ul className="dd-list">
+            <p>Hi, {this.props.username} :)</p>
+            
+            <Link className="dd-my-pet" to="/pick_pet">My Pets</Link>
+
             {
               this.props.userPets.map(pet => (
                 <li key={pet._id} >
@@ -64,14 +69,8 @@ class NavDropdown extends React.Component {
                 </li>
               ))
             }
-            <div 
-              onClick={()=>this.props.logout()}
-              className="dd-logout"
-            >
-              <span>
-                Log out
-              </span>
-            </div>
+
+            <div className="dd-logout" onClick={()=>this.props.logout()}>Log out</div>
           </ul>
         )}
       </div>

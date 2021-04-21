@@ -1,7 +1,6 @@
-
-
 .tc-cont {
   height: 9vh;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .tc-wrapper {
@@ -10,12 +9,10 @@
   align-items: center;
   min-height: 100%;
   width: 400px;
-  background-color: aliceblue;
-
- 
+  color: white;
+  font-weight: 600;
   font-size: 20px;
-  border: 1px solid black;
-  border-radius: 8px;
+  text-shadow: 0 0 3px rgb(48,216,240), 0 0 3px black;
 }
 
 .tc-text, .tc-name {
@@ -23,6 +20,6 @@
 }
 
 .tc-name {
-  font-weight: 700;
-  color: darkblue;
+  font-weight: 600;
+  color: white;
 }
