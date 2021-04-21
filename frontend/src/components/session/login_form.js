@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { logout } from '../../actions/session_actions';
 
-import logo from './logo2.PNG'
+import logo from './pet_connect_logo.png'
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -62,40 +62,43 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className='login-page'>
-        <div className='login-content'>
-          <div className='logo'><img src={logo}/> </div>
-          <div className='login-container'>
-            <div className='login-inner'>
-              <form onSubmit={this.handleSubmit}>
-                <div >
-                  <input className='login-text-input'
-                    type="text"
-                    value={this.state.email}
-                    onChange={this.update('email')}
-                    placeholder="Email"
-                  />
-                  <input className='login-text-input'
-                    type="password"
-                    value={this.state.password}
-                    onChange={this.update('password')}
-                    placeholder="Password"
-                  />
-                  <input className='login-button' type="submit" value="Log In" />
-                  <button className="demo-user-button" onClick={this.demoUser}>Demo User</button>
+      <div className='login-bg'> 
+        <div className='login-page'>
+          <div className='login-content'>
+            <div className='logo'><img src={logo}/> </div>
+            <div className='login-container'>
+              <div className='login-inner'>
+                <form onSubmit={this.handleSubmit}>
+                  <div >
+                    <input className='login-text-input'
+                      type="text"
+                      value={this.state.email}
+                      onChange={this.update('email')}
+                      placeholder="Email"
+                    />
+                    <input className='login-text-input'
+                      type="password"
+                      value={this.state.password}
+                      onChange={this.update('password')}
+                      placeholder="Password"
+                    />
+                    <input className='login-button' type="submit" value="Log In" />
+                    <button className="demo-user-button" onClick={this.demoUser}>Demo User</button>
+                  </div>
+                </form>
+                <div className='login-signup-button-container'>
+                  <button onClick={() => this.props.openModal('signup')}>Create New Account</button>
                 </div>
-              </form>
-              <div className='login-signup-button-container'>
-                <button onClick={() => this.props.openModal('signup')}>Create New Account</button>
+                <div className='login-errors'>{this.renderErrors()}</div>
               </div>
-              <div className='login-errors'>{this.renderErrors()}</div>
+              
             </div>
-            
           </div>
+        
+        
         </div>
-        
-        
       </div>
+      
     );
   }
 }
