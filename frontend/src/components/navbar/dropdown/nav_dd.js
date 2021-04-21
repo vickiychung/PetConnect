@@ -1,5 +1,6 @@
 import React from 'react';
 import './nav_dd.css';
+import '../../app.css';
 
 import {Link} from 'react-router-dom';
 
