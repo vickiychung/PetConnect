@@ -73,29 +73,28 @@ router.post('/register',
       if (err) {
         res.status(500).json({ error: true, Message: err });
       } else {
-        res.send({ data });
         newFileUploaded = {
           fileLink: s3FileURL + file.originalname,
           s3_key: params.Key
         };
+
+        const newPet = new Pet({
+          species: req.body.species,
+          breed: req.body.breed,
+          gender: req.body.gender,
+          size: req.body.size,
+          name: req.body.name,
+          personality: req.body.personality,
+          shelter: req.body.shelter,
+          shelterZip: req.body.shelterZip,
+          age: req.body.age,
+          user: req.user.id,
+          photoUrl: newFileUploaded.fileLink
+        });
+
+        newPet.save().then(pet => res.json(pet));
       }
     });
-
-    const newPet = new Pet({
-      species: req.body.species,
-      breed: req.body.breed,
-      gender: req.body.gender,
-      size: req.body.size,
-      name: req.body.name,
-      personality: req.body.personality,
-      shelter: req.body.shelter,
-      shelterZip: req.body.shelterZip,
-      age: req.body.age,
-      user: req.user.id,
-      photoUrl: newFileUploaded
-    });
-
-    newPet.save().then(pet => res.json(pet));
   }
 );
 
@@ -117,7 +116,7 @@ router.patch('/:id',
           return res.status(400).json(err);
         }
         res.send("Updated");
-    });jhn
+    });
   }
 );
 
