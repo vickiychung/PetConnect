@@ -49,6 +49,12 @@ class CreatePetForm extends React.Component {
   }
 
   render() {
+    
+    let errs;
+    if (this.props.petErrors.response) {
+      errs = this.props.petErrors.response.data
+    }
+    console.log(errs)
     return (
       <div className="create-pet-form-wrapper">
         <div className="create-pet-form-title">
@@ -58,6 +64,7 @@ class CreatePetForm extends React.Component {
         </div>
         <form onSubmit={this.handleSubmit} className="create-pet-form">
           <div className="create-pet-entry">
+            {errs ? <div> {errs.name} </div> : null} 
             <input 
               type="text"
               value={this.state.name}
