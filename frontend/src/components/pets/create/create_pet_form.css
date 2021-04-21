@@ -66,4 +66,5 @@
 
 .submit-pet-entry input:hover {
   background-color: #7fe9f3;
+  transition: all 500ms ease;
 }
