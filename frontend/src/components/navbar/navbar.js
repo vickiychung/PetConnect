@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css';
-import logo from './logo-petconnect.png';
+import logo from '../session/login_signup/pet_connect_logo_whitebg.png';
 import TotalConnections from '../total_connections/total_connections';
 import NavDropdown from './dropdown/nav_dd';
 
