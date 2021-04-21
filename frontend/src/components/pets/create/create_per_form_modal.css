@@ -1,0 +1,93 @@
+.create-pet-modal-background {
+	transition: all 500ms ease;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(39, 50, 64, 0.6);
+	position: fixed;
+	left: 0;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 2000;
+	cursor: default;
+}
+
+.create-pet-modal {
+	width: 400px;
+	height: 670px;
+	background-color: white;
+	color: black;
+	position: relative;
+	z-index: 10;
+	border-radius: 10px;
+}
+
+.close-icon-container {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.close-icon {
+	font-size: 24px;
+	cursor: pointer;
+	margin-top: 15px;
+  margin-right: 15px;
+}
+
+.close-icon:hover {
+	transition: all 250ms ease;
+	color: rgb(110, 253, 165);
+}
+
+.pet-list-element {
+  cursor: pointer;
+}
+
+.pet-list-element {
+	cursor: pointer;
+	margin-left: 20px;
+	margin-right: 20px;
+	border-radius: 10px;
+	height: 180px;
+}
+
+.pet-individual {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+}
+
+.pet-icon-add, .pet-icon{
+	width: 80px;
+	height: 70px;
+	font-size: 60px;
+	border: 1px solid #00B9D3;
+	background-color: #00B9D3;
+	border-radius: 100px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+}
+
+.home-newpet-name {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.pet-individual:hover .pet-icon-add {
+  border: 1px solid rgb(110, 189, 253);
+	background-color: rgb(110, 189, 253);
+  transition: all 500ms ease;
+}
+
+.pet-individual:hover .home-newpet-name {
+  color: gray;
+  transition: all 500ms ease;
+}
