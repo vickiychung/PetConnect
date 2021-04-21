@@ -45,7 +45,7 @@ class PetsNearYou extends React.Component {
     let showPet = () => {
       return (
         <li className="pets-near-index">
-          <Link className="pets-near-index-redirect" to="" >
+          <Link className="pets-near-index-redirect" to="/feed" >
             <div className="pets-near-name">
               <span>
                 {this.props.pet.name}

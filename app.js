@@ -1,6 +1,7 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
-const db = require('./config/keys').mongoURI;
+const db = require('./config/keys_dev.js').mongoURI;
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
@@ -12,6 +13,8 @@ const shelters = require("./routes/api/shelters");
 const connections = require("./routes/api/connections");
 require('./config/passport')(passport);
 
+
+app.use(cors());
 
 mongoose
   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
