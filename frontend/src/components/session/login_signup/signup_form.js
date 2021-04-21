@@ -32,10 +32,6 @@ class SignupForm extends React.Component {
   
   }
 
-  componentWillUnmount() {
-    
-  }
-
   // componentWillReceiveProps(nextProps) {
   //   if (nextProps.signedIn === true) {
   //     this.props.closeModal();
