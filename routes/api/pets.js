@@ -45,7 +45,7 @@ router.post('/register',
   upload.single("file"),
   (req, res) => {
     const { errors, isValid } = validatePetInput(req.body);
-
+    
     if (!isValid) {
       return res.status(400).json(errors);
     }
@@ -68,7 +68,7 @@ router.post('/register',
         ContentType: file.mimetype,
         ACL: "public-read"
       };
-  
+ 
       let newFileUploaded = {};
   
       s3bucket.upload(params, function(err, data) {

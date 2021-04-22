@@ -14,38 +14,74 @@ class CreatePetForm extends React.Component {
       personality: "",
       gender: "",
       shelter: "",
-      shelterZip: ""
+      shelterZip: "",
+      file: ""
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    
   }
 
   handleSubmit(e) {
     e.preventDefault();
     
-    let pet = {
-      name: this.state.name,
-      species: this.state.species,
-      breed: this.state.breed,
-      size: this.state.size,
-      age: this.state.age,
-      personality: this.state.personality,
-      gender: this.state.gender,
-      shelter: this.state.shelter,
-      shelterZip: this.state.shelterZip,  
-    }
+    const formData = new FormData();
+    formData.append("name", this.state.name);
+    formData.append("species", this.state.species);
+    formData.append("breed", this.state.breed);
+    formData.append("size", this.state.size);
+    formData.append("age", this.state.age);
+    formData.append("personality", this.state.personality);
+    formData.append("gender", this.state.gender);
+    formData.append("shelter", this.state.shelter);
+    formData.append("shelterZip", this.state.shelterZip);
 
     if (!this.state.shelterZip) {
-      pet.shelterZip = "00000";
+      formData.set("shelterZip", "00000");
     }
-    
-    this.props.registerPet(pet);
+
+    if (this.state.file) {
+      formData.append("file", this.state.file);
+    }
+
+    this.props.registerPet(formData);
+   
+    // console.log(formData);
+    // let pet = {
+    //   name: this.state.name,
+    //   species: this.state.species,
+    //   breed: this.state.breed,
+    //   size: this.state.size,
+    //   age: this.state.age,
+    //   personality: this.state.personality,
+    //   gender: this.state.gender,
+    //   shelter: this.state.shelter,
+    //   shelterZip: this.state.shelterZip,  
+    // }
+
+    // if (!this.state.shelterZip) {
+    //   pet.shelterZip = "00000";
+    // }
+
+    // if (this.state.file) {
+    //   pet.file = this.state.file
+    // }
+     
+    // this.props.registerPet(pet);
   }
 
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
+  }
+
+  fileSelectHandler = (e) => {
+    e.preventDefault();
+    this.setState({
+      file: e.target.files[0]
+    });
+    
   }
 
   render() {
@@ -55,13 +91,16 @@ class CreatePetForm extends React.Component {
       errs = this.props.petErrors.response.data
     }
     return (
-      <div className="create-pet-form-wrapper">
+      <div className="create-pet-form-wrapper" onClick={e => e.stopPropagation()} >
         <div className="create-pet-form-title">
           <h1 > 
             Add a Pet
           </h1>
         </div>
-        <form onSubmit={this.handleSubmit} className="create-pet-form">
+        <form onSubmit={this.handleSubmit} className="create-pet-form" >
+
+          
+
           <div className="create-pet-entry">
             { errs ? 
               <div className="pet-create-error"> {errs.name} </div> 
@@ -169,6 +208,13 @@ class CreatePetForm extends React.Component {
               placeholder="Shelter Zip (optional)"
             />
           </div>
+
+
+          <div className="create-pet-entry">
+            <input type="file" onChange={this.fileSelectHandler}/>
+          </div>
+
+          
 
           <div className="submit-pet-entry">
             <input type="submit" value="Add" />
