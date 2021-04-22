@@ -1,5 +1,6 @@
 import React from 'react';
 import './nav_dd.css';
+import '../../app.css';
 
 import {Link} from 'react-router-dom';
 
@@ -53,15 +54,30 @@ class NavDropdown extends React.Component {
         </div>
         { this.state.open && (
           <ul className="dd-list">
+            <p>Hi, {this.props.username} :)</p>
+            
+            <Link className="dd-my-pet" to="/pick_pet">My Pets</Link>
+
             {
               this.props.userPets.map(pet => (
                 <li key={pet._id} >
-                  {pet.name}
+                  <div className="dd-pet-name-container">
+                    <div className="dd-pet-name">
+                      {pet.name}
+                    </div>
+                  </div>
                 </li>
               ))
             }
-            <Link to="/pick_pet">My Pets</Link>
-            <div onClick={()=>this.props.logout()}>Log out</div>
+
+            <div 
+              onClick={()=>this.props.logout()}
+              className="dd-logout"
+            >
+              <span>
+                Log out
+              </span>
+            </div>
           </ul>
         )}
       </div>

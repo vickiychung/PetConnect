@@ -13,10 +13,8 @@ const petsReducer = (state = {}, action) => {
     case RECEIVE_USER_PETS:
       return action.userPets;
     case RECEIVE_PET:
-      // const newPet = { [action.pet.id]: action.pet.data };
-
       let newState = Object.assign({}, state);
-      let petLength = newState.data.length;
+      let petLength = newState.data.length || 1;
       newState.data[petLength] = action.pet.data;
       return newState; 
     default:

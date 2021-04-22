@@ -54,7 +54,6 @@ class CreatePetForm extends React.Component {
     if (this.props.petErrors.response) {
       errs = this.props.petErrors.response.data
     }
-    
     return (
       <div className="create-pet-form-wrapper">
         <div className="create-pet-form-title">
@@ -64,7 +63,10 @@ class CreatePetForm extends React.Component {
         </div>
         <form onSubmit={this.handleSubmit} className="create-pet-form">
           <div className="create-pet-entry">
-            {errs ? <div> {errs.name} </div> : null} 
+            { errs ? 
+              <div className="pet-create-error"> {errs.name} </div> 
+              : <div className="pet-create-error"></div>
+            } 
             <input 
               type="text"
               value={this.state.name}
@@ -74,6 +76,10 @@ class CreatePetForm extends React.Component {
           </div>
 
           <div className="create-pet-entry">
+            { errs ? 
+              <div className="pet-create-error"> {errs.species} </div> 
+              : <div className="pet-create-error"></div>
+            } 
             <input 
               type="text"
               value={this.state.species}
@@ -83,6 +89,10 @@ class CreatePetForm extends React.Component {
           </div>
 
           <div className="create-pet-entry">
+            { errs ? 
+              <div className="pet-create-error"> {errs.breed} </div> 
+              : <div className="pet-create-error"></div>
+            } 
             <input 
               type="text"
               value={this.state.breed}
@@ -92,6 +102,10 @@ class CreatePetForm extends React.Component {
           </div>
 
           <div className="create-pet-entry">
+            { errs ? 
+              <div className="pet-create-error"> {errs.size} </div> 
+              : <div className="pet-create-error"></div>
+            }
             <input 
               type="text"
               value={this.state.size}
@@ -101,6 +115,10 @@ class CreatePetForm extends React.Component {
           </div>
 
           <div className="create-pet-entry">
+            { errs ? 
+              <div className="pet-create-error"> {errs.age} </div> 
+              : <div className="pet-create-error"></div>
+            }
             <input 
               type="number"
               value={this.state.age}
@@ -110,15 +128,10 @@ class CreatePetForm extends React.Component {
           </div>
 
           <div className="create-pet-entry">
-            <input 
-              type="text"
-              value={this.state.personality}
-              onChange={this.update("personality")}
-              placeholder="Personality"
-            />
-          </div>
-
-          <div className="create-pet-entry">
+            { errs ? 
+              <div className="pet-create-error"> {errs.gender} </div> 
+              : <div className="pet-create-error"></div>
+            }
             <input 
               type="text"
               value={this.state.gender}
@@ -128,6 +141,17 @@ class CreatePetForm extends React.Component {
           </div>
 
           <div className="create-pet-entry">
+            <div className="pet-create-error"></div>
+            <input 
+              type="text"
+              value={this.state.personality}
+              onChange={this.update("personality")}
+              placeholder="Personality (optional)"
+            />
+          </div>
+
+          <div className="create-pet-entry">
+            <div className="pet-create-error"></div>
             <input 
               type="text"
               value={this.state.shelter}
@@ -137,6 +161,7 @@ class CreatePetForm extends React.Component {
           </div>
 
           <div className="create-pet-entry">
+            <div className="pet-create-error"></div>
             <input 
               type="number"
               value={this.state.shelterZip}

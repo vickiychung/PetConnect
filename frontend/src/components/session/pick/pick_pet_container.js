@@ -6,9 +6,10 @@ import { openModal, closeModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
   return {
-    state: state,
+    // state: state,
     currentUser: state.session.user.id,
-    userPets: state.entities.pets.data
+    userPets: state.entities.pets.data,
+    showModal: state.ui.modal
   };
 };
 

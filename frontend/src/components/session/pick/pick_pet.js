@@ -42,7 +42,12 @@ class PickPet extends React.Component {
             ))
           }
           {
-            pets.length < 5 ? <CreatePetFormModal /> : null
+            pets.length < 5 ? 
+              <CreatePetFormModal 
+                showModal={this.props.showModal} 
+                openModal={this.props.openModal}
+                closeModal={this.props.closeModal}
+              /> : null
           }
         </ul>
         
