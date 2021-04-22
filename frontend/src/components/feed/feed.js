@@ -66,7 +66,9 @@ class Feed extends React.Component {
 
     return (
       <div className="feed-wrapper">
-        <NavbarContainer userPets={userPets}/>
+        <div className="navbar-container">
+          <NavbarContainer userPets={userPets}/>
+        </div>
        
         <div className="feed-lists-wrapper">
           <div className="pets-near-you-list">
