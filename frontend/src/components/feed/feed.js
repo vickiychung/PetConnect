@@ -56,7 +56,7 @@ class Feed extends React.Component {
 
   const filterByZip = () => {
     return (
-      <ul>
+      <ul className="pets-near-index">
         {nearMatches.map(pet => (
           <PetsNearYouContainer key={pet._id} pet={pet}/>
         ))}
@@ -66,7 +66,7 @@ class Feed extends React.Component {
   
   const filterByShelter = () => {
     return (
-      <ul>
+      <ul className="pets-near-index">
         {shelterMatches.map(pet => (
           <PetsNearYouContainer key={pet._id} pet={pet}/>
         ))}
@@ -76,7 +76,7 @@ class Feed extends React.Component {
 
   const filterBySpecies = () => {
     return (
-      <ul>
+      <ul className="pets-near-index">
         {speciesMatches.map(pet => (
           <PetsNearYouContainer key={pet._id} pet={pet}/>
         ))}
@@ -168,23 +168,25 @@ class Feed extends React.Component {
         <div className="navbar-container">
           <NavbarContainer userPets={userPets}/>
         </div>
+
         <div className="feed-main-wrapper">
-        <div className="tabs-wrapper">
-          <div className="tabs">
-            <div className="tabs-1">
-              <button onClick={this.handleZip} className="tabs-2">Location</button>
-            </div>
-            <div className="tabs-1">
-              <button onClick={this.handleShelter} className="tabs-2">Shelter</button>
-            </div>
-            <div className="tabs-1">
-              <button onClick={this.handleSpecies} className="tabs-2">Species</button>
+
+          <div className="tabs-wrapper">
+            <div className="tabs">
+              <div className="tabs-1">
+                <button onClick={this.handleZip} className="tabs-2">Location</button>
+              </div>
+
+              <div className="tabs-1">
+                <button onClick={this.handleShelter} className="tabs-2">Shelter</button>
+              </div>
+
+              <div className="tabs-1">
+                <button onClick={this.handleSpecies} className="tabs-2">Species</button>
+              </div>
             </div>
           </div>
-          <div className="tabs">
 
-        </div>
-      </div>
         <div className="feed-lists-wrapper">
           <div className="pets-near-you-list">
             <ul>
@@ -192,14 +194,10 @@ class Feed extends React.Component {
             </ul>
           </div>
 
-            {/* <div className="middle-feed">
-
-            </div> */}
-
           <div className="pets-shelter-list">
-            <div className="pets-img-left">
+            <div className="pets-img-right-wrap">
               {/* place holder image */}
-              <img className="pets-img-left-1" src={pic}></img>
+              <img className="pets-img-right" src={pic}></img>
               {
                 //these are to display on right page of book. photoUrl is dependent on whether it exists. 
                 this.props.selectedPet ? 
@@ -217,15 +215,11 @@ class Feed extends React.Component {
             </div>
           </div>
         </div>
-        <div className="space">
-
-        </div>
+    
         <div className="my-pets-container">
           <MyPetsContainer currentPet={currentPet}/>
         </div>
       </div>
-    
-        
     </div>
     )
   }
