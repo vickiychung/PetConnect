@@ -2,7 +2,7 @@ const express = require("express")
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const keys = require('../../config/keys_dev');
+const keys = require('../../config/keys');
 const passport = require('passport');
 const User = require('../../models/User');
 const validateRegisterInput = require('../../validation/register')
@@ -50,8 +50,7 @@ router.post("/register", (req, res) => {
         username: req.body.username,
         email: req.body.email,
         password: req.body.password,
-        zipcode: req.body.zipcode,
-        pets: req.pets.id
+        zipcode: req.body.zipcode
       });
 
       bcrypt.genSalt(10, (err, salt) => {

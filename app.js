@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const db = require('./config/keys_dev.js').mongoURI;
+const db = require('./config/keys.js').mongoURI;
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
@@ -20,9 +20,6 @@ mongoose
   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
-
-app.get("/", (req, res) => res.send("Hello World!!"));
-
 
 app.use(passport.initialize());
 
