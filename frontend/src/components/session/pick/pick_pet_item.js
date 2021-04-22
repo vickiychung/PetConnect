@@ -5,7 +5,7 @@ import { faPaw } from '@fortawesome/free-solid-svg-icons';
 
 class PickPetItem extends React.Component {
   render() {
-    console.log(this.props.pet);
+
     return (
       
       <li className="pet-list-element">
