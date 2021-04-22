@@ -22,6 +22,49 @@ class MyPets extends React.Component {
         <div className="profile-pic-wrapper">
           {profilePhoto}
         </div>
+
+        <div className="pet-details">
+          <p className="my-pet-name">
+            {currentPet.name}
+          </p>
+
+          <ul className="my-pet-details-list">
+            <li>
+              <label>species: </label>
+              {currentPet.species}
+            </li>
+
+             <li>
+              <label>breed: </label>
+              {currentPet.breed}
+            </li>
+
+             <li>
+              <label>size: </label>
+              {currentPet.size}
+            </li>
+
+             <li>
+              <label>gender: </label>
+              {currentPet.gender}
+            </li>
+
+             <li>
+              <label>age: </label>
+              {currentPet.age}
+            </li>
+
+             <li>
+              <label>personality: </label>
+              {currentPet.personality}
+            </li>
+
+             <li>
+              <label>shelter: </label>
+              {currentPet.shelter}
+            </li>
+          </ul>
+        </div>
       </div>
     );
   }

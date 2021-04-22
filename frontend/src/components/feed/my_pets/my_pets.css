@@ -1,16 +1,64 @@
 .my-pets-wrapper {
-  background-color: coral;
+  background-color: rgb(233,171,199);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  padding-top: 15px;
 }
 
 .profile-pic-wrapper {
   display: flex;
   justify-content: center;
-  max-height: 50vh;
+  /* max-height: 50vh; */
   width: fit-content;
 }
 
 .profile-pic {
   width: 90%;
+}
+
+.pet-details {
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-pet-name {
+  font-weight: 600;
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.my-pet-details-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  margin-top: 0px;
+}
+
+.my-pet-details-list li {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.my-pet-details-list li label{
+  margin-left: 50px;
+  margin-right: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
 }
