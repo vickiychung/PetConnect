@@ -6,21 +6,80 @@ import PetsNearYouContainer from './pets_near_you/pets_near_you_container'
 
 class Feed extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      toggled: "zip"
+    }
+
+    this.handleZip = this.handleZip.bind(this);
+    this.handleSpecies = this.handleSpecies.bind(this);
+    this.handleShelter = this.handleShelter.bind(this);
+  }
+
   componentDidMount() {
     this.props.fetchUsers()
     this.props.fetchPets()
   }
 
-  // componentWillUnmount() {
-  //   this.props.fetchPets()
-  // }
+  handleSpecies() {
+    this.setState({toggled: 'species'})
+  }
+
+  handleZip() {
+    this.setState({toggled: 'zip'})
+  }
+
+  handleShelter() {
+    this.setState({toggled: 'shelter'})
+  }
 
   render() {
     if (!this.props.pets || !this.props.currentUser || !Array.isArray(this.props.users)) {
       return null
     }
 
-    // if (Object.values(this.props.pets))
+  const filterByZip = () => {
+    return (
+      <ul>
+        {nearMatches.map(pet => (
+          <PetsNearYouContainer key={pet._id} pet={pet}/>
+        ))}
+      </ul>
+    )
+  }
+  
+  const filterByShelter = () => {
+    return (
+      <ul>
+        {shelterMatches.map(pet => (
+          <PetsNearYouContainer key={pet._id} pet={pet}/>
+        ))}
+      </ul>
+    )
+  }
+
+  const filterBySpecies = () => {
+    return (
+      <ul>
+        {speciesMatches.map(pet => (
+          <PetsNearYouContainer key={pet._id} pet={pet}/>
+        ))}
+      </ul>
+    )
+  }
+
+
+  const toggle = () => {
+    if (this.state.toggled === 'zip') {
+      return filterByZip();
+    } else if (this.state.toggled === 'shelter') {
+      return filterByShelter();
+    } else if (this.state.toggled === 'species') {
+      return filterBySpecies();
+    }
+  }
 
   const userPets = [];
   
@@ -39,33 +98,83 @@ class Feed extends React.Component {
     }
   })
 
-  let matches = [];
+  //PETS NEAR YOU MATCHES
+  let nearMatches = [];
   
   this.props.pets.forEach(pet => {
     matchedUsers.forEach(user => {
       if (pet.user ===  user._id) {
-        matches.push(pet)
+        nearMatches.push(pet)
       }
     })
   })
 
+
+  //Helper methods for same shelter
+
+  let changeString = function(str) {
+    let word = str.split(" ")
+    let noSpaces = word.join("")
+    return noSpaces.toLowerCase()
+  }
   
+  let compareWords = function(word1, word2) {
+    if (word1.length < 4 || word2.length < 4) return false
+
+    if ((word1.length > word2.length) && (word1.includes(word2))) {
+      return true
+    } else if ((word2.length > word1.length) && (word2.includes(word1))){
+      return true
+    } else if (word1 === word2) {
+      return true
+    } else {
+      return false
+    }
+  }
+  //SHELTER MATCHES
+  let shelterMatches = [];
 
   this.props.pets.forEach(pet => {
-
+    if (compareWords(changeString(pet.shelter), changeString(this.props.currentPet.shelter)) && pet._id !== this.props.currentPet._id) {
+      shelterMatches.push(pet)
+    }
   })
 
+  let speciesMatches = [];
+
+  this.props.pets.forEach(pet => {
+    if (pet.species.toLowerCase() === this.props.currentPet.species.toLowerCase() && pet._id !== this.props.currentPet._id) {
+      speciesMatches.push(pet)
+    }
+  })
 
     return (
       <div className="feed-wrapper">
+
         <NavbarContainer userPets={userPets}/>
-       
+        <div className="tabs-wrapper">
+          <div className="tabs">
+            <div className="tabs-1">
+              <button onClick={this.handleZip} className="tabs-2">Location</button>
+            </div>
+            <div className="tabs-1">
+              <button onClick={this.handleShelter} className="tabs-2">Shelter</button>
+            </div>
+            <div className="tabs-1">
+              <button onClick={this.handleSpecies} className="tabs-2">Species</button>
+            </div>
+          </div>
+          <div className="tabs">
+
+        </div>
+      </div>
         <div className="feed-lists-wrapper">
           <div className="pets-near-you-list">
             <ul>
-              {matches.map(pet => (
+              {/* {nearMatches.map(pet => (
                 <PetsNearYouContainer key={pet._id} pet={pet}/>
-              ))}
+              ))} */}
+              {toggle()}
             </ul>
           </div>
 
