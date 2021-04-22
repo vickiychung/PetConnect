@@ -11,7 +11,8 @@ const mSTP = (state, ownProps) => ({
   pets: state.entities.pets.data,
   users: state.entities.users,
   currentPet: state.petProfile.pet.data,
-  currentPetId: ownProps.match.params.petId
+  currentPetId: ownProps.match.params.petId,
+  selectedPet: state.entities.selectedPet.data
 });
 
 const mDTP = dispatch => ({
