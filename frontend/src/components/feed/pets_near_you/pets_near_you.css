@@ -2,7 +2,8 @@
   background-color: yellow;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow-y: hidden;
+  height: 85vh;
 }
 
 .pets-near-item {

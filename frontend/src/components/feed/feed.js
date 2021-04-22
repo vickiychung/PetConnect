@@ -44,123 +44,126 @@ class Feed extends React.Component {
     if (!this.props.pets || !this.props.currentUser || !Array.isArray(this.props.users)) {
       return null
     }
-  let currentPet = null
-    this.props.pets.forEach(pet => {
-    if (pet._id === this.props.currentPetId) {
-      currentPet = pet
-    }
-  })
-  // const pet = this.props.pets.find(pet => pet._id === this.state.currentPetId);
 
-    console.log(this.props.selectedPet)
-
-  const filterByZip = () => {
-    return (
-      <ul className="pets-near-index">
-        {nearMatches.map(pet => (
-          <PetsNearYouContainer key={pet._id} pet={pet}/>
-        ))}
-      </ul>
-    )
-  }
-  
-  const filterByShelter = () => {
-    return (
-      <ul className="pets-near-index">
-        {shelterMatches.map(pet => (
-          <PetsNearYouContainer key={pet._id} pet={pet}/>
-        ))}
-      </ul>
-    )
-  }
-
-  const filterBySpecies = () => {
-    return (
-      <ul className="pets-near-index">
-        {speciesMatches.map(pet => (
-          <PetsNearYouContainer key={pet._id} pet={pet}/>
-        ))}
-      </ul>
-    )
-  }
-
-
-  const toggle = () => {
-    if (this.state.toggled === 'zip') {
-      return filterByZip();
-    } else if (this.state.toggled === 'shelter') {
-      return filterByShelter();
-    } else if (this.state.toggled === 'species') {
-      return filterBySpecies();
-    }
-  }
-
-  const userPets = [];
-  
-  this.props.pets.forEach(pet => {
-    if (pet.user === this.props.currentUser) {
-      userPets.push(pet)
-    }
-  })
-
-  let matchedUsers = [];
-
-
-  this.props.users.forEach(user => {
-    if (this.props.currentOwner.zipcode === user.zipcode && this.props.currentUser !== user._id) {
-      matchedUsers.push(user)
-    }
-  })
-
-  //PETS NEAR YOU MATCHES
-  let nearMatches = [];
-  
-  this.props.pets.forEach(pet => {
-    matchedUsers.forEach(user => {
-      if (pet.user ===  user._id) {
-        nearMatches.push(pet)
+    let currentPet = null
+      this.props.pets.forEach(pet => {
+      if (pet._id === this.props.currentPetId) {
+        currentPet = pet
       }
     })
-  })
+  // const pet = this.props.pets.find(pet => pet._id === this.state.currentPetId);
 
-
-  //Helper methods for same shelter
-
-  let changeString = function(str) {
-    let word = str.split(" ")
-    let noSpaces = word.join("")
-    return noSpaces.toLowerCase()
-  }
-  
-  let compareWords = function(word1, word2) {
-    if (word1.length < 4 || word2.length < 4) return false
-
-    if ((word1.length > word2.length) && (word1.includes(word2))) {
-      return true
-    } else if ((word2.length > word1.length) && (word2.includes(word1))){
-      return true
-    } else if (word1 === word2) {
-      return true
-    } else {
-      return false
+    const filterByZip = () => {
+      return (
+        <ul className="pets-near-index">
+          {nearMatches.map(pet => (
+            <PetsNearYouContainer key={pet._id} pet={pet}/>
+          ))}
+        </ul>
+      )
     }
-  }
-  //SHELTER MATCHES
-  let shelterMatches = [];
-
-  this.props.pets.forEach(pet => {
-    if (compareWords(changeString(pet.shelter), changeString(currentPet.shelter)) && pet._id !== currentPet._id) {
-      shelterMatches.push(pet)
+    
+    const filterByShelter = () => {
+      return (
+        <ul className="pets-near-index">
+          {shelterMatches.map(pet => (
+            <PetsNearYouContainer key={pet._id} pet={pet}/>
+          ))}
+        </ul>
+      )
     }
-  })
 
-  let speciesMatches = [];
-
-  this.props.pets.forEach(pet => {
-    if (pet.species.toLowerCase() === currentPet.species.toLowerCase() && pet._id !== currentPet._id) {
-      speciesMatches.push(pet)
+    const filterBySpecies = () => {
+      return (
+        <ul className="pets-near-index">
+          {speciesMatches.map(pet => (
+            <PetsNearYouContainer key={pet._id} pet={pet}/>
+          ))}
+        </ul>
+      )
     }
-  })
+
+
+    const toggle = () => {
+      if (this.state.toggled === 'zip') {
+        return filterByZip();
+      } else if (this.state.toggled === 'shelter') {
+        return filterByShelter();
+      } else if (this.state.toggled === 'species') {
+        return filterBySpecies();
+      }
+    }
+
+    const userPets = [];
+    
+    this.props.pets.forEach(pet => {
+      if (pet.user === this.props.currentUser) {
+        userPets.push(pet)
+      }
+    })
+
+    let matchedUsers = [];
+
+    this.props.users.forEach(user => {
+      if (this.props.currentOwner.zipcode === user.zipcode && this.props.currentUser !== user._id) {
+        matchedUsers.push(user)
+      }
+    })
+
+    //PETS NEAR YOU MATCHES
+    let nearMatches = [];
+    
+    this.props.pets.forEach(pet => {
+      matchedUsers.forEach(user => {
+        if (pet.user ===  user._id) {
+          nearMatches.push(pet)
+        }
+      })
+    })
+
+
+    //Helper methods for same shelter
+
+    let changeString = function(str) {
+      let word = str.split(" ")
+      let noSpaces = word.join("")
+      return noSpaces.toLowerCase()
+    }
+    
+    let compareWords = function(word1, word2) {
+      if (word1.length < 4 || word2.length < 4) return false
+
+      if ((word1.length > word2.length) && (word1.includes(word2))) {
+        return true
+      } else if ((word2.length > word1.length) && (word2.includes(word1))){
+        return true
+      } else if (word1 === word2) {
+        return true
+      } else {
+        return false
+      }
+    }
+    //SHELTER MATCHES
+    let shelterMatches = [];
+
+    this.props.pets.forEach(pet => {
+      if (compareWords(changeString(pet.shelter), changeString(currentPet.shelter)) && pet._id !== currentPet._id) {
+        shelterMatches.push(pet)
+      }
+    })
+
+    let speciesMatches = [];
+
+    this.props.pets.forEach(pet => {
+      if (pet.species.toLowerCase() === currentPet.species.toLowerCase() && pet._id !== currentPet._id) {
+        speciesMatches.push(pet)
+      }
+    })
+
+    let profilePhoto;
+    this.props.selectedPet.photoUrl ? 
+      profilePhoto =  <img className="selected-pet-img" src={this.props.selectedPet.photoUrl}></img> :
+      profilePhoto =  <img className="selected-pet-img" src={pic}></img>
 
     return (
       <div className="feed-wrapper">
@@ -195,11 +198,10 @@ class Feed extends React.Component {
           </div>
 
           <div className="pets-shelter-list">
-            <div className="pets-img-right-wrap">
-              {/* place holder image */}
-              <img className="pets-img-right" src={pic}></img>
+            <div className="selected-pet-wrap">
+              {profilePhoto}
+              
               {
-                //these are to display on right page of book. photoUrl is dependent on whether it exists. 
                 this.props.selectedPet ? 
                 <div>
                   name: {this.props.selectedPet.name}
