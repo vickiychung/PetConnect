@@ -10,6 +10,7 @@ const mSTP = state => ({
   currentOwner: state.session.user,
   pets: state.entities.pets.data,
   users: state.entities.users,
+  currentPet: state.petProfile.pet.data
 });
 
 const mDTP = dispatch => ({

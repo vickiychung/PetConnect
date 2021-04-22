@@ -27,7 +27,7 @@
 
 .pets-near-you-list {
   height: 100%;
-  width: 350px;
+  width: 450px;
   /* border: 5px solid darkblue; */
   /* border: 3px solid #30D8F0; */
   border-radius: 10px;
@@ -73,11 +73,12 @@
 
 .feed-lists-wrapper {
   display: flex;
+  padding: 50px;
 }
 
 .pets-shelter-list {
   height: 100%;
-  width: 350px;
+  width: 450px;
   /* border: 5px solid darkblue; */
   /* border: 3px solid #30D8F0; */
   border-radius: 10px;
@@ -87,6 +88,60 @@
   box-shadow: inset 0 -3em 3em rgb(0 0 0 / 10%), 0 0 0 2px #ffffff, 0.3em 0.3em 1em #047e90;
 }
 
+.tabs-wrapper {
+  display: flex;
+  position: absolute;
+  height: 30px;
+}
+
+.tabs {
+  height: 50px;
+  width: 350px;
+  padding-top: 10px;
+  border-radius: 10px;
+  display: flex;
+}
+
+.tabs-1 {
+  display: flex;
+  width: 120px;
+  height: inherit;
+  padding: 5px;
+} 
+
+
+.tabs-2 {
+  width: inherit;
+  border-radius: 8px;
+  background-color: white;
+  font-weight: 600;
+  color: darkblue;
+  border-color: #00B9D3;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.tabs-2:hover {
+  background-color: skyblue;
+}
+
 .my-pets-container {
   width: 30%;
+}
+
+.space {
+  /* width: 500px; */
+}
+
+.pets-img-left {
+  height: 30%;
+  padding: 10px;
+  padding-top: 15px;
+  text-align: center;
+}
+.pets-img-left-1 {
+  height: 100%;
+  width: 100%;
+  border-radius: 50px;
 }
