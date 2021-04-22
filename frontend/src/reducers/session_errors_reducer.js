@@ -4,6 +4,8 @@ import {
   RESET_SESSION_ERRORS,
 } from '../actions/session_actions';
 
+import { OPEN_MODAL, CLOSE_MODAL } from '../actions/modal_actions';
+
 const _nullErrors = [];
 
 const SessionErrorsReducer = (state = _nullErrors, action) => {
@@ -14,6 +16,10 @@ const SessionErrorsReducer = (state = _nullErrors, action) => {
     case RECEIVE_CURRENT_USER:
       return _nullErrors;
     case RESET_SESSION_ERRORS:
+      return _nullErrors;
+    case OPEN_MODAL:
+      return _nullErrors;
+    case CLOSE_MODAL:
       return _nullErrors;
     default:
       return state;

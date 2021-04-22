@@ -11,7 +11,7 @@ const mapStateToProps = ({ errors, session }) => {
     errors: errors.session,
     navLink: <Link to="/login">Sign In</Link>,
     user: session.user,
-    signedIn: session.isSignedIn, 
+    session: session, 
   };
 };
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
+import CreateUserModal from './create_user_modal';
 import logo from './pet_connect_logo.png'
 
 class LoginForm extends React.Component {
@@ -10,18 +11,18 @@ class LoginForm extends React.Component {
     this.state = {
       email: '',
       password: '',
-      errors: {}
+      // errors: {}
     };
     
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.demoUser = this.demoUser.bind(this);
-    this.clearErrorsAndOpenModal = this.clearErrorsAndOpenModal.bind(this);
+    // this.clearErrorsAndOpenModal = this.clearErrorsAndOpenModal.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({errors: nextProps.errors})
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   this.setState({errors: nextProps.errors})
+  // }
 
   demoUser(e) {
     e.preventDefault();
@@ -44,16 +45,16 @@ class LoginForm extends React.Component {
   })  
   }
 
-  clearErrorsAndOpenModal(){
-    this.props.openModal('signup');
-    this.props.resetSessionErrors();
+  // clearErrorsAndOpenModal(){
+  //   this.props.openModal('signup');
+  //   this.props.resetSessionErrors();
 
-  }
+  // }
   
 
   renderErrors() {
     if(!this.props.errors) return null;
-    if(this.props.ui.modal === null){
+    if(this.props.errors && !this.props.showModal){
       return(
         <ul>
           {Object.values(this.props.errors).map((error, i) => (
@@ -93,9 +94,14 @@ class LoginForm extends React.Component {
                     <button className="demo-user-button" onClick={this.demoUser}>Demo User</button>
                   </div>
                 </form>
-                <div className='login-signup-button-container'>
+                {/* <div className='login-signup-button-container'>
                   <button onClick={this.clearErrorsAndOpenModal}>Create New Account</button>
-                </div>
+                </div> */}
+                < CreateUserModal 
+                  showModal={this.props.showModal} 
+                  openModal={this.props.openModal}
+                  closeModal={this.props.closeModal}
+                />
                 <div className='login-errors'>{this.renderErrors()}</div>
               </div>
               

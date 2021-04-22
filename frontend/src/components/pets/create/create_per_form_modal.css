@@ -15,11 +15,11 @@
 
 .create-pet-modal {
 	width: 400px;
-	height: 670px;
+	height: 690px;
 	background-color: white;
 	color: black;
 	position: relative;
-	z-index: 10;
+	z-index: 3000;
 	border-radius: 10px;
 }
 
