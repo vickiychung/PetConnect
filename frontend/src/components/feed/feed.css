@@ -106,6 +106,8 @@
   color: darkblue;
   border-color: #00B9D3;
   outline: none;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .tabs-2:hover {
