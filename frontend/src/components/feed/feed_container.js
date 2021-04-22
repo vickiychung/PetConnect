@@ -17,7 +17,7 @@ const mDTP = dispatch => ({
   fetchPets: () => dispatch(fetchPets()),
   fetchUserPets: id => dispatch(fetchUserPets(id)),
   fetchUser: (userId) => dispatch(fetchUser(userId)),
-  fetchUsers: () => dispatch(fetchUsers())
+  fetchUsers: () => dispatch(fetchUsers()),
 });
 
 export default connect(mSTP, mDTP)(Feed)

@@ -3,9 +3,11 @@ import React from 'react';
 import "./feed.css"
 import NavbarContainer from '../navbar/navbar_container';
 import PetsNearYouContainer from './pets_near_you/pets_near_you_container'
+import MyPetsContainer from './my_pets/my_pets_container';
 
 class Feed extends React.Component {
 
+<<<<<<< HEAD
   constructor(props) {
     super(props);
 
@@ -18,6 +20,16 @@ class Feed extends React.Component {
     this.handleShelter = this.handleShelter.bind(this);
   }
 
+=======
+  constructor(props){
+    super(props);
+    this.state = {
+      currentPetId: this.props.match.params.petId
+    }
+    
+  }
+  
+>>>>>>> main
   componentDidMount() {
     this.props.fetchUsers()
     this.props.fetchPets()
@@ -39,6 +51,7 @@ class Feed extends React.Component {
     if (!this.props.pets || !this.props.currentUser || !Array.isArray(this.props.users)) {
       return null
     }
+<<<<<<< HEAD
 
   const filterByZip = () => {
     return (
@@ -80,6 +93,9 @@ class Feed extends React.Component {
       return filterBySpecies();
     }
   }
+=======
+  const pet = this.props.pets.filter((pet) => pet._id === this.state.currentPetId);
+>>>>>>> main
 
   const userPets = [];
   
@@ -150,6 +166,7 @@ class Feed extends React.Component {
 
     return (
       <div className="feed-wrapper">
+<<<<<<< HEAD
 
         <NavbarContainer userPets={userPets}/>
         <div className="tabs-wrapper">
@@ -177,17 +194,35 @@ class Feed extends React.Component {
               {toggle()}
             </ul>
           </div>
+=======
+        <div className="navbar-container">
+          <NavbarContainer userPets={userPets}/>
+        </div>
+>>>>>>> main
 
-          {/* <div className="middle-feed">
+        <div className="feed-main-wrapper">
+          <div className="feed-lists-wrapper">
+            <div className="pets-near-you-list">
+              <ul>
+                {matches.map(pet => (
+                  <PetsNearYouContainer key={pet._id} pet={pet}/>
+                ))}
+              </ul>
+            </div>
 
-          </div> */}
+            {/* <div className="middle-feed">
 
-          <div className="pets-shelter-list">
+            </div> */}
 
+            <div className="pets-shelter-list">
+
+            </div>
+          </div>
+
+          <div className="my-pets-container">
+            <MyPetsContainer />
           </div>
         </div>
-
-
       </div>
     )
   }
