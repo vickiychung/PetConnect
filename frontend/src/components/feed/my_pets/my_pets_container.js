@@ -4,7 +4,7 @@ import MyPets from './my_pets';
 
 const mapStateToProps = state => {
   return {
-    currentPet: state.petProfile.pet.data
+    // currentPet: state.petProfile.pet.data
   };
 };
 
