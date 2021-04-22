@@ -13,7 +13,7 @@ class Feed extends React.Component {
 
     this.state = {
       toggled: "zip",
-      currentPetId: this.props.match.params.petId
+      // currentPetId: this.props.match.params.petId
 
     }
 
@@ -44,6 +44,15 @@ class Feed extends React.Component {
     if (!Array.isArray(this.props.pets) || !this.props.currentUser || !Array.isArray(this.props.users)) {
       return null
     }
+  let currentPet = null
+    this.props.pets.forEach(pet => {
+    if (pet._id === this.props.currentPetId) {
+      currentPet = pet
+    }
+  })
+  // const pet = this.props.pets.find(pet => pet._id === this.state.currentPetId);
+
+    console.log(this.props.selectedPet)
 
     // console.log(this.props)
   let currentPet = null
@@ -213,8 +222,22 @@ class Feed extends React.Component {
 
           <div className="pets-shelter-list">
             <div className="pets-img-left">
+              {/* place holder image */}
               <img className="pets-img-left-1" src={pic}></img>
-                
+              {
+                //these are to display on right page of book. photoUrl is dependent on whether it exists. 
+                this.props.selectedPet ? 
+                <div>
+                  name: {this.props.selectedPet.name}
+                  species: {this.props.selectedPet.species}
+                  breed: {this.props.selectedPet.breed}
+                  size: {this.props.selectedPet.size}
+                  gender: {this.props.selectedPet.gender}
+                  age: {this.props.selectedPet.age}
+                  personality: {this.props.selectedPet.personality}
+                  shelter: {this.props.selectedPet.shelter}
+                </div> : null
+              } 
             </div>
           </div>
         </div>
