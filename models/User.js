@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-  pet: {
-    type: Schema.Types.ObjectId,
-    ref: 'pets'
-  },
+  // pet: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'pets'
+  // },
   username: {
     type: String,
     required: true
