@@ -4,13 +4,14 @@ import { fetchPets, fetchUserPets } from '../../actions/pet_actions'
 import { fetchUser, fetchUsers } from '../../actions/user_actions'
 
 
-const mSTP = state => ({
+const mSTP = (state, ownProps) => ({
   state: state,
   currentUser: state.session.user.id,
   currentOwner: state.session.user,
   pets: state.entities.pets.data,
   users: state.entities.users,
   currentPet: state.petProfile.pet.data,
+  currentPetId: ownProps.match.params.petId,
   selectedPet: state.entities.selectedPet.data
 });
 

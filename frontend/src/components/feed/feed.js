@@ -13,7 +13,7 @@ class Feed extends React.Component {
 
     this.state = {
       toggled: "zip",
-      currentPetId: this.props.match.params.petId
+      // currentPetId: this.props.match.params.petId
 
     }
 
@@ -44,6 +44,13 @@ class Feed extends React.Component {
     if (!this.props.pets || !this.props.currentUser || !Array.isArray(this.props.users)) {
       return null
     }
+  let currentPet = null
+    this.props.pets.forEach(pet => {
+    if (pet._id === this.props.currentPetId) {
+      currentPet = pet
+    }
+  })
+  // const pet = this.props.pets.find(pet => pet._id === this.state.currentPetId);
 
     console.log(this.props.selectedPet)
 
@@ -87,7 +94,6 @@ class Feed extends React.Component {
       return filterBySpecies();
     }
   }
-  const pet = this.props.pets.filter((pet) => pet._id === this.state.currentPetId);
 
   const userPets = [];
   
@@ -143,7 +149,7 @@ class Feed extends React.Component {
   let shelterMatches = [];
 
   this.props.pets.forEach(pet => {
-    if (compareWords(changeString(pet.shelter), changeString(this.props.currentPet.shelter)) && pet._id !== this.props.currentPet._id) {
+    if (compareWords(changeString(pet.shelter), changeString(currentPet.shelter)) && pet._id !== currentPet._id) {
       shelterMatches.push(pet)
     }
   })
@@ -151,7 +157,7 @@ class Feed extends React.Component {
   let speciesMatches = [];
 
   this.props.pets.forEach(pet => {
-    if (pet.species.toLowerCase() === this.props.currentPet.species.toLowerCase() && pet._id !== this.props.currentPet._id) {
+    if (pet.species.toLowerCase() === currentPet.species.toLowerCase() && pet._id !== currentPet._id) {
       speciesMatches.push(pet)
     }
   })
@@ -215,7 +221,7 @@ class Feed extends React.Component {
 
         </div>
         <div className="my-pets-container">
-          <MyPetsContainer />
+          <MyPetsContainer currentPet={currentPet}/>
         </div>
       </div>
     

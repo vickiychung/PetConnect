@@ -63,7 +63,7 @@ class NavDropdown extends React.Component {
                 <li key={pet._id} >
                   <div className="dd-pet-name-container">
                     <div className="dd-pet-name">
-                      {pet.name}
+                      <Link to={`/feed/${pet._id}`}>{pet.name}</Link>
                     </div>
                   </div>
                 </li>
