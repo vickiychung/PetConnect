@@ -32,7 +32,6 @@ class Feed extends React.Component {
 
   let matchedUsers = [];
 
-  console.log(this.props.users)
 
   this.props.users.forEach(user => {
     if (this.props.currentOwner.zipcode === user.zipcode && this.props.currentUser !== user._id) {
