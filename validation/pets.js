@@ -3,7 +3,7 @@ const validText = require('./valid-text');
 
 module.exports = function validatePetInput(data) {
   let errors = {};
-
+  
   data.species = validText(data.species) ? data.species : '';
   data.breed = validText(data.breed) ? data.breed : '';
   data.gender = validText(data.gender) ? data.gender : '';

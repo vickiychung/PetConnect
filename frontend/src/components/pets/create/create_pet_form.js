@@ -25,29 +25,49 @@ class CreatePetForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     
-    let pet = {
-      name: this.state.name,
-      species: this.state.species,
-      breed: this.state.breed,
-      size: this.state.size,
-      age: this.state.age,
-      personality: this.state.personality,
-      gender: this.state.gender,
-      shelter: this.state.shelter,
-      shelterZip: this.state.shelterZip,  
-    }
+    const formData = new FormData();
+    formData.append("name", this.state.name);
+    formData.append("species", this.state.species);
+    formData.append("breed", this.state.breed);
+    formData.append("size", this.state.size);
+    formData.append("age", this.state.age);
+    formData.append("personality", this.state.personality);
+    formData.append("gender", this.state.gender);
+    formData.append("shelter", this.state.shelter);
+    formData.append("shelterZip", this.state.shelterZip);
 
     if (!this.state.shelterZip) {
-      pet.shelterZip = "00000";
+      formData.set("shelterZip", "00000");
     }
 
     if (this.state.file) {
-      pet.file = this.state.file
+      formData.append("file", this.state.file);
     }
-    
-    console.log(pet)
-    
-    this.props.registerPet(pet);
+
+    this.props.registerPet(formData);
+   
+    // console.log(formData);
+    // let pet = {
+    //   name: this.state.name,
+    //   species: this.state.species,
+    //   breed: this.state.breed,
+    //   size: this.state.size,
+    //   age: this.state.age,
+    //   personality: this.state.personality,
+    //   gender: this.state.gender,
+    //   shelter: this.state.shelter,
+    //   shelterZip: this.state.shelterZip,  
+    // }
+
+    // if (!this.state.shelterZip) {
+    //   pet.shelterZip = "00000";
+    // }
+
+    // if (this.state.file) {
+    //   pet.file = this.state.file
+    // }
+     
+    // this.props.registerPet(pet);
   }
 
   update(field) {
@@ -79,10 +99,7 @@ class CreatePetForm extends React.Component {
         </div>
         <form onSubmit={this.handleSubmit} className="create-pet-form" >
 
-          <div className="create-pet-entry">
-            <input type="file" onChange={this.fileSelectHandler}/>
-            
-          </div>
+          
 
           <div className="create-pet-entry">
             { errs ? 
@@ -190,6 +207,11 @@ class CreatePetForm extends React.Component {
               onChange={this.update("shelterZip")}
               placeholder="Shelter Zip (optional)"
             />
+          </div>
+
+
+          <div className="create-pet-entry">
+            <input type="file" onChange={this.fileSelectHandler}/>
           </div>
 
           
