@@ -10,7 +10,7 @@ class Navbar extends React.Component {
 
 
   render() {
-    
+    // console.log(this.props)
     return (
       <header className="navbar">
         <div className="feed-logo">
@@ -28,6 +28,8 @@ class Navbar extends React.Component {
               logout={this.props.logout}
               userPets={this.props.userPets}
               username={this.props.username}
+              deletePet={this.props.deletePet}
+              currentPetId={this.props.currentPetId}
             />
           </span>
         </div>

@@ -1,20 +1,47 @@
 import React from 'react';
 import './my_pets.css';
 
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faPaw } from '@fortawesome/free-solid-svg-icons';
+
 class MyPets extends React.Component {
-  
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      name: this.props.currentPet.name,
+      species: this.props.currentPet.species,
+      breed: this.props.currentPet.breed,
+      size: this.props.currentPet.size,
+      age: this.props.currentPet.age,
+      personality: this.props.currentPet.personality,
+      gender: this.props.currentPet.gender,
+      shelter: this.props.currentPet.shelter,
+      shelterZip: this.props.currentPet.shelterZip,
+      file: this.props.currentPet.photoUrl
+    }
+  }
+
+ 
+
   render() {
     const currentPet = this.props.currentPet;
     let profilePhoto;
 
     if (!currentPet) return null;
 
+
+
     if (currentPet.photoUrl) {
       profilePhoto = <img 
         className="profile-pic" 
         src={currentPet.photoUrl} 
         alt="profile-photo" 
-      />
+      /> 
+    } else {
+      profilePhoto = <div className="profile-pic-default">
+          <FontAwesomeIcon icon={faPaw} />
+        </div>
     }
 
     return (

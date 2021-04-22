@@ -52,8 +52,6 @@ class Feed extends React.Component {
   })
   // const pet = this.props.pets.find(pet => pet._id === this.state.currentPetId);
 
-    console.log(this.props.selectedPet)
-
   const filterByZip = () => {
     return (
       <ul>
@@ -166,7 +164,7 @@ class Feed extends React.Component {
       <div className="feed-wrapper">
 
         <div className="navbar-container">
-          <NavbarContainer userPets={userPets}/>
+          <NavbarContainer userPets={userPets} currentPetId={currentPet._id}/>
         </div>
         <div className="feed-main-wrapper">
         <div className="tabs-wrapper">

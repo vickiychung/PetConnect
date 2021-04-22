@@ -15,19 +15,29 @@
 .profile-pic-wrapper {
   display: flex;
   justify-content: center;
+  /* align-items: center; */
   /* max-height: 50vh; */
   /* width: fit-content; */
   min-height: 450px;
   min-width: 400px;
+  
 }
 
-.profile-pic {
+.profile-pic, .profile-pic-default {
   /* width: 90%; */
   width: 400px;
   height: 450x;
   border-radius: 5px;
   border: 5px double white;
   box-shadow: 0 0 0 9px rgb(233,171,199),
+}
+
+.profile-pic-default {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 360px;
+  color: rgb(255, 142, 138);
 }
 
 .pet-details {

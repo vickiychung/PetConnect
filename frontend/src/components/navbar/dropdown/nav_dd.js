@@ -38,7 +38,7 @@ class NavDropdown extends React.Component {
   };
 
   render() {
-    
+    console.log(this.props)
     return (
       <div className="dd-wrapper" ref={this.wrapperRef}>
         <div 
@@ -78,6 +78,17 @@ class NavDropdown extends React.Component {
                 Log out
               </span>
             </div>
+
+            <Link to="/pick_pet">
+              <div 
+                onClick={()=>this.props.deletePet(this.props.currentPetId)}
+                className="dd-logout"
+              >
+                <span>
+                  Delete Pet
+                </span>
+              </div>
+            </Link>
           </ul>
         )}
       </div>
