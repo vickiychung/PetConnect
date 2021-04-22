@@ -54,7 +54,6 @@ class CreatePetForm extends React.Component {
     if (this.props.petErrors.response) {
       errs = this.props.petErrors.response.data
     }
-
     return (
       <div className="create-pet-form-wrapper">
         <div className="create-pet-form-title">

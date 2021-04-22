@@ -70,7 +70,14 @@ class NavDropdown extends React.Component {
               ))
             }
 
-            <div className="dd-logout" onClick={()=>this.props.logout()}>Log out</div>
+            <div 
+              onClick={()=>this.props.logout()}
+              className="dd-logout"
+            >
+              <span>
+                Log out
+              </span>
+            </div>
           </ul>
         )}
       </div>
