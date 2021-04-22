@@ -8,6 +8,7 @@
   margin-left: -5vw;
   margin-right: -5vw;
   padding: 0 0;
+  /* cursor: url('https://www.dfwhumane.com/wp-content/uploads/2021/01/paw1.png'), auto; */
 }
 
 .navbar-container {
@@ -124,6 +125,7 @@
 
 .tabs-2:hover {
   background-color: skyblue;
+  cursor: url('https://www.dfwhumane.com/wp-content/uploads/2021/01/paw1.png'), auto;
 }
 
 .my-pets-container {
