@@ -23,9 +23,6 @@ class PickPet extends React.Component {
     }
   }
 
-  // componentWillUnmount() {
-  //   this.props.fetchPets()
-  // }
 
   render() {
     
@@ -41,7 +38,7 @@ class PickPet extends React.Component {
         <ul className="user-pet-list">
           {
             pets.map((pet, index) => (
-              <PickPetItem key={index} pet={pet} /> 
+              <PickPetItem key={index} pet={pet} fetchCurrentPet={this.props.fetchCurrentPet} /> 
             ))
           }
           {

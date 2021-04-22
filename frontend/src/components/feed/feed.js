@@ -16,9 +16,11 @@ class Feed extends React.Component {
   // }
 
   render() {
-    if (!this.props.pets || !this.props.currentUser) {
+    if (!this.props.pets || !this.props.currentUser || !Array.isArray(this.props.users)) {
       return null
     }
+
+    // if (Object.values(this.props.pets))
 
   const userPets = [];
   
@@ -30,85 +32,27 @@ class Feed extends React.Component {
 
   let matchedUsers = [];
 
+  console.log(this.props.users)
+
   this.props.users.forEach(user => {
     if (this.props.currentOwner.zipcode === user.zipcode && this.props.currentUser !== user._id) {
       matchedUsers.push(user)
     }
   })
 
-  console.log(matchedUsers)
-  // console.log(Object.values(matchedUsers._id))
   let matches = [];
   
   this.props.pets.forEach(pet => {
     matchedUsers.forEach(user => {
-      if (pet.user._id ===  user._id) {
+      if (pet.user ===  user._id) {
         matches.push(pet)
       }
     })
   })
 
-  console.log(matches)
+  this.props.pets.forEach(pet => {
 
-  // const otherPets = () => {
-  //   const userPets = [];
-  //   const otherPets = [];
-
-  //   this.props.pets.map(pet => (
-  //     pet.user === this.props.currentUser ? (
-  //       userPets.push(pet)
-  //   ) :
-  //     otherPets.push(pet)
-  // ));
-  //   return otherPets;
-  // }
-  
-  // const nearPets = () => {
-  //   let theOtherPets = otherPets();
-  //   const nearPets = [];
-
-  //   theOtherPets.forEach(pet => {
-  //     let user = this.props.fetchUser(pet.user)
-
-  //     if (this.props.currentUser.zipcode === user.zipcode) {
-  //       nearPets.push(pet)
-  //     }
-  //   })
-  //   return nearPets;
-  // }
-
-  // const nearPets = () => {
-  //   let pets = this.props.pets
-  //   let nearPets = [];
-
-  //   for (let i = 0; i < pets.length; i++) {
-  //     let pet = pets[i];
-  //     let user = this.props.fetchUser(pet.user)
-
-  //     if (pet.user !== this.props.currentUser && this.props.currentUser.zipcode === user.zipcode) {
-  //       nearPets.push(pet)
-  //     }
-  //   }
-  //   return nearPets;
-  // }
-
-  // let theNearPets = nearPets()
- 
-
-  // console.log(theNearPets)
-    
-  // for (let i = 0; i < otherPets.length - 1; i++) {
-  //   let pet = otherPets[i];
-  //   let user = this.props.fetchUser(pet.user)
-
-  //   if (this.props.currentUser.zipcode === user.zipcode) {
-  //     console.log(user.zipcode)
-  //     console.log(this.props.currentUser.zipcode)
-  //     nearPets.push(pet)
-  //   }
-  // }
-
-
+  })
 
 
     return (
@@ -118,9 +62,9 @@ class Feed extends React.Component {
         <div className="feed-lists-wrapper">
           <div className="pets-near-you-list">
             <ul>
-              {/* {theNearPets.map(pet => (
+              {matches.map(pet => (
                 <PetsNearYouContainer key={pet._id} pet={pet}/>
-              ))} */}
+              ))}
             </ul>
           </div>
 
