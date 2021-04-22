@@ -6,11 +6,22 @@ class PetsNearYou extends React.Component {
     super(props);
 
 
+    this.state = {
+      users: []
+    }
   }
 
   // componentDidMount() {
-  //   this.props.fetchPets()
+  //   this.props.fetchUsers()
   // }
+
+  petsNearYou() {
+    if (this.props.pets === undefined) {
+      return null
+    }
+
+    // console.log()
+  }
 
   render() {
     if (this.props.pets === undefined) {
@@ -40,7 +51,6 @@ class PetsNearYou extends React.Component {
       }
       return false
     }
-    // console.log(this.props)
 
     let showPet = () => {
       return (

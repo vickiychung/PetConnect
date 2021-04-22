@@ -9,7 +9,7 @@ class PickPetItem extends React.Component {
       <li className="pet-list-element">
         <Link to="/feed">
           <div className="pet-individual">
-            <div className="pet-icon">
+            <div className="pet-icon" onClick={() => this.props.fetchCurrentPet(this.props.pet._id)}>
               <FontAwesomeIcon icon={faPaw} />
             </div>
             <span className="home-newpet-name">

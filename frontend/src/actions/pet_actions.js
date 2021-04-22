@@ -4,6 +4,7 @@ export const RECEIVE_PETS = "RECEIVE_PETS";
 export const RECEIVE_USER_PETS = "RECEIVE_USER_PETS";
 export const RECEIVE_PET = "RECEIVE_PET";
 export const RECEIVE_PET_ERRORS = "RECEIVE_PET_ERRORS";
+export const RECEIVE_CURRENT_PET = "RECEIVE_CURRENT_PET";
 
 export const receivePets = pets => ({
   type: RECEIVE_PETS,
@@ -26,6 +27,11 @@ export const receivePetErrors = errors => ({
   errors
 })
 
+const receiveCurrentPet = pet => ({
+  type: RECEIVE_CURRENT_PET,
+  pet
+});
+
 export const fetchPets = () => dispatch => (
   PetApiUtil.fetchPets()
   .then(pets => dispatch(receivePets(pets)))
@@ -45,5 +51,9 @@ export const registerPet = data => dispatch => (
   PetApiUtil.registerPet(data)
     .then(pet => dispatch(receivePet(pet)))
     .catch(err => dispatch(receivePetErrors(err)))
-    
 );
+
+export const fetchCurrentPet = petId => dispatch => (
+  PetApiUtil.fetchPet(petId).then(pet => dispatch(receiveCurrentPet(pet)))
+)
+

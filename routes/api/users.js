@@ -1,10 +1,10 @@
 const express = require("express")
 const router = express.Router();
 const bcrypt = require('bcryptjs');
-const User = require('../../models/User');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys_dev');
 const passport = require('passport');
+const User = require('../../models/User');
 const validateRegisterInput = require('../../validation/register')
 const validateLoginInput = require('../../validation/login')
 
@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
   passport.authenticate('jwt', { session: false }),
   User.find()
     .sort({ date: -1 })
-    .then(pets => res.json(pets))
+    .then(users => res.json(users))
     .catch(err => res.status(404).json({ nousersfound: "No users found"} ))
 })
 
@@ -50,7 +50,8 @@ router.post("/register", (req, res) => {
         username: req.body.username,
         email: req.body.email,
         password: req.body.password,
-        zipcode: req.body.zipcode
+        zipcode: req.body.zipcode,
+        pets: req.pets.id
       });
 
       bcrypt.genSalt(10, (err, salt) => {
@@ -98,7 +99,8 @@ router.post("/login", (req, res) => {
           id: user.id,
           username: user.username,
           email: user.email,
-          zipcode: user.zipcode
+          zipcode: user.zipcode,
+          pets: user.pets
         }
         jwt.sign(
           payload,

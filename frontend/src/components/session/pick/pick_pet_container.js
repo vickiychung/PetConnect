@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import PickPet from './pick_pet';
 import { logout } from '../../../actions/session_actions';
-import { fetchUserPets, registerPet } from '../../../actions/pet_actions';
+import { fetchUserPets, registerPet, fetchPets, fetchCurrentPet } from '../../../actions/pet_actions';
 import { openModal, closeModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
@@ -19,7 +19,9 @@ const mapDispatchToProps = (dispatch) => {
     fetchUserPets: id => dispatch(fetchUserPets(id)),
     registerPet: data => dispatch(registerPet(data)),
     openModal: () => dispatch(openModal()),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    fetchPets: () => dispatch(fetchPets()),
+    fetchCurrentPet: petId => dispatch(fetchCurrentPet(petId))
   }
 }
 

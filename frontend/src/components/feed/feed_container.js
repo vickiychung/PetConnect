@@ -1,17 +1,22 @@
 import { connect } from 'react-redux';
 import Feed from './feed'
 import { fetchPets, fetchUserPets } from '../../actions/pet_actions'
+import { fetchUser, fetchUsers } from '../../actions/user_actions'
 
 
 const mSTP = state => ({
   state: state,
   currentUser: state.session.user.id,
-  pets: state.entities.pets.data
+  currentOwner: state.session.user,
+  pets: state.entities.pets.data,
+  users: state.entities.users
 });
 
 const mDTP = dispatch => ({
   fetchPets: () => dispatch(fetchPets()),
-  fetchUserPets: id => dispatch(fetchUserPets(id))
+  fetchUserPets: id => dispatch(fetchUserPets(id)),
+  fetchUser: (userId) => dispatch(fetchUser(userId)),
+  fetchUsers: () => dispatch(fetchUsers())
 });
 
 export default connect(mSTP, mDTP)(Feed)
