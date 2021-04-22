@@ -7,7 +7,8 @@ class PickPetItem extends React.Component {
   render() {
     return (
       <li className="pet-list-element">
-        <Link to="/feed">
+        {/* <Link to="/feed/"> */}
+        <Link to={`/feed/${this.props.pet._id}`}>
           <div className="pet-individual">
             <div className="pet-icon" onClick={() => this.props.fetchCurrentPet(this.props.pet._id)}>
               <FontAwesomeIcon icon={faPaw} />
