@@ -22,9 +22,9 @@
 }
 
 .profile-pic {
-  /* width: 90%; */
-  width: 400px;
-  height: 450x;
+  width: 100%;
+  max-width: 400px;
+  max-height: 450px;
   border-radius: 5px;
   border: 5px double white;
   box-shadow: 0 0 0 9px rgb(233,171,199),
@@ -67,6 +67,11 @@
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 10px;
+  text-transform: lowercase;
+}
+
+.my-pet-details-list li:last-of-type {
+  text-transform: none;
 }
 
 .my-pet-details-list li label{

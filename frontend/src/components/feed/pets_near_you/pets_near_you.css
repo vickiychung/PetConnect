@@ -17,7 +17,7 @@
   /* border: 3px solid #30D8F0; */
   border-radius: 10px;
   background-color: #EEFCFF;
-  min-height: 500px;
+  min-height: 50px;
   display: inline-block;
   box-shadow: inset 0 -3em 3em rgb(0 0 0 / 10%), 0 0 0 2px #ffffff, 0.3em 0.3em 1em #047e90;
 }

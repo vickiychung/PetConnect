@@ -36,7 +36,7 @@
 
 .pets-shelter-list {
   height: 90vh;
-  width: 450px;
+  width: 550px;
   /* border: 5px solid darkblue; */
   /* border: 3px solid #30D8F0; */
   border-radius: 10px;
@@ -94,8 +94,41 @@
   padding-top: 15px;
   text-align: center;
 }
+
 .selected-pet-img {
-  height: 100%;
   width: 100%;
-  border-radius: 50px;
+  max-width: 400px;
+  max-height: 450px;
+  border-radius: 5px;
+  border: 5px double white;
+  box-shadow: 0 0 0 9px rgb(233,171,199),
+}
+
+.selected-pet-details-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  margin-top: 10px;
+}
+
+.selected-pet-details-list li {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+  text-transform: lowercase;
+}
+
+.selected-pet-details-list li:last-of-type, li:first-of-type {
+  text-transform: none;
+}
+
+.selected-pet-details-list li label {
+  margin-right: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
 }
