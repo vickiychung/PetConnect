@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding-top: 10px;
 
   position: sticky;
   top: 0;
@@ -15,7 +16,6 @@
   border-bottom: 1px solid #9AE4E8;
 	box-shadow: 0 5px 20px 0 rgba(21, 27, 38, 8%);
 }
-
 
 .feed-logo {
   display: flex;
