@@ -49,7 +49,7 @@ class Feed extends React.Component {
     })
   })
 
-  console.log(this.props.pets)
+  
 
   this.props.pets.forEach(pet => {
 
