@@ -192,8 +192,10 @@ class Feed extends React.Component {
 
           <div className="pets-shelter-list">
             <div className="pets-img-left">
+              {/* place holder image */}
               <img className="pets-img-left-1" src={pic}></img>
               {
+                //these are to display on right page of book. photoUrl is dependent on whether it exists. 
                 this.props.selectedPet ? 
                 <div>
                   name: {this.props.selectedPet.name}
