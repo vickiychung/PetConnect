@@ -69,29 +69,30 @@ class Feed extends React.Component {
         <div className="navbar-container">
           <NavbarContainer userPets={userPets}/>
         </div>
-       
-        <div className="feed-lists-wrapper">
-          <div className="pets-near-you-list">
-            <ul>
-              {matches.map(pet => (
-                <PetsNearYouContainer key={pet._id} pet={pet}/>
-              ))}
-            </ul>
+
+        <div className="feed-main-wrapper">
+          <div className="feed-lists-wrapper">
+            <div className="pets-near-you-list">
+              <ul>
+                {matches.map(pet => (
+                  <PetsNearYouContainer key={pet._id} pet={pet}/>
+                ))}
+              </ul>
+            </div>
+
+            {/* <div className="middle-feed">
+
+            </div> */}
+
+            <div className="pets-shelter-list">
+
+            </div>
           </div>
 
-          {/* <div className="middle-feed">
-
-          </div> */}
-
-          <div className="pets-shelter-list">
-
+          <div className="my-pets-container">
+            <MyPetsContainer />
           </div>
         </div>
-
-        <div className="my-pets-container">
-          <MyPetsContainer />
-        </div>
-
       </div>
     )
   }

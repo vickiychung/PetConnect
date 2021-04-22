@@ -1,4 +1,5 @@
 import React from 'react';
+import './my_pets.css';
 
 class MyPets extends React.Component {
   
@@ -18,7 +19,7 @@ class MyPets extends React.Component {
 
     return (
       <div className="my-pets-wrapper">
-        <div>
+        <div className="profile-pic-wrapper">
           {profilePhoto}
         </div>
       </div>

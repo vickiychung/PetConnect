@@ -1,0 +1,16 @@
+.my-pets-wrapper {
+  background-color: coral;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-pic-wrapper {
+  display: flex;
+  justify-content: center;
+  max-height: 50vh;
+  width: fit-content;
+}
+
+.profile-pic {
+  width: 90%;
+}

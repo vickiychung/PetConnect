@@ -14,9 +14,15 @@
   width: 100%;
 }
 
+.feed-main-wrapper {
+  display: flex;
+  justify-content: space-around;
+
+  height: 90vh;
+}
+
 .pets-near-index {
   list-style :none;
-
 }
 
 .pets-near-you-list {
@@ -84,13 +90,4 @@
 .my-pets-container {
   background-color: sandybrown;
   width: 30%;
-}
-
-.my-pets-wrapper {
-  color: black;
-  font-size: 20px;
-}
-
-.profile-pic {
-  width: 50%;
 }
