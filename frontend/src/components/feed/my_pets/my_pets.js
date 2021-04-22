@@ -1,7 +1,7 @@
 import React from 'react';
 
 class MyPets extends React.Component {
-
+  
   render() {
     const { currentPet } = this.props;
     let profilePhoto;
@@ -9,18 +9,18 @@ class MyPets extends React.Component {
     if (!currentPet) return null;
 
     if (currentPet.photoUrl) {
-      profilePhoto = <img src={currentPet.photoUrl} alt="profile-photo" />
+      profilePhoto = <img 
+        className="profile-pic" 
+        src={currentPet.photoUrl} 
+        alt="profile-photo" 
+      />
     }
-
-    console.log(currentPet);
 
     return (
       <div className="my-pets-wrapper">
         <div>
           {profilePhoto}
-          test
         </div>
-        TEST
       </div>
     );
   }
