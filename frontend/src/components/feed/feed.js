@@ -4,15 +4,17 @@ import "./feed.css"
 import NavbarContainer from '../navbar/navbar_container';
 import PetsNearYouContainer from './pets_near_you/pets_near_you_container'
 import MyPetsContainer from './my_pets/my_pets_container';
+import pic from '../session/login_signup/background.jpg'
 
 class Feed extends React.Component {
 
-<<<<<<< HEAD
   constructor(props) {
     super(props);
 
     this.state = {
-      toggled: "zip"
+      toggled: "zip",
+      currentPetId: this.props.match.params.petId
+
     }
 
     this.handleZip = this.handleZip.bind(this);
@@ -20,16 +22,7 @@ class Feed extends React.Component {
     this.handleShelter = this.handleShelter.bind(this);
   }
 
-=======
-  constructor(props){
-    super(props);
-    this.state = {
-      currentPetId: this.props.match.params.petId
-    }
-    
-  }
   
->>>>>>> main
   componentDidMount() {
     this.props.fetchUsers()
     this.props.fetchPets()
@@ -51,7 +44,6 @@ class Feed extends React.Component {
     if (!this.props.pets || !this.props.currentUser || !Array.isArray(this.props.users)) {
       return null
     }
-<<<<<<< HEAD
 
   const filterByZip = () => {
     return (
@@ -93,9 +85,7 @@ class Feed extends React.Component {
       return filterBySpecies();
     }
   }
-=======
   const pet = this.props.pets.filter((pet) => pet._id === this.state.currentPetId);
->>>>>>> main
 
   const userPets = [];
   
@@ -166,9 +156,11 @@ class Feed extends React.Component {
 
     return (
       <div className="feed-wrapper">
-<<<<<<< HEAD
 
-        <NavbarContainer userPets={userPets}/>
+        <div className="navbar-container">
+          <NavbarContainer userPets={userPets}/>
+        </div>
+        <div className="feed-main-wrapper">
         <div className="tabs-wrapper">
           <div className="tabs">
             <div className="tabs-1">
@@ -188,42 +180,31 @@ class Feed extends React.Component {
         <div className="feed-lists-wrapper">
           <div className="pets-near-you-list">
             <ul>
-              {/* {nearMatches.map(pet => (
-                <PetsNearYouContainer key={pet._id} pet={pet}/>
-              ))} */}
               {toggle()}
             </ul>
           </div>
-=======
-        <div className="navbar-container">
-          <NavbarContainer userPets={userPets}/>
-        </div>
->>>>>>> main
-
-        <div className="feed-main-wrapper">
-          <div className="feed-lists-wrapper">
-            <div className="pets-near-you-list">
-              <ul>
-                {matches.map(pet => (
-                  <PetsNearYouContainer key={pet._id} pet={pet}/>
-                ))}
-              </ul>
-            </div>
 
             {/* <div className="middle-feed">
 
             </div> */}
 
-            <div className="pets-shelter-list">
-
+          <div className="pets-shelter-list">
+            <div className="pets-img-left">
+              <img className="pets-img-left-1" src={pic}></img>
+                
             </div>
           </div>
+        </div>
+        <div className="space">
 
-          <div className="my-pets-container">
-            <MyPetsContainer />
-          </div>
+        </div>
+        <div className="my-pets-container">
+          <MyPetsContainer />
         </div>
       </div>
+    
+        
+    </div>
     )
   }
 }

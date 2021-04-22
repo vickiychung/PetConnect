@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 class PetsNearYou extends React.Component {
   constructor(props) {
     super(props);
@@ -19,8 +20,13 @@ class PetsNearYou extends React.Component {
     if (this.props.pets === undefined) {
       return null
     }
+  }
 
-    // console.log()
+  handleClick() {
+    return (
+      console.log('hello')
+    
+    )
   }
 
   render() {
@@ -38,9 +44,6 @@ class PetsNearYou extends React.Component {
         if (this.props.user.zipcode === pet.shelterZip) {
           matches.push(pet.name)
         }
-        // if (94063 === pet.shelterZip) {
-        //   matches.push(pet.name)
-        // }
       }
       return matches
     }
@@ -54,8 +57,8 @@ class PetsNearYou extends React.Component {
 
     let showPet = () => {
       return (
-        <li className="pets-near-index">
-          <Link className="pets-near-index-redirect" to="/feed" >
+        <li onClick={this.handleClick} className="pets-near-index">
+          {/* <Link className="pets-near-index-redirect" to="/feed" > */}
             <div className="pets-near-name">
               <span>
                 {this.props.pet.name}
@@ -64,7 +67,7 @@ class PetsNearYou extends React.Component {
             <div>
 
             </div>
-          </Link>
+          {/* </Link> */}
           <span className="pets-near-details">
             Age: <span className="pets-near-age">{this.props.pet.age}</span>
           </span>
