@@ -4,7 +4,7 @@ import './my_pets.css';
 class MyPets extends React.Component {
   
   render() {
-    const { currentPet } = this.props;
+    const currentPet = this.props.pet;
     let profilePhoto;
 
     if (!currentPet) return null;

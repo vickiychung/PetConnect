@@ -28,7 +28,7 @@ class Feed extends React.Component {
     if (!this.props.pets || !this.props.currentUser || !Array.isArray(this.props.users)) {
       return null
     }
-  const pet = this.props.pets.filter((pet) => pet._id === this.state.currentPetId);
+  const pet = this.props.pets.find(pet => pet._id === this.state.currentPetId);
 
   const userPets = [];
   
@@ -90,7 +90,7 @@ class Feed extends React.Component {
           </div>
 
           <div className="my-pets-container">
-            <MyPetsContainer />
+            <MyPetsContainer pet={pet}/>
           </div>
         </div>
       </div>
