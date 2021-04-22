@@ -9,10 +9,13 @@ import PickPetContainer from './session/pick/pick_pet_container';
 
 
 
+
+
 const App = () => (
   <div>
     <Modal />
     {/* <p>Hello pets</p> */}
+
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <ProtectedRoute exact path="/pick_pet" component={PickPetContainer} />
