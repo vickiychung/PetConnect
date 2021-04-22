@@ -26,12 +26,13 @@ class PickPet extends React.Component {
 
   render() {
     
-    let pets = this.props.userPets;
-    if (typeof pets === "object") {
+    let pets = this.state.pets;
+    if (typeof pets === "undefined" || pets === null) {
+      pets = []; 
+     } else if (typeof pets === "object") {
       pets = Object.values(this.state.pets);
-    } else if (pets === undefined || pets === null) {
-      pets = [];
     }
+    
     return (
       <div className="user-pet-list-wrapper">
         <button onClick={this.props.logout}>Logout</button>
