@@ -28,6 +28,13 @@
   border: 1px solid rgb(110, 189, 253);
 	background-color: rgb(110, 189, 253);
 	border-radius: 10px;
+  width: 100px;
+}
+
+.pet-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .pet-individual:hover .pet-icon {
