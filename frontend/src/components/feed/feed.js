@@ -3,6 +3,7 @@ import React from 'react';
 import "./feed.css"
 import NavbarContainer from '../navbar/navbar_container';
 import PetsNearYouContainer from './pets_near_you/pets_near_you_container'
+import MyPetsContainer from './my_pets/my_pets_container';
 
 class Feed extends React.Component {
 
@@ -65,27 +66,33 @@ class Feed extends React.Component {
 
     return (
       <div className="feed-wrapper">
-        <NavbarContainer userPets={userPets}/>
-       
-        <div className="feed-lists-wrapper">
-          <div className="pets-near-you-list">
-            <ul>
-              {matches.map(pet => (
-                <PetsNearYouContainer key={pet._id} pet={pet}/>
-              ))}
-            </ul>
-          </div>
-
-          {/* <div className="middle-feed">
-
-          </div> */}
-
-          <div className="pets-shelter-list">
-
-          </div>
+        <div className="navbar-container">
+          <NavbarContainer userPets={userPets}/>
         </div>
 
+        <div className="feed-main-wrapper">
+          <div className="feed-lists-wrapper">
+            <div className="pets-near-you-list">
+              <ul>
+                {matches.map(pet => (
+                  <PetsNearYouContainer key={pet._id} pet={pet}/>
+                ))}
+              </ul>
+            </div>
 
+            {/* <div className="middle-feed">
+
+            </div> */}
+
+            <div className="pets-shelter-list">
+
+            </div>
+          </div>
+
+          <div className="my-pets-container">
+            <MyPetsContainer />
+          </div>
+        </div>
       </div>
     )
   }
