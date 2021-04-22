@@ -5,13 +5,18 @@ import { faPaw } from '@fortawesome/free-solid-svg-icons';
 
 class PickPetItem extends React.Component {
   render() {
+    console.log(this.props.pet);
     return (
+      
       <li className="pet-list-element">
-        {/* <Link to="/feed/"> */}
         <Link to={`/feed/${this.props.pet._id}`}>
-          <div className="pet-individual">
-            <div className="pet-icon" onClick={() => this.props.fetchCurrentPet(this.props.pet._id)}>
-              <FontAwesomeIcon icon={faPaw} />
+          <div className="pet-individual" onClick={() => this.props.fetchCurrentPet(this.props.pet._id)}>
+            <div className="pet-icon" >
+              {
+                this.props.pet.photoUrl ? <img src={this.props.pet.photoUrl} />
+                : <FontAwesomeIcon icon={faPaw} />
+              }
+              {/* <FontAwesomeIcon icon={faPaw} /> */}
             </div>
             <span className="home-newpet-name">
               {this.props.pet.name}

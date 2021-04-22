@@ -14,10 +14,12 @@ class CreatePetForm extends React.Component {
       personality: "",
       gender: "",
       shelter: "",
-      shelterZip: ""
+      shelterZip: "",
+      file: ""
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    
   }
 
   handleSubmit(e) {
@@ -38,6 +40,12 @@ class CreatePetForm extends React.Component {
     if (!this.state.shelterZip) {
       pet.shelterZip = "00000";
     }
+
+    if (this.state.file) {
+      pet.file = this.state.file
+    }
+    
+    console.log(pet)
     
     this.props.registerPet(pet);
   }
@@ -48,6 +56,14 @@ class CreatePetForm extends React.Component {
     });
   }
 
+  fileSelectHandler = (e) => {
+    e.preventDefault();
+    this.setState({
+      file: e.target.files[0]
+    });
+    
+  }
+
   render() {
     
     let errs;
@@ -55,13 +71,19 @@ class CreatePetForm extends React.Component {
       errs = this.props.petErrors.response.data
     }
     return (
-      <div className="create-pet-form-wrapper">
+      <div className="create-pet-form-wrapper" onClick={e => e.stopPropagation()} >
         <div className="create-pet-form-title">
           <h1 > 
             Add a Pet
           </h1>
         </div>
-        <form onSubmit={this.handleSubmit} className="create-pet-form">
+        <form onSubmit={this.handleSubmit} className="create-pet-form" >
+
+          <div className="create-pet-entry">
+            <input type="file" onChange={this.fileSelectHandler}/>
+            
+          </div>
+
           <div className="create-pet-entry">
             { errs ? 
               <div className="pet-create-error"> {errs.name} </div> 
@@ -169,6 +191,8 @@ class CreatePetForm extends React.Component {
               placeholder="Shelter Zip (optional)"
             />
           </div>
+
+          
 
           <div className="submit-pet-entry">
             <input type="submit" value="Add" />
