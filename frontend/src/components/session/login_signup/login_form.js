@@ -11,18 +11,12 @@ class LoginForm extends React.Component {
     this.state = {
       email: '',
       password: '',
-      // errors: {}
     };
     
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.demoUser = this.demoUser.bind(this);
-    // this.clearErrorsAndOpenModal = this.clearErrorsAndOpenModal.bind(this);
   }
-
-  // componentWillReceiveProps(nextProps) {
-  //   this.setState({errors: nextProps.errors})
-  // }
 
   demoUser(e) {
     e.preventDefault();
@@ -44,12 +38,6 @@ class LoginForm extends React.Component {
       return this.props.history.push(`/pick_pet`)
   })  
   }
-
-  // clearErrorsAndOpenModal(){
-  //   this.props.openModal('signup');
-  //   this.props.resetSessionErrors();
-
-  // }
   
 
   renderErrors() {
@@ -94,9 +82,6 @@ class LoginForm extends React.Component {
                     <button className="demo-user-button" onClick={this.demoUser}>Demo User</button>
                   </div>
                 </form>
-                {/* <div className='login-signup-button-container'>
-                  <button onClick={this.clearErrorsAndOpenModal}>Create New Account</button>
-                </div> */}
                 < CreateUserModal 
                   showModal={this.props.showModal} 
                   openModal={this.props.openModal}

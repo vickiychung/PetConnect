@@ -16,8 +16,6 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.clearErrorsAndCloseModal = this.clearErrorsAndCloseModal.bind(this);
-    // this.clearedErrors = false;
   }
 
   componentDidUpdate(nextProps) {
@@ -32,20 +30,6 @@ class SignupForm extends React.Component {
   
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.signedIn === true) {
-  //     this.props.closeModal();
-  //     let user = {
-  //       email: this.state.email,
-  //       password: this.state.password
-  //     }
-  //     this.props.login(user)
-  //   }
-
-  //   this.setState({errors: nextProps.errors})
-  // }
-
-  
 
   update(field) {
     return e => this.setState({
@@ -78,12 +62,6 @@ class SignupForm extends React.Component {
       </ul>
     );
   }
-
-  // clearErrorsAndCloseModal(){
-  //   this.props.closeModal();
-  //   this.props.resetSessionErrors();
-
-  // }
 
   render() {
     console.log(this.props)

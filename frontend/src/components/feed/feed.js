@@ -7,6 +7,14 @@ import MyPetsContainer from './my_pets/my_pets_container';
 
 class Feed extends React.Component {
 
+  constructor(props){
+    super(props);
+    this.state = {
+      currentPetId: this.props.match.params.petId
+    }
+    
+  }
+  
   componentDidMount() {
     this.props.fetchUsers()
     this.props.fetchPets()
@@ -20,8 +28,7 @@ class Feed extends React.Component {
     if (!this.props.pets || !this.props.currentUser || !Array.isArray(this.props.users)) {
       return null
     }
-
-    // if (Object.values(this.props.pets))
+  const pet = this.props.pets.filter((pet) => pet._id === this.state.currentPetId);
 
   const userPets = [];
   
