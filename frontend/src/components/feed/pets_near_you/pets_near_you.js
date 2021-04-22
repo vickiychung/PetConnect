@@ -10,6 +10,8 @@ class PetsNearYou extends React.Component {
     this.state = {
       users: []
     }
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
   // componentDidMount() {
@@ -23,10 +25,10 @@ class PetsNearYou extends React.Component {
   }
 
   handleClick() {
-    return (
-      console.log('hello')
-    
-    )
+    this.props.fetchPet(this.props.pet._id)
+    // console.log(this.props.fetchPet())
+    // console.log(this.props.pet._id)
+
   }
 
   render() {

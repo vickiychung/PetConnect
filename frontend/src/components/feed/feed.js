@@ -45,6 +45,8 @@ class Feed extends React.Component {
       return null
     }
 
+    console.log(this.props.selectedPet)
+
   const filterByZip = () => {
     return (
       <ul>
@@ -191,7 +193,19 @@ class Feed extends React.Component {
           <div className="pets-shelter-list">
             <div className="pets-img-left">
               <img className="pets-img-left-1" src={pic}></img>
-                
+              {
+                this.props.selectedPet ? 
+                <div>
+                  name: {this.props.selectedPet.name}
+                  species: {this.props.selectedPet.species}
+                  breed: {this.props.selectedPet.breed}
+                  size: {this.props.selectedPet.size}
+                  gender: {this.props.selectedPet.gender}
+                  age: {this.props.selectedPet.age}
+                  personality: {this.props.selectedPet.personality}
+                  shelter: {this.props.selectedPet.shelter}
+                </div> : null
+              } 
             </div>
           </div>
         </div>
