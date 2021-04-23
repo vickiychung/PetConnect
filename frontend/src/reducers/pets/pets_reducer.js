@@ -1,8 +1,5 @@
 import {
   RECEIVE_PETS,
-  RECEIVE_USER_PETS,
-  RECEIVE_PET,
-  REMOVE_PET
 } from '../../actions/pet_actions';
 
 import {

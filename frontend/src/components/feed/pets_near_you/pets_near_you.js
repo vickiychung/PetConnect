@@ -12,6 +12,7 @@ class PetsNearYou extends React.Component {
     }
 
     this.handleClick = this.handleClick.bind(this);
+    this.sendConnectionRequest = this.sendConnectionRequest.bind(this);
   }
 
   // componentDidMount() {
@@ -26,6 +27,14 @@ class PetsNearYou extends React.Component {
 
   handleClick() {
     this.props.fetchPet(this.props.pet._id)
+  }
+
+  sendConnectionRequest() {
+    let connection = {
+      friend: this.props.pet._id,
+      currentPet: this.props.currentPet
+    }
+    this.props.createConnectionRequest(connection)
   }
 
   render() {
@@ -57,11 +66,15 @@ class PetsNearYou extends React.Component {
     let showPet = () => {
       return (
         <li onClick={this.handleClick} className="pets-near-item">
-          <div className="pets-near-name">
-            <span>
-              {this.props.pet.name}
-            </span>
-          </div>
+          {/* <Link className="pets-near-index-redirect" to="/feed" > */}
+            <div className="pets-near-name">
+              <span>
+                {this.props.pet.name} <button onClick={this.sendConnectionRequest}>CONNECT</button>
+              </span>
+            </div>
+           
+          {/* </Link> */}
+        
 
           <span className="pets-near-details">
             AGE: <span className="details-lower">{this.props.pet.age}</span>
