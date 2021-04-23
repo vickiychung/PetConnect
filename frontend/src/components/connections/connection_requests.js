@@ -18,7 +18,7 @@ class ConnectionRequests extends React.Component {
 
   jank() {
     this.setState({potato: Math.random()})
-    console.log(this.state)
+    // console.log(this.state)
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -34,7 +34,7 @@ class ConnectionRequests extends React.Component {
       accepted: true, 
       id: this.props.requestId
     }
-    console.log(this.state)
+    // console.log(this.state)
     this.props.acceptConnectionRequest(response)
     setTimeout(this.jank, 3000)
     // window.location.reload()
