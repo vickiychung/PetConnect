@@ -36,7 +36,8 @@
 
 .pets-shelter-list {
   background-color: rgb(241, 221, 197);
-  width: 50%;
+  /* width: 50%; */
+  width: 420px;
   height: 88vh;
   border: 1.5px solid rgb(202,168,130);
   border-radius: 10px;
@@ -49,13 +50,15 @@
   padding-right: 5px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .selected-pet-img {
-  width: 100%;
-  max-width: 355px;
-  max-height: 400px;
+  /* width: 100%; */
+  /* max-width: 355px; */
+  width: 365px;
+  /* max-height: 400px; */
+  height: 390px;
   border-radius: 5px;
   border: 5px double white;
   margin-bottom: 10px;
@@ -64,18 +67,33 @@
 .selected-pet-details-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
   padding: 10px;
-  margin-top: 5px;
+  padding-top: 0px;
+  margin-top: 0px;
+  margin-left: 20px;
+  width: 320px;
+}
+
+.selected-pet-name {
+  font-weight: 600;
+  font-size: 30px;
+  /* display: flex; */
+  /* flex-direction: row;
+  justify-content: center; */
+  margin-top: 0px;
+  margin-bottom: 10px;
+  margin: auto;
+  text-align: center;
 }
 
 .selected-pet-details-list li {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+  /* justify-content: flex-start;
+  align-items: center; */
   margin-bottom: 10px;
   text-transform: lowercase;
 }

@@ -21,7 +21,7 @@ class TotalConnections extends React.Component {
   }
 
   render() {
-    console.log(this.props.connections)
+    // console.log(this.props.connections)
     // console.log(this.props.state.entities.allConnections.data)
     if (!this.state.connections.data) {
       return null
