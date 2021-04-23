@@ -27,6 +27,10 @@ class Connections extends React.Component {
     if (!pet) {
       return null;
     }
+
+    if (pet.data === null) {
+      return null;
+    }
     
     return (
       <li className="connection-item" onClick={() => this.props.fetchPet(pet.data._id)}>
