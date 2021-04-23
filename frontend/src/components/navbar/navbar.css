@@ -1,19 +1,19 @@
 .navbar {
   min-height: 9vh;
   width: 100%;
-  background-color: #00B9D3;
+  background-color: rgb(141, 211, 214);
 
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-top: 10px;
 
-  position: sticky;
+  position: absolute;
   top: 0;
   left: 0;
+  right: 0%;
   z-index: 100;
 
-  border-bottom: 1px solid #9AE4E8;
+  border-bottom: 1px solid rgb(123, 187, 189);
 	box-shadow: 0 5px 20px 0 rgba(21, 27, 38, 8%);
 }
 
