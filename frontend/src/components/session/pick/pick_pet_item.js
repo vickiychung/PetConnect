@@ -13,7 +13,7 @@ class PickPetItem extends React.Component {
           <div className="pet-individual" onClick={() => this.props.fetchCurrentPet(this.props.pet._id)}>
             <div>
               {
-                this.props.pet.photoUrl ? <div class="pet-img"><img src={this.props.pet.photoUrl} /></div>
+                this.props.pet.photoUrl ? <div className="pet-img"><img src={this.props.pet.photoUrl} /></div>
                 : <div className="pet-icon"><FontAwesomeIcon icon={faPaw} /></div>
               }
             </div>
