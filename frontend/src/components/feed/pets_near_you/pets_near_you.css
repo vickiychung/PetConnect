@@ -1,0 +1,98 @@
+.pets-near-you-list {
+  background-color: rgb(243, 213, 176);
+  width: 50%;
+  height: 88vh;
+  border: 1.5px solid rgb(202,168,130);
+  border-radius: 10px;
+  box-shadow: inset 0 -3em 3em rgb(0 0 0 / 10%), 0 0 0 2px rgb(202,168,130), 0.3em 0.3em 1em rgb(202,168,130);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow-y: scroll;
+
+}
+
+.tabs-wrapper {
+  display: flex;
+  justify-content: center;
+  height: 30px;
+  position: absolute;
+  top: -23px;
+}
+
+.tabs {
+  height: 50px;
+  width: 350px;
+  padding-top: 10px;
+  border-radius: 10px;
+  display: flex;
+}
+
+.tabs-1 {
+  display: flex;
+  width: 120px;
+  height: inherit;
+  padding: 5px;
+} 
+
+.tabs-2 {
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgb(243,231,97);
+  border: 2px solid rgb(202,168,130);
+  color: black;
+  font-weight: 600;
+  font-size: 16px;
+  width: inherit;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+.tabs-2:hover {
+  background-color: rgb(240,240,240);
+}
+
+.pets-near-index {
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  top: 25px;
+}
+
+.pets-near-item {
+  list-style :none;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.pets-near-name {
+  color: rgb(90, 75, 58);
+  font-weight: 600;
+  font-size: 23px;
+  text-decoration: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.pets-near-details {
+  display: block;
+  padding-bottom: 5px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.pets-near-details span {
+  margin-left: 10px;
+  font-weight: 400;
+}
+
+.details-lower {
+  text-transform: lowercase;
+}
+
