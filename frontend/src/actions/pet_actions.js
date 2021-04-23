@@ -39,7 +39,6 @@ const receiveSelectedpet = pet => ({
   pet
 })
 
-
 const removePet = petId => ({
   type: REMOVE_PET,
   petId

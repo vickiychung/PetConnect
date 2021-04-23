@@ -88,17 +88,14 @@ class NavDropdown extends React.Component {
               </span>
             </div>
 
-            <Link to="/pick_pet">
-              <div 
-                onClick={()=>this.deletePet()}
-                className="dd-logout"
-              >
-                <span>
-                  Delete Pet
-                </span>
-              </div>
-            </Link>
             
+              <div onClick={()=>this.deletePet()} className="dd-logout">
+                <Link to="/pick_pet">
+                  <span>
+                    Delete Pet
+                  </span>
+                </Link>
+              </div>
           </ul>
         )}
       </div>

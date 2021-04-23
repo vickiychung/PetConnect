@@ -25,7 +25,7 @@ class PickPet extends React.Component {
 
 
   render() {
-    console.log(this.props)
+    
     let pets = this.state.pets;
     if (typeof pets === "undefined" || pets === null) {
       pets = []; 
