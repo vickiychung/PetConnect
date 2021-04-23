@@ -26,12 +26,13 @@ const userPetsReducer = (state = {}, action) => {
         };
       });
       return newState;
-    case EDIT_PET:
-      newState.data.forEach((pet, i) => {
-        if (pet._id === action.pet._id) {
-          newState.data[i] = action.pet;
-        };
-      });
+    // case EDIT_PET:
+    //   newState.data.forEach((pet, i) => {
+    //     if (pet._id === action.pet._id) {
+    //       newState.data[i] = action.pet;
+    //     };
+    //   });
+    //   return newState;
     case RECEIVE_USER_LOGOUT:
       return {};
     default:
