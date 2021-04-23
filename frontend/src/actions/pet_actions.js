@@ -7,6 +7,7 @@ export const RECEIVE_PET_ERRORS = "RECEIVE_PET_ERRORS";
 export const RECEIVE_CURRENT_PET = "RECEIVE_CURRENT_PET";
 export const RECEIVE_SELECTED_PET = "RECEIVE_SELECTED_PET";
 export const REMOVE_PET = "REMOVE_PET";
+export const EDIT_PET = "EDIT_PET";
 
 export const receivePets = pets => ({
   type: RECEIVE_PETS,
@@ -44,6 +45,11 @@ const removePet = petId => ({
   petId
 })
 
+const editPet = pet => ({
+  type: EDIT_PET,
+  pet
+})
+
 
 export const fetchPets = () => dispatch => (
   PetApiUtil.fetchPets()
@@ -72,4 +78,10 @@ export const fetchCurrentPet = petId => dispatch => (
 
 export const deletePet = petId => dispatch => (
   PetApiUtil.deletePet(petId).then(() => dispatch(removePet(petId)))
+);
+
+export const updatePet = pet => dispatch => (
+  PetApiUtil.editPet(pet)
+    .then(pet => dispatch(editPet(pet)))
+    .catch(err => dispatch(receivePetErrors(err)))
 );

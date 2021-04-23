@@ -20,10 +20,27 @@ class MyPets extends React.Component {
       shelterZip: this.props.currentPet.shelterZip,
       file: this.props.currentPet.photoUrl
     }
+
+    this.speciesInput = React.createRef();
+
+    this.handleSpeciesChange = this.handleSpeciesChange.bind(this);
+    this.handleSpeciesUpdate = this.handleSpeciesUpdate.bind(this);
   }
 
- 
+  handleSpeciesChange(e) {
+    const editedSpecies = e.target.value.replace(/[\t]+/g, '');
+    this.setState({ species: editedSpecies });
+  }
 
+  handleSpeciesUpdate() {
+    // this.props.updateTask({ id: this.props.task.id, name: this.state.name });
+    // const formData = new FormData();
+    // formData.set("species", this.state.species);
+
+    // this.props.updatePet(formData);
+    this.props.updatePet({id: this.props.currentPet._id, species: this.state.species})
+  }
+ 
   render() {
 
     console.log(this.props)
@@ -58,10 +75,14 @@ class MyPets extends React.Component {
             {currentPet.name}
           </p>
 
+          
+
+
           <ul className="my-pet-details-list">
             <li>
               <label>species: </label>
-              {currentPet.species}
+              {currentPet.breed}
+              
             </li>
 
              <li>
