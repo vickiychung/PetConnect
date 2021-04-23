@@ -23,7 +23,7 @@
 }
 
 .feed-lists-wrapper {
-  width: 60%;
+  width: 55%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -92,4 +92,56 @@
   width: 20%;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.connections-container {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  right: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.connections-req-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: teal;
+}
+
+.connections-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: teal;
+}
+
+.connect-item {
+  font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.connect-button-wrapper {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.connect-button-wrapper button:first-child {
+  margin-right: 10px;
+}
+
+.connect-button {
+  border-radius: 5px;
+  border: 2.5px solid rgb(151,194,185);
+  background-color: rgb(221,255,204);
+  color: teal;
+  cursor: pointer;
 }
