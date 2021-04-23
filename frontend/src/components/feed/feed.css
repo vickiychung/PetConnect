@@ -118,25 +118,27 @@
 .connections-wrapper {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  color: teal;
 }
 
-.connect-req-item {
+.connect-item {
   font-weight: 400;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.req-button-wrapper {
+.connect-button-wrapper {
   margin-top: 8px;
   display: flex;
   justify-content: center;
 }
 
-.req-button-wrapper button:first-child {
+.connect-button-wrapper button:first-child {
   margin-right: 10px;
 }
 
-.req-button {
+.connect-button {
   border-radius: 5px;
   border: 2.5px solid rgb(151,194,185);
   background-color: rgb(221,255,204);
