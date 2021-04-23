@@ -331,6 +331,7 @@ class Feed extends React.Component {
         <div className="my-pets-container">
           <MyPetsContainer currentPet={currentPet}/>
         </div>
+        
         <div>
           <ul> Connection Requests
             {this.props.connectionRequests.map(request => {
