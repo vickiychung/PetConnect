@@ -29,11 +29,11 @@ class Connections extends React.Component {
     }
     
     return (
-      <li className="connect-item" onClick={() => this.props.fetchPet(pet.data._id)}>
+      <li className="connection-item" onClick={() => this.props.fetchPet(pet.data._id)}>
          {pet.data.name}
-        <div className="connect-button-wrapper">
-//           <button className="connect-button" onClick={this.handleDelete}>DELETE</button>
-        </div>
+        {/* <div className="connect-button-wrapper">
+          <button className="connect-button" onClick={this.handleDelete}>DELETE</button>
+        </div> */}
       </li>
     )
   }
