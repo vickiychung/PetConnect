@@ -9,7 +9,7 @@ const Connection = require('../../models/Connection');
 router.get('/:id',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    ConnectionRequest.find({pet: req.params.id})
+    ConnectionRequest.find({friend: req.params.id})
       .then(connectRequest => res.json(connectRequest))
       .catch(err =>
         res.status(404).json({ norequestsfound: 'No connection requests found for this pet' })
