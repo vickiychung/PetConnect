@@ -1,25 +1,21 @@
 .my-pets-wrapper {
-  background-color: rgb(233,171,199);
+  background-color: rgb(221,255,204);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 91vh;
-  /* height: 100%; */
-  /* height: 750px; */
   padding-top: 25px;
-  /* margin-top: 50px; */
-  width: 550px;
+  padding-right: 10px;
+  padding-left: 10px;
+  width: fit-content;
   border-radius: 5px;
 }
 
 .profile-pic-wrapper {
   display: flex;
   justify-content: center;
-  /* max-height: 50vh; */
-  /* width: fit-content; */
-  min-height: 450px;
-  min-width: 400px;
+  min-width: 355px;
+  min-height: 400px;
 }
 
 .profile-pic {
@@ -28,9 +24,8 @@
   max-height: 400px;
   border-radius: 5px;
   border: 5px double white;
-  box-shadow: 0 0 0 9px rgb(233,171,199);
-  margin-bottom: 0px;
-  padding-bottom: 0px;
+  box-shadow: 0 0 0 7px rgb(151,194,185);
+  margin-bottom: 10px;
 }
 
 .pet-details {
@@ -41,7 +36,7 @@
   align-items: center;
   justify-content: center;
   width: 400px;
-  margin-bottom: 4px;
+  margin-bottom: 10px;
 }
 
 .my-pet-name {
@@ -60,6 +55,7 @@
   flex-direction: column;
   align-items: center;
   padding: 0px;
+  padding-left: 30px;
   margin-top: 0px;
 }
 
@@ -75,12 +71,9 @@
 
 .my-pet-details-list li:last-of-type {
   text-transform: none;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
 }
 
 .my-pet-details-list li label{
-  /* margin-left: 50px; */
   margin-right: 10px;
   text-transform: uppercase;
   font-weight: 600;
