@@ -9,6 +9,7 @@ class ConnectionRequests extends React.Component {
     }
 
     this.acceptConnection = this.acceptConnection.bind(this);
+    this.declineConnection = this.declineConnection.bind(this);
     this.jank = this.jank.bind(this);
   }
 
