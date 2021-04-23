@@ -111,49 +111,79 @@
 }
 
 .connections-req-wrapper {
-  background-color: pink;
-  color: teal;
+  background-color: rgb(250, 212, 229);
+  color: rgb(161, 119, 138);
+  border-radius: 5px;
   width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
   padding-left: 10px;
   padding-right: 15px;
   margin-bottom: 30px;
+  font-size: 16px;
 }
 
 .connections-wrapper {
-  background-color: plum;
-  color: teal;
+  background-color: rgb(241, 198, 241);
+  color: rgb(161, 119, 138);
+  border-radius: 5px;
   width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
   padding-left: 10px;
   padding-right: 15px;
+  font-size: 16px;
 }
 
 .connect-item {
-  font-weight: 400;
   margin-top: 10px;
   margin-bottom: 10px;
-  color: black;
+  color: rgb(77, 76, 76);
+  font-size: 14px;
+}
+
+.connection-item {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: rgb(77, 76, 76);
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.connect-item:first-child, .connection-item:first-child {
+  margin-top: 25px;
 }
 
 .connect-button-wrapper {
-  margin-top: 8px;
+  margin-top: 15px;
   display: flex;
   justify-content: center;
 }
 
-.connect-button-wrapper button:first-child {
-  margin-right: 10px;
-}
-
 .connect-button {
   border-radius: 5px;
-  border: 2.5px solid rgb(151,194,185);
-  background-color: rgb(221,255,204);
-  color: teal;
+  border: 2px solid rgb(161, 119, 138);
+  background-color: rgb(243, 230, 236);
+  color: rgb(161, 119, 138);
   cursor: pointer;
+  font-weight: 600;
+  padding: 5px 5px;
+}
+
+.connection-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-left: 15px;
+}
+
+.connect-button-wrapper button:first-child {
+  margin-right: 10px;
 }
