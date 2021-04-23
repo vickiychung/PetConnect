@@ -100,22 +100,35 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-around;
   position: absolute;
   right: 10px;
-  /* padding-right: 10px; */
-  /* padding-left: 0px;
-  margin-left: 0px; */
+  padding-right: 10px;
+  padding-left: 10px;
   font-size: 14px;
   font-weight: 600;
 }
 
 .connections-req-wrapper {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
 }
 
 .connections-wrapper {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.connect-req-item {
+  font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.req-button-wrapper {
+  margin-top: 8px;
+}
+
+.rq-button {
 }
