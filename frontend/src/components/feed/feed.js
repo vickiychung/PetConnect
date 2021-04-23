@@ -75,7 +75,7 @@ class Feed extends React.Component {
   const pet = this.props.pets.find(pet => pet._id === this.state.currentPetId);
   // console.log(this.props)
   
-  console.log(currentPet)
+  // console.log(currentPet)
   // const filterByZip = () => {
   //   return (
   //     <ul>

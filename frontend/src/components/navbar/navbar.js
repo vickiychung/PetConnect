@@ -8,10 +8,13 @@ import NavDropdown from './dropdown/nav_dd';
 
 class Navbar extends React.Component {
 
-  
+  componentDidMount() {
+    this.props.fetchAllConnections()
+  }
 
   render() {
 
+    // console.log(this.props)
     return (
       <header className="navbar">
         <div className="feed-logo">
@@ -20,7 +23,7 @@ class Navbar extends React.Component {
           </Link>
         </div>
         
-        <TotalConnections />
+        <TotalConnections fetchAllConnections={this.props.fetchAllConnections} connections={this.props.connections} state={this.props.state}/>
         
         <div className="nav-buttons">
           <span>

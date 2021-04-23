@@ -9,7 +9,7 @@ class Connections extends React.Component {
 
   componentDidMount() {
     this.props.goGetPet(this.props.friend)
-    console.log(this.props.state)
+    console.log(this.props.petFriend)
   }
 
   handleDelete() {
