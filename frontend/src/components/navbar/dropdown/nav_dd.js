@@ -15,8 +15,7 @@ class NavDropdown extends React.Component {
     }
     this.wrapperRef = React.createRef();
     this.handleClickOutside = this.handleClickOutside.bind(this);
-    // console.log(this.props)
-
+    
   };
 
   componentDidMount() {
@@ -44,7 +43,7 @@ class NavDropdown extends React.Component {
   }
 
   render() {
-    console.log(this.props)
+    
     return (
       <div className="dd-wrapper" ref={this.wrapperRef}>
         <div 

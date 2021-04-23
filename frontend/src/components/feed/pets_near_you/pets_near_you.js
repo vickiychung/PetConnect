@@ -26,9 +26,6 @@ class PetsNearYou extends React.Component {
 
   handleClick() {
     this.props.fetchPet(this.props.pet._id)
-    // console.log(this.props.fetchPet())
-    // console.log(this.props.pet._id)
-
   }
 
   render() {

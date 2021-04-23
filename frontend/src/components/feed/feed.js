@@ -42,8 +42,7 @@ class Feed extends React.Component {
   }
 
   render() {
-    // console.log(this.props)
-
+    
     let currentPet = this.props.currentPet || null
 
     if (!this.props.pets || !this.props.currentUser || !Array.isArray(this.props.users) || !currentPet) {

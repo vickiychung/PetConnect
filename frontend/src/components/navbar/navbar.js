@@ -11,7 +11,7 @@ class Navbar extends React.Component {
   
 
   render() {
-    // console.log(this.props)
+
     return (
       <header className="navbar">
         <div className="feed-logo">

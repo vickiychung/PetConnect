@@ -4,6 +4,10 @@ import {
   RECEIVE_USER_PETS
 } from '../../actions/pet_actions';
 
+import {
+  RECEIVE_USER_LOGOUT
+} from '../../actions/session_actions';
+
 const userPetsReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
@@ -21,6 +25,8 @@ const userPetsReducer = (state = {}, action) => {
         };
       });
       return newState;
+    case RECEIVE_USER_LOGOUT:
+      return {};
     default:
       return state;
   }
