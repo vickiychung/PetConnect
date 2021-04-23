@@ -78,24 +78,26 @@
 	align-items: center;
 	justify-content: center;
 	color: white;
-	transition: all 500ms ease;
+	/* transition: all 500ms ease; */
 }
 
 .home-newpet-name {
   margin-top: 10px;
   font-size: 24px;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
+
 
 .pet-icon-add:hover  {
   border: 1px solid rgb(110, 189, 253);
 	background-color: rgb(110, 189, 253);
-  transition: all 500ms ease;
+  /* transition: all 500ms ease; */
 }
 
 .pet-individual:hover, .pet-add-element:hover {
   /* color: gray; */
-  transition: all 500ms ease;
+	/* font-weight: bold; */
+  /* transition: all 500ms ease; */
 }
 
 .add-pet-but-cont {

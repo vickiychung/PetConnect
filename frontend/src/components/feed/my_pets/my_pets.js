@@ -216,7 +216,7 @@ class MyPets extends React.Component {
               <label>species: </label>
               <input
                 type="text"
-                className={`my-pet-details`}
+                className={`my-pet-details details-lower`}
                 onChange={this.handleSpeciesChange}
                 onBlur={this.handleSpeciesUpdate}
                 ref={this.speciesInput}
@@ -233,7 +233,7 @@ class MyPets extends React.Component {
               <label>breed: </label>
               <input
                 type="text"
-                className={`my-pet-details`}
+                className={`my-pet-details details-lower`}
                 onChange={this.handleBreedChange}
                 onBlur={this.handleBreedUpdate}
                 ref={this.breedInput}
@@ -250,7 +250,7 @@ class MyPets extends React.Component {
               <label>size: </label>
               <input
                 type="text"
-                className={`my-pet-details`}
+                className={`my-pet-details details-lower`}
                 onChange={this.handleSizeChange}
                 onBlur={this.handleSizeUpdate}
                 ref={this.sizeInput}
@@ -267,7 +267,7 @@ class MyPets extends React.Component {
               <label>gender: </label>
               <input
                 type="text"
-                className={`my-pet-details`}
+                className={`my-pet-details details-lower`}
                 onChange={this.handleGenderChange}
                 onBlur={this.handleGenderUpdate}
                 ref={this.genderInput}
@@ -301,7 +301,7 @@ class MyPets extends React.Component {
               <label>personality: </label>
               <input
                 type="text"
-                className={`my-pet-details`}
+                className={`my-pet-details details-lower`}
                 onChange={this.handlePersonalityChange}
                 onBlur={this.handlePersonalityUpdate}
                 ref={this.personalityInput}

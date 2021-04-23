@@ -8,7 +8,8 @@
   overflow: hidden;
   background-color: #C3F0F2;
   /* margin: 0 -15px; */
-  font-family: 'Alegreya', serif;
+  /* font-family: 'Alegreya', serif; */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .user-pet-banner{
@@ -25,7 +26,7 @@
   font-size: 68px;
   text-align: center;
   margin: auto;
-  margin: 20px 0px;
+  margin: 0px 0px 0px;
 }
 
 .user-pet-list {
@@ -55,17 +56,18 @@
 .pet-icon {
   /* border: 1px solid rgb(110, 189, 253);
 	background-color: rgb(110, 189, 253); */
-  border: 1px solid white;
+  border: 5px solid white;
 	background-color: rgb(110, 189, 253);
 	border-radius: 10px;
   /* width: 100px; */
-  width: 195px;
-  height: 195px;
+  width: 185px;
+  height: 185px;
   padding: 5px;
 }
 
 .pet-icon:hover{
-  background-color: #00B9D3;
+  border: 5px solid #00B9D3;
+  /* background-color: #00B9D3; */
 }
 
 .pet-img{
