@@ -1,5 +1,9 @@
 import axios from 'axios';
 
+export const getPet = (id) => {
+  return axios.get(`/api/pets/${id}`)
+}
+
 export const fetchPets = () => {
   return axios.get('/api/pets')
 };

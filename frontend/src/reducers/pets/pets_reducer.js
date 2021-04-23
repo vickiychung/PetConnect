@@ -1,7 +1,8 @@
 import {
   RECEIVE_PETS,
   RECEIVE_USER_PETS,
-  RECEIVE_PET
+  RECEIVE_PET,
+  GET_PET
 } from '../../actions/pet_actions';
 
 const petsReducer = (state = {}, action) => {

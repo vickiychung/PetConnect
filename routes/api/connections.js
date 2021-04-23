@@ -30,6 +30,17 @@ router.post('/',
   }
 );
 
+// router.get('/:id',
+//   passport.authenticate('jwt', { session: false }),
+//   (req, res) => {
+//     Connection.find({friend: req.params.id})
+//       .then(connection => res.json(connection))
+//       .catch(err =>
+//         res.status(404).json({ noconnectionsfound: 'No connections found for this pet' })
+//       )
+//   }
+// );
+
 router.delete('/',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
