@@ -114,6 +114,7 @@
   background-color: rgb(250, 212, 229);
   color: rgb(161, 119, 138);
   border-radius: 5px;
+  box-shadow: 0 0 0 1px rgb(223, 161, 189), 0.1em 0.1em 0.5em rgb(223, 161, 189);
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -127,9 +128,10 @@
 }
 
 .connections-wrapper {
-  background-color: rgb(241, 198, 241);
+  background-color: rgb(247, 216, 247);
   color: rgb(161, 119, 138);
   border-radius: 5px;
+  box-shadow: 0 0 0 1px rgb(199, 164, 180), 0.1em 0.1em 0.5em rgb(199, 164, 180);
   width: 90%;
   display: flex;
   flex-direction: column;
