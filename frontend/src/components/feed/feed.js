@@ -5,6 +5,9 @@ import NavbarContainer from '../navbar/navbar_container';
 import PetsNearYouContainer from './pets_near_you/pets_near_you_container'
 import MyPetsContainer from './my_pets/my_pets_container';
 import pic from '../session/login_signup/background.jpg'
+import ConnectionRequests from '../connections/connection_requests';
+import { goGetPet } from '../../actions/pet_actions';
+import Connections from '../connections/connections';
 
 class Feed extends React.Component {
 
@@ -24,8 +27,10 @@ class Feed extends React.Component {
 
   
   componentDidMount() {
-    this.props.fetchUsers()
     this.props.fetchPets()
+    this.props.fetchUsers()
+    this.props.fetchConnectionRequests(this.props.currentPetId)
+    this.props.fetchConnections(this.props.currentPetId)
   }
 
   handleSpecies() {
@@ -41,33 +46,84 @@ class Feed extends React.Component {
   }
 
   render() {
-    if (!this.props.pets || !this.props.currentUser || !Array.isArray(this.props.users)) {
+    if (!Array.isArray(this.props.pets) || !this.props.currentUser || !Array.isArray(this.props.users) || !this.props.connectionRequests || !this.props.connections) {
       return null
     }
 
-    let currentPet = null
-      this.props.pets.forEach(pet => {
-      if (pet._id === this.props.currentPetId) {
-        currentPet = pet
-      }
-    })
+    console.log(this.props.connections)
+  let currentPet = null
+    this.props.pets.forEach(pet => {
+    if (pet._id === this.props.currentPetId) {
+      currentPet = pet
+    }
+  })
+  // console.log(currentPet)
+  // console.log(this.props.connectionRequests)
+  const pet = this.props.pets.find(pet => pet._id === this.state.currentPetId);
+
+
+  // const filterByZip = () => {
+  //   return (
+  //     <ul>
+  //       {nearMatches.map(pet => (
+  //         <PetsNearYouContainer key={pet._id} currentPet={currentPet} pet={pet} createConnectionRequest={this.props.createConnectionRequest}/>
+  //       ))}
+  //     </ul>
+  //   )
+  // }
+  
+  // const filterByShelter = () => {
+  //   return (
+  //     <ul>
+  //       {shelterMatches.map(pet => (
+  //         <PetsNearYouContainer key={pet._id} currentPet={currentPet} pet={pet} createConnectionRequest={this.props.createConnectionRequest}/>
+  //       ))}
+  //     </ul>
+  //   )
+  // }
+
+  // const filterBySpecies = () => {
+  //   return (
+  //     <ul>
+  //       {speciesMatches.map(pet => (
+  //         <PetsNearYouContainer key={pet._id} currentPet={currentPet} pet={pet} createConnectionRequest={this.props.createConnectionRequest}/>
+  //       ))}
+  //     </ul>
+  //   )
+  // }
+
+    // let currentPet = null
+    //   this.props.pets.forEach(pet => {
+    //   if (pet._id === this.props.currentPetId) {
+    //     currentPet = pet
+    //   }
+    // })
   // const pet = this.props.pets.find(pet => pet._id === this.state.currentPetId);
 
     const filterByZip = () => {
       return (
         <ul className="pets-near-index">
           {nearMatches.map(pet => (
-            <PetsNearYouContainer key={pet._id} pet={pet}/>
+            <PetsNearYouContainer key={pet._id} currentPet={currentPet} createConnectionRequest={this.props.createConnectionRequest} pet={pet}/>
           ))}
         </ul>
       )
     }
-    
+  
+  // const pet = this.props.pets.filter((pet) => pet._id === this.state.currentPetId);
+
+  const userPets = [];
+  
+  this.props.pets.forEach(pet => {
+    if (pet.user === this.props.currentUser) {
+      userPets.push(pet)
+    }
+  })
     const filterByShelter = () => {
       return (
         <ul className="pets-near-index">
           {shelterMatches.map(pet => (
-            <PetsNearYouContainer key={pet._id} pet={pet}/>
+            <PetsNearYouContainer key={pet._id} currentPet={currentPet} createConnectionRequest={this.props.createConnectionRequest} pet={pet}/>
           ))}
         </ul>
       )
@@ -77,7 +133,7 @@ class Feed extends React.Component {
       return (
         <ul className="pets-near-index">
           {speciesMatches.map(pet => (
-            <PetsNearYouContainer key={pet._id} pet={pet}/>
+            <PetsNearYouContainer key={pet._id} currentPet={currentPet} createConnectionRequest={this.props.createConnectionRequest} pet={pet}/>
           ))}
         </ul>
       )
@@ -94,13 +150,13 @@ class Feed extends React.Component {
       }
     }
 
-    const userPets = [];
+    // const userPets = [];
     
-    this.props.pets.forEach(pet => {
-      if (pet.user === this.props.currentUser) {
-        userPets.push(pet)
-      }
-    })
+    // this.props.pets.forEach(pet => {
+    //   if (pet.user === this.props.currentUser) {
+    //     userPets.push(pet)
+    //   }
+    // })
 
     let matchedUsers = [];
 
@@ -123,6 +179,23 @@ class Feed extends React.Component {
 
 
     //Helper methods for same shelter
+
+  // console.log(this.props.pets)
+
+  // this.props.pets.forEach(pet => {
+  //   console.log(pet)
+  //   if (compareWords(changeString(pet.shelter), changeString(this.props.currentPet.shelter)) && pet._id !== this.props.currentPet._id) {
+  //     shelterMatches.push(pet)
+  //   }
+  // })
+
+
+
+  // this.props.pets.forEach(pet => {
+  //   // console.log(pet.shelter)
+  //   if (compareWords(changeString(pet.shelter), changeString(currentPet.shelter)) && pet._id !== currentPet._id) {
+  //     shelterMatches.push(pet)
+  //   }
 
     let changeString = function(str) {
       let word = str.split(" ")
@@ -166,6 +239,8 @@ class Feed extends React.Component {
         profilePhoto =  <img className="selected-pet-img" src={this.props.selectedPet.photoUrl}></img> :
         profilePhoto =  <img className="selected-pet-img" src={pic}></img>
     }
+    // })
+  // console.log(this.props.connectionRequests)
 
     return (
       <div className="feed-wrapper">
@@ -255,6 +330,28 @@ class Feed extends React.Component {
     
         <div className="my-pets-container">
           <MyPetsContainer currentPet={currentPet}/>
+        </div>
+        <div>
+          <ul> Connection Requests
+            {this.props.connectionRequests.map(request => {
+          
+              return <ConnectionRequests key={request._id}
+                      goGetPet={this.props.goGetPet}
+                      acceptConnectionRequest={this.props.acceptConnectionRequest}
+                      state={this.props.state}
+                      requesterId={request.pet}
+                      petId={request.friend}
+                      requestId={request._id}
+                      history={this.props.history}
+                       />
+            })}
+          </ul>
+          <ul> Connections
+            {this.props.connections.map(connection => {
+              // console.log(connection)
+              return <Connections key={connection._id} deleteConnection={this.props.deleteConnection} connection={connection.pet} connectionId={connection._id}/>
+            })}
+          </ul>
         </div>
       </div>
 

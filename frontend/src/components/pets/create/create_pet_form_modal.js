@@ -28,7 +28,7 @@ const CreatePetFormModal = (props) => {
 
   const modalButton = () => {
     return (
-      <li onClick={() => props.openModal()} className="pet-list-element" >
+      <li onClick={() => props.openModal()} className="pet-add-element" >
         <div className="pet-icon-add">
           <FontAwesomeIcon icon={faPlus} />
         </div>
