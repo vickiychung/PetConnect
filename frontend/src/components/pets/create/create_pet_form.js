@@ -217,7 +217,7 @@ class CreatePetForm extends React.Component {
           
 
           <div className="submit-pet-entry">
-            <input type="submit" value="Add" />
+            <button>Add Pet</button>
           </div>
         </form>
       </div>

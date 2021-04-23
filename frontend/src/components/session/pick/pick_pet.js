@@ -35,22 +35,28 @@ class PickPet extends React.Component {
     
     return (
       <div className="user-pet-list-wrapper">
-        <button onClick={this.props.logout}>Logout</button>
-        <ul className="user-pet-list">
-          {
-            pets.map((pet, index) => (
-              <PickPetItem key={index} pet={pet} fetchCurrentPet={this.props.fetchCurrentPet} /> 
-            ))
-          }
-          {
-            pets.length < 5 ? 
-              <CreatePetFormModal 
-                showModal={this.props.showModal} 
-                openModal={this.props.openModal}
-                closeModal={this.props.closeModal}
-              /> : null
-          }
-        </ul>
+        {/* <button onClick={this.props.logout}>Logout</button> */}
+        <div className="user-pet-banner">
+          <div className='pick-title-container'>
+            <h1 className='pick-title'>Pick Your Pet</h1></div>
+          
+          <ul className="user-pet-list">
+            {
+              pets.map((pet, index) => (
+                <PickPetItem key={index} pet={pet} fetchCurrentPet={this.props.fetchCurrentPet} /> 
+              ))
+            }
+            {
+              pets.length < 5 ? 
+                <CreatePetFormModal 
+                  showModal={this.props.showModal} 
+                  openModal={this.props.openModal}
+                  closeModal={this.props.closeModal}
+                /> : null
+            }
+          </ul>
+        </div>
+        
         
       </div>
     )
