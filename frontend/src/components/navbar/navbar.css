@@ -2,6 +2,7 @@
   min-height: 9vh;
   width: 100%;
   background-color: #00B9D3;
+  /* background-color: rgb(154,228,232); */
 
   display: flex;
   justify-content: space-around;
