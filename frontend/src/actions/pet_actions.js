@@ -8,7 +8,7 @@ export const RECEIVE_CURRENT_PET = "RECEIVE_CURRENT_PET";
 export const RECEIVE_SELECTED_PET = "RECEIVE_SELECTED_PET";
 export const REMOVE_PET = "REMOVE_PET";
 export const EDIT_PET = "EDIT_PET";
-export const GET_PET = "GET_PET"
+export const GET_PET = "GET_PET";
 
 export const receivePets = pets => ({
   type: RECEIVE_PETS,
