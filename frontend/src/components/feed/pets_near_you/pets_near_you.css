@@ -1,23 +1,21 @@
 .pets-near-you-list {
-  height: 91vh;
+  /* background-color: rgb(218,243,248); */
+  background-color: rgb(243, 213, 176);
+
   width: 50%;
-  /* width: 450px; */
-  /* border: 5px solid darkblue; */
-  /* border: 3px solid #30D8F0; */
+  height: 88vh;
+  /* border: 3px solid rgb(179,236,239); */
+  border: 1.5px solid rgb(202,168,130);
   border-radius: 10px;
-  background-color: springgreen;
-  /* background-color: #EEFCFF; */
-  /* min-height: 50px; */
-  /* display: inline-block; */
-  box-shadow: inset 0 -3em 3em rgb(0 0 0 / 10%), 0 0 0 2px #ffffff, 0.3em 0.3em 1em #047e90;
+  box-shadow: inset 0 -3em 3em rgb(0 0 0 / 10%), 0 0 0 2px rgb(202,168,130), 0.3em 0.3em 1em rgb(202,168,130);
 }
 
 .pets-near-index {
-  background-color: yellow;
+  /* background-color: yellow; */
   display: flex;
   flex-direction: column;
   overflow-y: hidden;
-  height: 85vh;
+  /* height: 85vh; */
 }
 
 .pets-near-item {
