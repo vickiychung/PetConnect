@@ -15,6 +15,7 @@ class NavDropdown extends React.Component {
     }
     this.wrapperRef = React.createRef();
     this.handleClickOutside = this.handleClickOutside.bind(this);
+    
   };
 
   componentDidMount() {
@@ -36,6 +37,10 @@ class NavDropdown extends React.Component {
   toggle() {
     this.setState({open: !this.state.open})
   };
+
+  deletePet() {
+    this.props.deletePet(this.props.currentPetId)
+  }
 
   render() {
     
@@ -63,7 +68,7 @@ class NavDropdown extends React.Component {
                 <li key={pet._id} >
                   <div className="dd-pet-name-container">
                     <div className="dd-pet-name">
-                      <Link to={`/feed/${pet._id}`}>{pet.name}</Link>
+                      <Link to={`/feed/${pet._id}`} onClick={() => this.props.fetchCurrentPet(pet._id)}>{pet.name} </Link>
                     </div>
                   </div>
                 </li>
@@ -78,6 +83,15 @@ class NavDropdown extends React.Component {
                 Log out
               </span>
             </div>
+
+            
+              <div onClick={()=>this.deletePet()} className="dd-logout">
+                <Link to="/pick_pet">
+                  <span>
+                    Delete Pet
+                  </span>
+                </Link>
+              </div>
           </ul>
         )}
       </div>

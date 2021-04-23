@@ -27,13 +27,9 @@ class PetsNearYou extends React.Component {
 
   handleClick() {
     this.props.fetchPet(this.props.pet._id)
-    // console.log(this.props.fetchPet())
-    // console.log(this.props.pet._id)
   }
 
   sendConnectionRequest() {
-    // console.log(this.props.pet._id)
-    // console.log(this.props.currentPet)
     let connection = {
       friend: this.props.pet._id,
       currentPet: this.props.currentPet

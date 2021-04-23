@@ -30,6 +30,14 @@
   margin-bottom: 10px;
 }
 
+.profile-pic-default {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 360px;
+  color: rgb(255, 142, 138);
+}
+
 .pet-details {
   font-family: 'Montserrat', sans-serif;
   width: 100%;
