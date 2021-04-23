@@ -19,3 +19,11 @@ export const fetchPet = id => {
 export const registerPet = data => {
   return axios.post(`/api/pets/register`, data)
 }
+
+export const editPet = data => {
+  return axios.patch(`/api/pets/${data.id}`, data)
+}
+
+export const deletePet = petId => {
+  return axios.delete(`/api/pets/${petId}`)
+} 

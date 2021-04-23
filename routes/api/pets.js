@@ -172,7 +172,8 @@ router.patch('/:id',
     } else {
       Pet.findByIdAndUpdate(
         req.params.id, 
-        {$set: req.body, photoUrl: newFileUploaded.fileLink }, 
+        // {$set: req.body, photoUrl: newFileUploaded.fileLink },
+        {$set: req.body } ,
         {new: true}, 
         (err, result) => {
           if(err) {

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-// import { fetchCurrentPet } from '../../../actions/pet_actions';
+import { updatePet } from '../../../actions/pet_actions';
 import MyPets from './my_pets';
 
 const mapStateToProps = state => {
@@ -8,10 +8,10 @@ const mapStateToProps = state => {
   };
 };
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     fetchCurrentPet: petId => dispatch(fetchCurrentPet(petId))
-//   };
-// };
+const mapDispatchToProps = dispatch => {
+  return {
+    updatePet: pet => dispatch(updatePet(pet))
+  };
+};
 
-export default connect(mapStateToProps, null)(MyPets);
+export default connect(mapStateToProps, mapDispatchToProps)(MyPets);
