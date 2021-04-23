@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import "./pets_near_you.css";
 
 class PetsNearYou extends React.Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class PetsNearYou extends React.Component {
   }
 
   sendConnectionRequest() {
-    // console.log(this.props.selectedPet)
+    // console.log(this.props.pet._id)
     // console.log(this.props.currentPet)
     let connection = {
       friend: this.props.pet._id,
@@ -69,28 +69,31 @@ class PetsNearYou extends React.Component {
 
     let showPet = () => {
       return (
-        <li onClick={this.handleClick} className="pets-near-index">
+        <li onClick={this.handleClick} className="pets-near-item">
           {/* <Link className="pets-near-index-redirect" to="/feed" > */}
             <div className="pets-near-name">
               <span>
                 {this.props.pet.name} <button onClick={this.sendConnectionRequest}>CONNECT</button>
               </span>
             </div>
-            <div>
-
-            </div>
+           
           {/* </Link> */}
+        
+
           <span className="pets-near-details">
-            Age: <span className="pets-near-age">{this.props.pet.age}</span>
+            AGE: <span className="details-lower">{this.props.pet.age}</span>
           </span>
+
           <span className="pets-near-details">
-            Gender: <span className="pets-near-age">{this.props.pet.gender}</span>
+            GENDER: <span className="details-lower">{this.props.pet.gender}</span>
           </span>
+
           <span className="pets-near-details">
-            Shelter: <span className="pets-near-age">{this.props.pet.shelter}</span>
+            PERSONALITY: <span className="details-lower">{this.props.pet.personality}</span>
           </span>
+
           <span className="pets-near-details">
-            Personality: <span className="pets-near-age">{this.props.pet.personality}</span>
+            SHELTER: <span>{this.props.pet.shelter}</span>
           </span>
         </li>
       )

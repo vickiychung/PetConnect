@@ -2,15 +2,16 @@
   min-height: 9vh;
   width: 100%;
   background-color: #00B9D3;
+  /* background-color: rgb(154,228,232); */
 
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-top: 10px;
 
-  position: sticky;
+  position: absolute;
   top: 0;
   left: 0;
+  right: 0%;
   z-index: 100;
 
   border-bottom: 1px solid #9AE4E8;
