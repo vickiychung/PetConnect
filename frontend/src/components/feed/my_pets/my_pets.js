@@ -50,6 +50,7 @@ class MyPets extends React.Component {
     this.handleShelterChange = this.handleShelterChange.bind(this);
     this.handleShelterUpdate = this.handleShelterUpdate.bind(this);
 
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -132,6 +133,27 @@ class MyPets extends React.Component {
     this.props.updatePet({id: this.props.currentPet._id, shelter: this.state.shelter})
   }
   
+  fileSelectHandler = (e) => {
+    // e.preventDefault();
+    
+    this.setState({
+      file: e.target.files[0]
+    });
+
+  
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData();
+
+    formData.set("id", this.props.currentPet._id);
+    if (this.state.file) {
+      formData.append("file", this.state.file);
+    }
+    
+    this.props.updatePet(formData)
+  }
  
   render() {
 
@@ -150,15 +172,36 @@ class MyPets extends React.Component {
       /> 
     } else {
       profilePhoto = <div className="profile-pic-default">
+        <FontAwesomeIcon icon={faPaw} />
+        {/* <label htmlFor="upload-button">
           <FontAwesomeIcon icon={faPaw} />
+        </label>
+          <input 
+            type="file" 
+            id="upload-button" 
+            style={{ display: "none" }} 
+            onChange={this.fileSelectHandler}
+          /> */}
         </div>
     }
+    
 
     return (
       <div className="my-pets-wrapper">
         <div className="profile-pic-wrapper">
           {profilePhoto}
+          
         </div>
+        {/* <form onSubmit={this.handleSubmit}>
+          <input 
+            type="file" 
+            id="upload-button" 
+            onChange={this.fileSelectHandler}
+          />
+          <div className="submit-pet-entry">
+            <input type="submit" value="Add" />
+          </div>
+        </form> */}
 
         <div className="pet-details">
           <p className="my-pet-name">
