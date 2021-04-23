@@ -5,7 +5,7 @@ import NavbarContainer from '../navbar/navbar_container';
 import PetsNearYouContainer from './pets_near_you/pets_near_you_container'
 import MyPetsContainer from './my_pets/my_pets_container';
 import pic from '../session/login_signup/background.jpg'
-import ConnectionRequests from '../connections/connection_requests';
+import ConnectionRequests from '../connections/connection_requests_container';
 import { goGetPet } from '../../actions/pet_actions';
 import Connections from '../connections/connection_container';
 
@@ -326,7 +326,7 @@ class Feed extends React.Component {
         
           <div className="connections-container">
             <ul className="connections-req-wrapper">NEW REQUESTS
-              {this.props.connectionRequests.map(request => {
+              {this.props.connectionRequests.map((request, i) => {
             
                 return <ConnectionRequests key={request._id}
                         goGetPet={this.props.goGetPet}
@@ -336,7 +336,8 @@ class Feed extends React.Component {
                         petId={request.friend}
                         requestId={request._id}
                         history={this.props.history}
-                        />
+                        index={i}
+                      />
               })}
             </ul>
 

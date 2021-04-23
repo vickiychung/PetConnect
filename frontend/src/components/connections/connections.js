@@ -4,7 +4,8 @@ class Connections extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleDelete = this.handleDelete.bind(this)
+    this.handleDelete = this.handleDelete.bind(this);
+    this.getConnection = this.getConnection.bind(this);
   }
 
   componentDidMount() {
@@ -17,6 +18,8 @@ class Connections extends React.Component {
     // this.props.deleteConnection(this.props.connectionId)
   }
 
+
+
   render() {
     // console.log(this.props);
 
@@ -27,8 +30,10 @@ class Connections extends React.Component {
     
     return (
       <div>
-        <li>{pet.data.name}</li>
-        <button onClick={this.handleDelete}>DELETE</button>
+        <li onClick={() => this.props.fetchPet(pet.data._id)}>
+          {pet.data.name}
+        </li>
+        {/* <button onClick={this.handleDelete}>DELETE</button> */}
       </div>
     )
   }

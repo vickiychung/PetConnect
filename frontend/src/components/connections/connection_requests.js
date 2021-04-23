@@ -14,7 +14,7 @@ class ConnectionRequests extends React.Component {
   }
 
   componentDidMount() {
-    this.props.goGetPet(this.props.requesterId)
+    this.props.goGetRequestPet(this.props.requesterId)
   }
 
   jank() {
@@ -24,7 +24,7 @@ class ConnectionRequests extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.potato !== this.state.potato) {
-      console.log('potato has changed')
+      // console.log('potato has changed')
     }
   }
 
@@ -52,23 +52,23 @@ class ConnectionRequests extends React.Component {
     this.props.acceptConnectionRequest(response)
   }
 
+  
+
   render() {
-    // console.log(this.props)
-    // this.props.goGetPet(this.props.requesterId)
-    // if (!this.props.friend) {
-    //   return null
-    // }
-    // this.props.goGetPet(this.props.requesterId)
-    // console.log(this.props.state.entities.connectionRequests.friendData.data.name)
-    // console.log(this.props)
-    // console.log(this.props.requesterId)
-    // console.log(this.props.state.entities.connectionRequests.friendData.data.name)
-    // console.log(this.props.state)
+    console.log(this.props)
+
+    let pet = this.props.requestPets[this.props.index];
+    if (!pet) {
+      return null;
+    }
+    console.log(pet)
     return (
       
       <li className="connect-item">
         {/* {this.props.state.entities.connectionRequests.friendData.data.name} */}
-        {this.props.requesterId} 
+        <div onClick={() => this.props.fetchPet(pet.data._id)} >
+          {pet.data.name} 
+        </div>
 
         <div className="connect-button-wrapper">
           <button className="connect-button" onClick={this.acceptConnection}>ACCEPT</button>

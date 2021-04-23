@@ -9,6 +9,7 @@ export const RECEIVE_SELECTED_PET = "RECEIVE_SELECTED_PET";
 export const REMOVE_PET = "REMOVE_PET";
 export const EDIT_PET = "EDIT_PET";
 export const GET_PET = "GET_PET";
+export const GET_REQUEST_PET = "GET_REQUEST_PET";
 
 export const receivePets = pets => ({
   type: RECEIVE_PETS,
@@ -30,6 +31,11 @@ const getPet = pet => ({
   type: GET_PET,
   pet
 })
+
+const getRequestPet = pet => ({
+  type: GET_REQUEST_PET,
+  pet
+});
 
 export const receivePetErrors = errors => ({
   type: RECEIVE_PET_ERRORS,
@@ -59,6 +65,11 @@ const editPet = pet => ({
 export const goGetPet = petId => dispatch => (
   PetApiUtil.getPet(petId)
   .then(pet => dispatch(getPet(pet)))
+)
+
+export const goGetRequestPet = petId => dispatch => (
+  PetApiUtil.getPet(petId)
+  .then(pet => dispatch(getRequestPet(pet)))
 )
 
 export const fetchPets = () => dispatch => (
