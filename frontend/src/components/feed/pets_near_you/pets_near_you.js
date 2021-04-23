@@ -67,19 +67,19 @@ class PetsNearYou extends React.Component {
           </div>
 
           <span className="pets-near-details">
-            Age: <span className="pets-near-age">{this.props.pet.age}</span>
+            AGE: <span className="details-lower">{this.props.pet.age}</span>
           </span>
 
           <span className="pets-near-details">
-            Gender: <span className="pets-near-age">{this.props.pet.gender}</span>
+            GENDER: <span className="details-lower">{this.props.pet.gender}</span>
           </span>
 
           <span className="pets-near-details">
-            Shelter: <span className="pets-near-age">{this.props.pet.shelter}</span>
+            PERSONALITY: <span className="details-lower">{this.props.pet.personality}</span>
           </span>
 
           <span className="pets-near-details">
-            Personality: <span className="pets-near-age">{this.props.pet.personality}</span>
+            SHELTER: <span>{this.props.pet.shelter}</span>
           </span>
         </li>
       )

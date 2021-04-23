@@ -1,5 +1,4 @@
 .pets-near-you-list {
-  /* background-color: rgb(218,243,248); */
   background-color: rgb(243, 213, 176);
   width: 50%;
   height: 88vh;
@@ -12,13 +11,15 @@
   justify-content: flex-start;
   padding-left: 10px;
   padding-right: 10px;
+  overflow-y: scroll;
+
 }
 
 .tabs-wrapper {
   display: flex;
   justify-content: center;
   height: 30px;
-  position: relative;
+  position: absolute;
   top: -23px;
 }
 
@@ -55,41 +56,43 @@
 }
 
 .pets-near-index {
-  background-color: yellow;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  overflow-y: hidden;
   position: relative;
-  top: 20px;
+  top: 25px;
 }
 
 .pets-near-item {
-  background-color: teal;
   list-style :none;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 .pets-near-name {
-  color: darkblue;
+  color: rgb(90, 75, 58);
   font-weight: 600;
-  font-size: 25px;
+  font-size: 23px;
   text-decoration: none;
   padding-top: 8px;
   padding-bottom: 8px;
 }
 
-.pets-near-index-redirect {
-  text-decoration: none;
-}
-
 .pets-near-details {
-  color: #30D8F0;
   display: block;
   padding-bottom: 5px;
-}
-
-.pets-near-age {
-  color: darkblue;
+  font-size: 16px;
   font-weight: 600;
 }
+
+.pets-near-details span {
+  margin-left: 10px;
+  font-weight: 400;
+}
+
+.details-lower {
+  text-transform: lowercase;
+}
+
