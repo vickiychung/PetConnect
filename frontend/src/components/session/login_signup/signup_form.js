@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faPlus, faTimes } from '@fortawesome/free-solid-svg-icons';
 import './session.css'
 
 
@@ -68,7 +70,11 @@ class SignupForm extends React.Component {
       <div className="signup-container">
         <div className='signup-title'>
           <h1>Sign Up</h1>
-          <div className='signup-close' onClick={() => this.props.closeModal()}>X</div>
+    
+            <div className="close-icon" onClick={() => this.props.closeModal()}>
+              <FontAwesomeIcon icon={faTimes} />
+  
+            </div>
         </div>
         <form className='signup-form' onSubmit={this.handleSubmit}>
           <div className="signup-inputs">
