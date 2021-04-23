@@ -14,10 +14,11 @@ class Connections extends React.Component {
   render() {
     console.log(this.props.connectionId)
     return (
-      <div>
-        <li>{this.props.connection}</li>
-        <button onClick={this.handleDelete}>DELETE</button>
-      </div>
+      <li className="connect-item">{this.props.connection}
+        <div className="connect-button-wrapper">
+          <button className="connect-button" onClick={this.handleDelete}>DELETE</button>
+        </div>
+      </li>
     )
   }
 }
