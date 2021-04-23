@@ -1,13 +1,13 @@
 import axios from 'axios';
 
-export const fetchConnectionRequest = () => {
-  return axios.get('/api/requests')
+export const fetchConnectionRequests = (friendId) => {
+  return axios.get(`/api/requests/${friendId}`)
 }
 
-export const createConnectionRequest = () => {
-  return axios.post('/api/requests')
+export const createConnectionRequest = (data) => {
+  return axios.post('/api/requests', data)
 }
 
-export const acceptConnectionRequest = () => {
-  return axios.patch('/api/requests')
+export const acceptConnectionRequest = (data) => {
+  return axios.patch('/api/requests', data)
 }

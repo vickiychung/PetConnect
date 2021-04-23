@@ -7,7 +7,6 @@ class MyPets extends React.Component {
     const currentPet = this.props.currentPet;
     let profilePhoto;
 
-    console.log(currentPet)
     if (!currentPet) return null;
 
     if (currentPet.photoUrl) {
