@@ -95,7 +95,6 @@
 }
 
 .connections-container {
-  background-color: pink;
   width: 15%;
   display: flex;
   flex-direction: column;
@@ -113,6 +112,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: teal;
 }
 
 .connections-wrapper {
@@ -128,7 +128,18 @@
 
 .req-button-wrapper {
   margin-top: 8px;
+  display: flex;
+  justify-content: center;
 }
 
-.rq-button {
+.req-button-wrapper button:first-child {
+  margin-right: 10px;
+}
+
+.req-button {
+  border-radius: 5px;
+  border: 2.5px solid rgb(151,194,185);
+  background-color: rgb(221,255,204);
+  color: teal;
+  cursor: pointer;
 }
