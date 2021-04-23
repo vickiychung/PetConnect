@@ -83,13 +83,11 @@
 
 .selected-pet-wrap {
   height: 30%;
-  padding: 10px;
   padding-top: 15px;
-  text-align: center;
 }
 
 .selected-pet-img {
-  width: 100%;
+  width: 90%;
   max-width: 400px;
   max-height: 450px;
   border-radius: 5px;
