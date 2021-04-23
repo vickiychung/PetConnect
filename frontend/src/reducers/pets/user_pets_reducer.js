@@ -1,0 +1,30 @@
+import {
+  RECEIVE_PET,
+  REMOVE_PET,
+  RECEIVE_USER_PETS
+} from '../../actions/pet_actions';
+
+const userPetsReducer = (state = {}, action) => {
+  Object.freeze(state);
+  let newState = Object.assign({}, state);
+  switch (action.type) {
+    case RECEIVE_USER_PETS:
+      return action.userPets;
+    case RECEIVE_PET:
+      let petLength = newState.data.length || 1;
+      newState.data[petLength] = action.pet.data;
+      return newState; 
+    case REMOVE_PET:
+      newState.data.forEach((pet, i) => {
+        if (pet._id === action.petId) {
+          newState.data.splice(i, 1);
+        };
+      });
+      return newState;
+    default:
+      return state;
+  }
+
+}
+
+export default userPetsReducer;

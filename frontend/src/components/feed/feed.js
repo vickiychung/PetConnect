@@ -41,6 +41,8 @@ class Feed extends React.Component {
   }
 
   render() {
+    console.log(this.props)
+
     if (!this.props.pets || !this.props.currentUser || !Array.isArray(this.props.users)) {
       return null
     }
@@ -164,7 +166,11 @@ class Feed extends React.Component {
       <div className="feed-wrapper">
 
         <div className="navbar-container">
-          <NavbarContainer userPets={userPets} currentPetId={currentPet._id}/>
+          <NavbarContainer 
+            userPets={userPets} 
+            currentPetId={currentPet._id}
+            history={this.props.history}
+          />
         </div>
         <div className="feed-main-wrapper">
         <div className="tabs-wrapper">

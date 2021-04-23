@@ -8,6 +8,7 @@ import NavDropdown from './dropdown/nav_dd';
 
 class Navbar extends React.Component {
 
+  
 
   render() {
     // console.log(this.props)
@@ -30,6 +31,7 @@ class Navbar extends React.Component {
               username={this.props.username}
               deletePet={this.props.deletePet}
               currentPetId={this.props.currentPetId}
+              history={this.props.history}
             />
           </span>
         </div>

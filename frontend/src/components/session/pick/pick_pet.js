@@ -25,7 +25,7 @@ class PickPet extends React.Component {
 
 
   render() {
-    
+    console.log(this.props)
     let pets = this.state.pets;
     if (typeof pets === "undefined" || pets === null) {
       pets = []; 
@@ -39,7 +39,11 @@ class PickPet extends React.Component {
         <ul className="user-pet-list">
           {
             pets.map((pet, index) => (
-              <PickPetItem key={index} pet={pet} fetchCurrentPet={this.props.fetchCurrentPet} /> 
+              <PickPetItem 
+                key={index} pet={pet} 
+                fetchCurrentPet={this.props.fetchCurrentPet} 
+                
+              /> 
             ))
           }
           {

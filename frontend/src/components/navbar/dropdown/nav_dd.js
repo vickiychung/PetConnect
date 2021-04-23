@@ -15,6 +15,8 @@ class NavDropdown extends React.Component {
     }
     this.wrapperRef = React.createRef();
     this.handleClickOutside = this.handleClickOutside.bind(this);
+    // console.log(this.props)
+
   };
 
   componentDidMount() {
@@ -37,8 +39,15 @@ class NavDropdown extends React.Component {
     this.setState({open: !this.state.open})
   };
 
+  deletePet() {
+    this.props.deletePet(this.props.currentPetId)
+    // .then(action => {
+    //   // return this.props.history.push(`/pick_pet`)
+    //   console.log('test')
+    // })
+  }
+
   render() {
-    console.log(this.props)
     return (
       <div className="dd-wrapper" ref={this.wrapperRef}>
         <div 
@@ -81,7 +90,7 @@ class NavDropdown extends React.Component {
 
             <Link to="/pick_pet">
               <div 
-                onClick={()=>this.props.deletePet(this.props.currentPetId)}
+                onClick={()=>this.deletePet()}
                 className="dd-logout"
               >
                 <span>
@@ -89,6 +98,7 @@ class NavDropdown extends React.Component {
                 </span>
               </div>
             </Link>
+            
           </ul>
         )}
       </div>
