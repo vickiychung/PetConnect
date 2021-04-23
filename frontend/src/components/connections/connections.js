@@ -26,10 +26,15 @@ class Connections extends React.Component {
     }
     console.log('fesf')
     return (
-      <div>
-        <li>{this.props.petFriend[this.props.index].name}</li>
-        <button onClick={this.handleDelete}>DELETE</button>
-      </div>
+      // <div>
+      //   <li>{this.props.petFriend[this.props.index].name}</li>
+      //   <button onClick={this.handleDelete}>DELETE</button>
+      // </div>
+      <li className="connect-item">{this.props.petFriend[this.props.index].name}
+        <div className="connect-button-wrapper">
+          <button className="connect-button" onClick={this.handleDelete}>DELETE</button>
+        </div>
+      </li>
     )
   }
 }

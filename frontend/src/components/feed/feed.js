@@ -133,15 +133,16 @@ class Feed extends React.Component {
         userPets.push(pet)
       }
     })
-      const filterByShelter = () => {
-        return (
-          <ul className="pets-near-index">
-            {shelterMatches.map(pet => (
-              <PetsNearYouContainer key={pet._id} currentPet={currentPet} createConnectionRequest={this.props.createConnectionRequest} pet={pet}/>
-            ))}
-          </ul>
-        )
-      }
+
+    const filterByShelter = () => {
+      return (
+        <ul className="pets-near-index">
+          {shelterMatches.map(pet => (
+            <PetsNearYouContainer key={pet._id} currentPet={currentPet} createConnectionRequest={this.props.createConnectionRequest} pet={pet}/>
+          ))}
+        </ul>
+      )
+    }
 
     const filterBySpecies = () => {
       return (
@@ -153,7 +154,6 @@ class Feed extends React.Component {
       )
     }
 
-
     const toggle = () => {
       if (this.state.toggled === 'zip') {
         return filterByZip();
@@ -163,7 +163,6 @@ class Feed extends React.Component {
         return filterBySpecies();
       }
     }
-
 
     let matchedUsers = [];
 
@@ -184,9 +183,7 @@ class Feed extends React.Component {
       })
     })
 
-
     //Helper methods for same shelter
-
     let changeString = function(str) {
       let word = str.split(" ")
       let noSpaces = word.join("")
@@ -226,121 +223,125 @@ class Feed extends React.Component {
 
 
     let profilePhoto;
+
     if (this.props.selectedPet) {
       this.props.selectedPet.photoUrl ? 
         profilePhoto =  <img className="selected-pet-img" src={this.props.selectedPet.photoUrl}></img> :
         profilePhoto =  <img className="selected-pet-img" src={pic}></img>
     }
 
-  return (
-    <div className="feed-wrapper">
+    return (
+      <div className="feed-wrapper">
 
-      <div className="navbar-container">
-        <NavbarContainer 
-          userPets={userPets} 
-          currentPetId={currentPet._id}
-          history={this.props.history}
-        />
-      </div>
+        <div className="navbar-container">
+          <NavbarContainer 
+            userPets={userPets} 
+            currentPetId={currentPet._id}
+            history={this.props.history}
+          />
+        </div>
 
-      <div className="feed-main-wrapper">
+        <div className="feed-main-wrapper">
 
-        <div className="feed-lists-wrapper">
+          <div className="feed-lists-wrapper">
 
-          <div className="pets-near-you-list">
-            
-             <div className="tabs-wrapper">
-              <div className="tabs">
-                <div className="tabs-1">
-                  <button onClick={this.handleZip} className="tabs-2">Location</button>
-                </div>
+            <div className="pets-near-you-list">
+              
+              <div className="tabs-wrapper">
+                <div className="tabs">
+                  <div className="tabs-1">
+                    <button onClick={this.handleZip} className="tabs-2">Location</button>
+                  </div>
 
-                <div className="tabs-1">
-                  <button onClick={this.handleShelter} className="tabs-2">Shelter</button>
-                </div>
+                  <div className="tabs-1">
+                    <button onClick={this.handleShelter} className="tabs-2">Shelter</button>
+                  </div>
 
-                <div className="tabs-1">
-                  <button onClick={this.handleSpecies} className="tabs-2">Species</button>
+                  <div className="tabs-1">
+                    <button onClick={this.handleSpecies} className="tabs-2">Species</button>
+                  </div>
                 </div>
               </div>
+
+              <ul>
+                {toggle()}
+              </ul>
             </div>
 
-            <ul>
-              {toggle()}
-            </ul>
+            <div className="pets-shelter-list">
+              <div className="selected-pet-wrap">
+                {profilePhoto}
+
+                {
+                  this.props.selectedPet ? 
+                  <ul className="selected-pet-details-list">
+                    <li>
+                      <label>name: </label>
+                      {this.props.selectedPet.name}
+                    </li>
+
+                    <li>
+                      <label>species: </label>
+                      {this.props.selectedPet.species}
+                    </li>
+
+                    <li>
+                      <label>breed: </label>
+                      {this.props.selectedPet.breed}
+                    </li>
+
+                    <li>
+                      <label>size: </label>
+                      {this.props.selectedPet.size}
+                    </li>
+
+                    <li>
+                      <label>gender: </label>
+                      {this.props.selectedPet.gender}
+                    </li>
+
+                    <li>
+                      <label>age: </label>
+                      {this.props.selectedPet.age}
+                    </li>
+
+                    <li>
+                      <label>personality: </label>
+                      {this.props.selectedPet.personality}
+                    </li>
+
+                    <li>
+                      <label>shelter: </label>
+                      {this.props.selectedPet.shelter}
+                    </li>
+                  </ul> : null
+                } 
+              </div>
+            </div>
           </div>
 
-          <div className="pets-shelter-list">
-            <div className="selected-pet-wrap">
-              {profilePhoto}
+          <div className="my-pets-container">
+            <MyPetsContainer currentPet={currentPet}/>
+          </div>
+        
+          <div className="connections-container">
+            <ul className="connections-req-wrapper">NEW REQUESTS
+              {this.props.connectionRequests.map(request => {
+            
+                return <ConnectionRequests key={request._id}
+                        goGetPet={this.props.goGetPet}
+                        acceptConnectionRequest={this.props.acceptConnectionRequest}
+                        state={this.props.state}
+                        requesterId={request.pet}
+                        petId={request.friend}
+                        requestId={request._id}
+                        history={this.props.history}
+                        />
+              })}
+            </ul>
 
-              {
-                this.props.selectedPet ? 
-                <ul className="selected-pet-details-list">
-                  <li>
-                    <label>name: </label>
-                    {this.props.selectedPet.name}
-                  </li>
-
-                  <li>
-                    <label>species: </label>
-                    {this.props.selectedPet.species}
-                  </li>
-
-                  <li>
-                    <label>breed: </label>
-                    {this.props.selectedPet.breed}
-                  </li>
-
-                  <li>
-                    <label>size: </label>
-                    {this.props.selectedPet.size}
-                  </li>
-
-                  <li>
-                    <label>gender: </label>
-                    {this.props.selectedPet.gender}
-                  </li>
-
-                  <li>
-                    <label>age: </label>
-                    {this.props.selectedPet.age}
-                  </li>
-
-                  <li>
-                    <label>personality: </label>
-                    {this.props.selectedPet.personality}
-                  </li>
-
-                  <li>
-                    <label>shelter: </label>
-                    {this.props.selectedPet.shelter}
-                  </li>
-                </ul> : null
-              } 
-            </div>
-        </div>
-    
-        <div className="my-pets-container">
-          <MyPetsContainer currentPet={currentPet}/>
-        </div>
-        <div>
-          <ul> Connection Requests
-            {this.props.connectionRequests.map(request => {
-          
-              return <ConnectionRequests key={request._id}
-                      goGetPet={this.props.goGetPet}
-                      acceptConnectionRequest={this.props.acceptConnectionRequest}
-                      state={this.props.state}
-                      requesterId={request.pet}
-                      petId={request.friend}
-                      requestId={request._id}
-                      history={this.props.history}
-                       />
-            })}
-          </ul>
-          <ul> Connections
-            {this.props.connections.map((connection, i) => {
+            <ul className="connections-wrapper">CONNECTIONS
+              {this.props.connections.map((connection, i) => {
               // console.log('this is a connection', connection)
               if (connection.pet1 === currentPet._id) {
                 return <Connections key={connection._id} index={i} deleteConnection={this.props.deleteConnection} goGetPet={this.props.goGetPet} friend={connection.pet2} connectionId={connection._id}/>
@@ -348,14 +349,12 @@ class Feed extends React.Component {
                 return <Connections key={connection._id} index={i} deleteConnection={this.props.deleteConnection} goGetPet={this.props.goGetPet} friend={connection.pet1} connectionId={connection._id}/>
               }
             })}
-          </ul>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-
-  </div>
-  )
-}
+    )
+  }
 }
 
 export default Feed;
