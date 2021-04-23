@@ -176,7 +176,11 @@ class Feed extends React.Component {
     <div className="feed-wrapper">
 
       <div className="navbar-container">
-        <NavbarContainer userPets={userPets}/>
+        <NavbarContainer 
+          userPets={userPets} 
+          currentPetId={currentPet._id}
+          history={this.props.history}
+        />
       </div>
 
       <div className="feed-main-wrapper">

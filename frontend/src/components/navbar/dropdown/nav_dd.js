@@ -43,11 +43,8 @@ class NavDropdown extends React.Component {
     this.props.deletePet(this.props.currentPetId)
   }
 
-  switchPet() {
-    this.props.fetchCurrentPet(this.props.currentPetId);
-  }
-
   render() {
+    console.log(this.props)
     return (
       <div className="dd-wrapper" ref={this.wrapperRef}>
         <div 
