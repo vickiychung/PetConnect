@@ -18,7 +18,7 @@ const entitiesReducer = combineReducers({
   connections: connectionsReducer,
   userPets: userPetsReducer,
   friendPets: connectionPetReducer,
-  requestPets: requestPetReducer
+  requestPets: requestPetReducer,
   allConnections: allConnectionsReducer
 });
 
