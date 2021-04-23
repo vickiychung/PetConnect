@@ -112,7 +112,9 @@ class MyPets extends React.Component {
   }
 
   handleAgeUpdate() {
-    this.props.updatePet({id: this.props.currentPet._id, age: this.state.age})
+    if (this.state.age !== this.props.currentPet.age) {
+      this.props.updatePet({id: this.props.currentPet._id, age: this.state.age})
+    }
   }
 
   handlePersonalityChange(e) {
@@ -214,7 +216,7 @@ class MyPets extends React.Component {
               <label>species: </label>
               <input
                 type="text"
-                // className={`my-pet-name`}
+                className={`my-pet-details`}
                 onChange={this.handleSpeciesChange}
                 onBlur={this.handleSpeciesUpdate}
                 ref={this.speciesInput}
@@ -231,7 +233,7 @@ class MyPets extends React.Component {
               <label>breed: </label>
               <input
                 type="text"
-                // className={`my-pet-name`}
+                className={`my-pet-details`}
                 onChange={this.handleBreedChange}
                 onBlur={this.handleBreedUpdate}
                 ref={this.breedInput}
@@ -248,7 +250,7 @@ class MyPets extends React.Component {
               <label>size: </label>
               <input
                 type="text"
-                // className={`my-pet-name`}
+                className={`my-pet-details`}
                 onChange={this.handleSizeChange}
                 onBlur={this.handleSizeUpdate}
                 ref={this.sizeInput}
@@ -265,7 +267,7 @@ class MyPets extends React.Component {
               <label>gender: </label>
               <input
                 type="text"
-                // className={`my-pet-name`}
+                className={`my-pet-details`}
                 onChange={this.handleGenderChange}
                 onBlur={this.handleGenderUpdate}
                 ref={this.genderInput}
@@ -282,7 +284,7 @@ class MyPets extends React.Component {
               <label>age: </label>
               <input
                 type="number"
-                // className={`my-pet-name`}
+                className={`my-pet-details`}
                 onChange={this.handleAgeChange}
                 onBlur={this.handleAgeUpdate}
                 ref={this.ageInput}
@@ -299,7 +301,7 @@ class MyPets extends React.Component {
               <label>personality: </label>
               <input
                 type="text"
-                // className={`my-pet-name`}
+                className={`my-pet-details`}
                 onChange={this.handlePersonalityChange}
                 onBlur={this.handlePersonalityUpdate}
                 ref={this.personalityInput}
@@ -315,7 +317,7 @@ class MyPets extends React.Component {
               <label>shelter: </label>
               <input
                 type="text"
-                // className={`my-pet-name`}
+                className={`my-pet-details`}
                 onChange={this.handleShelterChange}
                 onBlur={this.handleShelterUpdate}
                 ref={this.shelterInput}
