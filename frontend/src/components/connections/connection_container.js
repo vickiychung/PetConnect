@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import Connections from './connections'
 
 const mapStateToProps = state => ({
-  petFriend: state.entities.friendsPets
+  petFriend: state.entities.friendPets
+  // state
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -7,7 +7,7 @@ import MyPetsContainer from './my_pets/my_pets_container';
 import pic from '../session/login_signup/background.jpg'
 import ConnectionRequests from '../connections/connection_requests';
 import { goGetPet } from '../../actions/pet_actions';
-import Connections from '../connections/connections';
+import Connections from '../connections/connection_container';
 
 class Feed extends React.Component {
 
@@ -341,12 +341,26 @@ class Feed extends React.Component {
             </ul>
 
             <ul className="connections-wrapper">CONNECTIONS
-              {this.props.connections.map((connection, i) => {
+            {this.props.connections.map((connection, i) => {
               // console.log('this is a connection', connection)
               if (connection.pet1 === currentPet._id) {
-                return <Connections key={connection._id} index={i} deleteConnection={this.props.deleteConnection} goGetPet={this.props.goGetPet} friend={connection.pet2} connectionId={connection._id}/>
+                return <Connections 
+                          key={connection._id} 
+                          index={i} 
+                          deleteConnection={this.props.deleteConnection} 
+                          goGetPet={this.props.goGetPet} 
+                          friend={connection.pet2} 
+                          connectionId={connection._id}
+                        />
               } else if (connection.pet2 === currentPet._id) {
-                return <Connections key={connection._id} index={i} deleteConnection={this.props.deleteConnection} goGetPet={this.props.goGetPet} friend={connection.pet1} connectionId={connection._id}/>
+                return <Connections 
+                          key={connection._id} 
+                          index={i} 
+                          deleteConnection={this.props.deleteConnection} 
+                          goGetPet={this.props.goGetPet} 
+                          friend={connection.pet1} 
+                          connectionId={connection._id}
+                        />
               }
             })}
             </ul>

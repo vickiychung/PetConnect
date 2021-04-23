@@ -3,6 +3,7 @@ import PickPetItem from './pick_pet_item'
 import CreatePetFormContainer from '../../pets/create/create_pet_form_container';
 import CreatePetFormModal from '../../pets/create/create_pet_form_modal';
 import './pick_pet.css'
+import pickHeader from './pick_your_pet.png'
 
 class PickPet extends React.Component {
   constructor(props) {
@@ -38,7 +39,8 @@ class PickPet extends React.Component {
         {/* <button onClick={this.props.logout}>Logout</button> */}
         <div className="user-pet-banner">
           <div className='pick-title-container'>
-            <h1 className='pick-title'>Pick Your Pet</h1></div>
+            
+            <h1 className='pick-title'><img src={pickHeader}/></h1></div>
           
           <ul className="user-pet-list">
             {

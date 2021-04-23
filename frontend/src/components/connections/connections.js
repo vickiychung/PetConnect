@@ -13,18 +13,19 @@ class Connections extends React.Component {
   }
 
   handleDelete() {
-    console.log(this.props.connectionId)
+    // console.log(this.props.connectionId)
     this.props.deleteConnection({id: this.props.connectionId})
     // this.props.deleteConnection(this.props.connectionId)
   }
 
   render() {
-    // console.log(this.props.connectionId)
+    // console.log(this.props);
 
-    if (!this.props.petFriend) {
-      return null
+    let pet = this.props.petFriend[this.props.index];
+    if (!pet) {
+      return null;
     }
-    console.log('fesf')
+    
     return (
       // <div>
       //   <li>{this.props.petFriend[this.props.index].name}</li>
