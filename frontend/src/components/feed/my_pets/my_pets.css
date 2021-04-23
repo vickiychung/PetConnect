@@ -1,5 +1,7 @@
 .my-pets-wrapper {
   background-color: rgb(221,255,204);
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px rgb(151,194,185), 0.1em 0.1em 0.5em rgb(151,194,185);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -27,7 +29,6 @@
   max-height: 400px;
   border-radius: 5px;
   border: 5px double white;
-  box-shadow: 0 0 0 5px rgb(151,194,185);
   margin-bottom: 20px;
 }
 
