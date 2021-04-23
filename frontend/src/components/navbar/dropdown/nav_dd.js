@@ -41,10 +41,10 @@ class NavDropdown extends React.Component {
 
   deletePet() {
     this.props.deletePet(this.props.currentPetId)
-    // .then(action => {
-    //   // return this.props.history.push(`/pick_pet`)
-    //   console.log('test')
-    // })
+  }
+
+  switchPet() {
+    this.props.fetchCurrentPet(this.props.currentPetId);
   }
 
   render() {
@@ -72,7 +72,7 @@ class NavDropdown extends React.Component {
                 <li key={pet._id} >
                   <div className="dd-pet-name-container">
                     <div className="dd-pet-name">
-                      <Link to={`/feed/${pet._id}`}>{pet.name}</Link>
+                      <Link to={`/feed/${pet._id}`} onClick={() => this.props.fetchCurrentPet(pet._id)}>{pet.name} </Link>
                     </div>
                   </div>
                 </li>

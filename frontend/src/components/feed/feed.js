@@ -42,7 +42,7 @@ class Feed extends React.Component {
   }
 
   render() {
-    console.log(this.props)
+    // console.log(this.props)
 
     let currentPet = this.props.currentPet || null
 

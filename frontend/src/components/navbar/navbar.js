@@ -32,6 +32,7 @@ class Navbar extends React.Component {
               deletePet={this.props.deletePet}
               currentPetId={this.props.currentPetId}
               history={this.props.history}
+              fetchCurrentPet={this.props.fetchCurrentPet}
             />
           </span>
         </div>
