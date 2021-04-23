@@ -28,10 +28,10 @@ class Connections extends React.Component {
     
     return (
       <li className="connection-item">
-        {this.props.petFriend[this.props.index].name}
-        <div className="connect-button-wrapper">
+        {pet.data.name}
+        {/* <div className="connect-button-wrapper">
           <button className="connect-button" onClick={this.handleDelete}>DELETE</button>
-        </div>
+        </div> */}
       </li>
     )
   }
