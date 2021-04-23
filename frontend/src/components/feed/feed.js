@@ -31,6 +31,7 @@ class Feed extends React.Component {
     this.props.fetchUsers()
     this.props.fetchConnectionRequests(this.props.currentPetId)
     this.props.fetchConnections(this.props.currentPetId)
+    this.props.fetchCurrentPet(this.props.currentPetId)
   }
 
   handleSpecies() {
@@ -46,59 +47,29 @@ class Feed extends React.Component {
   }
 
   render() {
-    if (!Array.isArray(this.props.pets) || !this.props.currentUser || !Array.isArray(this.props.users) || !this.props.connectionRequests || !this.props.connections) {
+    
+    let currentPet = this.props.currentPet || null
+
+    // if (!this.props.pets || !this.props.currentUser || !Array.isArray(this.props.users) || !currentPet)  {
+    //   return null
+    // }
+
+    if (!Array.isArray(this.props.pets) || 
+        !this.props.currentUser || 
+        !Array.isArray(this.props.users) || 
+        !this.props.connectionRequests || 
+        !this.props.connections || 
+        !currentPet) {
       return null
     }
-
-    console.log(this.props.connections)
-  let currentPet = null
-    this.props.pets.forEach(pet => {
-    if (pet._id === this.props.currentPetId) {
-      currentPet = pet
-    }
-  })
-  // console.log(currentPet)
-  // console.log(this.props.connectionRequests)
-  const pet = this.props.pets.find(pet => pet._id === this.state.currentPetId);
-
-
-  // const filterByZip = () => {
-  //   return (
-  //     <ul>
-  //       {nearMatches.map(pet => (
-  //         <PetsNearYouContainer key={pet._id} currentPet={currentPet} pet={pet} createConnectionRequest={this.props.createConnectionRequest}/>
-  //       ))}
-  //     </ul>
-  //   )
-  // }
-  
-  // const filterByShelter = () => {
-  //   return (
-  //     <ul>
-  //       {shelterMatches.map(pet => (
-  //         <PetsNearYouContainer key={pet._id} currentPet={currentPet} pet={pet} createConnectionRequest={this.props.createConnectionRequest}/>
-  //       ))}
-  //     </ul>
-  //   )
-  // }
-
-  // const filterBySpecies = () => {
-  //   return (
-  //     <ul>
-  //       {speciesMatches.map(pet => (
-  //         <PetsNearYouContainer key={pet._id} currentPet={currentPet} pet={pet} createConnectionRequest={this.props.createConnectionRequest}/>
-  //       ))}
-  //     </ul>
-  //   )
-  // }
-
-    // let currentPet = null
-    //   this.props.pets.forEach(pet => {
+    
+    const pet = this.props.pets.find(pet => pet._id === this.state.currentPetId);
+    // this.props.pets.forEach(pet => {
     //   if (pet._id === this.props.currentPetId) {
     //     currentPet = pet
     //   }
     // })
-  // const pet = this.props.pets.find(pet => pet._id === this.state.currentPetId);
+    // const pet = this.props.pets.find(pet => pet._id === this.state.currentPetId);
 
     const filterByZip = () => {
       return (
@@ -110,24 +81,24 @@ class Feed extends React.Component {
       )
     }
   
-  // const pet = this.props.pets.filter((pet) => pet._id === this.state.currentPetId);
+    // const pet = this.props.pets.filter((pet) => pet._id === this.state.currentPetId);
 
-  const userPets = [];
-  
-  this.props.pets.forEach(pet => {
-    if (pet.user === this.props.currentUser) {
-      userPets.push(pet)
-    }
-  })
-    const filterByShelter = () => {
-      return (
-        <ul className="pets-near-index">
-          {shelterMatches.map(pet => (
-            <PetsNearYouContainer key={pet._id} currentPet={currentPet} createConnectionRequest={this.props.createConnectionRequest} pet={pet}/>
-          ))}
-        </ul>
-      )
-    }
+    const userPets = [];
+    
+    this.props.pets.forEach(pet => {
+      if (pet.user === this.props.currentUser) {
+        userPets.push(pet)
+      }
+    })
+      const filterByShelter = () => {
+        return (
+          <ul className="pets-near-index">
+            {shelterMatches.map(pet => (
+              <PetsNearYouContainer key={pet._id} currentPet={currentPet} createConnectionRequest={this.props.createConnectionRequest} pet={pet}/>
+            ))}
+          </ul>
+        )
+      }
 
     const filterBySpecies = () => {
       return (
@@ -150,13 +121,6 @@ class Feed extends React.Component {
       }
     }
 
-    // const userPets = [];
-    
-    // this.props.pets.forEach(pet => {
-    //   if (pet.user === this.props.currentUser) {
-    //     userPets.push(pet)
-    //   }
-    // })
 
     let matchedUsers = [];
 
@@ -180,23 +144,6 @@ class Feed extends React.Component {
 
     //Helper methods for same shelter
 
-  // console.log(this.props.pets)
-
-  // this.props.pets.forEach(pet => {
-  //   console.log(pet)
-  //   if (compareWords(changeString(pet.shelter), changeString(this.props.currentPet.shelter)) && pet._id !== this.props.currentPet._id) {
-  //     shelterMatches.push(pet)
-  //   }
-  // })
-
-
-
-  // this.props.pets.forEach(pet => {
-  //   // console.log(pet.shelter)
-  //   if (compareWords(changeString(pet.shelter), changeString(currentPet.shelter)) && pet._id !== currentPet._id) {
-  //     shelterMatches.push(pet)
-  //   }
-
     let changeString = function(str) {
       let word = str.split(" ")
       let noSpaces = word.join("")
@@ -216,6 +163,7 @@ class Feed extends React.Component {
         return false
       }
     }
+    
     //SHELTER MATCHES
     let shelterMatches = [];
 
@@ -233,98 +181,100 @@ class Feed extends React.Component {
       }
     })
 
+
     let profilePhoto;
     if (this.props.selectedPet) {
       this.props.selectedPet.photoUrl ? 
         profilePhoto =  <img className="selected-pet-img" src={this.props.selectedPet.photoUrl}></img> :
         profilePhoto =  <img className="selected-pet-img" src={pic}></img>
     }
-    // })
-  // console.log(this.props.connectionRequests)
 
-    return (
-      <div className="feed-wrapper">
+  return (
+    <div className="feed-wrapper">
 
-        <div className="navbar-container">
-          <NavbarContainer userPets={userPets}/>
-        </div>
+      <div className="navbar-container">
+        <NavbarContainer 
+          userPets={userPets} 
+          currentPetId={currentPet._id}
+          history={this.props.history}
+        />
+      </div>
 
-        <div className="feed-main-wrapper">
+      <div className="feed-main-wrapper">
 
-          <div className="feed-lists-wrapper">
+        <div className="feed-lists-wrapper">
 
-            <div className="pets-near-you-list">
-              
-               <div className="tabs-wrapper">
-                <div className="tabs">
-                  <div className="tabs-1">
-                    <button onClick={this.handleZip} className="tabs-2">Location</button>
-                  </div>
+          <div className="pets-near-you-list">
+            
+             <div className="tabs-wrapper">
+              <div className="tabs">
+                <div className="tabs-1">
+                  <button onClick={this.handleZip} className="tabs-2">Location</button>
+                </div>
 
-                  <div className="tabs-1">
-                    <button onClick={this.handleShelter} className="tabs-2">Shelter</button>
-                  </div>
+                <div className="tabs-1">
+                  <button onClick={this.handleShelter} className="tabs-2">Shelter</button>
+                </div>
 
-                  <div className="tabs-1">
-                    <button onClick={this.handleSpecies} className="tabs-2">Species</button>
-                  </div>
+                <div className="tabs-1">
+                  <button onClick={this.handleSpecies} className="tabs-2">Species</button>
                 </div>
               </div>
-
-              <ul>
-                {toggle()}
-              </ul>
             </div>
 
-            <div className="pets-shelter-list">
-              <div className="selected-pet-wrap">
-                {profilePhoto}
+            <ul>
+              {toggle()}
+            </ul>
+          </div>
 
-                {
-                  this.props.selectedPet ? 
-                  <ul className="selected-pet-details-list">
-                    <li>
-                      <label>name: </label>
-                      {this.props.selectedPet.name}
-                    </li>
+          <div className="pets-shelter-list">
+            <div className="selected-pet-wrap">
+              {profilePhoto}
 
-                    <li>
-                      <label>species: </label>
-                      {this.props.selectedPet.species}
-                    </li>
+              {
+                this.props.selectedPet ? 
+                <ul className="selected-pet-details-list">
+                  <li>
+                    <label>name: </label>
+                    {this.props.selectedPet.name}
+                  </li>
 
-                    <li>
-                      <label>breed: </label>
-                      {this.props.selectedPet.breed}
-                    </li>
+                  <li>
+                    <label>species: </label>
+                    {this.props.selectedPet.species}
+                  </li>
 
-                    <li>
-                      <label>size: </label>
-                      {this.props.selectedPet.size}
-                    </li>
+                  <li>
+                    <label>breed: </label>
+                    {this.props.selectedPet.breed}
+                  </li>
 
-                    <li>
-                      <label>gender: </label>
-                      {this.props.selectedPet.gender}
-                    </li>
+                  <li>
+                    <label>size: </label>
+                    {this.props.selectedPet.size}
+                  </li>
 
-                    <li>
-                      <label>age: </label>
-                      {this.props.selectedPet.age}
-                    </li>
+                  <li>
+                    <label>gender: </label>
+                    {this.props.selectedPet.gender}
+                  </li>
 
-                    <li>
-                      <label>personality: </label>
-                      {this.props.selectedPet.personality}
-                    </li>
+                  <li>
+                    <label>age: </label>
+                    {this.props.selectedPet.age}
+                  </li>
 
-                    <li>
-                      <label>shelter: </label>
-                      {this.props.selectedPet.shelter}
-                    </li>
-                  </ul> : null
-                } 
-              </div>
+                  <li>
+                    <label>personality: </label>
+                    {this.props.selectedPet.personality}
+                  </li>
+
+                  <li>
+                    <label>shelter: </label>
+                    {this.props.selectedPet.shelter}
+                  </li>
+                </ul> : null
+              } 
             </div>
         </div>
     
@@ -354,10 +304,11 @@ class Feed extends React.Component {
           </ul>
         </div>
       </div>
-
     </div>
-    )
-  }
+
+  </div>
+  )
+}
 }
 
 export default Feed;

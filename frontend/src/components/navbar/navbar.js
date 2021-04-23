@@ -8,9 +8,10 @@ import NavDropdown from './dropdown/nav_dd';
 
 class Navbar extends React.Component {
 
+  
 
   render() {
-    
+
     return (
       <header className="navbar">
         <div className="feed-logo">
@@ -28,6 +29,10 @@ class Navbar extends React.Component {
               logout={this.props.logout}
               userPets={this.props.userPets}
               username={this.props.username}
+              deletePet={this.props.deletePet}
+              currentPetId={this.props.currentPetId}
+              history={this.props.history}
+              fetchCurrentPet={this.props.fetchCurrentPet}
             />
           </span>
         </div>

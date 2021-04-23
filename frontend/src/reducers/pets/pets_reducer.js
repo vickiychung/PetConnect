@@ -1,23 +1,19 @@
 import {
   RECEIVE_PETS,
-  RECEIVE_USER_PETS,
-  RECEIVE_PET,
-  GET_PET
 } from '../../actions/pet_actions';
+
+import {
+  RECEIVE_USER_LOGOUT
+} from '../../actions/session_actions';
 
 const petsReducer = (state = {}, action) => {
   Object.freeze(state);
-
+  let newState = Object.assign({}, state);
   switch (action.type) {
     case RECEIVE_PETS:
       return action.pets;
-    case RECEIVE_USER_PETS:
-      return action.userPets;
-    case RECEIVE_PET:
-      let newState = Object.assign({}, state);
-      let petLength = newState.data.length || 1;
-      newState.data[petLength] = action.pet.data;
-      return newState; 
+    case RECEIVE_USER_LOGOUT:
+      return {};
     default:
       return state;
   }
