@@ -18,17 +18,17 @@ class Connections extends React.Component {
   }
 
   render() {
-    console.log(this.props.petFriend)
+    // console.log(this.props);
 
-    if (!this.props.petFriend) {
-      return null
+    let pet = this.props.petFriend[this.props.index];
+    if (!pet) {
+      return null;
     }
-    // return null
-    console.log('fesf')
+    
     return (
       <div>
-        {/* <li>{this.props.petFriend}</li>
-        <button onClick={this.handleDelete}>DELETE</button> */}
+        <li>{pet.data.name}</li>
+        <button onClick={this.handleDelete}>DELETE</button>
       </div>
     )
   }
