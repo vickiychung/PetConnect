@@ -40,9 +40,7 @@ class PickPet extends React.Component {
           {
             pets.map((pet, index) => (
               <PickPetItem 
-                key={index} pet={pet} 
-                fetchCurrentPet={this.props.fetchCurrentPet} 
-                
+                key={index} pet={pet}                
               /> 
             ))
           }

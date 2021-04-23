@@ -10,7 +10,7 @@ class PickPetItem extends React.Component {
       
       <li className="pet-list-element">
         <Link to={`/feed/${this.props.pet._id}`}>
-          <div className="pet-individual" onClick={() => this.props.fetchCurrentPet(this.props.pet._id)}>
+          <div className="pet-individual" >
             <div className="pet-icon" >
               {
                 this.props.pet.photoUrl ? <img src={this.props.pet.photoUrl} />
