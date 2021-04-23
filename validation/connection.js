@@ -1,7 +1,11 @@
-// const Validator = require("validator");
+const Validator = require("validator");
+const validText = require('./valid-text')
 
-// module.exports = function(data) {
-//   let errors = {};
+module.exports = function(data) {
+  let errors = {};
+
+  data.pet1 = validText(data.pet1) ? data.pet1 : '';
+  data.pet2 = validText(data.pet2) ? data.pet2 : '';
 
 
 //   if (!Validator.equals(str, comparison)) {
@@ -20,4 +24,4 @@
 //     errors,
 //     isValid: Object.keys(errors).length === 0
 //   }
-// }
+}
