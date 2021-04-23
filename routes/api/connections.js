@@ -5,6 +5,17 @@ const passport = require('passport');
 
 const Connection = require('../../models/Connection');
 
+router.get('/:id',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Connection.find({ $or: [{pet1: req.params.id},{pet2: req.params.id}] })
+      .then(connectRequest => res.json(connectRequest))
+      .catch(err =>
+        res.status(404).json({ noconnectionsfound: 'No connections found for this pet' })
+      )
+  }
+);
+
 router.post('/',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
