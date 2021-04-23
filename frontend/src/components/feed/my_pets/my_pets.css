@@ -9,6 +9,8 @@
   padding-left: 10px;
   width: fit-content;
   border-radius: 5px;
+  height: 85vh;
+  margin-bottom: 20px;
 }
 
 .profile-pic-wrapper {
@@ -36,7 +38,7 @@
   align-items: center;
   justify-content: center;
   width: 400px;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 .my-pet-name {
@@ -71,6 +73,7 @@
 
 .my-pet-details-list li:last-of-type {
   text-transform: none;
+  margin-bottom: 0px;
 }
 
 .my-pet-details-list li label{
