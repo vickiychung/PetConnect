@@ -65,12 +65,14 @@ class ConnectionRequests extends React.Component {
     // console.log(this.props.state)
     return (
       
-      <li>
+      <li className="connect-item">
         {/* {this.props.state.entities.connectionRequests.friendData.data.name} */}
         {this.props.requesterId} 
-        <button onClick={this.acceptConnection}>ACCEPT</button>
-        <button onClick={this.declineConnection}>DECLINE</button>
 
+        <div className="connect-button-wrapper">
+          <button className="connect-button" onClick={this.acceptConnection}>ACCEPT</button>
+          <button className="connect-button" onClick={this.declineConnection}>DECLINE</button>
+        </div>
       </li>
     )
   }
