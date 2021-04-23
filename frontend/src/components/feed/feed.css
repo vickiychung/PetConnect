@@ -13,13 +13,12 @@
 
 .feed-main-wrapper {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   width: 100%;
   height: 91vh;
 
   position: absolute;
   top: 9vh;
-  right: 0;
   margin-top: 15px;
 }
 
@@ -29,7 +28,7 @@
   justify-content: flex-start;
   align-items: center;
   margin-left: 10px;
-  margin-right: 10px;
+  /* margin-right: 10px; */
   margin-bottom: 25px;
 }
 
@@ -96,21 +95,22 @@
 }
 
 .connections-container {
-  background-color: pink;
+  /* background-color: pink; */
+  font-size: 14px;
+  font-weight: 600;
   width: 15%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  position: absolute;
-  right: 10px;
   padding-right: 10px;
   padding-left: 10px;
-  font-size: 14px;
-  font-weight: 600;
+  margin-right: 10px;
+  margin-bottom: 25px;
 }
 
 .connections-req-wrapper {
+  background-color: pink;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -118,6 +118,7 @@
 }
 
 .connections-wrapper {
+  background-color: plum;
   display: flex;
   flex-direction: column;
   align-items: center;
