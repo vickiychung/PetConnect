@@ -11,6 +11,7 @@
   border-radius: 5px;
   height: 85vh;
   margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .profile-pic-wrapper {
@@ -46,6 +47,7 @@
   align-items: center;
   justify-content: center;
   width: 400px;
+  
 }
 
 .my-pet-name {
@@ -95,6 +97,8 @@
   border: 0px solid rgb(221,255,204);
   outline: none;
   width: 100%;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .my-pet-details:focus {
