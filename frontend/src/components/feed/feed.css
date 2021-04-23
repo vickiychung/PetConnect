@@ -20,7 +20,8 @@
   position: absolute;
   top: 9vh;
   margin-top: 15px;
-  padding-left: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .feed-lists-wrapper {
@@ -96,14 +97,13 @@
 }
 
 .connections-container {
-  /* background-color: pink; */
   font-size: 14px;
   font-weight: 600;
   width: 15%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
   padding-right: 10px;
   padding-left: 10px;
   margin-right: 10px;
@@ -112,24 +112,32 @@
 
 .connections-req-wrapper {
   background-color: pink;
+  color: teal;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: teal;
+  padding-left: 10px;
+  padding-right: 15px;
+  margin-bottom: 30px;
 }
 
 .connections-wrapper {
   background-color: plum;
+  color: teal;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: teal;
+  padding-left: 10px;
+  padding-right: 15px;
 }
 
 .connect-item {
   font-weight: 400;
   margin-top: 10px;
   margin-bottom: 10px;
+  color: black;
 }
 
 .connect-button-wrapper {

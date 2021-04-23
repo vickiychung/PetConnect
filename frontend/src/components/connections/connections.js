@@ -26,10 +26,13 @@ class Connections extends React.Component {
     }
     
     return (
-      <div>
-        <li>{pet.data.name}</li>
-        <button onClick={this.handleDelete}>DELETE</button>
-      </div>
+      <li className="connect-item">
+        {pet.data.name}
+        
+        <div className="connect-button-wrapper">
+          <button onClick={this.handleDelete}>DELETE</button>
+        </div>
+      </li>
     )
   }
 }
