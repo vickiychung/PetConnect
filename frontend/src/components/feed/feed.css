@@ -7,10 +7,10 @@
   align-items: center;
   justify-content: center;
   
-  margin-top: -20px;
+  /* margin-top: -20px;
   margin-left: -5vw;
   margin-right: -5vw;
-  padding: 0 0;
+  padding: 0 0; */
 }
 
 .navbar-container {
@@ -18,31 +18,38 @@
 }
 
 .feed-main-wrapper {
+  background-color: thistle;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
-  height: 90vh;
+  height: 91vh;
 
   position: absolute;
   top: 9vh;
-  right: 0;
+  margin: 0;
 }
 
 .feed-lists-wrapper {
+  background-color: teal;
   width: 50%;
+  /* height: 80%; */
   display: flex;
-  padding: 50px;
+  justify-content: flex-start;
+  align-items: center;
+  /* padding: 50px; */
 }
 
 .pets-shelter-list {
-  height: 90vh;
-  width: 550px;
+  height: 91vh;
+  width: 50%;
+  /* width: 550px; */
   /* border: 5px solid darkblue; */
   /* border: 3px solid #30D8F0; */
   border-radius: 10px;
-  background-color: #EEFCFF;
-  min-height: 500px;
-  display: inline-block;
+  /* background-color: #EEFCFF; */
+  background-color: sandybrown;
+  /* min-height: 500px; */
+  /* display: inline-block; */
   box-shadow: inset 0 -3em 3em rgb(0 0 0 / 10%), 0 0 0 2px #ffffff, 0.3em 0.3em 1em #047e90;
 }
 
