@@ -46,6 +46,10 @@
   color: rgba(20, 26, 24, 0.726);
 }
 
+.dd-pet-name:hover, .dd-logout:hover, .dd-my-pet:hover {
+  font-weight: bold;
+}
+
 .dd-logout {
   cursor: pointer;
   margin-top: 10px;
