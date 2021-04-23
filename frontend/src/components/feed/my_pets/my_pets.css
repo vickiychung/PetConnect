@@ -59,12 +59,11 @@
 }
 
 .my-pet-details-list {
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0px;
-  padding-left: 30px;
   margin-top: 0px;
 }
 
@@ -87,4 +86,25 @@
   margin-right: 10px;
   text-transform: uppercase;
   font-weight: 600;
+}
+
+
+.my-pet-details {
+  background-color: rgb(221,255,204);
+  border-radius: 5px;
+  border: 0px solid rgb(221,255,204);
+  outline: none;
+  width: 100%;
+}
+
+.my-pet-details:focus {
+  border: 1px solid rgb(106, 255, 48);
+  background-color: rgb(201, 255, 180);
+  transition: all 700ms ease;
+}
+
+.my-pet-details::-webkit-outer-spin-button,
+.my-pet-details::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
