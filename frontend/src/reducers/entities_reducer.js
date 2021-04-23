@@ -6,6 +6,7 @@ import showPetReducer from './pets/show_pet_reducer';
 import connectionRequestsReducer from './connection_requests_reducer';
 import connectionsReducer from './connections_reducer';
 import userPetsReducer from './pets/user_pets_reducer'
+import connectionPetReducer from './pets/connection_pets_reducer';
 
 const entitiesReducer = combineReducers({
   pets: petsReducer,
@@ -13,7 +14,8 @@ const entitiesReducer = combineReducers({
   selectedPet: showPetReducer,
   connectionRequests: connectionRequestsReducer,
   connections: connectionsReducer,
-  userPets: userPetsReducer
+  userPets: userPetsReducer,
+  friendPets: connectionPetReducer
 });
 
 export default entitiesReducer;
