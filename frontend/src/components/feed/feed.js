@@ -50,7 +50,7 @@ class Feed extends React.Component {
       return null
     }
 
-    console.log(this.props.connections)
+    // console.log(this.props.connections)
   let currentPet = null
     this.props.pets.forEach(pet => {
     if (pet._id === this.props.currentPetId) {
@@ -60,7 +60,7 @@ class Feed extends React.Component {
   // console.log(currentPet)
   // console.log(this.props.connectionRequests)
   const pet = this.props.pets.find(pet => pet._id === this.state.currentPetId);
-
+  // console.log(this.props)
 
   // const filterByZip = () => {
   //   return (
@@ -348,7 +348,7 @@ class Feed extends React.Component {
           </ul>
           <ul> Connections
             {this.props.connections.map(connection => {
-              // console.log(connection)
+              console.log(connection)
               return <Connections key={connection._id} deleteConnection={this.props.deleteConnection} connection={connection.pet} connectionId={connection._id}/>
             })}
           </ul>
