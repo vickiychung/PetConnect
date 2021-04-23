@@ -8,9 +8,9 @@ const receiveConnections = connections => ({
   connections
 });
 
-const removeConnection = connectionId => ({
+const removeConnection = connection => ({
   type: REMOVE_CONNECTION,
-  connectionId
+  connection
 })
 
 export const fetchConnections = currentPetId => dispatch => {
@@ -20,6 +20,6 @@ export const fetchConnections = currentPetId => dispatch => {
 
 export const deleteConnection = connectionId => dispatch => {
   return ConnectionApiUtil.deleteConnection(connectionId)
-  .then(() => dispatch(removeConnection()))
+  .then((connection) => dispatch(removeConnection(connection)))
 }
 

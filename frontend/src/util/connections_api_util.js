@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 export const fetchConnections = (currentPetId) => {
-  return axios.get(`/api/requests/${currentPetId}`)
+  return axios.get(`/api/connections/${currentPetId}`)
 }
 
-export const deleteConnection = () => {
-  return axios.delete('/api/requests')
+export const deleteConnection = (id) => {
+  return axios.delete('/api/connections', id)
 }

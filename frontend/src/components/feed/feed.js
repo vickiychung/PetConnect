@@ -74,7 +74,8 @@ class Feed extends React.Component {
   // console.log(this.props.connectionRequests)
   const pet = this.props.pets.find(pet => pet._id === this.state.currentPetId);
   // console.log(this.props)
-
+  
+  console.log(currentPet)
   // const filterByZip = () => {
   //   return (
   //     <ul>
@@ -339,9 +340,13 @@ class Feed extends React.Component {
             })}
           </ul>
           <ul> Connections
-            {this.props.connections.map(connection => {
-              console.log(connection)
-              return <Connections key={connection._id} deleteConnection={this.props.deleteConnection} connection={connection.pet} connectionId={connection._id}/>
+            {this.props.connections.map((connection, i) => {
+              // console.log('this is a connection', connection)
+              if (connection.pet1 === currentPet._id) {
+                return <Connections key={connection._id} index={i} deleteConnection={this.props.deleteConnection} goGetPet={this.props.goGetPet} friend={connection.pet2} connectionId={connection._id}/>
+              } else if (connection.pet2 === currentPet._id) {
+                return <Connections key={connection._id} index={i} deleteConnection={this.props.deleteConnection} goGetPet={this.props.goGetPet} friend={connection.pet1} connectionId={connection._id}/>
+              }
             })}
           </ul>
         </div>
