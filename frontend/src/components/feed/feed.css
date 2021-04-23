@@ -23,7 +23,7 @@
 }
 
 .feed-lists-wrapper {
-  width: 60%;
+  width: 55%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -92,4 +92,30 @@
   width: 20%;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.connections-container {
+  background-color: pink;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  right: 10px;
+  /* padding-right: 10px; */
+  /* padding-left: 0px;
+  margin-left: 0px; */
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.connections-req-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.connections-wrapper {
+  display: flex;
+  justify-content: flex-end;
 }

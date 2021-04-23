@@ -281,8 +281,8 @@ class Feed extends React.Component {
             <MyPetsContainer currentPet={currentPet}/>
           </div>
         
-          <div>
-            <ul> Connection Requests
+          <div className="connections-container">
+            <ul className="connections-req-wrapper">NEW REQUESTS
               {this.props.connectionRequests.map(request => {
             
                 return <ConnectionRequests key={request._id}
@@ -297,7 +297,7 @@ class Feed extends React.Component {
               })}
             </ul>
 
-            <ul> Connections
+            <ul className="connections-wrapper">CONNECTIONS
               {this.props.connections.map(connection => {
                 // console.log(connection)
                 return <Connections key={connection._id} deleteConnection={this.props.deleteConnection} connection={connection.pet} connectionId={connection._id}/>
