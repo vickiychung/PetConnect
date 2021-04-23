@@ -276,8 +276,8 @@ class Feed extends React.Component {
                   this.props.selectedPet ? 
                   <ul className="selected-pet-details-list">
                     <li>
-                      <label>name: </label>
-                      {this.props.selectedPet.name}
+                      {/* <label>name: </label> */}
+                      <h1 className='selected-pet-name'>{this.props.selectedPet.name}</h1>
                     </li>
 
                     <li>

@@ -16,7 +16,7 @@ class PetsNearYou extends React.Component {
   }
 
   // componentDidMount() {
-  //   this.props.fetchUsers()
+  //   this.props.fetchAllConnections()
   // }
 
   petsNearYou() {
@@ -63,13 +63,16 @@ class PetsNearYou extends React.Component {
       return false
     }
 
+
     let showPet = () => {
+      console.log(this.props)
       return (
         <li onClick={this.handleClick} className="pets-near-item">
           {/* <Link className="pets-near-index-redirect" to="/feed" > */}
             <div className="pets-near-name">
-              <span>
-                {this.props.pet.name} <button onClick={this.sendConnectionRequest}>CONNECT</button>
+              <span className='pets-near-name-container'>
+                {this.props.pet.name}
+                <button className='pets-connect-button' onClick={this.sendConnectionRequest}>CONNECT</button>
               </span>
             </div>
            
