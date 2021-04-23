@@ -167,7 +167,9 @@
   color: rgb(77, 76, 76);
   font-size: 14px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .connection-item {
