@@ -22,45 +22,6 @@
   margin-top: 15px;
 }
 
-
-.tabs-wrapper {
-  display: flex;
-  position: absolute;
-  height: 30px;
-}
-
-.tabs {
-  height: 50px;
-  width: 350px;
-  padding-top: 10px;
-  border-radius: 10px;
-  display: flex;
-}
-
-.tabs-1 {
-  display: flex;
-  width: 120px;
-  height: inherit;
-  padding: 5px;
-} 
-
-
-.tabs-2 {
-  width: inherit;
-  border-radius: 8px;
-  background-color: white;
-  font-weight: 600;
-  color: darkblue;
-  border-color: #00B9D3;
-  outline: none;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.tabs-2:hover {
-  background-color: skyblue;
-}
-
 .feed-lists-wrapper {
   width: 60%;
   display: flex;

@@ -176,85 +176,88 @@ class Feed extends React.Component {
 
         <div className="feed-main-wrapper">
 
-          <div className="tabs-wrapper">
-            <div className="tabs">
-              <div className="tabs-1">
-                <button onClick={this.handleZip} className="tabs-2">Location</button>
+          <div className="feed-lists-wrapper">
+
+            <div className="pets-near-you-list">
+              
+               <div className="tabs-wrapper">
+                <div className="tabs">
+                  <div className="tabs-1">
+                    <button onClick={this.handleZip} className="tabs-2">Location</button>
+                  </div>
+
+                  <div className="tabs-1">
+                    <button onClick={this.handleShelter} className="tabs-2">Shelter</button>
+                  </div>
+
+                  <div className="tabs-1">
+                    <button onClick={this.handleSpecies} className="tabs-2">Species</button>
+                  </div>
+                </div>
               </div>
 
-              <div className="tabs-1">
-                <button onClick={this.handleShelter} className="tabs-2">Shelter</button>
-              </div>
+              <ul>
+                {toggle()}
+              </ul>
+            </div>
 
-              <div className="tabs-1">
-                <button onClick={this.handleSpecies} className="tabs-2">Species</button>
+            <div className="pets-shelter-list">
+              <div className="selected-pet-wrap">
+                {profilePhoto}
+
+                {
+                  this.props.selectedPet ? 
+                  <ul className="selected-pet-details-list">
+                    <li>
+                      <label>name: </label>
+                      {this.props.selectedPet.name}
+                    </li>
+
+                    <li>
+                      <label>species: </label>
+                      {this.props.selectedPet.species}
+                    </li>
+
+                    <li>
+                      <label>breed: </label>
+                      {this.props.selectedPet.breed}
+                    </li>
+
+                    <li>
+                      <label>size: </label>
+                      {this.props.selectedPet.size}
+                    </li>
+
+                    <li>
+                      <label>gender: </label>
+                      {this.props.selectedPet.gender}
+                    </li>
+
+                    <li>
+                      <label>age: </label>
+                      {this.props.selectedPet.age}
+                    </li>
+
+                    <li>
+                      <label>personality: </label>
+                      {this.props.selectedPet.personality}
+                    </li>
+
+                    <li>
+                      <label>shelter: </label>
+                      {this.props.selectedPet.shelter}
+                    </li>
+                  </ul> : null
+                } 
               </div>
             </div>
-          </div>
-
-        <div className="feed-lists-wrapper">
-          <div className="pets-near-you-list">
-            <ul>
-              {toggle()}
-            </ul>
-          </div>
-
-          <div className="pets-shelter-list">
-            <div className="selected-pet-wrap">
-              {profilePhoto}
-
-              {
-                this.props.selectedPet ? 
-                <ul className="selected-pet-details-list">
-                  <li>
-                    <label>name: </label>
-                    {this.props.selectedPet.name}
-                  </li>
-
-                   <li>
-                    <label>species: </label>
-                    {this.props.selectedPet.species}
-                  </li>
-
-                   <li>
-                    <label>breed: </label>
-                    {this.props.selectedPet.breed}
-                  </li>
-
-                   <li>
-                    <label>size: </label>
-                    {this.props.selectedPet.size}
-                  </li>
-
-                   <li>
-                    <label>gender: </label>
-                    {this.props.selectedPet.gender}
-                  </li>
-
-                   <li>
-                    <label>age: </label>
-                    {this.props.selectedPet.age}
-                  </li>
-
-                   <li>
-                    <label>personality: </label>
-                    {this.props.selectedPet.personality}
-                  </li>
-
-                   <li>
-                    <label>shelter: </label>
-                    {this.props.selectedPet.shelter}
-                  </li>
-                </ul> : null
-              } 
-            </div>
-          </div>
         </div>
     
         <div className="my-pets-container">
           <MyPetsContainer currentPet={currentPet}/>
         </div>
       </div>
+
     </div>
     )
   }
