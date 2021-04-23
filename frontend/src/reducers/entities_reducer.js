@@ -4,12 +4,14 @@ import petsReducer from './pets/pets_reducer';
 import usersReducer from './users_reducer';
 import showPetReducer from './pets/show_pet_reducer';
 import connectionRequestsReducer from './connection_requests_reducer';
+import connectionsReducer from './connections_reducer';
 
 const entitiesReducer = combineReducers({
   pets: petsReducer,
   users: usersReducer,
   selectedPet: showPetReducer,
-  connectionRequests: connectionRequestsReducer
+  connectionRequests: connectionRequestsReducer,
+  connections: connectionsReducer
 });
 
 export default entitiesReducer;

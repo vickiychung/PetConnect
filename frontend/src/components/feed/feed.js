@@ -7,6 +7,7 @@ import MyPetsContainer from './my_pets/my_pets_container';
 import pic from '../session/login_signup/background.jpg'
 import ConnectionRequests from '../connections/connection_requests';
 import { goGetPet } from '../../actions/pet_actions';
+import Connections from '../connections/connections';
 
 class Feed extends React.Component {
 
@@ -29,6 +30,7 @@ class Feed extends React.Component {
     this.props.fetchPets()
     this.props.fetchUsers()
     this.props.fetchConnectionRequests(this.props.currentPetId)
+    this.props.fetchConnections(this.props.currentPetId)
   }
 
   handleSpecies() {
@@ -44,9 +46,11 @@ class Feed extends React.Component {
   }
 
   render() {
-    if (!Array.isArray(this.props.pets) || !this.props.currentUser || !Array.isArray(this.props.users) || !this.props.connectionRequests) {
+    if (!Array.isArray(this.props.pets) || !this.props.currentUser || !Array.isArray(this.props.users) || !this.props.connectionRequests || !this.props.connections) {
       return null
     }
+
+    console.log(this.props.connections)
   let currentPet = null
     this.props.pets.forEach(pet => {
     if (pet._id === this.props.currentPetId) {
@@ -57,7 +61,6 @@ class Feed extends React.Component {
   // console.log(this.props.connectionRequests)
   const pet = this.props.pets.find(pet => pet._id === this.state.currentPetId);
 
-  console.log(this.props.connectionRequests)
 
   // const filterByZip = () => {
   //   return (
@@ -341,6 +344,12 @@ class Feed extends React.Component {
                       requestId={request._id}
                       history={this.props.history}
                        />
+            })}
+          </ul>
+          <ul> Connections
+            {this.props.connections.map(connection => {
+              // console.log(connection)
+              return <Connections key={connection._id} deleteConnection={this.props.deleteConnection} connection={connection.pet} connectionId={connection._id}/>
             })}
           </ul>
         </div>

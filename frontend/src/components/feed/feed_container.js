@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
-import Feed from './feed'
-import { goGetPet, fetchPet, fetchPets, fetchUserPets } from '../../actions/pet_actions'
-import { fetchUser, fetchUsers } from '../../actions/user_actions'
+import Feed from './feed';
+import { goGetPet, fetchPet, fetchPets, fetchUserPets } from '../../actions/pet_actions';
+import { fetchUser, fetchUsers } from '../../actions/user_actions';
+import { fetchConnections, deleteConnection } from '../../actions/connection_actions';
 import {
   fetchConnectionRequests,
   createConnectionRequest,
@@ -19,7 +20,8 @@ const mSTP = (state, ownProps) => ({
   currentPet: state.petProfile.pet.data,
   currentPetId: ownProps.match.params.petId,
   selectedPet: state.entities.selectedPet.data,
-  connectionRequests: state.entities.connectionRequests.data
+  connectionRequests: state.entities.connectionRequests.data,
+  connections: state.entities.connections.data
 });
 
 const mDTP = dispatch => ({
@@ -31,7 +33,9 @@ const mDTP = dispatch => ({
   fetchUsers: () => dispatch(fetchUsers()),
   fetchConnectionRequests: friendId => dispatch(fetchConnectionRequests(friendId)),
   createConnectionRequest: request => dispatch(createConnectionRequest(request)),
-  acceptConnectionRequest: data => dispatch(acceptConnectionRequest(data))
+  acceptConnectionRequest: data => dispatch(acceptConnectionRequest(data)),
+  fetchConnections: currentPetId => dispatch(fetchConnections(currentPetId)),
+  deleteConnection: connectionId => dispatch(deleteConnection(connectionId))
 });
 
 export default connect(mSTP, mDTP)(Feed)
