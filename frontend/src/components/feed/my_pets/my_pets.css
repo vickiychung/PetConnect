@@ -1,5 +1,7 @@
 .my-pets-wrapper {
   background-color: rgb(221,255,204);
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px rgb(151,194,185), 0.1em 0.1em 0.5em rgb(151,194,185);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -12,6 +14,7 @@
   height: 85vh;
   margin-bottom: 20px;
   font-family: 'Montserrat', sans-serif;
+  overflow-y: scroll;
 }
 
 .profile-pic-wrapper {
@@ -27,8 +30,7 @@
   max-height: 400px;
   border-radius: 5px;
   border: 5px double white;
-  box-shadow: 0 0 0 5px rgb(151,194,185);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .profile-pic-default {
@@ -47,7 +49,6 @@
   align-items: center;
   justify-content: center;
   width: 400px;
-  
 }
 
 .my-pet-name {
@@ -57,15 +58,15 @@
   flex-direction: row;
   justify-content: center;
   margin-top: 0px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .my-pet-details-list {
-  width: 80%;
+  width: 95%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px;
+  padding-left: 20px;
   margin-top: 0px;
 }
 
@@ -88,10 +89,12 @@
   margin-right: 10px;
   text-transform: uppercase;
   font-weight: 600;
+  font-size: 14px;
 }
 
 
 .my-pet-details {
+  font-family: 'Montserrat', sans-serif;
   background-color: rgb(221,255,204);
   border-radius: 5px;
   border: 0px solid rgb(221,255,204);

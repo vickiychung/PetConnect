@@ -13,13 +13,15 @@
 
 .feed-main-wrapper {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   width: 100%;
   height: 91vh;
 
   position: absolute;
   top: 9vh;
   margin-top: 15px;
+  padding-left: 30px;
+  padding-right: 20px;
 }
 
 .feed-lists-wrapper {
@@ -27,15 +29,14 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 25px;
 }
 
 .pets-shelter-list {
   background-color: rgb(241, 221, 197);
-  /* width: 50%; */
-  width: 420px;
+  width: 50%;
+  overflow-y: scroll;
   height: 88vh;
   border: 1.5px solid rgb(202,168,130);
   border-radius: 10px;
@@ -48,50 +49,45 @@
   padding-right: 5px;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
+  align-items: center;
 }
 
 .selected-pet-img {
-  /* width: 100%; */
-  /* max-width: 355px; */
-  width: 365px;
-  /* max-height: 400px; */
-  height: 390px;
+  width: 100%;
+  max-width: 365px;
+  max-height: 390px;
   border-radius: 5px;
   border: 5px double white;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .selected-pet-details-list {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
+  align-items: flex-start;
+  justify-content: center;
   padding: 10px;
   padding-top: 0px;
   margin-top: 0px;
-  margin-left: 20px;
-  width: 320px;
+  width: 75%;
 }
 
 .selected-pet-name {
   font-weight: 600;
   font-size: 30px;
-  /* display: flex; */
-  /* flex-direction: row;
-  justify-content: center; */
   margin-top: 0px;
   margin-bottom: 10px;
   margin: auto;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .selected-pet-details-list li {
   width: 100%;
   display: flex;
   flex-direction: row;
-  /* justify-content: flex-start;
-  align-items: center; */
+  justify-content: flex-start;
+  align-items: center;
   margin-bottom: 10px;
   text-transform: lowercase;
 }
@@ -107,59 +103,105 @@
 }
 
 .my-pets-container {
-  width: 20%;
   margin-left: 10px;
   margin-right: 10px;
 }
 
 .connections-container {
+  font-size: 14px;
+  font-weight: 600;
   width: 15%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  position: absolute;
-  right: 10px;
+  justify-content: flex-start;
   padding-right: 10px;
   padding-left: 10px;
-  font-size: 14px;
-  font-weight: 600;
+  margin-right: 10px;
+  margin-bottom: 25px;
 }
 
 .connections-req-wrapper {
+  background-color: rgb(250, 212, 229);
+  color: rgb(161, 119, 138);
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px rgb(223, 161, 189), 0.1em 0.1em 0.5em rgb(223, 161, 189);
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: teal;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 15px;
+  margin-bottom: 30px;
+  font-size: 16px;
 }
 
 .connections-wrapper {
+  background-color: rgb(247, 216, 247);
+  color: rgb(161, 119, 138);
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px rgb(199, 164, 180), 0.1em 0.1em 0.5em rgb(199, 164, 180);
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: teal;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 15px;
+  font-size: 16px;
 }
 
 .connect-item {
-  font-weight: 400;
   margin-top: 10px;
   margin-bottom: 10px;
+  color: rgb(77, 76, 76);
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.connection-item {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: rgb(77, 76, 76);
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.connect-item:first-child, .connection-item:first-child {
+  margin-top: 25px;
 }
 
 .connect-button-wrapper {
-  margin-top: 8px;
+  margin-top: 15px;
   display: flex;
   justify-content: center;
 }
 
-.connect-button-wrapper button:first-child {
-  margin-right: 10px;
-}
-
 .connect-button {
   border-radius: 5px;
-  border: 2.5px solid rgb(151,194,185);
-  background-color: rgb(221,255,204);
-  color: teal;
+  border: 2px solid rgb(161, 119, 138);
+  background-color: rgb(243, 230, 236);
+  color: rgb(161, 119, 138);
   cursor: pointer;
+  font-weight: 600;
+  padding: 5px 5px;
+}
+
+.connection-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-left: 15px;
+}
+
+.connect-button-wrapper button:first-child {
+  margin-right: 10px;
 }
