@@ -17,6 +17,14 @@ router.get('/:id',
   }
 );
 
+router.get('/', (req, res) => {
+  passport.authenticate('jwt', { session: false }),
+  ConnectionRequest.find()
+      .sort({ date: -1 })
+      .then(connectionRequests => res.json(connectionRequests))
+      .catch(err => res.status(404).json({ noconnectionsrequestsfound: 'No connection requests found' }));
+});
+
 router.post('/',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {

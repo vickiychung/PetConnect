@@ -11,3 +11,7 @@ export const createConnectionRequest = (data) => {
 export const acceptConnectionRequest = (data) => {
   return axios.patch('/api/requests', data)
 }
+
+export const fetchAllConnectionRequests = () => {
+  return axios.get('/api/requests')
+}
