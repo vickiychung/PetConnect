@@ -14,6 +14,7 @@
   height: 85vh;
   margin-bottom: 20px;
   font-family: 'Montserrat', sans-serif;
+  overflow-y: scroll;
 }
 
 .profile-pic-wrapper {
@@ -48,7 +49,6 @@
   align-items: center;
   justify-content: center;
   width: 400px;
-  overflow-y: scroll;
 }
 
 .my-pet-name {
