@@ -100,6 +100,14 @@
   border-radius: 5px;
 }
 
+.pets-near-photo-default {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 70px;
+  color: rgb(255, 142, 138);
+}
+
 .pets-near-name {
   color: rgb(90, 75, 58);
   font-weight: 600;

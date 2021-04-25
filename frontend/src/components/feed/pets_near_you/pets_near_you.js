@@ -73,7 +73,7 @@ class PetsNearYou extends React.Component {
         alt="profile-photo" 
       /> 
     } else {
-      profilePhoto = <div>
+      profilePhoto = <div className="pets-near-photo-default">
         <FontAwesomeIcon icon={faPaw} />
       </div>
     }

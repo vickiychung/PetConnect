@@ -36,8 +36,8 @@
 
 .pets-shelter-list {
   background-color: rgb(241, 221, 197);
-  /* width: 50%; */
-  width: 420px;
+  width: 50%;
+  /* width: 420px; */
   height: 88vh;
   border: 1.5px solid rgb(202,168,130);
   border-radius: 10px;
@@ -50,7 +50,7 @@
   padding-right: 5px;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
+  align-items: center;
 }
 
 .selected-pet-img {
@@ -61,7 +61,7 @@
   height: 390px;
   border-radius: 5px;
   border: 5px double white;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .selected-pet-details-list {
