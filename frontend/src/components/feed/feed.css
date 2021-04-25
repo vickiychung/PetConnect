@@ -20,7 +20,7 @@
   position: absolute;
   top: 9vh;
   margin-top: 15px;
-  padding-left: 20px;
+  padding-left: 30px;
   padding-right: 20px;
 }
 
@@ -37,7 +37,7 @@
 .pets-shelter-list {
   background-color: rgb(241, 221, 197);
   width: 50%;
-  /* width: 420px; */
+  overflow-y: scroll;
   height: 88vh;
   border: 1.5px solid rgb(202,168,130);
   border-radius: 10px;
@@ -67,13 +67,14 @@
 .selected-pet-details-list {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
+  align-items: flex-start;
+  justify-content: center;
   padding: 10px;
   padding-top: 0px;
   margin-top: 0px;
-  margin-left: 20px;
-  width: 320px;
+  /* margin-left: 20px; */
+  /* width: 320px; */
+  width: 75%;
 }
 
 .selected-pet-name {
@@ -86,14 +87,15 @@
   margin-bottom: 10px;
   margin: auto;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .selected-pet-details-list li {
   width: 100%;
   display: flex;
   flex-direction: row;
-  /* justify-content: flex-start;
-  align-items: center; */
+  justify-content: flex-start;
+  align-items: center;
   margin-bottom: 10px;
   text-transform: lowercase;
 }
