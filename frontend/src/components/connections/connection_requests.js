@@ -58,7 +58,7 @@ class ConnectionRequests extends React.Component {
     // console.log(this.props)
 
     let pet = this.props.requestPets[this.props.index];
-    if (!pet) {
+    if (!pet || !pet.data) {
       return null;
     }
     // console.log(pet)
