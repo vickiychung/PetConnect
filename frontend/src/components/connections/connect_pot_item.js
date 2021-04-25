@@ -1,18 +1,18 @@
-import React from 'react';
+// import React from 'react';
 
-class ConnectPotItem extends React.Component {
-
-
-  render() {
-    return (
-      <li>
-        <span>
-          {this.props.pet.name}
-        </span>
-      </li>
-    )
-  }
-}
+// class ConnectPotItem extends React.Component {
 
 
-export default ConnectPotItem;
+//   render() {
+//     return (
+//       <li>
+//         <span>
+//           {this.props.pet.name}
+//         </span>
+//       </li>
+//     )
+//   }
+// }
+
+
+// export default ConnectPotItem;

@@ -1,43 +1,43 @@
-import React from 'react';
-import ConnectPotItem from './connect_pot_item';
+// import React from 'react';
+// import ConnectPotItem from './connect_pot_item';
 
-class ConnectPot extends React.Component {
-  constructor(props) {
-    super(props);
+// class ConnectPot extends React.Component {
+//   constructor(props) {
+//     super(props);
 
-    this.state = {
-      pets: []
-    }
-  }
+//     this.state = {
+//       pets: []
+//     }
+//   }
 
-  componentDidMount() {
-    this.props.fetchPets();
-  }
+//   componentDidMount() {
+//     this.props.fetchPets();
+//   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.pets !== this.props.pets) {
-      this.setState({pets: this.props.pets})
-    }
-  }
+//   componentDidUpdate(prevProps) {
+//     if (prevProps.pets !== this.props.pets) {
+//       this.setState({pets: this.props.pets})
+//     }
+//   }
 
-  render() {
-    let pets = this.state.pets;
-    if (typeof pets === "object") {
-      pets = Object.values(this.state.pets);
-    }
+//   render() {
+//     let pets = this.state.pets;
+//     if (typeof pets === "object") {
+//       pets = Object.values(this.state.pets);
+//     }
 
-    return (
-      <div>
-        <ul>
-          {
-            pets.map((pet, index) => (
-              <ConnectPotItem key={index} pet={pet} /> 
-            ))
-          }
-        </ul>
-      </div>
-    )
-  };
-};
+//     return (
+//       <div>
+//         <ul>
+//           {
+//             pets.map((pet, index) => (
+//               <ConnectPotItem key={index} pet={pet} /> 
+//             ))
+//           }
+//         </ul>
+//       </div>
+//     )
+//   };
+// };
 
-export default ConnectPot;
+// export default ConnectPot;

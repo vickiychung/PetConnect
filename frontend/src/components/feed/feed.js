@@ -6,7 +6,6 @@ import PetsNearYouContainer from './pets_near_you/pets_near_you_container'
 import MyPetsContainer from './my_pets/my_pets_container';
 import pic from '../session/login_signup/background.jpg'
 import ConnectionRequests from '../connections/connection_requests_container';
-import { goGetPet } from '../../actions/pet_actions';
 import Connections from '../connections/connection_container';
 
 class Feed extends React.Component {
@@ -29,8 +28,8 @@ class Feed extends React.Component {
   componentDidMount() {
     this.props.fetchPets()
     this.props.fetchUsers()
-    this.props.fetchConnectionRequests(this.props.currentPetId)
-    this.props.fetchConnections(this.props.currentPetId)
+    // this.props.fetchConnectionRequests(this.props.currentPetId)
+    // this.props.fetchConnections(this.props.currentPetId)
     this.props.fetchCurrentPet(this.props.currentPetId)
   }
 
@@ -57,62 +56,20 @@ class Feed extends React.Component {
     if (!Array.isArray(this.props.pets) || 
         !this.props.currentUser || 
         !Array.isArray(this.props.users) || 
-        !this.props.connectionRequests || 
-        !this.props.connections || 
+        // !this.props.connectionRequests || 
+        // !this.props.connections || 
         !currentPet) {
       return null
     }
 
-    // console.log(this.props.connections)
-  // let currentPet = null
     this.props.pets.forEach(pet => {
     if (pet._id === this.props.currentPetId) {
       currentPet = pet
     }
   })
-  // console.log(currentPet)
-  // console.log(this.props.connectionRequests)
+
   const pet = this.props.pets.find(pet => pet._id === this.state.currentPetId);
-  // console.log(this.props)
-  
-  // console.log(currentPet)
-  // const filterByZip = () => {
-  //   return (
-  //     <ul>
-  //       {nearMatches.map(pet => (
-  //         <PetsNearYouContainer key={pet._id} currentPet={currentPet} pet={pet} createConnectionRequest={this.props.createConnectionRequest}/>
-  //       ))}
-  //     </ul>
-  //   )
-  // }
-  
-  // const filterByShelter = () => {
-  //   return (
-  //     <ul>
-  //       {shelterMatches.map(pet => (
-  //         <PetsNearYouContainer key={pet._id} currentPet={currentPet} pet={pet} createConnectionRequest={this.props.createConnectionRequest}/>
-  //       ))}
-  //     </ul>
-  //   )
-  // }
 
-  // const filterBySpecies = () => {
-  //   return (
-  //     <ul>
-  //       {speciesMatches.map(pet => (
-  //         <PetsNearYouContainer key={pet._id} currentPet={currentPet} pet={pet} createConnectionRequest={this.props.createConnectionRequest}/>
-  //       ))}
-  //     </ul>
-  //   )
-  // }
-
-    // let currentPet = null
-    //   this.props.pets.forEach(pet => {
-    //   if (pet._id === this.props.currentPetId) {
-    //     currentPet = pet
-    //   }
-    // })
-    // const pet = this.props.pets.find(pet => pet._id === this.state.currentPetId);
 
     const filterByZip = () => {
       return (
@@ -325,25 +282,31 @@ class Feed extends React.Component {
           </div>
         
           <div className="connections-container">
-            <ul className="connections-req-wrapper">NEW REQUESTS
+            {/* <ul className="connections-req-wrapper">NEW REQUESTS
               {this.props.connectionRequests.map((request, i) => {
             
                 return <ConnectionRequests key={request._id}
-                        goGetPet={this.props.goGetPet}
                         acceptConnectionRequest={this.props.acceptConnectionRequest}
-                        state={this.props.state}
                         requesterId={request.pet}
-                        petId={request.friend}
+                        petId={request.friend} 
                         requestId={request._id}
                         history={this.props.history}
                         index={i}
                       />
               })}
-            </ul>
+            </ul> */}
+            <div className="connections-req-wrapper">
+              NEW REQUESTS
+              <ConnectionRequests currentPetId={this.props.currentPetId}/>
+            </div>
 
-            <ul className="connections-wrapper">CONNECTIONS
+            <div className="connections-wrapper">
+              CONNECTIONS
+            </div>
+
+            {/* <ul className="connections-wrapper">CONNECTIONS
             {this.props.connections.map((connection, i) => {
-              // console.log('this is a connection', connection)
+
               if (connection.pet1 === currentPet._id) {
                 return <Connections 
                           key={connection._id} 
@@ -364,7 +327,7 @@ class Feed extends React.Component {
                         />
               }
             })}
-            </ul>
+            </ul> */}
           </div>
         </div>
       </div>

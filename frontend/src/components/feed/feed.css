@@ -212,3 +212,7 @@
 .connect-button-wrapper button:first-child {
   margin-right: 10px;
 }
+
+.request-list {
+  padding-left: 0;
+}

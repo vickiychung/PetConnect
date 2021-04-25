@@ -52,7 +52,10 @@ router.patch('/',
           if (err) {
             return res.status(400).json(err);
           } else {
-            res.send("Accepted");
+            res.send({
+              status: "Accepted",
+              id: req.body.id
+            });
           }
       });
     } else {
@@ -62,7 +65,10 @@ router.patch('/',
           if (err) {
             return res.status(400).json(err);
           } else {
-            res.send("Declined");
+            res.send({
+              status: "Declined",
+              id: req.body.id
+            });
           }
       });
     }
@@ -78,7 +84,10 @@ router.delete('/',
         if (err) {
           return res.status(400).json(err);
         } else {
-          res.send("Deleted");
+          res.send({
+            status: "Deleted",
+            id: req.body.id
+          });
         }
     });
   }
