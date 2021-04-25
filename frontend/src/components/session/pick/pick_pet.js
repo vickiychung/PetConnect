@@ -36,11 +36,14 @@ class PickPet extends React.Component {
     
     return (
       <div className="user-pet-list-wrapper">
-        {/* <button onClick={this.props.logout}>Logout</button> */}
         <div className="user-pet-banner">
           <div className='pick-title-container'>
+            <h1 className='pick-title'>
+              <img src={pickHeader}/>
+              <div className="user-pet-list-logout-container"><button className="user-pet-list-logout" onClick={this.props.logout}>Logout</button></div>
+            </h1>
             
-            <h1 className='pick-title'><img src={pickHeader}/></h1></div>
+          </div>
           
           <ul className="user-pet-list">
             {
@@ -57,6 +60,7 @@ class PickPet extends React.Component {
                 /> : null
             }
           </ul>
+          
         </div>
         
         

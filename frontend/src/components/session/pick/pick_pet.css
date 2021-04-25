@@ -25,8 +25,9 @@
 .pick-title{
   font-size: 68px;
   text-align: center;
-  margin: auto;
   margin: 0px 0px 0px;
+  display: flex;
+  justify-content: center;
 }
 
 .user-pet-list {
@@ -105,4 +106,31 @@ a, a:hover, a:visited, a:link, a:active {
   text-decoration: none;
 }
 
+.user-pet-list-logout-container{
 
+}
+
+.user-pet-list-logout{
+  border-radius: 6px;
+  font-size: 17px;
+  line-height: 48px;
+  padding: 0 16px;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: #00B9D3;
+  color: #fff;
+  font-weight: bold;
+  justify-content: center;
+  text-align: center;
+  text-shadow: none;
+  vertical-align: middle;
+  word-wrap: break-word;
+  border: none;
+  /* margin-bottom: 30px; */
+}
+
+.user-pet-list-logout:hover{
+  background-color: #7fe9f3;
+}
