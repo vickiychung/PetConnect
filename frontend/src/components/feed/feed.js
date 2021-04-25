@@ -6,7 +6,7 @@ import PetsNearYouContainer from './pets_near_you/pets_near_you_container'
 import MyPetsContainer from './my_pets/my_pets_container';
 import pic from '../session/login_signup/background.jpg'
 import ConnectionRequests from '../connections/connection_requests_container';
-import Connections from '../connections/connection_container';
+import Connections from '../connections/connections_container';
 
 class Feed extends React.Component {
 
@@ -15,8 +15,6 @@ class Feed extends React.Component {
 
     this.state = {
       toggled: "zip",
-      // currentPetId: this.props.match.params.petId
-
     }
 
     this.handleZip = this.handleZip.bind(this);
@@ -28,8 +26,6 @@ class Feed extends React.Component {
   componentDidMount() {
     this.props.fetchPets()
     this.props.fetchUsers()
-    // this.props.fetchConnectionRequests(this.props.currentPetId)
-    // this.props.fetchConnections(this.props.currentPetId)
     this.props.fetchCurrentPet(this.props.currentPetId)
   }
 
@@ -49,15 +45,9 @@ class Feed extends React.Component {
     
     let currentPet = this.props.currentPet || null
 
-    // if (!this.props.pets || !this.props.currentUser || !Array.isArray(this.props.users) || !currentPet)  {
-    //   return null
-    // }
-
     if (!Array.isArray(this.props.pets) || 
         !this.props.currentUser || 
         !Array.isArray(this.props.users) || 
-        // !this.props.connectionRequests || 
-        // !this.props.connections || 
         !currentPet) {
       return null
     }
@@ -81,8 +71,6 @@ class Feed extends React.Component {
       )
     }
   
-    // const pet = this.props.pets.filter((pet) => pet._id === this.state.currentPetId);
-
     const userPets = [];
     
     this.props.pets.forEach(pet => {
@@ -288,6 +276,7 @@ class Feed extends React.Component {
 
             <div className="connections-wrapper">
               CONNECTIONS
+              <Connections currentPetId={this.props.currentPetId}/>
             </div>
 
             {/* <ul className="connections-wrapper">CONNECTIONS

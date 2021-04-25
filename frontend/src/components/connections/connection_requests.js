@@ -29,7 +29,7 @@ class ConnectionRequests extends React.Component {
     
     if (!this.state.connectionRequests || !this.state.requestPets) {
       return null;
-    }
+    };
     
     return (
       <ul className="request-list">
@@ -42,9 +42,9 @@ class ConnectionRequests extends React.Component {
               friendId={request.pet}
               friendPet={this.state.requestPets[i]}
               goGetRequestPet={this.props.goGetRequestPet}
-              index={i}
               acceptConnectionRequest={this.props.acceptConnectionRequest}
               fetchPet={this.props.fetchPet}
+              index={i}
             />
           ))
         }

@@ -5,12 +5,15 @@ import { fetchPet, goGetPet } from '../../actions/pet_actions';
 import { fetchConnections, deleteConnection } from '../../actions/connection_actions';
 
 const mapStateToProps = state => ({
-  petFriend: state.entities.friendPets
-  // state
+  petFriends: state.entities.friendPets,
+  connections: state.entities.connections.data
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchPet: petId => dispatch(fetchPet(petId))
+  goGetPet: id => dispatch(goGetPet(id)),
+  fetchPet: petId => dispatch(fetchPet(petId)),
+  fetchConnections: currentPetId => dispatch(fetchConnections(currentPetId)),
+  deleteConnection: connectionId => dispatch(deleteConnection(connectionId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Connections);
