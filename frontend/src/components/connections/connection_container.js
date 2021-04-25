@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import Connections from './connections'
 
-import { fetchPet } from '../../actions/pet_actions';
+import { fetchPet, goGetPet } from '../../actions/pet_actions';
+import { fetchConnections, deleteConnection } from '../../actions/connection_actions';
 
 const mapStateToProps = state => ({
   petFriend: state.entities.friendPets

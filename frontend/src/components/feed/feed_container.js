@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
 import Feed from './feed';
-import { goGetPet, fetchPet, fetchPets, fetchUserPets, fetchCurrentPet } from '../../actions/pet_actions';
+import { fetchPet, fetchPets, fetchUserPets, fetchCurrentPet } from '../../actions/pet_actions';
 import { fetchUser, fetchUsers } from '../../actions/user_actions';
-import { fetchConnections, deleteConnection } from '../../actions/connection_actions';
 import { createConnectionRequest } from '../../actions/connection_request_actions';
 
 
