@@ -6,7 +6,7 @@ import { fetchConnections, deleteConnection } from '../../actions/connection_act
 
 const mapStateToProps = state => ({
   petFriends: state.entities.friendPets,
-  connections: state.entities.connections.data
+  connections: state.entities.connections
 });
 
 const mapDispatchToProps = dispatch => ({

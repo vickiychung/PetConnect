@@ -9,7 +9,7 @@ class ConnectRequestItem extends React.Component {
   }
 
   componentDidMount() {
-    this.props.goGetRequestPet(this.props.friendId)
+    this.props.goGetRequestPet(this.props.friendId);
   }
 
   acceptConnection() {
@@ -40,7 +40,7 @@ class ConnectRequestItem extends React.Component {
 
     return (
       <li className="connect-item">
-        <div  onClick={() => this.props.fetchPet(this.props.friendId)}>
+        <div onClick={() => this.props.fetchPet(this.props.friendId)}>
           {this.props.friendPet.data.name}
         </div>
         <div className="connect-button-wrapper">

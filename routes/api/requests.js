@@ -42,6 +42,7 @@ router.patch('/',
         pet2: req.body.currentPet
       });
 
+      
       newConnection.save()
         .then(connection => res.json(connection))
         .catch(err => res.json(err))
@@ -54,7 +55,10 @@ router.patch('/',
           } else {
             res.send({
               status: "Accepted",
-              id: req.body.id
+              id: req.body.id,
+              _id: req.body.id,
+              pet1: req.body.friend,
+              pet2: req.body.currentPet
             });
           }
       });
