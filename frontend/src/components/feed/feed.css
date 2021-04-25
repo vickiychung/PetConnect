@@ -30,7 +30,7 @@
   justify-content: flex-start;
   align-items: center;
   margin-left: 10px;
-  /* margin-right: 10px; */
+  margin-right: 10px;
   margin-bottom: 25px;
 }
 
@@ -54,10 +54,7 @@
 }
 
 .selected-pet-img {
-  /* width: 100%; */
-  /* max-width: 355px; */
   width: 365px;
-  /* max-height: 400px; */
   height: 390px;
   border-radius: 5px;
   border: 5px double white;
@@ -72,17 +69,12 @@
   padding: 10px;
   padding-top: 0px;
   margin-top: 0px;
-  /* margin-left: 20px; */
-  /* width: 320px; */
   width: 75%;
 }
 
 .selected-pet-name {
   font-weight: 600;
   font-size: 30px;
-  /* display: flex; */
-  /* flex-direction: row;
-  justify-content: center; */
   margin-top: 0px;
   margin-bottom: 10px;
   margin: auto;
@@ -111,7 +103,6 @@
 }
 
 .my-pets-container {
-  width: 20%;
   margin-left: 10px;
   margin-right: 10px;
 }
