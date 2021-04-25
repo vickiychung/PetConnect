@@ -21,11 +21,6 @@
   height: 30px;
   position: absolute;
   top: -24px;
-  padding-right: 25px;
-}
-
-.pets-connect-button{
-  cursor: pointer;
 }
 
 .tabs {
@@ -51,9 +46,13 @@
   color: black;
   font-weight: 600;
   font-size: 16px;
-  width: inherit;
+  width: 100%;
   border-radius: 8px;
   outline: none;
+}
+
+.pets-connect-button{
+  cursor: pointer;
 }
 
 .tabs-2:hover {
