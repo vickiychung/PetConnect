@@ -17,6 +17,13 @@ const connectionsReducer = (state = [], action) => {
     case ACCEPT_CONNECTION_REQUEST:
       nextState.push(action.connection.data);
       return nextState;
+    case REMOVE_CONNECTION:
+      nextState.forEach((connection, i) => {
+        if (connection._id === action.connection.data._id) {
+          nextState.splice(i, 1);
+        }
+      });
+      return nextState;
     case RECEIVE_USER_PETS:
       return [];
     case RECEIVE_USER_LOGOUT:

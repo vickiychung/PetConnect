@@ -16,7 +16,7 @@ class ConnectionsItem extends React.Component {
   }
 
   handleDelete() {
-    this.props.deleteConnection({id: this.props.connectionId})
+    this.props.deleteConnection(this.props.connectionId)
   }
 
   render() {
@@ -40,6 +40,9 @@ class ConnectionsItem extends React.Component {
       <li key={this.props.connectionId}>
         <div onClick={() => this.props.fetchPet(friendId)}>
           {this.props.friendPet.data.name}
+        </div>
+        <div onClick={this.handleDelete}>
+          -----Delete
         </div>
       </li>
     );

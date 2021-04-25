@@ -48,7 +48,7 @@ class Connections extends React.Component {
           this.state.connections.map((connection, i) => (
             
             <ConnectionsItem
-              key={connection._id}
+              key={connection._id || Math.floor(Math.random() * 1000000)}
               currentPetId={this.props.currentPetId}
               connectionId={connection._id} 
               friendId1={connection.pet1}
