@@ -167,7 +167,7 @@ class MyPets extends React.Component {
       profilePhoto = <img 
         className="profile-pic" 
         src={currentPet.photoUrl} 
-        alt="profile-photo" 
+        alt="profile" 
       /> 
     } else {
       

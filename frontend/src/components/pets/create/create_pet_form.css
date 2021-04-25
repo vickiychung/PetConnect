@@ -1,7 +1,6 @@
 
 .create-pet-form-wrapper {
   height: 100%;
-  /* width: 2000px; */
 }
 
 .create-pet-form {
@@ -10,7 +9,6 @@
   justify-content: center;
   margin-left: 20px;
   margin-right: 20px;
-  /* margin-top: 20px; */
   width: 2000px;
 }
 
@@ -29,16 +27,9 @@
 
 .create-pet-entry {
   width: 100%;
-  /* padding-bottom: 10px; */
 }
 
 .create-pet-entry input {
-  /* width: 96%;
-  height: 16px;
-  padding: 8px; 
-  outline: none;
-  border: 1px solid rgb(194, 194, 194);
-  border-radius: 6px; */
   cursor: pointer;
   border-radius: 6px;
   font-size: 15px;

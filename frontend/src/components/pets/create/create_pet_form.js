@@ -187,12 +187,9 @@ class CreatePetForm extends React.Component {
             />
           </div>
 
-
           <div className="create-pet-entry">
             <input type="file" onChange={this.fileSelectHandler}/>
           </div>
-
-          
 
           <div className="submit-pet-entry">
             <button>Add Pet</button>

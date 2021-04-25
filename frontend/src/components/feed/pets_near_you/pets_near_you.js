@@ -7,7 +7,6 @@ class PetsNearYou extends React.Component {
   constructor(props) {
     super(props);
 
-
     this.state = {
       users: []
     }
@@ -38,19 +37,6 @@ class PetsNearYou extends React.Component {
     if (this.props.pets === undefined) {
       return null
     }
-    let pets = this.props.pets
-
-    let matchZip = (pets) => {
-      let matches = [];
-
-      for (let i = 0; i < pets.length; i++) {
-        let pet = pets[i];
-        if (this.props.user.zipcode === pet.shelterZip) {
-          matches.push(pet.name)
-        }
-      }
-      return matches
-    }
 
     let isMatch = () => {
       if (this.props.pet.shelterZip === this.props.user.zipcode) {
@@ -65,7 +51,7 @@ class PetsNearYou extends React.Component {
       profilePhoto = <img 
         className="pets-near-photo"
         src={this.props.pet.photoUrl} 
-        alt="profile-photo" 
+        alt="profile" 
       /> 
     } else {
       profilePhoto = <div className="pets-near-photo-default">
@@ -80,7 +66,8 @@ class PetsNearYou extends React.Component {
       let connected = () => {
         let connect = false
         this.props.connections.forEach(connection => {
-          if ((connection.pet1 === this.props.pet._id && connection.pet2 === this.props.currentPet._id) || (connection.pet1 === this.props.currentPet._id && connection.pet2 === this.props.pet._id)) {
+          if ((connection.pet1 === this.props.pet._id && connection.pet2 === this.props.currentPet._id) || 
+          (connection.pet1 === this.props.currentPet._id && connection.pet2 === this.props.pet._id)) {
             connect = true
           }
         })

@@ -25,7 +25,6 @@ class Connections extends React.Component {
 
       // this.setState({updateId: this.props.updateId})
       // this.forceUpdate();
-      // console.log("is this hit")
 
     }
     if (prevProps.connections !== this.props.connections) {

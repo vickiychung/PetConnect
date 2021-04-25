@@ -6,7 +6,6 @@ import { deletePet, fetchCurrentPet } from '../../actions/pet_actions';
 import { fetchAllConnections } from '../../actions/connection_actions';
 
 const mSTP = (state, ownProps) => ({
-  // state: state,
   connections: state.entities.allConnections,
   ownProps,
   username: state.session.user.username

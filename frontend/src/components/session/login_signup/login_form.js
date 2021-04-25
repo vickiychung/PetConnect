@@ -80,7 +80,7 @@ class LoginForm extends React.Component {
       <div className='login-bg'> 
         <div className='login-page'>
           <div className='login-content'>
-            <div className='logo'><img src={logo}/> </div>
+            <div className='logo'><img src={logo} alt="logo"/> </div>
             <div className='login-container'>
               <div className='login-inner'>
                 <form onSubmit={this.handleSubmit}>
@@ -116,12 +116,12 @@ class LoginForm extends React.Component {
         </div>
 
         <div className="github">
-          <img className="github-image" src={githubLogo2}></img>
+          <img className="github-image" src={githubLogo2} alt="github-logo"></img>
           <div className="github-links">
-            <a href="https://github.com/vickiychung" target="_blank">Vicki Chung</a>
-            <a href="https://github.com/aliibsin" target="_blank">Ali Ibsin</a>
-            <a href="https://github.com/taylormusolf" target="_blank">Taylor Musolf</a>
-            <a href="https://github.com/Jmasters8" target="_blank">Jason Masters</a>
+            <a href="https://github.com/vickiychung" target="_blank" rel="noreferrer">Vicki Chung</a>
+            <a href="https://github.com/aliibsin" target="_blank" rel="noreferrer">Ali Ibsin</a>
+            <a href="https://github.com/taylormusolf" target="_blank" rel="noreferrer">Taylor Musolf</a>
+            <a href="https://github.com/Jmasters8" target="_blank" rel="noreferrer">Jason Masters</a>
           </div>
         </div>
 

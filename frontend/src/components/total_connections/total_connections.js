@@ -10,9 +10,6 @@ class TotalConnections extends React.Component {
       connections: this.props.connections
     }
   }
-  // componentDidMount() {
-  //   this.props.fetchAllConnections()
-  // }
 
   componentDidUpdate(prevProps) {
     if (prevProps.connections !== this.props.connections) {
@@ -21,12 +18,10 @@ class TotalConnections extends React.Component {
   }
 
   render() {
-
     if (!this.state.connections.data) {
       return null
     }
-    
-    // let rand = Math.floor(Math.random() * 1000000);
+  
     let rand = this.state.connections.data.length
     return (
       <div className="tc-cont">

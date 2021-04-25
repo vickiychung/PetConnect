@@ -13,7 +13,6 @@ class Navbar extends React.Component {
   }
 
   render() {
-
     return (
       <header className="navbar">
         <div className="feed-logo">
@@ -26,7 +25,6 @@ class Navbar extends React.Component {
         
         <div className="nav-buttons">
           <span>
-            {/* <button onClick={()=>this.props.logout()}>Log out</button> */}
             <NavDropdown 
               logout={this.props.logout}
               userPets={this.props.userPets}

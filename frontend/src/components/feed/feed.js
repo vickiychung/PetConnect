@@ -53,14 +53,12 @@ class Feed extends React.Component {
     }
 
     this.props.pets.forEach(pet => {
-    if (pet._id === this.props.currentPetId) {
-      currentPet = pet
-    }
-  })
+      if (pet._id === this.props.currentPetId) {
+        currentPet = pet
+      }
+    })
 
-  const pet = this.props.pets.find(pet => pet._id === this.state.currentPetId);
-
-
+ 
     const filterByZip = () => {
       return (
         <ul className="pets-near-index">
@@ -171,8 +169,8 @@ class Feed extends React.Component {
 
     if (this.props.selectedPet) {
       this.props.selectedPet.photoUrl ? 
-        profilePhoto =  <img className="selected-pet-img" src={this.props.selectedPet.photoUrl}></img> :
-        profilePhoto =  <img className="selected-pet-img" src={pic}></img>
+        profilePhoto =  <img className="selected-pet-img" src={this.props.selectedPet.photoUrl} alt="profile"></img> :
+        profilePhoto =  <img className="selected-pet-img" src={pic} alt="profile"></img>
     }
 
     return (
@@ -276,31 +274,6 @@ class Feed extends React.Component {
               CONNECTIONS
               <Connections currentPetId={this.props.currentPetId}/>
             </div>
-
-            {/* <ul className="connections-wrapper">CONNECTIONS
-            {this.props.connections.map((connection, i) => {
-
-              if (connection.pet1 === currentPet._id) {
-                return <Connections 
-                          key={connection._id} 
-                          index={i} 
-                          deleteConnection={this.props.deleteConnection} 
-                          goGetPet={this.props.goGetPet} 
-                          friend={connection.pet2} 
-                          connectionId={connection._id}
-                        />
-              } else if (connection.pet2 === currentPet._id) {
-                return <Connections 
-                          key={connection._id} 
-                          index={i} 
-                          deleteConnection={this.props.deleteConnection} 
-                          goGetPet={this.props.goGetPet} 
-                          friend={connection.pet1} 
-                          connectionId={connection._id}
-                        />
-              }
-            })}
-            </ul> */}
           </div>
         </div>
       </div>
