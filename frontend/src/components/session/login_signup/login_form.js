@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 import CreateUserModal from './create_user_modal';
+
 import logo from './pet_connect_logo.png';
 import githubLogo2 from './25231.png'
 
@@ -96,6 +97,7 @@ class LoginForm extends React.Component {
         
         
         </div>
+
         <div className="github">
           <img className="github-image" src={githubLogo2}></img>
           <div className="github-links">
@@ -105,6 +107,7 @@ class LoginForm extends React.Component {
             <a href="https://github.com/Jmasters8" target="_blank">Jason Masters</a>
           </div>
         </div>
+
       </div>
       
     );
