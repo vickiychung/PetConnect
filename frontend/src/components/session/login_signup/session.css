@@ -302,7 +302,6 @@ ul {
   transform: translate(-50%, -50%);
 }
 
-
 .github {
   display: flex;
   justify-content: center;
@@ -342,4 +341,3 @@ ul {
   bottom: 0;
   position: absolute;
 }
-
