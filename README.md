@@ -20,7 +20,7 @@ The PetConnect was built on a MERN stack which consits of MongoDB, a document-ba
 <img width="1426" alt="pick your pet" src="https://user-images.githubusercontent.com/71670060/115976130-b7bb3280-a51f-11eb-9855-b88337622cc1.PNG">
 
 ## Pet Feed Page
-<img width="1489" alt="feed page" src="https://user-images.githubusercontent.com/71670060/115999956-0958d100-a5a3-11eb-9ef0-f4c0b5737b3e.PNG">
+<img width="1462" alt="feed page-2" src="https://user-images.githubusercontent.com/71670060/116012979-73dd3180-a5e2-11eb-9132-e728bf089308.PNG">
 
 ## Technology
 ### Backend
