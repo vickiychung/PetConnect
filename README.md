@@ -9,8 +9,8 @@ The PetConnect was built on a MERN stack which consits of MongoDB, a document-ba
 ## Features:
 * User Sign Up/Log In utilizing Bcrypt and salting
 * Users can view other pets based on location, shelter and species
-* Users can create, edit, delete and their pets
-* Pet select screen that allows user to change between active pet they will be making social connections with
+* Users can create, edit, and delete their pets
+* Pet select screen that allows user to change between the active pet they will be making social connections with
 * Pet connection modules that track current connections and pending requests that can be approved or declined
 
 ## Splash Page:
