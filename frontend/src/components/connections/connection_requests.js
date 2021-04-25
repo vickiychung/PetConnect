@@ -55,13 +55,13 @@ class ConnectionRequests extends React.Component {
   
 
   render() {
-    console.log(this.props)
+    // console.log(this.props)
 
     let pet = this.props.requestPets[this.props.index];
     if (!pet) {
       return null;
     }
-    console.log(pet)
+    // console.log(pet)
     return (
       
       <li className="connect-item">
