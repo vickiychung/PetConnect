@@ -17,12 +17,30 @@ class LoginForm extends React.Component {
     
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
-    this.demoUser = this.demoUser.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
-  demoUser(e) {
+  handleDemo(e) {
     e.preventDefault();
-    this.props.demoUser({email: 'demo@user.com', password: '123456'})
+    let demoEmail = "demo@user.com".split("");
+    let demoPassword = "123456".split("");
+    this.demoSignIn(demoEmail, demoPassword);
+  }
+
+  demoSignIn(demoEmail, demoPassword) {
+    if (demoEmail.length > 0) {
+      this.setState({ email: this.state.email + demoEmail.shift() },
+        () => window.setTimeout(() => this.demoSignIn(demoEmail, demoPassword), 100)
+      );
+
+    } else if (demoPassword.length > 0) {
+      this.setState({ password: this.state.password + demoPassword.shift() },
+        () => window.setTimeout(() => this.demoSignIn(demoEmail, demoPassword), 100)
+      );
+
+    } else {
+      this.props.login(this.state);
+    }
   }
 
   update(field) {
@@ -40,7 +58,6 @@ class LoginForm extends React.Component {
       return this.props.history.push(`/pick_pet`)
   })  
   }
-  
 
   renderErrors() {
     if(!this.props.errors) return null;
@@ -81,7 +98,7 @@ class LoginForm extends React.Component {
                       placeholder="Password"
                     />
                     <input className='login-button' type="submit" value="Log In" />
-                    <button className="demo-user-button" onClick={this.demoUser}>Demo User</button>
+                    <button className="demo-user-button" onClick={this.handleDemo}>Demo User</button>
                   </div>
                 </form>
                 < CreateUserModal 
