@@ -38,16 +38,19 @@ router.post('/',
   }
 );
 
-router.delete('/',
+router.delete('/:id',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
     Connection.findByIdAndDelete(
-      req.body.id,
+      req.params.id,
       (err, result) => {
         if (err) {
           return res.status(400).json(err);
         } else {
-          res.send("Deleted");
+          res.send({
+            status: "Deleted",
+            _id: req.params.id
+          })
         }
     });
   }

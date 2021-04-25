@@ -4,8 +4,6 @@ export const RECEIVE_CONNECTION_REQUESTS = "RECEIVE_CONNECTION_REQUESTS";
 export const CREATE_CONNECTION_REQUEST = "CREATE_CONNECTION_REQUEST";
 export const ACCEPT_CONNECTION_REQUEST = "ACCEPT_CONNECTION_REQUEST";
 
-
-
 const receiveConnectionRequests = connectionRequests => ({
   type: RECEIVE_CONNECTION_REQUESTS,
   connectionRequests

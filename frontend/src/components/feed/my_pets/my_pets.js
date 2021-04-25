@@ -135,14 +135,13 @@ class MyPets extends React.Component {
     this.props.updatePet({id: this.props.currentPet._id, shelter: this.state.shelter})
   }
   
-  fileSelectHandler = (e) => {
-    // e.preventDefault();
-    
+  fileSelectHandler = (e) => {   
+
+    //remains of a edit/reupload image. will get back to this later - Ali
+
     this.setState({
       file: e.target.files[0]
     });
-
-  
   }
 
   handleSubmit(e) {
@@ -159,8 +158,6 @@ class MyPets extends React.Component {
  
   render() {
 
-    // console.log(this.props)
-
     const currentPet = this.props.currentPet;
     let profilePhoto;
 
@@ -170,12 +167,14 @@ class MyPets extends React.Component {
       profilePhoto = <img 
         className="profile-pic" 
         src={currentPet.photoUrl} 
-        alt="profile-photo" 
+        alt="profile" 
       /> 
     } else {
+      
       profilePhoto = <div className="profile-pic-default">
         <FontAwesomeIcon icon={faPaw} />
-        {/* <label htmlFor="upload-button">
+        {/* remains of a edit/reupload image. will get back to this later - Ali
+        <label htmlFor="upload-button">
           <FontAwesomeIcon icon={faPaw} />
         </label>
           <input 
@@ -194,7 +193,9 @@ class MyPets extends React.Component {
           {profilePhoto}
           
         </div>
-        {/* <form onSubmit={this.handleSubmit}>
+        
+        {/* remains of a edit/reupload image. will get back to this later - Ali
+        <form onSubmit={this.handleSubmit}>
           <input 
             type="file" 
             id="upload-button" 

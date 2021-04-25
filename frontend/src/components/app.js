@@ -8,9 +8,6 @@ import LoginFormContainer from './session/login_signup/login_form_container';
 import PickPetContainer from './session/pick/pick_pet_container';
 
 
-
-
-
 const App = () => (
   <div>
     <Modal />
@@ -18,14 +15,12 @@ const App = () => (
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <ProtectedRoute exact path="/pick_pet" component={PickPetContainer} />
-      {/* <ProtectedRoute exact path="/feed" component={FeedContainer} /> */}
       <ProtectedRoute exact path="/feed/:petId" component={FeedContainer} />
     
       <Redirect exact from="/*" to="/login" />
       <Redirect exact from="/login/*" to="/login" />
-      {/* <Redirect exact from="/feed/*" to="/feed" /> */}
+      <Redirect exact from="/feed/*" to="/feed" />
       <Redirect exact from="/pick_pet/*" to="/pick_pet" />
-
     </Switch>
   </div>
 );

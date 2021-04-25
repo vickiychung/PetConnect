@@ -42,6 +42,7 @@ router.patch('/',
         pet2: req.body.currentPet
       });
 
+      
       newConnection.save()
         .then(connection => res.json(connection))
         .catch(err => res.json(err))
@@ -52,7 +53,13 @@ router.patch('/',
           if (err) {
             return res.status(400).json(err);
           } else {
-            res.send("Accepted");
+            res.send({
+              status: "Accepted",
+              id: req.body.id,
+              _id: req.body.id,
+              pet1: req.body.friend,
+              pet2: req.body.currentPet
+            });
           }
       });
     } else {
@@ -62,7 +69,10 @@ router.patch('/',
           if (err) {
             return res.status(400).json(err);
           } else {
-            res.send("Declined");
+            res.send({
+              status: "Declined",
+              id: req.body.id
+            });
           }
       });
     }
@@ -78,7 +88,10 @@ router.delete('/',
         if (err) {
           return res.status(400).json(err);
         } else {
-          res.send("Deleted");
+          res.send({
+            status: "Deleted",
+            id: req.body.id
+          });
         }
     });
   }

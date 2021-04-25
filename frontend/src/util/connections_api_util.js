@@ -8,6 +8,6 @@ export const fetchAllConnections = () => {
   return axios.get('/api/connections')
 }
 
-export const deleteConnection = (id) => {
-  return axios.delete('/api/connections', id)
+export const deleteConnection = id => {
+  return axios.delete(`/api/connections/${id}`)
 }
