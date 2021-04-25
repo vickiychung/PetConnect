@@ -17,12 +17,36 @@ class LoginForm extends React.Component {
     
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
-    this.demoUser = this.demoUser.bind(this);
+    // this.demoUser = this.demoUser.bind(this);
+    this.handleGuest = this.handleGuest.bind(this);
   }
 
-  demoUser(e) {
+  // demoUser(e) {
+  //   e.preventDefault();
+  //   this.props.demoUser({email: 'demo@user.com', password: '123456'})
+  // }
+
+  handleGuest(e) {
     e.preventDefault();
-    this.props.demoUser({email: 'demo@user.com', password: '123456'})
+    let guestEmail = "demo@user.com".split("");
+    let guestPassword = "123456".split("");
+    this.guestSignIn(guestEmail, guestPassword);
+  }
+
+  guestSignIn(guestEmail, guestPassword) {
+    if (guestEmail.length > 0) {
+      this.setState({ email: this.state.email + guestEmail.shift() },
+        () => window.setTimeout(() => this.guestSignIn(guestEmail, guestPassword), 100)
+      );
+
+    } else if (guestPassword.length > 0) {
+      this.setState({ password: this.state.password + guestPassword.shift() },
+        () => window.setTimeout(() => this.guestSignIn(guestEmail, guestPassword), 100)
+      );
+
+    } else {
+      this.props.login(this.state);
+    }
   }
 
   update(field) {
@@ -40,7 +64,6 @@ class LoginForm extends React.Component {
       return this.props.history.push(`/pick_pet`)
   })  
   }
-  
 
   renderErrors() {
     if(!this.props.errors) return null;
@@ -81,7 +104,7 @@ class LoginForm extends React.Component {
                       placeholder="Password"
                     />
                     <input className='login-button' type="submit" value="Log In" />
-                    <button className="demo-user-button" onClick={this.demoUser}>Demo User</button>
+                    <button className="demo-user-button" onClick={this.handleGuest}>Demo User</button>
                   </div>
                 </form>
                 < CreateUserModal 
