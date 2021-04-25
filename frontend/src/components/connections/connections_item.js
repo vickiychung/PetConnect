@@ -20,11 +20,15 @@ class ConnectionsItem extends React.Component {
   }
 
   render() {
-    console.log(this.props)
 
-    if (!this.props.friendId1 || !this.props.friendId2 || !this.props.friendPet) {
+    if (!this.props.friendId1 || 
+      !this.props.friendId2 || 
+      !this.props.friendPet ||
+      this.props.friendPet.data === null
+      ) {
       return null;
     }
+
     let friendId;
     if (this.props.currentPetId === this.props.friendId1) {
       friendId = this.props.friendId2;
