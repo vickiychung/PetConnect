@@ -13,8 +13,6 @@ const receiveShelter = shelter => ({
   shelter
 });
 
-
-
 export const fetchShelters = () => dispatch => (
   ShelterApiUtil.fetchShelters()
   .then(shelters => dispatch(receiveShelters(shelters)))

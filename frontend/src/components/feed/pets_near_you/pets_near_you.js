@@ -16,10 +16,6 @@ class PetsNearYou extends React.Component {
     this.sendConnectionRequest = this.sendConnectionRequest.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.props.fetchAllConnections()
-  // }
-
   petsNearYou() {
     if (this.props.pets === undefined) {
       return null
@@ -43,7 +39,6 @@ class PetsNearYou extends React.Component {
       return null
     }
     let pets = this.props.pets
-
 
     let matchZip = (pets) => {
       let matches = [];
@@ -81,8 +76,7 @@ class PetsNearYou extends React.Component {
     let showPet = () => {
 
       if (!this.props.connections) return null
-      // console.log(this.props.pet)
-      // console.log(this.props.currentPet)
+ 
       let connected = () => {
         let connect = false
         this.props.connections.forEach(connection => {
@@ -96,9 +90,7 @@ class PetsNearYou extends React.Component {
           return <button className='pets-connect-button' onClick={this.sendConnectionRequest}>CONNECT</button>
         }
       }
-      // console.log(connected())
-
-
+ 
       return (
         <li onClick={this.handleClick} className="pets-near-item">
           <div className="pets-near-photo-wrapper">
@@ -110,7 +102,6 @@ class PetsNearYou extends React.Component {
               <span className='pets-near-name-container'>
                 {this.props.pet.name}
                 {connected()}
-                {/* <button className='pets-connect-button' onClick={this.sendConnectionRequest}>CONNECT</button> */}
               </span>
             </div>
 

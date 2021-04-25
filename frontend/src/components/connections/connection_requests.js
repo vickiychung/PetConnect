@@ -24,7 +24,6 @@ class ConnectionRequests extends React.Component {
     };
   }
 
-  
   render() {
     
     if (!this.state.connectionRequests || !this.state.requestPets) {
