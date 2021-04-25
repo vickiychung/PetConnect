@@ -30,8 +30,7 @@ class ConnectionRequests extends React.Component {
     if (!this.state.connectionRequests || !this.state.requestPets) {
       return null;
     }
-    console.log(this.state.connectionRequests)
-  
+    
     return (
       <ul className="request-list">
         {

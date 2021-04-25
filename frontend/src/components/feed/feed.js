@@ -233,7 +233,6 @@ class Feed extends React.Component {
                   this.props.selectedPet ? 
                   <ul className="selected-pet-details-list">
                     <li>
-                      {/* <label>name: </label> */}
                       <h1 className='selected-pet-name'>{this.props.selectedPet.name}</h1>
                     </li>
 
@@ -282,19 +281,6 @@ class Feed extends React.Component {
           </div>
         
           <div className="connections-container">
-            {/* <ul className="connections-req-wrapper">NEW REQUESTS
-              {this.props.connectionRequests.map((request, i) => {
-            
-                return <ConnectionRequests key={request._id}
-                        acceptConnectionRequest={this.props.acceptConnectionRequest}
-                        requesterId={request.pet}
-                        petId={request.friend} 
-                        requestId={request._id}
-                        history={this.props.history}
-                        index={i}
-                      />
-              })}
-            </ul> */}
             <div className="connections-req-wrapper">
               NEW REQUESTS
               <ConnectionRequests currentPetId={this.props.currentPetId}/>

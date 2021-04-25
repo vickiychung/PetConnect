@@ -2,7 +2,6 @@ import {
   RECEIVE_PET,
   REMOVE_PET,
   RECEIVE_USER_PETS,
-  EDIT_PET
 } from '../../actions/pet_actions';
 
 import {
@@ -26,19 +25,11 @@ const userPetsReducer = (state = {}, action) => {
         };
       });
       return newState;
-    // case EDIT_PET:
-    //   newState.data.forEach((pet, i) => {
-    //     if (pet._id === action.pet._id) {
-    //       newState.data[i] = action.pet;
-    //     };
-    //   });
-    //   return newState;
     case RECEIVE_USER_LOGOUT:
       return {};
     default:
       return state;
   }
-
 }
 
 export default userPetsReducer;
