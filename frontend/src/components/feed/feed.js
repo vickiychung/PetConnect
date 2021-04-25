@@ -208,9 +208,7 @@ class Feed extends React.Component {
                 </div>
               </div>
 
-              <ul>
-                {toggle()}
-              </ul>
+              {toggle()}
             </div>
 
             <div className="pets-shelter-list">

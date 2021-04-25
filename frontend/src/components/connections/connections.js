@@ -18,12 +18,15 @@ class Connections extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.updateId !== this.props.updateId) {
+
       //this does not work as intended. Component does not update on pet change
-      //through the dropdown despite any of the code below. if you have 
+      //through the dropdown despite any of the code commented below. if you have 
       //ideas/suggestions, please try it out or let me know - Ali
+
       // this.setState({updateId: this.props.updateId})
       // this.forceUpdate();
       // console.log("is this hit")
+
     }
     if (prevProps.connections !== this.props.connections) {
       this.setState({connections: this.props.connections});
