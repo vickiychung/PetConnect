@@ -53,8 +53,9 @@
 }
 
 .selected-pet-img {
-  width: 365px;
-  height: 390px;
+  width: 100%;
+  max-width: 365px;
+  max-height: 390px;
   border-radius: 5px;
   border: 5px double white;
   margin-bottom: 20px;
