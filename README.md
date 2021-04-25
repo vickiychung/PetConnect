@@ -4,7 +4,7 @@ PetConnect is a social media platform that allows pets to make new friends, and 
 
 Link to the app hosted on Heroku: http://pet-connect-app.herokuapp.com/
 
-The PetConnect was built on a MERN stack which consits of MongoDB, a document-based NoSQL database, with use from Mongoose, an object data modeling (ODM) library, Express, an application framework library for Node, React-Redux frontend framework(using Axios, a promise based HTTP client that can be used in Node environment and browser), and lastly, Node, our JavaScript runtime environment.
+The PetConnect was built on a MERN stack which consits of MongoDB, a document-based NoSQL database, with use of Mongoose, an object data modeling (ODM) library, Express, an application framework library for Node, React-Redux frontend framework(using Axios, a promise based HTTP client that can be used in Node environment and browser), and lastly, Node, our JavaScript runtime environment.
 
 ## Features:
 * User Sign Up/Log In utilizing Bcrypt and salting
