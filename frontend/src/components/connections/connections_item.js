@@ -37,12 +37,12 @@ class ConnectionsItem extends React.Component {
     }
 
     return (
-      <li key={this.props.connectionId}>
+      <li className='connections-item' key={this.props.connectionId}>
         <div onClick={() => this.props.fetchPet(friendId)}>
-          {this.props.friendPet.data.name}
+          <div className='connections-name'>{this.props.friendPet.data.name}</div>
         </div>
-        <div onClick={this.handleDelete}>
-          -----Delete
+        <div className='remove-connection-button' onClick={this.handleDelete}>
+          REMOVE
         </div>
       </li>
     );
