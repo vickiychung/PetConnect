@@ -78,7 +78,10 @@ class PetsNearYou extends React.Component {
       </div>
     }
 
+      // look at code below if something breaks
+      
     let showPet = () => {
+
       if (!this.props.connections) return null
       // console.log(this.props.pet)
       // console.log(this.props.currentPet)
@@ -96,6 +99,7 @@ class PetsNearYou extends React.Component {
         }
       }
       // console.log(connected())
+
 
       return (
         <li onClick={this.handleClick} className="pets-near-item">
