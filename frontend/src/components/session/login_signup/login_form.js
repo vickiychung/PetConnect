@@ -3,8 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import CreateUserModal from './create_user_modal';
 import logo from './pet_connect_logo.png';
-import githubLogo from './githublogo.png';
-import githubLogo2 from './githublogo2.png'
+import githubLogo2 from './25231.png'
 
 class LoginForm extends React.Component {
   constructor(props) {
