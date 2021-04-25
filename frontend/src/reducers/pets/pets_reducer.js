@@ -8,7 +8,7 @@ import {
 
 const petsReducer = (state = {}, action) => {
   Object.freeze(state);
-  let newState = Object.assign({}, state);
+  
   switch (action.type) {
     case RECEIVE_PETS:
       return action.pets;
@@ -17,7 +17,6 @@ const petsReducer = (state = {}, action) => {
     default:
       return state;
   }
-
 }
 
 export default petsReducer;

@@ -7,7 +7,6 @@ class PetsNearYou extends React.Component {
   constructor(props) {
     super(props);
 
-
     this.state = {
       users: []
     }
@@ -15,10 +14,6 @@ class PetsNearYou extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.sendConnectionRequest = this.sendConnectionRequest.bind(this);
   }
-
-  // componentDidMount() {
-  //   this.props.fetchAllConnections()
-  // }
 
   petsNearYou() {
     if (this.props.pets === undefined) {
@@ -42,20 +37,6 @@ class PetsNearYou extends React.Component {
     if (this.props.pets === undefined) {
       return null
     }
-    let pets = this.props.pets
-
-
-    let matchZip = (pets) => {
-      let matches = [];
-
-      for (let i = 0; i < pets.length; i++) {
-        let pet = pets[i];
-        if (this.props.user.zipcode === pet.shelterZip) {
-          matches.push(pet.name)
-        }
-      }
-      return matches
-    }
 
     let isMatch = () => {
       if (this.props.pet.shelterZip === this.props.user.zipcode) {
@@ -70,25 +51,23 @@ class PetsNearYou extends React.Component {
       profilePhoto = <img 
         className="pets-near-photo"
         src={this.props.pet.photoUrl} 
-        alt="profile-photo" 
+        alt="profile" 
       /> 
     } else {
       profilePhoto = <div className="pets-near-photo-default">
         <FontAwesomeIcon icon={faPaw} />
       </div>
     }
-
-      // look at code below if something breaks
       
     let showPet = () => {
 
       if (!this.props.connections) return null
-      // console.log(this.props.pet)
-      // console.log(this.props.currentPet)
+ 
       let connected = () => {
         let connect = false
         this.props.connections.forEach(connection => {
-          if ((connection.pet1 === this.props.pet._id && connection.pet2 === this.props.currentPet._id) || (connection.pet1 === this.props.currentPet._id && connection.pet2 === this.props.pet._id)) {
+          if ((connection.pet1 === this.props.pet._id && connection.pet2 === this.props.currentPet._id) || 
+          (connection.pet1 === this.props.currentPet._id && connection.pet2 === this.props.pet._id)) {
             connect = true
           }
         })
@@ -98,9 +77,7 @@ class PetsNearYou extends React.Component {
           return <button className='pets-connect-button' onClick={this.sendConnectionRequest}>CONNECT</button>
         }
       }
-      // console.log(connected())
-
-
+ 
       return (
         <li onClick={this.handleClick} className="pets-near-item">
           <div className="pets-near-photo-wrapper">
@@ -112,7 +89,6 @@ class PetsNearYou extends React.Component {
               <span className='pets-near-name-container'>
                 {this.props.pet.name}
                 {connected()}
-                {/* <button className='pets-connect-button' onClick={this.sendConnectionRequest}>CONNECT</button> */}
               </span>
             </div>
 

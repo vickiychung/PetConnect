@@ -21,7 +21,6 @@ const mapDispatchToProps = (dispatch) => {
     openModal: () => dispatch(openModal()),
     closeModal: () => dispatch(closeModal()),
     fetchPets: () => dispatch(fetchPets()),
-    
   }
 }
 

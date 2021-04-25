@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faPlus, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import './session.css'
 
 
@@ -28,10 +28,7 @@ class SignupForm extends React.Component {
       }
       this.props.login(user)
     }
-
-  
   }
-
 
   update(field) {
     return e => this.setState({
@@ -74,7 +71,6 @@ class SignupForm extends React.Component {
     
             <div className="close-icon" onClick={() => this.props.closeModal()}>
               <FontAwesomeIcon icon={faTimes} />
-  
             </div>
         </div>
         <form className='signup-form' onSubmit={this.handleSubmit}>
@@ -109,7 +105,6 @@ class SignupForm extends React.Component {
                 onChange={this.update('password2')}
                 placeholder="Confirm Password"
               />
- 
             <input className="signup-input-button" type="submit" value="Sign Up" />
           </div>
           <div className='login-errors'>{this.renderErrors()}</div>

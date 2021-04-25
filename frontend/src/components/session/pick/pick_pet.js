@@ -1,6 +1,5 @@
 import React from 'react';
 import PickPetItem from './pick_pet_item'
-import CreatePetFormContainer from '../../pets/create/create_pet_form_container';
 import CreatePetFormModal from '../../pets/create/create_pet_form_modal';
 import './pick_pet.css'
 import pickHeader from './pick_your_pet.png'
@@ -23,7 +22,6 @@ class PickPet extends React.Component {
       this.setState({pets: this.props.userPets})
     }
   }
-
 
   render() {
     
@@ -62,8 +60,6 @@ class PickPet extends React.Component {
           </ul>
           
         </div>
-        
-        
       </div>
     )
   }

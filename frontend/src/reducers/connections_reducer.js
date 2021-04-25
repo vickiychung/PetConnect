@@ -7,24 +7,27 @@ import {
   RECEIVE_USER_LOGOUT
 } from '../actions/session_actions';
 
-const connectionsReducer = (state = {}, action) => {
+const connectionsReducer = (state = [], action) => {
   Object.freeze(state);
-  let nextState = Object.assign({}, state);
-
+  let nextState = [...state];
+  
   switch (action.type) {
     case RECEIVE_CONNECTIONS:
-      return action.connections
+      return action.connections.data
+    case ACCEPT_CONNECTION_REQUEST:
+      nextState.push(action.connection.data);
+      return nextState;
     case REMOVE_CONNECTION:
-      nextState.data.forEach((connection, i) => {
-        if (connection._id === action.connectionId) {
-          nextState.data.splice(i, 1);
+      nextState.forEach((connection, i) => {
+        if (connection._id === action.connection.data._id) {
+          nextState.splice(i, 1);
         }
-      })
+      });
       return nextState;
     case RECEIVE_USER_PETS:
-      return {};
+      return [];
     case RECEIVE_USER_LOGOUT:
-      return {};
+      return [];
     default:
       return state;
   }

@@ -6,13 +6,12 @@ import PetsNearYou from './pets_near_you';
 
 
 const mapStateToProps = (state) => {
-  
-return {
-  pets: state.entities.pets.data,
-  user: state.session.user,
-  selectedPet: state.session.selectedPet,
-  connections: state.entities.allConnections.data
-}
+  return {
+    pets: state.entities.pets.data,
+    user: state.session.user,
+    selectedPet: state.session.selectedPet,
+    connections: state.entities.allConnections.data
+  }
 };
 
 const mapDispatchToProps = (dispatch) => ({

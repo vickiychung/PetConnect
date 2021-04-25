@@ -1,81 +1,54 @@
 import React from 'react';
+import ConnectRequestItem from './connection_requests_item';
 
 class ConnectionRequests extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      potato: 0
+      connectionRequests: this.props.connectionRequests,
+      requestPets: this.props.requestPets
     }
-
-    this.acceptConnection = this.acceptConnection.bind(this);
-    this.declineConnection = this.declineConnection.bind(this);
-    this.jank = this.jank.bind(this);
   }
 
   componentDidMount() {
-    this.props.goGetRequestPet(this.props.requesterId)
+    this.props.fetchConnectionRequests(this.props.currentPetId);
   }
 
-  jank() {
-    this.setState({potato: Math.random()})
-    // console.log(this.state)
+  componentDidUpdate(prevProps) {
+    if (prevProps.connectionRequests !== this.props.connectionRequests) {
+      this.setState({connectionRequests: this.props.connectionRequests});
+    };
+    if (prevProps.requestPets !== this.props.requestPets) {
+      this.setState({requestPets: this.props.requestPets});
+    };
   }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.potato !== this.state.potato) {
-      // console.log('potato has changed')
-    }
-  }
-
-  acceptConnection() {
-    let response = {
-      currentPet: this.props.requesterId,
-      friend: this.props.petId,
-      accepted: true, 
-      id: this.props.requestId
-    }
-    // console.log(this.state)
-    this.props.acceptConnectionRequest(response)
-    setTimeout(this.jank, 3000)
-    // window.location.reload()
-    // .then(() => this.props.history.push(`/feed/${this.props.petId}`))
-  }
-
-  declineConnection() {
-    let response = {
-      currentPet: this.props.requesterId,
-      friend: this.props.petId,
-      accepted: false, 
-      id: this.props.requestId
-    }
-    this.props.acceptConnectionRequest(response)
-  }
-
-  
 
   render() {
-    // console.log(this.props)
-
-    let pet = this.props.requestPets[this.props.index];
-    if (!pet || !pet.data) {
+    
+    if (!this.state.connectionRequests || !this.state.requestPets) {
       return null;
-    }
-    // console.log(pet)
+    };
+    
     return (
-      
-      <li className="connect-item">
-        {/* {this.props.state.entities.connectionRequests.friendData.data.name} */}
-        <div onClick={() => this.props.fetchPet(pet.data._id)} >
-          {pet.data.name} 
-        </div>
-
-        <div className="connect-button-wrapper">
-          <button className="connect-button" onClick={this.acceptConnection}>ACCEPT</button>
-          <button className="connect-button" onClick={this.declineConnection}>DECLINE</button>
-        </div>
-      </li>
-    )
+      <ul className="request-list">
+        {
+          this.state.connectionRequests.map((request, i) => (
+            <ConnectRequestItem
+              key={request._id}
+              requestId={request._id}
+              currentPetId={this.props.currentPetId}
+              friendId={request.pet}
+              friendPet={this.state.requestPets[i]}
+              goGetRequestPet={this.props.goGetRequestPet}
+              acceptConnectionRequest={this.props.acceptConnectionRequest}
+              fetchPet={this.props.fetchPet}
+              index={i}
+            />
+          ))
+        }
+      </ul>
+    );
   }
 }
 

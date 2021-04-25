@@ -15,7 +15,6 @@
 
 .create-pet-modal {
 	width: 425px;
-	/* height: 690px; */
 	height: 800px;
 	background-color: white;
 	color: black;
@@ -78,7 +77,6 @@
 	align-items: center;
 	justify-content: center;
 	color: white;
-	/* transition: all 500ms ease; */
 }
 
 .home-newpet-name {
@@ -91,12 +89,6 @@
 .pet-icon-add:hover  {
   border: 1px solid rgb(110, 189, 253);
 	background-color: rgb(110, 189, 253);
-  /* transition: all 500ms ease; */
-}
-
-.pet-individual:hover, .pet-add-element:hover {
-  /* color: gray; */
-	/* font-weight: bold; */
   /* transition: all 500ms ease; */
 }
 

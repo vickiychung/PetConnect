@@ -17,7 +17,6 @@ const showPetReducer = (state = {}, action) => {
     default:
       return state;
   }
-
 }
 
 export default showPetReducer;

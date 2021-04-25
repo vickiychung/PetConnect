@@ -6,9 +6,6 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
-// import {fetchPets, fetchUserPets, fetchPet, registerPet} from './util/pet_api_util';
-import {fetchPets, fetchUserPets, fetchPet, registerPet} from './actions/pet_actions';
-
 document.addEventListener('DOMContentLoaded', () => {
   let store;
 
@@ -17,29 +14,20 @@ document.addEventListener('DOMContentLoaded', () => {
     setAuthToken(localStorage.jwtToken);
 
     const decodedUser = jwt_decode(localStorage.jwtToken);
-
     const preloadedState = { session: { isAuthenticated: true, user: decodedUser } };
-    // const preloadedState = {};
+
     store = configureStore(preloadedState);
 
     const currentTime = Date.now() / 1000;
 
-      if (decodedUser.exp < currentTime) {
-        store.dispatch(logout());
-        window.location.href = '/login';
+    if (decodedUser.exp < currentTime) {
+      store.dispatch(logout());
+      window.location.href = '/login';
     }
+
   } else {
     store = configureStore({});
   }
-
-
-  window.store = store;
-
-  window.fetchPets = fetchPets;
-  window.fetchUserPets = fetchUserPets;
-  window.fetchPet = fetchPet;
-  window.registerPet = registerPet;
-
 
   const root = document.getElementById('root');
 
