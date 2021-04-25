@@ -82,6 +82,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  width: 100%;
 }
 
 .pets-near-photo-wrapper {
@@ -111,6 +112,8 @@
 .pets-near-name-container{
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .pets-connect-button{
@@ -128,7 +131,8 @@
   text-shadow: none;
   border: 2px solid rgb(202,168,130);
   width: 100px;
-  margin-right: 10px;
+  position: absolute;
+  right: 30px;
 }
 
 .pets-connect-button:hover{
