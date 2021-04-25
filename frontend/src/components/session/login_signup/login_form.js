@@ -95,6 +95,17 @@ class LoginForm extends React.Component {
         
         
         </div>
+
+        <div className="github">
+          <img className="github-image" src={githubLogo2}></img>
+          <div className="github-links">
+            <a href="https://github.com/vickiychung" target="_blank">Vicki Chung</a>
+            <a href="https://github.com/aliibsin" target="_blank">Ali Ibsin</a>
+            <a href="https://github.com/taylormusolf" target="_blank">Taylor Musolf</a>
+            <a href="https://github.com/Jmasters8" target="_blank">Jason Masters</a>
+          </div>
+        </div>
+
       </div>
       
     );
