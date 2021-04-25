@@ -302,3 +302,44 @@ ul {
   transform: translate(-50%, -50%);
 }
 
+
+.github {
+  display: flex;
+  justify-content: center;
+}
+
+.github-img {
+  padding-bottom: 5px;
+  width: 50px;
+  position: absolute;
+  bottom: 0;
+  padding-right: 22px;
+}
+
+.github-links {
+  display: none;
+  margin-left: 60px;
+  font-size: 20px;
+  bottom: 0;
+  position: absolute;
+}
+
+.github-links a {
+  color: black;
+  padding: 12px 30px;
+  text-decoration: none;
+  display: block;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+   
+}
+
+.github:hover .github-links {
+  display: inline-flex;
+  margin-left: 50px;
+  font-size: 20px;
+  bottom: 0;
+  position: absolute;
+}
+
