@@ -43,7 +43,7 @@ class Connections extends React.Component {
     };
     
     return (
-      <ul className="request-list">
+      <ul className="connect-list">
         {
           this.state.connections.map((connection, i) => (
             
