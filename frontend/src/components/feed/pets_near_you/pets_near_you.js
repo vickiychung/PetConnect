@@ -79,7 +79,6 @@ class PetsNearYou extends React.Component {
     }
 
     let showPet = () => {
-      console.log(this.props.pet)
       return (
         <li onClick={this.handleClick} className="pets-near-item">
           <div className="pets-near-photo-wrapper">
