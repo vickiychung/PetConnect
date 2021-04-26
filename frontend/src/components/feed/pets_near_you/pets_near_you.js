@@ -10,9 +10,13 @@ class PetsNearYou extends React.Component {
     this.state = {
       users: []
     }
-
+    
     this.handleClick = this.handleClick.bind(this);
     this.sendConnectionRequest = this.sendConnectionRequest.bind(this);
+  }
+
+  componentDidMount(){
+    this.props.fetchAllConnectionRequests();
   }
 
   petsNearYou() {
@@ -31,6 +35,7 @@ class PetsNearYou extends React.Component {
       currentPet: this.props.currentPet
     }
     this.props.createConnectionRequest(connection)
+      
   }
 
   render() {
@@ -60,19 +65,27 @@ class PetsNearYou extends React.Component {
     }
       
     let showPet = () => {
-
-      if (!this.props.connections) return null
+      if (!this.props.connections || !this.props.connectionRequests) return null
  
       let connected = () => {
-        let connect = false
+        let connect = false;
+        let pending = false;
         this.props.connections.forEach(connection => {
           if ((connection.pet1 === this.props.pet._id && connection.pet2 === this.props.currentPet._id) || 
           (connection.pet1 === this.props.currentPet._id && connection.pet2 === this.props.pet._id)) {
             connect = true
           }
         })
+        this.props.connectionRequests.forEach(connectionRequest =>{
+          if ((connectionRequest.friend === this.props.pet._id && connectionRequest.pet === this.props.currentPet._id) || 
+          (connectionRequest.pet === this.props.pet._id && connectionRequest.friend === this.props.currentPet._id)){
+            pending = true
+          }
+        })
         if (connect) {
           return <button className="pets-connect-button-2">CONNECTED</button>
+        } else if (pending) {
+          return <button className="pets-connect-button-3">PENDING</button>
         } else {
           return <button className='pets-connect-button' onClick={this.sendConnectionRequest}>CONNECT</button>
         }
