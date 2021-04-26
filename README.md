@@ -30,6 +30,7 @@ The PetConnect was built on a MERN stack which consits of MongoDB, a document-ba
 * Node
 * Hosting on Heroku
 * BCrypt used for password salting and hashing
+* AWS
 
 ### Frontend
 * React
