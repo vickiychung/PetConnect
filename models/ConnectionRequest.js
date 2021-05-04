@@ -6,9 +6,15 @@ const ConnectionRequestSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'pets'
   },
+  friendName: {
+    type: String
+  },
   pet: {
     type: Schema.Types.ObjectId,
     ref: 'pets'
+  },
+  petName: {
+    type: String
   }
 }, {
   timestamps: true
