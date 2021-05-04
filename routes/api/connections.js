@@ -29,7 +29,9 @@ router.post('/',
   (req, res) => {
     const newConnection = new Connection({
       pet1: req.body.pet1,
-      pet2: req.body.pet2
+      pet2: req.body.pet2,
+      pet1Name: req.body.pet1.name,
+      pet2Name: req.body.pet2.name
     });
 
     newConnection.save()

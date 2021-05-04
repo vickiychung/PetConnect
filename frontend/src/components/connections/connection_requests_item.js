@@ -15,7 +15,9 @@ class ConnectRequestItem extends React.Component {
   acceptConnection() {
     let response = {
       currentPet: this.props.currentPetId,
+      currentPetName: this.props.currentPetName,
       friend: this.props.friendId,
+      friendName: this.props.friendName,
       accepted: true, 
       id: this.props.requestId
     }
