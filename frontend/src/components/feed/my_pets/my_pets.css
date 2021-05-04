@@ -6,16 +6,19 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 25px;
+  padding-top: 15px;
   padding-right: 10px;
   padding-left: 10px;
   /* width: fit-content; */
   width: 90%;
+  min-width: 400px;
   border-radius: 5px;
-  height: 85vh;
+  /* height: 85vh; */
+  height: 99%;
   margin-bottom: 20px;
+  margin-left: 20px;
   font-family: 'Montserrat', sans-serif;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 .profile-pic-wrapper {
@@ -50,6 +53,7 @@
   align-items: center;
   justify-content: center;
   width: 400px;
+  
 }
 
 .my-pet-name {
@@ -69,7 +73,9 @@
   align-items: center;
   padding-left: 20px;
   margin-top: 0px;
+  
 }
+
 
 .my-pet-details-list li {
   width: 100%;
@@ -90,7 +96,7 @@
   margin-right: 10px;
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 
