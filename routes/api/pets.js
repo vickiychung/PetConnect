@@ -10,6 +10,8 @@ const Pet = require('../../models/Pet');
 const validatePetInput = require('../../validation/pets');
 const validatePetUpdate = require('../../validation/pet-update');
 
+const Connection = require('../../models/Connection');
+
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
@@ -189,6 +191,20 @@ router.patch('/:id',
 router.delete('/:id',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
+    Connection.deleteMany(
+      {pet1: req.params.id},
+      err => {
+        if (err) return res.status(400).json(err);
+      }
+    );
+
+    Connection.deleteMany(
+      {pet2: req.params.id},
+      err => {
+        if (err) return res.status(400).json(err);
+      }
+    );
+
     Pet.findByIdAndDelete(
       req.params.id,
       (err, result) => {
