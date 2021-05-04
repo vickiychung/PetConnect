@@ -34,7 +34,10 @@ class ConnectRequestItem extends React.Component {
 
   render() {
     
-    if (!this.props.friendId || !this.props.friendPet) {
+    if (!this.props.friendId || 
+      !this.props.friendPet ||
+      this.props.friendPet.data === null
+      ) {
       return null;
     }
 
