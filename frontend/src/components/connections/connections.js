@@ -53,11 +53,10 @@ class Connections extends React.Component {
               connectionId={connection._id} 
               friendId1={connection.pet1}
               friendId2={connection.pet2}
-              friendPet={this.state.petFriends[i]}
-              goGetPet={this.props.goGetPet}
+              pet1Name={connection.pet1Name}
+              pet2Name={connection.pet2Name}
               deleteConnection={this.props.deleteConnection}
               fetchPet={this.props.fetchPet}
-              index={i}
             />
           ))
         }

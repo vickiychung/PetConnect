@@ -31,7 +31,7 @@ class PetsNearYou extends React.Component {
 
   sendConnectionRequest() {
     let connection = {
-      friend: this.props.pet._id,
+      friend: this.props.pet,
       currentPet: this.props.currentPet
     }
     this.props.createConnectionRequest(connection)
@@ -42,6 +42,7 @@ class PetsNearYou extends React.Component {
     if (this.props.pets === undefined) {
       return null
     }
+
 
     let isMatch = () => {
       if (this.props.pet.shelterZip === this.props.user.zipcode) {

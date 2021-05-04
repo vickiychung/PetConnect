@@ -172,6 +172,7 @@ class Feed extends React.Component {
         profilePhoto =  <img className="selected-pet-img" src={this.props.selectedPet.photoUrl} alt="profile"></img> :
         profilePhoto =  <img className="selected-pet-img" src={pic} alt="profile"></img>
     }
+    
 
     return (
       <div className="feed-wrapper">

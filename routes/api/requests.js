@@ -29,9 +29,13 @@ router.post('/',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
     const newConnectRequest = new ConnectionRequest({
-      friend: req.body.friend,
-      pet: req.body.currentPet
+      friend: req.body.friend._id,
+      friendName: req.body.friend.name,
+      pet: req.body.currentPet._id,
+      petName: req.body.currentPet.name
     });
+
+    // console.log(req);
 
     newConnectRequest.save()
       .then(connectRequest => res.json(connectRequest))
@@ -47,7 +51,9 @@ router.patch('/',
     if (accepted) {
       const newConnection = new Connection({
         pet1: req.body.friend,
-        pet2: req.body.currentPet
+        pet2: req.body.currentPet,
+        pet1Name: req.body.friendName,
+        pet2Name: req.body.currentPetName
       });
 
       
@@ -66,7 +72,9 @@ router.patch('/',
               id: req.body.id,
               _id: req.body.id,
               pet1: req.body.friend,
-              pet2: req.body.currentPet
+              pet2: req.body.currentPet,
+              pet1Name: req.body.friendName,
+              pet2Name: req.body.currentPetName
             });
           }
       });

@@ -7,26 +7,19 @@ class ConnectionsItem extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
   }
 
-  componentDidMount() {
-    if (this.props.currentPetId === this.props.friendId1) {
-      this.props.goGetPet(this.props.friendId2) 
-    } else {
-      this.props.goGetPet(this.props.friendId1)
-    }
-  }
-
   handleDelete() {
     this.props.deleteConnection(this.props.connectionId)
   }
 
   render() {
 
-    if (!this.props.friendId1 || 
-      !this.props.friendId2 || 
-      !this.props.friendPet ||
-      this.props.friendPet.data === null
-      ) {
-      return null;
+
+    let friendName;
+
+    if (this.props.currentPetId === this.props.friendId1) {
+      friendName = this.props.pet2Name; 
+    } else {
+      friendName = this.props.pet1Name; 
     }
 
     let friendId;
@@ -39,7 +32,7 @@ class ConnectionsItem extends React.Component {
     return (
       <li className='connections-item' key={this.props.connectionId}>
         <div onClick={() => this.props.fetchPet(friendId)}>
-          <div className='connections-name'>{this.props.friendPet.data.name}</div>
+          <div className='connections-name'>{friendName}</div>
         </div>
         <div className='remove-connection-button' onClick={this.handleDelete}>
           REMOVE
