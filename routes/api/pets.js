@@ -11,6 +11,7 @@ const validatePetInput = require('../../validation/pets');
 const validatePetUpdate = require('../../validation/pet-update');
 
 const Connection = require('../../models/Connection');
+const ConnectionRequest = require('../../models/ConnectionRequest');
 
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
