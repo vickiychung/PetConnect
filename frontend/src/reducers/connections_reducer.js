@@ -15,6 +15,9 @@ const connectionsReducer = (state = [], action) => {
     case RECEIVE_CONNECTIONS:
       return action.connections.data
     case ACCEPT_CONNECTION_REQUEST:
+      if (action.connection.data.status === 'Declined') {
+        return state;
+      }
       nextState.push(action.connection.data);
       return nextState;
     case REMOVE_CONNECTION:

@@ -8,10 +8,6 @@ class ConnectRequestItem extends React.Component {
     this.declineConnection = this.declineConnection.bind(this);
   }
 
-  componentDidMount() {
-    this.props.goGetRequestPet(this.props.friendId);
-  }
-
   acceptConnection() {
     let response = {
       currentPet: this.props.currentPetId,
@@ -35,18 +31,10 @@ class ConnectRequestItem extends React.Component {
   }
 
   render() {
-    
-    if (!this.props.friendId || 
-      !this.props.friendPet ||
-      this.props.friendPet.data === null
-      ) {
-      return null;
-    }
-
     return (
       <li className="connect-item">
         <div onClick={() => this.props.fetchPet(this.props.friendId)}>
-          <div className="request-name">{this.props.friendPet.data.name}</div>
+          <div className="request-name">{this.props.friendName}</div>
         </div>
         <div className="connect-button-wrapper">
           <button className="connect-button request-accept" onClick={this.acceptConnection}>ACCEPT</button>

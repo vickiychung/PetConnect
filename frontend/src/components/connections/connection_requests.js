@@ -40,12 +40,9 @@ class ConnectionRequests extends React.Component {
               currentPetId={this.props.currentPetId}
               currentPetName={request.friendName}
               friendId={request.pet}
-              friendPet={this.state.requestPets[i]}
               friendName={request.petName}
-              goGetRequestPet={this.props.goGetRequestPet}
               acceptConnectionRequest={this.props.acceptConnectionRequest}
               fetchPet={this.props.fetchPet}
-              index={i}
             />
           ))
         }
