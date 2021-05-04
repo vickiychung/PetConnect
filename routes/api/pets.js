@@ -206,6 +206,20 @@ router.delete('/:id',
       }
     );
 
+    ConnectionRequest.deleteMany(
+      {friend: req.params.id},
+      err => {
+        if (err) return res.status(400).json(err);
+      }
+    );
+
+    ConnectionRequest.deleteMany(
+      {pet: req.params.id},
+      err => {
+        if (err) return res.status(400).json(err);
+      }
+    );
+
     Pet.findByIdAndDelete(
       req.params.id,
       (err, result) => {
