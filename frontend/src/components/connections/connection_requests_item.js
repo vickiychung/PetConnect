@@ -44,11 +44,11 @@ class ConnectRequestItem extends React.Component {
     return (
       <li className="connect-item">
         <div onClick={() => this.props.fetchPet(this.props.friendId)}>
-          {this.props.friendPet.data.name}
+          <div className="request-name">{this.props.friendPet.data.name}</div>
         </div>
         <div className="connect-button-wrapper">
-          <button className="connect-button" onClick={this.acceptConnection}>ACCEPT</button>
-          <button className="connect-button" onClick={this.declineConnection}>DECLINE</button>
+          <button className="connect-button request-accept" onClick={this.acceptConnection}>ACCEPT</button>
+          <button className="connect-button request-decline" onClick={this.declineConnection}>DECLINE</button>
         </div>
       </li>
     )

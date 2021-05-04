@@ -9,7 +9,8 @@
   padding-top: 25px;
   padding-right: 10px;
   padding-left: 10px;
-  width: fit-content;
+  /* width: fit-content; */
+  width: 90%;
   border-radius: 5px;
   height: 85vh;
   margin-bottom: 20px;
