@@ -6,7 +6,6 @@ class Connections extends React.Component {
     super(props);
 
     this.state = {
-      petFriends: this.props.petFriends,
       connections: this.props.connections,
       updateId: this.props.updateId
     }
@@ -29,16 +28,12 @@ class Connections extends React.Component {
     }
     if (prevProps.connections !== this.props.connections) {
       this.setState({connections: this.props.connections});
-    };
-    if (prevProps.petFriends !== this.props.petFriends) {
-      this.setState({petFriends: this.props.petFriends});
-    };
-    
+    };    
   }
 
   render() {
 
-    if (!this.state.connections || !this.props.petFriends) {
+    if (!this.state.connections) {
       return null;
     };
     

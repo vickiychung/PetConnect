@@ -7,7 +7,6 @@ class ConnectionRequests extends React.Component {
 
     this.state = {
       connectionRequests: this.props.connectionRequests,
-      requestPets: this.props.requestPets
     }
   }
 
@@ -19,14 +18,11 @@ class ConnectionRequests extends React.Component {
     if (prevProps.connectionRequests !== this.props.connectionRequests) {
       this.setState({connectionRequests: this.props.connectionRequests});
     };
-    if (prevProps.requestPets !== this.props.requestPets) {
-      this.setState({requestPets: this.props.requestPets});
-    };
   }
 
   render() {
     
-    if (!this.state.connectionRequests || !this.state.requestPets) {
+    if (!this.state.connectionRequests) {
       return null;
     };
     
