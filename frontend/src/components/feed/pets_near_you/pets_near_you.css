@@ -1,7 +1,8 @@
 .pets-near-you-list {
   background-color: rgb(243, 213, 176);
   width: 50%;
-  height: 88vh;
+  min-width: 400px;
+  height: 85vh;
   border: 1.5px solid rgb(202,168,130);
   border-radius: 10px;
   box-shadow: inset 0 -3em 3em rgb(0 0 0 / 10%), 0 0 0 2px rgb(202,168,130), 0.3em 0.3em 1em rgb(202,168,130);
@@ -9,7 +10,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  margin-left: 0px;
+  margin-top: 27px;
+  margin-left: 15px;
   padding-left: 0px;
   padding-right: 10px;
   overflow-y: scroll;
@@ -70,6 +72,7 @@
   padding-inline-start: 0px;
   padding-left: 30px;
   padding-right: 20px;
+  
 }
 
 .pets-near-item {
@@ -81,7 +84,8 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
+  /* width: 100%; */
+  max-width: 375px;
 }
 
 .pets-near-photo-wrapper {
@@ -189,6 +193,7 @@
   padding-bottom: 5px;
   font-size: 16px;
   font-weight: 600;
+  max-width: 225px;
 }
 
 .pets-near-details span {

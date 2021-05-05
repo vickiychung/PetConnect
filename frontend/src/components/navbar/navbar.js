@@ -15,27 +15,30 @@ class Navbar extends React.Component {
   render() {
     return (
       <header className="navbar">
-        <div className="feed-logo">
-          <Link to="/feed">
-            <img src={logo} alt="PetConnect" />
-          </Link>
+        <div className='navbar-container'>
+          <div className="feed-logo">
+            <Link to="/feed">
+              <img src={logo} alt="PetConnect" />
+            </Link>
+          </div>
+          
+          <TotalConnections fetchAllConnections={this.props.fetchAllConnections} connections={this.props.connections} state={this.props.state}/>
+          
+          <div className="nav-buttons">
+            <span>
+              <NavDropdown 
+                logout={this.props.logout}
+                userPets={this.props.userPets}
+                username={this.props.username}
+                deletePet={this.props.deletePet}
+                currentPetId={this.props.currentPetId}
+                history={this.props.history}
+                fetchCurrentPet={this.props.fetchCurrentPet}
+              />
+            </span>
+          </div>
         </div>
         
-        <TotalConnections fetchAllConnections={this.props.fetchAllConnections} connections={this.props.connections} state={this.props.state}/>
-        
-        <div className="nav-buttons">
-          <span>
-            <NavDropdown 
-              logout={this.props.logout}
-              userPets={this.props.userPets}
-              username={this.props.username}
-              deletePet={this.props.deletePet}
-              currentPetId={this.props.currentPetId}
-              history={this.props.history}
-              fetchCurrentPet={this.props.fetchCurrentPet}
-            />
-          </span>
-        </div>
 
       </header>
     )

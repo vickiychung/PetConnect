@@ -13,15 +13,19 @@
 
 .feed-main-wrapper {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 91vh;
-
+  /* justify-content: space-between; */
+  /* width: 100%; */
+  /* height: 88vh; */
+  height: 85%;
   position: absolute;
   top: 9vh;
   margin-top: 15px;
-  padding-left: 30px;
-  padding-right: 20px;
+  max-width: 2000px;
+  /* margin-left: 100px; */
+  /* margin: auto; */
+  /* padding-left: 30px; */
+  /* padding-right: 20px; */
+  
 }
 
 .feed-lists-wrapper {
@@ -36,8 +40,9 @@
 .pets-shelter-list {
   background-color: rgb(241, 221, 197);
   width: 50%;
-  overflow-y: scroll;
-  height: 88vh;
+  min-width: 400px;
+  height: 85vh;
+  margin-top: 27px;
   border: 1.5px solid rgb(202,168,130);
   border-radius: 10px;
   box-shadow: inset 0 -3em 3em rgb(0 0 0 / 10%), 0 0 0 2px rgb(202,168,130), 0.3em 0.3em 1em rgb(202,168,130);
@@ -115,9 +120,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-right: 10px;
+  /* padding-right: 10px; */
   padding-left: 10px;
-  margin-right: 10px;
+  /* margin-right: 10px; */
   margin-bottom: 25px;
 }
 
