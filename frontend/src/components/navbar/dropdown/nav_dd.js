@@ -12,7 +12,6 @@ class NavDropdown extends React.Component {
     super(props);
     this.state = {
       open: false,
-      petIdClicked: ""
     }
     this.wrapperRef = React.createRef();
     this.handleClickOutside = this.handleClickOutside.bind(this);
