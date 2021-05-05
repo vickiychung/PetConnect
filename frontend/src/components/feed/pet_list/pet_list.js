@@ -5,12 +5,8 @@ import PetListItem from './pet_list_item';
 
 
 class PetList extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
-    // console.log(this.props)
 
     if (!this.props.connections || !this.props.connectionRequests) return null;
 
