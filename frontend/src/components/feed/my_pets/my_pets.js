@@ -1,6 +1,6 @@
 import React from 'react';
+import 'simplebar';
 import './my_pets.css';
-
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faPaw } from '@fortawesome/free-solid-svg-icons';
 
@@ -188,7 +188,7 @@ class MyPets extends React.Component {
     
 
     return (
-      <div className="my-pets-wrapper">
+      <div className="my-pets-wrapper" data-simplebar>
         <div className="profile-pic-wrapper">
           {profilePhoto}
           

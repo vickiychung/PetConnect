@@ -1,5 +1,7 @@
 .navbar {
-  min-height: 9vh;
+  /* min-height: 9vh; */
+  min-height: 50px;
+  max-height: 100px;
   width: 100%;
   
   background-color: rgb(141, 211, 214);
@@ -33,11 +35,14 @@
 
 .feed-logo img {
   max-height: 9vh;
+  min-height: 75px;
+  min-width: 75px;
 }
 
 .nav-buttons {
-  min-width: 200px;  
+  min-width: 50px;  
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
+  margin-bottom: 25px;
 }
