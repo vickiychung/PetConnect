@@ -15,6 +15,10 @@ class PetListItem extends React.Component {
     this.sendConnectionRequest = this.sendConnectionRequest.bind(this);
   }
 
+  componentDidUpdate(prevProps) {
+    
+  }
+
   sendConnectionRequest() {
     let connection = {
       friend: this.props.pet,

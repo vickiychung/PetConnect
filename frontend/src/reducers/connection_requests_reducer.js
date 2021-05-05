@@ -17,7 +17,7 @@ const connectionRequestsReducer = (state = [], action) => {
       return action.connectionRequests.data
     case ACCEPT_CONNECTION_REQUEST:
       nextState.forEach((request, i) => {
-        if (request._id === action.connection.data.id)   {
+        if (request._id === action.connection.data._id)   {
           nextState.splice(i, 1);
         }
       })
