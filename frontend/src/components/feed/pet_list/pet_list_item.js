@@ -6,7 +6,13 @@ class PetListItem extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      connect: false,
+      pending: false
+    }
+
     this.handleClick = this.handleClick.bind(this);
+    this.sendConnectionRequest = this.sendConnectionRequest.bind(this);
   }
 
   sendConnectionRequest() {
@@ -22,6 +28,31 @@ class PetListItem extends React.Component {
   }
 
   render() {
+    console.log(this.props)
+
+    const connected = () => {
+      let connect = false;
+      let pending = false;
+      this.props.connections.forEach(connection => {
+        if ((connection.pet1 === this.props.pet._id && connection.pet2 === this.props.currentPet._id) || 
+          (connection.pet1 === this.props.currentPet._id && connection.pet2 === this.props.pet._id)) {
+            connect = true
+        }
+      })
+      this.props.connectionRequests.forEach(connectionRequest =>{
+        if ((connectionRequest.friend === this.props.pet._id && connectionRequest.pet === this.props.currentPet._id) || 
+        (connectionRequest.pet === this.props.pet._id && connectionRequest.friend === this.props.currentPet._id)){
+          pending = true
+        }
+      })
+      if (connect) {
+        return <button className="pets-connect-button-2">CONNECTED</button>
+      } else if (pending) {
+        return <button className="pets-connect-button-3">PENDING</button>
+      } else {
+        return <button className='pets-connect-button' onClick={this.sendConnectionRequest}>CONNECT</button>
+      }
+    }
 
     let profilePhoto;
 
@@ -47,7 +78,7 @@ class PetListItem extends React.Component {
             <div className="pets-near-name">
               <span className='pets-near-name-container'>
                 {this.props.pet.name}
-                {/* {connected()} */}
+                {connected()}
               </span>
             </div>
 

@@ -62,7 +62,7 @@ class Feed extends React.Component {
  
     const filterByZip = () => {
       return (
-          <PetListContainer list={nearMatches} />
+          <PetListContainer list={nearMatches} currentPet={currentPet} />
         // <ul className="pets-near-index">
         //   {nearMatches.map(pet => (
         //     <PetsNearYouContainer key={pet._id} currentPet={currentPet} createConnectionRequest={this.props.createConnectionRequest} pet={pet}/>
@@ -81,7 +81,7 @@ class Feed extends React.Component {
 
     const filterByShelter = () => {
       return (
-        <PetListContainer list={shelterMatches} />
+        <PetListContainer list={shelterMatches} currentPet={currentPet} />
         // <ul className="pets-near-index">
         //   {shelterMatches.map(pet => (
         //     <PetsNearYouContainer key={pet._id} currentPet={currentPet} createConnectionRequest={this.props.createConnectionRequest} pet={pet}/>
@@ -92,7 +92,7 @@ class Feed extends React.Component {
 
     const filterBySpecies = () => {
       return (
-        <PetListContainer list={speciesMatches} />
+        <PetListContainer list={speciesMatches} currentPet={currentPet} />
         // <ul className="pets-near-index">
         //   {speciesMatches.map(pet => (
         //     <PetsNearYouContainer key={pet._id} currentPet={currentPet} createConnectionRequest={this.props.createConnectionRequest} pet={pet}/>

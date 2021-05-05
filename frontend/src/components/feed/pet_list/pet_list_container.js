@@ -10,8 +10,8 @@ const mapStateToProps = (state) => {
   return {
     user: state.session.user,
     selectedPet: state.session.selectedPet,
-    connections: state.entities.allConnections.data,
-    connectionRequests: state.entities.allConnectionRequests.data
+    connections: state.entities.connections,
+    connectionRequests: state.entities.connectionRequests
   }
 };
 

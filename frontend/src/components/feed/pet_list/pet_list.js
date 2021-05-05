@@ -9,14 +9,10 @@ class PetList extends React.Component {
     super(props);
   }
 
-  componentDidMount(){
-    this.props.fetchAllConnectionRequests();
-  }
-
   render() {
-    console.log(this.props)
+    // console.log(this.props)
 
-      
+    if (!this.props.connections || !this.props.connectionRequests) return null;
 
     return (
       <ul className="pets-near-index">
@@ -27,6 +23,9 @@ class PetList extends React.Component {
               pet={pet} 
               fetchPet={this.props.fetchPet} 
               createConnectionRequest={this.props.createConnectionRequest}
+              connections={this.props.connections}
+              connectionRequests={this.props.connectionRequests}
+              currentPet={this.props.currentPet}
             />
           ))
         }
