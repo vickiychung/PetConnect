@@ -1,5 +1,5 @@
 import React from 'react';
-import PetsNearYou from '../feed/pets_near_you/pets_near_you_container.js'
+
 
 class ConnectionsItem extends React.Component {
   constructor(props) {
