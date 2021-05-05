@@ -3,6 +3,7 @@ import React from 'react';
 import "./feed.css"
 import NavbarContainer from '../navbar/navbar_container';
 import PetsNearYouContainer from './pets_near_you/pets_near_you_container'
+import PetListContainer from './pet_list/pet_list_container';
 import MyPetsContainer from './my_pets/my_pets_container';
 import pic from '../session/login_signup/background.jpg'
 import ConnectionRequests from '../connections/connection_requests_container';
@@ -52,20 +53,21 @@ class Feed extends React.Component {
       return null
     }
 
-    this.props.pets.forEach(pet => {
-      if (pet._id === this.props.currentPetId) {
-        currentPet = pet
-      }
-    })
+    // this.props.pets.forEach(pet => {
+    //   if (pet._id === this.props.currentPetId) {
+    //     currentPet = pet
+    //   }
+    // })
 
  
     const filterByZip = () => {
       return (
-        <ul className="pets-near-index">
-          {nearMatches.map(pet => (
-            <PetsNearYouContainer key={pet._id} currentPet={currentPet} createConnectionRequest={this.props.createConnectionRequest} pet={pet}/>
-          ))}
-        </ul>
+          <PetListContainer list={nearMatches} />
+        // <ul className="pets-near-index">
+        //   {nearMatches.map(pet => (
+        //     <PetsNearYouContainer key={pet._id} currentPet={currentPet} createConnectionRequest={this.props.createConnectionRequest} pet={pet}/>
+        //   ))}
+        // </ul>
       )
     }
   
@@ -79,21 +81,23 @@ class Feed extends React.Component {
 
     const filterByShelter = () => {
       return (
-        <ul className="pets-near-index">
-          {shelterMatches.map(pet => (
-            <PetsNearYouContainer key={pet._id} currentPet={currentPet} createConnectionRequest={this.props.createConnectionRequest} pet={pet}/>
-          ))}
-        </ul>
+        <PetListContainer list={shelterMatches} />
+        // <ul className="pets-near-index">
+        //   {shelterMatches.map(pet => (
+        //     <PetsNearYouContainer key={pet._id} currentPet={currentPet} createConnectionRequest={this.props.createConnectionRequest} pet={pet}/>
+        //   ))}
+        // </ul>
       )
     }
 
     const filterBySpecies = () => {
       return (
-        <ul className="pets-near-index">
-          {speciesMatches.map(pet => (
-            <PetsNearYouContainer key={pet._id} currentPet={currentPet} createConnectionRequest={this.props.createConnectionRequest} pet={pet}/>
-          ))}
-        </ul>
+        <PetListContainer list={speciesMatches} />
+        // <ul className="pets-near-index">
+        //   {speciesMatches.map(pet => (
+        //     <PetsNearYouContainer key={pet._id} currentPet={currentPet} createConnectionRequest={this.props.createConnectionRequest} pet={pet}/>
+        //   ))}
+        // </ul>
       )
     }
 

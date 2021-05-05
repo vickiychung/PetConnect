@@ -1,0 +1,211 @@
+.pets-near-you-list {
+  background-color: rgb(243, 213, 176);
+  width: 50%;
+  min-width: 400px;
+  height: 85vh;
+  border: 1.5px solid rgb(202,168,130);
+  border-radius: 10px;
+  box-shadow: inset 0 -3em 3em rgb(0 0 0 / 10%), 0 0 0 2px rgb(202,168,130), 0.3em 0.3em 1em rgb(202,168,130);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 27px;
+  margin-left: 15px;
+  padding-left: 0px;
+  padding-right: 10px;
+  overflow-y: scroll;
+}
+
+.tabs-wrapper {
+  display: flex;
+  justify-content: center;
+  height: 30px;
+  position: absolute;
+  top: -24px;
+}
+
+.tabs {
+  height: 50px;
+  width: 350px;
+  padding-top: 10px;
+  border-radius: 10px;
+  display: flex;
+  z-index: 10;
+}
+
+.tabs-1 {
+  display: flex;
+  width: 120px;
+  height: inherit;
+  padding: 5px;
+} 
+
+.tabs-2 {
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgb(243,231,97);
+  border: 2px solid rgb(202,168,130);
+  color: black;
+  font-weight: 600;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 8px;
+  outline: none;
+}
+
+.pets-connect-button{
+  cursor: pointer;
+}
+
+.tabs-2:hover {
+  background-color: rgb(240,240,240);
+  cursor: pointer;
+}
+
+.pets-near-index {
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 30px;
+  padding-inline-start: 0px;
+  padding-left: 30px;
+  padding-right: 20px;
+  
+}
+
+.pets-near-item {
+  list-style :none;
+  cursor: pointer;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid rgb(202,168,130);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* width: 100%; */
+  max-width: 375px;
+}
+
+.pets-near-photo-wrapper {
+  display: flex;
+  justify-content: center;
+  min-width: 89px;
+  min-height: 100px;
+  margin-right: 20px;
+}
+
+.pets-near-photo {
+  width: 100%;
+  max-width: 89px;
+  max-height: 100px;
+  border-radius: 5px;
+}
+
+.pets-near-photo-default {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 70px;
+  color: rgb(255, 142, 138);
+}
+
+.pets-near-name {
+  color: rgb(90, 75, 58);
+  font-weight: 600;
+  font-size: 23px;
+  text-decoration: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.pets-near-name-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.pets-connect-button{
+  background-color: brown;
+  border-radius: 6px;
+  font-size: 10px;
+  line-height: 20px;
+  padding: 0 16px;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: none;
+  border: 2px solid rgb(202,168,130);
+  width: 100px;
+  position: absolute;
+  right: 30px;
+}
+
+.pets-connect-button-2 {
+  background-color: green;
+  border-radius: 6px;
+  font-size: 10px;
+  line-height: 20px;
+  padding: 0 16px;
+  /* cursor: pointer; */
+  text-decoration: none;
+  white-space: nowrap;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: none;
+  border: 2px solid rgb(202,168,130);
+  width: 100px;
+  position: absolute;
+  right: 30px;
+}
+
+.pets-connect-button-3 {
+  background-color: gray;
+  border-radius: 6px;
+  font-size: 10px;
+  line-height: 20px;
+  padding: 0 16px;
+  /* cursor: pointer; */
+  text-decoration: none;
+  white-space: nowrap;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: none;
+  border: 2px solid rgb(202,168,130);
+  width: 100px;
+  position: absolute;
+  right: 30px;
+}
+
+.pets-connect-button:hover{
+  background-color: rgb(133, 87, 87);
+}
+
+.pets-near-details {
+  display: block;
+  padding-bottom: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  max-width: 225px;
+}
+
+.pets-near-details span {
+  margin-left: 10px;
+  font-weight: 400;
+}
+
+.details-lower {
+  text-transform: lowercase;
+}
+
+.test {
+  width: 500px;
+  height: 500px;
+}

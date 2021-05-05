@@ -34,8 +34,7 @@ class PetsNearYou extends React.Component {
       friend: this.props.pet,
       currentPet: this.props.currentPet
     }
-    this.props.createConnectionRequest(connection)
-      
+    this.props.createConnectionRequest(connection)  
   }
 
   render() {
