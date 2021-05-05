@@ -35,7 +35,6 @@ router.post('/',
       petName: req.body.currentPet.name
     });
 
-    // console.log(req);
 
     newConnectRequest.save()
       .then(connectRequest => res.json(connectRequest))
@@ -58,8 +57,7 @@ router.patch('/',
 
       
       newConnection.save()
-        .then(connection => res.json(connection))
-        .catch(err => res.json(err))
+
 
      ConnectionRequest.findByIdAndDelete(
         req.body.id,
