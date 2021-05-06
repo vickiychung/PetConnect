@@ -37,7 +37,7 @@ class PickPet extends React.Component {
         <div className="user-pet-banner">
           <div className='pick-title-container'>
             <h1 className='pick-title'>
-              <img src={pickHeader}/>
+              <img src={pickHeader} alt="pick-header-img" />
               <div className="user-pet-list-logout-container"><button className="user-pet-list-logout" onClick={this.props.logout}>Logout</button></div>
             </h1>
             
