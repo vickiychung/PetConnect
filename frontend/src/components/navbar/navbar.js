@@ -36,6 +36,7 @@ class Navbar extends React.Component {
                 fetchCurrentPet={this.props.fetchCurrentPet}
                 fetchConnections={this.props.fetchConnections}
                 fetchConnectionRequests={this.props.fetchConnectionRequests}
+                fetchSentRequests={this.props.fetchSentRequests}
               />
             </span>
           </div>

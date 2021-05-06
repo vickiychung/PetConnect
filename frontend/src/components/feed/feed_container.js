@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import Feed from './feed';
 import { fetchPet, fetchPets, fetchUserPets, fetchCurrentPet } from '../../actions/pet_actions';
 import { fetchUser, fetchUsers } from '../../actions/user_actions';
-import { createConnectionRequest } from '../../actions/connection_request_actions';
 
 
 const mSTP = (state, ownProps) => ({
@@ -22,7 +21,6 @@ const mDTP = dispatch => ({
   fetchUserPets: id => dispatch(fetchUserPets(id)),
   fetchUser: (userId) => dispatch(fetchUser(userId)),
   fetchUsers: () => dispatch(fetchUsers()),
-  createConnectionRequest: request => dispatch(createConnectionRequest(request)),
   fetchCurrentPet: petId => dispatch(fetchCurrentPet(petId))
 });
 

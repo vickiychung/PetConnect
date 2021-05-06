@@ -4,6 +4,10 @@ export const fetchConnectionRequests = (friendId) => {
   return axios.get(`/api/requests/${friendId}`)
 }
 
+export const fetchSentRequests = (petId) => {
+  return axios.get(`/api/requests/sent/${petId}`)
+}
+
 export const createConnectionRequest = (data) => {
   return axios.post('/api/requests', data)
 }

@@ -2,11 +2,12 @@ import React from 'react';
 import 'simplebar';
 import "./feed.css";
 import NavbarContainer from '../navbar/navbar_container';
-import PetsNearYouContainer from './pets_near_you/pets_near_you_container'
+import PetListContainer from './pet_list/pet_list_container';
 import MyPetsContainer from './my_pets/my_pets_container';
 import pic from '../session/login_signup/background.jpg'
 import ConnectionRequests from '../connections/connection_requests_container';
 import Connections from '../connections/connections_container';
+import PendingRequests from '../connections/pending_requests_container';
 
 class Feed extends React.Component {
 
@@ -52,20 +53,9 @@ class Feed extends React.Component {
       return null
     }
 
-    this.props.pets.forEach(pet => {
-      if (pet._id === this.props.currentPetId) {
-        currentPet = pet
-      }
-    })
-
- 
     const filterByZip = () => {
       return (
-        <ul className="pets-near-index">
-          {nearMatches.map(pet => (
-            <PetsNearYouContainer key={pet._id} currentPet={currentPet} createConnectionRequest={this.props.createConnectionRequest} pet={pet}/>
-          ))}
-        </ul>
+          <PetListContainer list={nearMatches} currentPet={currentPet} />
       )
     }
   
@@ -79,21 +69,13 @@ class Feed extends React.Component {
 
     const filterByShelter = () => {
       return (
-        <ul className="pets-near-index">
-          {shelterMatches.map(pet => (
-            <PetsNearYouContainer key={pet._id} currentPet={currentPet} createConnectionRequest={this.props.createConnectionRequest} pet={pet}/>
-          ))}
-        </ul>
+        <PetListContainer list={shelterMatches} currentPet={currentPet} />
       )
     }
 
     const filterBySpecies = () => {
       return (
-        <ul className="pets-near-index">
-          {speciesMatches.map(pet => (
-            <PetsNearYouContainer key={pet._id} currentPet={currentPet} createConnectionRequest={this.props.createConnectionRequest} pet={pet}/>
-          ))}
-        </ul>
+        <PetListContainer list={speciesMatches} currentPet={currentPet} />
       )
     }
 
@@ -269,6 +251,11 @@ class Feed extends React.Component {
             <div className="connections-req-wrapper">
               NEW REQUESTS
               <ConnectionRequests currentPetId={this.props.currentPetId}/>
+            </div>
+
+            <div className="connections-req-wrapper">
+              PENDING REQUESTS
+              <PendingRequests currentPetId={this.props.currentPetId} />
             </div>
 
             <div className="connections-wrapper">

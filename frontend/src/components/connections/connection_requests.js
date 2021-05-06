@@ -7,7 +7,6 @@ class ConnectionRequests extends React.Component {
 
     this.state = {
       connectionRequests: this.props.connectionRequests,
-      requestPets: this.props.requestPets
     }
   }
 
@@ -19,34 +18,33 @@ class ConnectionRequests extends React.Component {
     if (prevProps.connectionRequests !== this.props.connectionRequests) {
       this.setState({connectionRequests: this.props.connectionRequests});
     };
-    if (prevProps.requestPets !== this.props.requestPets) {
-      this.setState({requestPets: this.props.requestPets});
-    };
   }
 
   render() {
-    
-    if (!this.state.connectionRequests || !this.state.requestPets) {
+    if (!this.state.connectionRequests) {
       return null;
     };
-    
+
     return (
-      <ul className="request-list">
-        {
-          this.state.connectionRequests.map((request, i) => (
-            <ConnectRequestItem
-              key={request._id}
-              requestId={request._id}
-              currentPetId={this.props.currentPetId}
-              currentPetName={request.friendName}
-              friendId={request.pet}
-              friendName={request.petName}
-              acceptConnectionRequest={this.props.acceptConnectionRequest}
-              fetchPet={this.props.fetchPet}
-            />
-          ))
-        }
-      </ul>
+      <div>
+        <ul className="request-list">
+          {
+            this.state.connectionRequests.map((request) => (
+              <ConnectRequestItem
+                key={request._id}
+                requestId={request._id}
+                currentPetId={this.props.currentPetId}
+                currentPetName={request.friendName}
+                friendId={request.pet}
+                friendName={request.petName}
+                acceptConnectionRequest={this.props.acceptConnectionRequest}
+                fetchPet={this.props.fetchPet}
+                fetchConnections={this.props.fetchConnections}
+              />
+            ))
+          }
+        </ul>
+      </div>
     );
   }
 }

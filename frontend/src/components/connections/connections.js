@@ -6,7 +6,6 @@ class Connections extends React.Component {
     super(props);
 
     this.state = {
-      petFriends: this.props.petFriends,
       connections: this.props.connections,
       updateId: this.props.updateId
     }
@@ -17,28 +16,14 @@ class Connections extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.updateId !== this.props.updateId) {
-
-      //this does not work as intended. Component does not update on pet change
-      //through the dropdown despite any of the code commented below. if you have 
-      //ideas/suggestions, please try it out or let me know - Ali
-
-      // this.setState({updateId: this.props.updateId})
-      // this.forceUpdate();
-
-    }
     if (prevProps.connections !== this.props.connections) {
       this.setState({connections: this.props.connections});
-    };
-    if (prevProps.petFriends !== this.props.petFriends) {
-      this.setState({petFriends: this.props.petFriends});
-    };
-    
+    };    
   }
 
   render() {
 
-    if (!this.state.connections || !this.props.petFriends) {
+    if (!this.state.connections) {
       return null;
     };
     

@@ -17,6 +17,17 @@ router.get('/:id',
   }
 );
 
+router.get('/sent/:id',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    ConnectionRequest.find({pet: req.params.id})
+      .then(connectRequest => res.json(connectRequest))
+      .catch(err =>
+        res.status(404).json({ norequestsfound: 'No connection requests found for this pet' })
+      )
+  }
+);
+
 router.get('/', (req, res) => {
   passport.authenticate('jwt', { session: false }),
   ConnectionRequest.find()
