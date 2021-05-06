@@ -34,9 +34,9 @@ class PendingRequests extends React.Component {
                 key={request._id}
                 request={request}
                 requestId={request._id}
-                friendId={this.props.currentPetId}
+                currentPetId={this.props.currentPetId}
                 friendName={request.friendName}
-                currentPetId={request.pet}
+                friendId={request.friend}
                 currentPetName={request.petName}
                 acceptConnectionRequest={this.props.acceptConnectionRequest}
                 fetchPet={this.props.fetchPet}

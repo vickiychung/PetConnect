@@ -7,8 +7,7 @@ import PetListItem from './pet_list_item';
 class PetList extends React.Component {
 
   render() {
-
-    if (!this.props.connections || !this.props.connectionRequests) return null;
+    if (!this.props.connections || !this.props.connectionRequests || !this.props.sentRequests) return null;
 
     return (
       <ul className="pets-near-index">
@@ -21,6 +20,7 @@ class PetList extends React.Component {
               createConnectionRequest={this.props.createConnectionRequest}
               connections={this.props.connections}
               connectionRequests={this.props.connectionRequests}
+              sentRequests={this.props.sentRequests}
               currentPet={this.props.currentPet}
             />
           ))

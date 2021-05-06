@@ -44,6 +44,12 @@ class PetListItem extends React.Component {
           pending = true
         }
       })
+      this.props.sentRequests.forEach(sentRequest =>{
+        if ((sentRequest.friend === this.props.pet._id && sentRequest.pet === this.props.currentPet._id) || 
+        (sentRequest.pet === this.props.pet._id && sentRequest.friend === this.props.currentPet._id)){
+          pending = true
+        }
+      })
       if (connect) {
         return <button className="pets-connect-button-2">CONNECTED</button>
       } else if (pending) {

@@ -18,7 +18,7 @@ class PendingRequestsItem extends React.Component {
   }
 
   render() {
-
+    
     return (
     <li className='connections-item'>
       <div onClick={() => this.props.fetchPet(this.props.friendId)}>

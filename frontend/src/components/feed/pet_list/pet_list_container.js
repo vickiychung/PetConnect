@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
-import { fetchAllConnections } from '../../../actions/connection_actions';
 import { fetchPet } from '../../../actions/pet_actions';
-import { fetchAllConnectionRequests } from '../../../actions/connection_request_actions';
-import { createConnectionRequest } from '../../../actions/connection_request_actions';
+import { 
+  fetchSentRequests, 
+  createConnectionRequest 
+} from '../../../actions/connection_request_actions';
 import PetList from './pet_list';
 
 
@@ -11,14 +12,13 @@ const mapStateToProps = (state) => {
     user: state.session.user,
     selectedPet: state.session.selectedPet,
     connections: state.entities.connections,
-    connectionRequests: state.entities.connectionRequests
+    connectionRequests: state.entities.connectionRequests,
+    sentRequests: state.entities.sentRequests
   }
 };
 
 const mapDispatchToProps = (dispatch) => ({
   fetchPet: petId => dispatch(fetchPet(petId)),
-  fetchAllConnections: () => dispatch(fetchAllConnections()),
-  fetchAllConnectionRequests: () => dispatch(fetchAllConnectionRequests()),
   createConnectionRequest: request => dispatch(createConnectionRequest(request))
 });
 
