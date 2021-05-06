@@ -17,7 +17,7 @@ class ConnectRequestItem extends React.Component {
       accepted: true, 
       id: this.props.requestId
     }
-    this.props.acceptConnectionRequest(response).then(this.props.fetchConnections(this.props.currentPetId))
+    this.props.acceptConnectionRequest(response).then(() => this.props.fetchConnections(this.props.currentPetId))
   }
 
   declineConnection() {
