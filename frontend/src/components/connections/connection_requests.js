@@ -39,6 +39,7 @@ class ConnectionRequests extends React.Component {
                 friendName={request.petName}
                 acceptConnectionRequest={this.props.acceptConnectionRequest}
                 fetchPet={this.props.fetchPet}
+                fetchConnections={this.props.fetchConnections}
               />
             ))
           }
