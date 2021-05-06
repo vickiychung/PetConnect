@@ -1,4 +1,3 @@
-import { ACCEPT_CONNECTION_REQUEST } from '../actions/connection_request_actions';
 import { RECEIVE_CONNECTIONS, REMOVE_CONNECTION } from '../actions/connection_actions'
 
 import { RECEIVE_USER_PETS } from '../actions/pet_actions';

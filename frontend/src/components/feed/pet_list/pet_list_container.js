@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchPet } from '../../../actions/pet_actions';
 import { 
-  fetchSentRequests, 
   createConnectionRequest 
 } from '../../../actions/connection_request_actions';
 import PetList from './pet_list';
