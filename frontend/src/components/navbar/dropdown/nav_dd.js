@@ -11,11 +11,10 @@ class NavDropdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false
+      open: false,
     }
     this.wrapperRef = React.createRef();
     this.handleClickOutside = this.handleClickOutside.bind(this);
-    
   };
 
   componentDidMount() {
@@ -68,7 +67,12 @@ class NavDropdown extends React.Component {
                 <li key={pet._id} >
                   <div className="dd-pet-name-container">
                     <div className="dd-pet-name">
-                      <Link to={`/feed/${pet._id}`} onClick={() => this.props.fetchCurrentPet(pet._id)}>{pet.name} </Link>
+                      {/* <Link to={`/feed/${pet._id}`} onClick={() => this.props.fetchCurrentPet(pet._id)}>{pet.name} </Link> */}
+                      <Link to={`/feed/${pet._id}`} onClick={
+                        () => this.props.fetchCurrentPet(pet._id)
+                        .then(this.props.fetchConnections(pet._id))
+                        .then(this.props.fetchConnectionRequests(pet._id))}>
+                      {pet.name} </Link>
                     </div>
                   </div>
                 </li>
