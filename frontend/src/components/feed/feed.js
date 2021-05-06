@@ -1,6 +1,6 @@
 import React from 'react';
-
-import "./feed.css"
+import 'simplebar';
+import "./feed.css";
 import NavbarContainer from '../navbar/navbar_container';
 import PetListContainer from './pet_list/pet_list_container';
 import MyPetsContainer from './my_pets/my_pets_container';
@@ -170,7 +170,7 @@ class Feed extends React.Component {
 
           <div className="feed-lists-wrapper">
 
-            <div className="pets-near-you-list">
+            <div className="pets-near-you-list" data-simplebar>
               
               <div className="tabs-wrapper">
                 <div className="tabs">
@@ -191,7 +191,7 @@ class Feed extends React.Component {
               {toggle()}
             </div>
 
-            <div className="pets-shelter-list">
+            <div className="pets-shelter-list" data-simplebar>
               <div className="selected-pet-wrap">
                 {profilePhoto}
 
