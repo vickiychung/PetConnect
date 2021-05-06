@@ -1,21 +1,20 @@
 import { connect } from 'react-redux';
 import { fetchPet } from '../../actions/pet_actions';
-import ConnectionRequests from './connection_requests'
+import PendingRequests from './pending_requests';
 
 import {
-  fetchConnectionRequests,
-  acceptConnectionRequest
+  acceptConnectionRequest,
+  fetchSentRequests
 } from '../../actions/connection_request_actions';
 
 const mapStateToProps = state => ({
-  connectionRequests: state.entities.connectionRequests,
   sentRequests: state.entities.sentRequests
 })
 
 const mapDispatchToProps = dispatch => ({
   fetchPet: petId => dispatch(fetchPet(petId)),
-  fetchConnectionRequests: friendId => dispatch(fetchConnectionRequests(friendId)),
+  fetchSentRequests: petId => dispatch(fetchSentRequests(petId)),
   acceptConnectionRequest: data => dispatch(acceptConnectionRequest(data)),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ConnectionRequests)
+export default connect(mapStateToProps, mapDispatchToProps)(PendingRequests)

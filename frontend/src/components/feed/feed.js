@@ -7,6 +7,7 @@ import MyPetsContainer from './my_pets/my_pets_container';
 import pic from '../session/login_signup/background.jpg'
 import ConnectionRequests from '../connections/connection_requests_container';
 import Connections from '../connections/connections_container';
+import PendingRequests from '../connections/pending_requests_container';
 
 class Feed extends React.Component {
 
@@ -250,6 +251,11 @@ class Feed extends React.Component {
             <div className="connections-req-wrapper">
               NEW REQUESTS
               <ConnectionRequests currentPetId={this.props.currentPetId}/>
+            </div>
+
+            <div className="connections-req-wrapper">
+              PENDING REQUESTS
+              <PendingRequests currentPetId={this.props.currentPetId} />
             </div>
 
             <div className="connections-wrapper">
