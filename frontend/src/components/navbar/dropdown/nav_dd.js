@@ -71,8 +71,12 @@ class NavDropdown extends React.Component {
                       <Link to={`/feed/${pet._id}`} onClick={
                         () => this.props.fetchCurrentPet(pet._id)
                         .then(this.props.fetchConnections(pet._id))
-                        .then(this.props.fetchConnectionRequests(pet._id))}>
-                      {pet.name} </Link>
+                        .then(this.props.fetchConnectionRequests(pet._id))
+                        .then(this.props.fetchSentRequests(pet._id))
+                      }
+                      >
+                        {pet.name} 
+                      </Link>
                     </div>
                   </div>
                 </li>
