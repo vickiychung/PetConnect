@@ -78,13 +78,17 @@
   list-style :none;
   cursor: pointer;
   padding-bottom: 10px;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   border-bottom: 2px solid rgb(202,168,130);
   display: flex;
   justify-content: flex-start;
   align-items: center;
   /* width: 100%; */
   max-width: 375px;
+}
+
+.pets-near-item:hover {
+  background-color: rgb(243, 233, 221, 0.5);
 }
 
 .pets-near-photo-wrapper {
