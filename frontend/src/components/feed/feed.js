@@ -22,7 +22,6 @@ class Feed extends React.Component {
     this.handleSpecies = this.handleSpecies.bind(this);
     this.handleShelter = this.handleShelter.bind(this);
   }
-
   
   componentDidMount() {
     this.props.fetchPets()
@@ -176,7 +175,9 @@ class Feed extends React.Component {
               <div className="tabs-wrapper">
                 <div className="tabs">
                   <div className="tabs-1">
-                    <button onClick={this.handleZip} className="tabs-2" ref="zip-tab">Location</button>
+                    {this.state.toggled === "zip" ? 
+                      <button onClick={this.handleZip} className="tabs-2-selected">Location</button> :
+                      <button onClick={this.handleZip} className="tabs-2">Location</button>}
                   </div>
 
                   <div className="tabs-1">
