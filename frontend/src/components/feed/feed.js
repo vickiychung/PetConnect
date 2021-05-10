@@ -53,12 +53,6 @@ class Feed extends React.Component {
       return null
     }
 
-    const filterByZip = () => {
-      return (
-          <PetListContainer list={nearMatches} currentPet={currentPet} />
-      )
-    }
-  
     const userPets = [];
     
     this.props.pets.forEach(pet => {
@@ -67,13 +61,28 @@ class Feed extends React.Component {
       }
     })
 
+    const filterByZip = () => {
+      const zipTab = document.getElementById("zip-tab");
+      zipTab.classList.add("selected");
+      
+      return (
+        <PetListContainer list={nearMatches} currentPet={currentPet} />
+      )
+    }
+
     const filterByShelter = () => {
+      const shelterTab = document.getElementById("shelter-tab");
+      shelterTab.classList.add("selected");
+
       return (
         <PetListContainer list={shelterMatches} currentPet={currentPet} />
       )
     }
 
     const filterBySpecies = () => {
+      const speciesTab = document.getElementById("species-tab");
+      speciesTab.classList.add("selected");
+      
       return (
         <PetListContainer list={speciesMatches} currentPet={currentPet} />
       )
@@ -176,15 +185,15 @@ class Feed extends React.Component {
               <div className="tabs-wrapper">
                 <div className="tabs">
                   <div className="tabs-1">
-                    <button onClick={this.handleZip} className="tabs-2">Location</button>
+                    <button onClick={this.handleZip} className="tabs-2" id="zip-tab">Location</button>
                   </div>
 
                   <div className="tabs-1">
-                    <button onClick={this.handleShelter} className="tabs-2">Shelter</button>
+                    <button onClick={this.handleShelter} className="tabs-2" id="shelter-tab">Shelter</button>
                   </div>
 
                   <div className="tabs-1">
-                    <button onClick={this.handleSpecies} className="tabs-2">Species</button>
+                    <button onClick={this.handleSpecies} className="tabs-2" id="species-tab">Species</button>
                   </div>
                 </div>
               </div>
