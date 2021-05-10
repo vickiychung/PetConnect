@@ -181,11 +181,15 @@ class Feed extends React.Component {
                   </div>
 
                   <div className="tabs-1">
-                    <button onClick={this.handleShelter} className="tabs-2" ref="shelter-tab">Shelter</button>
+                    {this.state.toggled === "shelter" ?
+                    <button onClick={this.handleShelter} className="tabs-2-selected" >Shelter</button> :
+                    <button onClick={this.handleShelter} className="tabs-2" >Shelter</button>}
                   </div>
 
                   <div className="tabs-1">
-                    <button onClick={this.handleSpecies} className="tabs-2" ref="species-tab">Species</button>
+                    {this.state.toggled === "species" ?
+                    <button onClick={this.handleSpecies} className="tabs-2-selected">Species</button> :
+                    <button onClick={this.handleSpecies} className="tabs-2">Species</button>}
                   </div>
                 </div>
               </div>
