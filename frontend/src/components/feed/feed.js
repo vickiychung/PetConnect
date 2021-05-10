@@ -176,15 +176,15 @@ class Feed extends React.Component {
               <div className="tabs-wrapper">
                 <div className="tabs">
                   <div className="tabs-1">
-                    <button onClick={this.handleZip} className="tabs-2" id="zip-tab">Location</button>
+                    <button onClick={this.handleZip} className="tabs-2" ref="zip-tab">Location</button>
                   </div>
 
                   <div className="tabs-1">
-                    <button onClick={this.handleShelter} className="tabs-2" id="shelter-tab">Shelter</button>
+                    <button onClick={this.handleShelter} className="tabs-2" ref="shelter-tab">Shelter</button>
                   </div>
 
                   <div className="tabs-1">
-                    <button onClick={this.handleSpecies} className="tabs-2" id="species-tab">Species</button>
+                    <button onClick={this.handleSpecies} className="tabs-2" ref="species-tab">Species</button>
                   </div>
                 </div>
               </div>
