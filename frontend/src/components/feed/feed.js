@@ -52,7 +52,7 @@ class Feed extends React.Component {
         !currentPet) {
       return null
     }
-
+    
     const userPets = [];
     
     this.props.pets.forEach(pet => {
@@ -62,27 +62,18 @@ class Feed extends React.Component {
     })
 
     const filterByZip = () => {
-      const zipTab = document.getElementById("zip-tab");
-      zipTab.classList.add("selected");
-      
       return (
         <PetListContainer list={nearMatches} currentPet={currentPet} />
       )
     }
-
+    
     const filterByShelter = () => {
-      const shelterTab = document.getElementById("shelter-tab");
-      shelterTab.classList.add("selected");
-
       return (
         <PetListContainer list={shelterMatches} currentPet={currentPet} />
       )
     }
 
     const filterBySpecies = () => {
-      const speciesTab = document.getElementById("species-tab");
-      speciesTab.classList.add("selected");
-      
       return (
         <PetListContainer list={speciesMatches} currentPet={currentPet} />
       )
