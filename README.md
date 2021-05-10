@@ -1,6 +1,6 @@
 # <div align="center">![logo](https://i.imgur.com/JMN2Vub.png)</div>
 
-PetConnect is a social media platform that allows pets to make new friends as well as find old ones. Users can see other pets that were adopted from the same shelter and current pets that match the user's zip code. Once logged in, the user chooses one of their pets to log in as. After logging in as a pet, the pet's connections, pending sent connection requests, and incoming pending connection requests are displayed. Pets also have the ability to find other pets with using different filters(location, shelter, species). 
+PetConnect is a social media platform that allows pets to make new friends as well as find old ones. Users can see other pets that were adopted from the same shelter and current pets that match the user's zip code. Once logged in, the user chooses one of their pets to log in as. After logging in as a pet, the pet's connections and pending sent/incoming connection requests are displayed. Pets also have the ability to find other pets using different filters(location, shelter, species). 
 
 PetConnect was built on a MERN stack which consits of MongoDB, a document-based NoSQL database, with use of Mongoose, an object data modeling (ODM) library, Express, an application framework library for Node, React-Redux frontend framework(using Axios, a promise based HTTP client that can be used in Node environment and browser), and lastly, Node, our JavaScript runtime environment.
 
