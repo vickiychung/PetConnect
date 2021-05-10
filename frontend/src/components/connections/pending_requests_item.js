@@ -25,7 +25,7 @@ class PendingRequestsItem extends React.Component {
         <div className='connections-name'>{this.props.friendName}</div>
       </div>
       <div className='remove-connection-button' onClick={this.declineConnection}>
-          Cancel
+          CANCEL
       </div>
     </li>
 

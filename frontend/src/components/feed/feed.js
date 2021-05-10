@@ -22,7 +22,6 @@ class Feed extends React.Component {
     this.handleSpecies = this.handleSpecies.bind(this);
     this.handleShelter = this.handleShelter.bind(this);
   }
-
   
   componentDidMount() {
     this.props.fetchPets()
@@ -52,13 +51,7 @@ class Feed extends React.Component {
         !currentPet) {
       return null
     }
-
-    const filterByZip = () => {
-      return (
-          <PetListContainer list={nearMatches} currentPet={currentPet} />
-      )
-    }
-  
+    
     const userPets = [];
     
     this.props.pets.forEach(pet => {
@@ -67,6 +60,12 @@ class Feed extends React.Component {
       }
     })
 
+    const filterByZip = () => {
+      return (
+        <PetListContainer list={nearMatches} currentPet={currentPet} />
+      )
+    }
+    
     const filterByShelter = () => {
       return (
         <PetListContainer list={shelterMatches} currentPet={currentPet} />
@@ -176,15 +175,21 @@ class Feed extends React.Component {
               <div className="tabs-wrapper">
                 <div className="tabs">
                   <div className="tabs-1">
-                    <button onClick={this.handleZip} className="tabs-2">Location</button>
+                    {this.state.toggled === "zip" ? 
+                      <button onClick={this.handleZip} className="tabs-2-selected">Location</button> :
+                      <button onClick={this.handleZip} className="tabs-2">Location</button>}
                   </div>
 
                   <div className="tabs-1">
-                    <button onClick={this.handleShelter} className="tabs-2">Shelter</button>
+                    {this.state.toggled === "shelter" ?
+                    <button onClick={this.handleShelter} className="tabs-2-selected" >Shelter</button> :
+                    <button onClick={this.handleShelter} className="tabs-2" >Shelter</button>}
                   </div>
 
                   <div className="tabs-1">
-                    <button onClick={this.handleSpecies} className="tabs-2">Species</button>
+                    {this.state.toggled === "species" ?
+                    <button onClick={this.handleSpecies} className="tabs-2-selected">Species</button> :
+                    <button onClick={this.handleSpecies} className="tabs-2">Species</button>}
                   </div>
                 </div>
               </div>
