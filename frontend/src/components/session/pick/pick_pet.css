@@ -10,11 +10,13 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+
+
 .user-pet-banner{
   background-color: white;
   width: 100%;
   height: 400px;
-  
+  margin: auto;
 }
 .pick-title-container{
   width: 1144px;
@@ -73,6 +75,56 @@
 .pet-img:hover{
   background-color: #00B9D3;
 }
+
+@media only screen and (max-width: 1160px) {
+  .user-pet-banner{
+    height: 100%;
+  }
+  .user-pet-list{
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* height: 800px; */
+    height: 80%;
+    width: 600px;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .pick-title-container{
+    width: 50%;
+    
+  }
+  .pick-title{
+    margin: auto;
+  }
+  .pick-title img{
+    /* width: 100%;
+    height: 100%; */
+    width: 450px;
+  }
+  .pet-list-element{
+    margin: 0px;
+  }
+  .pet-individual{
+    margin: auto;
+  }
+  /* .pet-icon, .pet-img {
+    width: 50%;
+    height: 50%;
+  }
+  .pick-list-element{
+    width: 25%;
+  }
+
+  .user-pet-list{
+    width: 25%;
+  } */
+
+  
+}
+
+
+
 
 a {
   color: black;
