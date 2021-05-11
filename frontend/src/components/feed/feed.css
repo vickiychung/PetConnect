@@ -138,7 +138,7 @@
   margin-bottom: 25px;
 }
 
-.connections-req-wrapper {
+.connections-req-wrapper, .connections-pend-wrapper {
   background-color: rgb(250, 212, 229);
   color: rgb(161, 119, 138);
   border-radius: 5px;
@@ -155,8 +155,13 @@
   font-size: 16px;
 }
 
-.connections-wrapper {
+.connections-pend-wrapper {
+  
   background-color: rgb(247, 216, 247);
+}
+
+.connections-wrapper {
+  background-color: rgb(255, 225, 250);
   color: rgb(161, 119, 138);
   border-radius: 5px;
   box-shadow: 0 0 0 1px rgb(199, 164, 180), 0.1em 0.1em 0.5em rgb(199, 164, 180);

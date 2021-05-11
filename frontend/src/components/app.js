@@ -17,9 +17,10 @@ const App = () => (
       <ProtectedRoute exact path="/pick_pet" component={PickPetContainer} />
       <ProtectedRoute exact path="/feed/:petId" component={FeedContainer} />
     
+      
       <Redirect exact from="/*" to="/login" />
       <Redirect exact from="/login/*" to="/login" />
-      <Redirect exact from="/feed/*" to="/feed" />
+      <Redirect exact from="/feed/*" to="/pick_pet" />
       <Redirect exact from="/pick_pet/*" to="/pick_pet" />
     </Switch>
   </div>
