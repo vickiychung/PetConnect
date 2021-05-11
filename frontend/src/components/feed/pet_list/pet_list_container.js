@@ -12,13 +12,14 @@ const mapStateToProps = (state) => {
     selectedPet: state.session.selectedPet,
     connections: state.entities.connections,
     connectionRequests: state.entities.connectionRequests,
-    sentRequests: state.entities.sentRequests
+    sentRequests: state.entities.sentRequests,
+    users: state.entities.users
   }
 };
 
 const mapDispatchToProps = (dispatch) => ({
   fetchPet: petId => dispatch(fetchPet(petId)),
-  createConnectionRequest: request => dispatch(createConnectionRequest(request))
+  createConnectionRequest: request => dispatch(createConnectionRequest(request)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PetList)

@@ -28,7 +28,7 @@ class PetListItem extends React.Component {
   }
 
   render() {
-
+    
     const connected = () => {
       let connect = false;
       let pending = false;
@@ -102,6 +102,7 @@ class PetListItem extends React.Component {
             <span className="pets-near-details">
               SHELTER: <span>{this.props.pet.shelter}</span>
             </span>
+
           </div>
         </li>
     )
