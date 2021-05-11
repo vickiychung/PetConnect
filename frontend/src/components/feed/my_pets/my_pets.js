@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import 'simplebar';
 import './my_pets.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -18,9 +18,12 @@ class MyPets extends React.Component {
       gender: this.props.currentPet.gender,
       shelter: this.props.currentPet.shelter,
       shelterZip: this.props.currentPet.shelterZip,
-      file: this.props.currentPet.photoUrl
+      file: this.props.currentPet.photoUrl,
+      width: 98,
+      content: this.props.currentPet.name
     }
 
+    this.nameInput = React.createRef();
     this.speciesInput = React.createRef();
     this.breedInput = React.createRef();
     this.sizeInput = React.createRef();
@@ -28,7 +31,11 @@ class MyPets extends React.Component {
     this.personalityInput = React.createRef();
     this.genderInput = React.createRef();
     this.shelterInput = React.createRef();
-    
+    this.span = React.createRef();
+
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleNameUpdate = this.handleNameUpdate.bind(this);
+
     this.handleSpeciesChange = this.handleSpeciesChange.bind(this);
     this.handleSpeciesUpdate = this.handleSpeciesUpdate.bind(this);
 
@@ -53,8 +60,21 @@ class MyPets extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidMount() {
+    // this.setState({width: this.span.current.offSetWidth})
+    // console.log(this.span.current.offSetWidth)
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    // console.log(prevProps)
+    // console.log(this.props)
+    // console.log(prevState)
+    // 
+    // if (prevState !== this.state) {
+    //   this.setState({width: this.span.current.offSetWidth})
+    // }
     if (prevProps.currentPet !== this.props.currentPet) {
+      
       this.setState({
         name: this.props.currentPet.name,
         species: this.props.currentPet.species,
@@ -65,10 +85,25 @@ class MyPets extends React.Component {
         gender: this.props.currentPet.gender,
         shelter: this.props.currentPet.shelter,
         shelterZip: this.props.currentPet.shelterZip,
-        file: this.props.currentPet.photoUrl
-      })
+        file: this.props.currentPet.photoUrl,
+        width: this.span.current.offSetWidth
+      });
+      
     }
+ 
+    // console.log(prevState)
   } 
+
+  handleNameChange(e) {
+    const editedName = e.target.value.replace(/[\t]+/g, '');
+    this.setState({ name: editedName, content: editedName });
+    console.log(this.span)
+    this.setState({width: this.span.current.offSetWidth})
+  }
+
+  handleNameUpdate() {
+    this.props.updatePet({id: this.props.currentPet._id, name: this.state.name})
+  }
 
   handleSpeciesChange(e) {
     const editedSpecies = e.target.value.replace(/[\t]+/g, '');
@@ -161,7 +196,7 @@ class MyPets extends React.Component {
     const currentPet = this.props.currentPet;
     let profilePhoto;
 
-    if (!currentPet) return null;
+    if (!currentPet || !this.span === null) return null;
 
     if (currentPet.photoUrl) {
       profilePhoto = <img 
@@ -186,7 +221,8 @@ class MyPets extends React.Component {
         </div>
     }
     
-
+    // console.log(this.span)
+    // console.log(this.props)
     return (
       <div className="my-pets-wrapper" data-simplebar>
         <div className="profile-pic-wrapper">
@@ -208,7 +244,21 @@ class MyPets extends React.Component {
 
         <div className="pet-details">
           <p className="my-pet-name">
-            {currentPet.name}
+            <span className="name-width" ref={this.span}>{this.state.content}</span>
+            <input
+              type="text"
+              className={`my-pet-details-name`}
+              onChange={this.handleNameChange}
+              onBlur={this.handleNameUpdate}
+              ref={this.nameInput}
+              value={this.state.name}
+              placeholder="Name can't be blank"
+              autoComplete="off" 
+              autoCorrect="off" 
+              autoCapitalize="off"
+              spellCheck="false"
+              style={{width:this.state.width}}
+            />
           </p>
 
   
@@ -333,7 +383,9 @@ class MyPets extends React.Component {
         </div>
       </div>
     );
+    
   }
+  
 }
 
 export default MyPets;

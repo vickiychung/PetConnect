@@ -249,7 +249,7 @@ class Feed extends React.Component {
           </div>
 
           <div className="my-pets-container">
-            <MyPetsContainer currentPet={currentPet}/>
+            <MyPetsContainer />
           </div>
         
           <div className="connections-container">

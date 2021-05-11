@@ -67,7 +67,7 @@
   /* padding-bottom: 50px; */
 }
 
-.my-pet-name {
+/* .my-pet-name {
   font-weight: 600;
   font-size: 30px;
   display: flex;
@@ -75,7 +75,25 @@
   justify-content: center;
   margin-top: 0px;
   margin-bottom: 20px;
+} */
+
+.my-pet-details-name, .name-width {
+  font-size: 24px;
+  border-radius: 12px;
+  
 }
+
+.my-pet-details-name  {
+  padding: 8px 8px;
+  color: #555;
+  border-radius: 12px;
+  outline: none;
+  text-align: center;
+}
+
+/* .name-width {
+  width: 4px;
+} */
 
 .my-pet-details-list {
   width: 95%;
