@@ -287,7 +287,7 @@ class Feed extends React.Component {
               <ConnectionRequests currentPetId={this.props.currentPetId}/>
             </div>
 
-            <div className="connections-req-wrapper">
+            <div className="connections-pend-wrapper">
               PENDING REQUESTS
               <PendingRequests currentPetId={this.props.currentPetId} />
             </div>

@@ -68,8 +68,6 @@
 }
 
 .my-pet-name {
-  font-weight: 600;
-  font-size: 30px;
   display: flex;
   flex-direction: row;
   justify-content: center;
