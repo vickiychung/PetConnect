@@ -221,7 +221,8 @@ class MyPets extends React.Component {
         </form> */}
 
         <div className="pet-details">
-          <p className="my-pet-name">
+          {/* <p className="my-pet-name">
+          
             <input
               type="text"
               className={`my-pet-details-name`}
@@ -235,8 +236,11 @@ class MyPets extends React.Component {
               autoCapitalize="off"
               spellCheck="false"
             />
-          </p>
-
+          </p> */}
+        
+          <span className={`my-pet-details-name`}>
+            {this.state.name}
+          </span>
   
           <ul className="my-pet-details-list">
             <li>
