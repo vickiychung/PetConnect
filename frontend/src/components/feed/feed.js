@@ -153,6 +153,30 @@ class Feed extends React.Component {
         profilePhoto =  <img className="selected-pet-img" src={this.props.selectedPet.photoUrl} alt="profile"></img> :
         profilePhoto =  <img className="selected-pet-img" src={pic} alt="profile"></img>
     }
+
+    const getPetOwnerEmail = () => {
+      let name;
+      this.props.users.forEach(user => {
+        if (this.props.selectedPet.user === user._id) {
+          name = user.email
+          return name;
+        }
+      })
+      return name;
+    }
+    
+    const isConnected = () => {
+      if (!this.props.selectedPet) return
+      let name = false
+      
+      this.props.state.entities.connections.forEach(connection => {
+
+        if (connection.pet1 === this.props.selectedPet._id || connection.pet2 === this.props.selectedPet._id) {
+          name = getPetOwnerEmail()
+        }
+      })
+      return name || 'Connect for info!'
+    }
     
 
     return (
@@ -242,6 +266,12 @@ class Feed extends React.Component {
                       <label>shelter: </label>
                       {this.props.selectedPet.shelter}
                     </li>
+
+                    <li>
+                      <label>Email: </label>
+                      {isConnected()}
+                    </li>
+                   
                   </ul> : null
                 } 
               </div>
