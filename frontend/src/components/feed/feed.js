@@ -159,7 +159,6 @@ class Feed extends React.Component {
       this.props.users.forEach(user => {
         if (this.props.selectedPet.user === user._id) {
           name = user.email
-          return name;
         }
       })
       return name;
