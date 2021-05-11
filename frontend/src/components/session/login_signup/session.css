@@ -48,6 +48,9 @@ ul {
   .logo{
     margin-left: 100px;
   }
+  .login-bg::after{
+    position: fixed;
+  }
 }
 @media only screen and (max-height: 360px) {
   .github-image{
