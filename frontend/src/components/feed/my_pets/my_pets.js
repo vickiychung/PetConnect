@@ -18,9 +18,11 @@ class MyPets extends React.Component {
       gender: this.props.currentPet.gender,
       shelter: this.props.currentPet.shelter,
       shelterZip: this.props.currentPet.shelterZip,
-      file: this.props.currentPet.photoUrl
+      file: this.props.currentPet.photoUrl,
+
     }
 
+    this.nameInput = React.createRef();
     this.speciesInput = React.createRef();
     this.breedInput = React.createRef();
     this.sizeInput = React.createRef();
@@ -28,7 +30,10 @@ class MyPets extends React.Component {
     this.personalityInput = React.createRef();
     this.genderInput = React.createRef();
     this.shelterInput = React.createRef();
-    
+
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleNameUpdate = this.handleNameUpdate.bind(this);
+
     this.handleSpeciesChange = this.handleSpeciesChange.bind(this);
     this.handleSpeciesUpdate = this.handleSpeciesUpdate.bind(this);
 
@@ -65,10 +70,20 @@ class MyPets extends React.Component {
         gender: this.props.currentPet.gender,
         shelter: this.props.currentPet.shelter,
         shelterZip: this.props.currentPet.shelterZip,
-        file: this.props.currentPet.photoUrl
-      })
+        file: this.props.currentPet.photoUrl,
+      });
+      
     }
   } 
+
+  handleNameChange(e) {
+    const editedName = e.target.value.replace(/[\t]+/g, '');
+    this.setState({ name: editedName });
+  }
+
+  handleNameUpdate() {
+    this.props.updatePet({id: this.props.currentPet._id, name: this.state.name})
+  }
 
   handleSpeciesChange(e) {
     const editedSpecies = e.target.value.replace(/[\t]+/g, '');
@@ -185,7 +200,6 @@ class MyPets extends React.Component {
           /> */}
         </div>
     }
-    
 
     return (
       <div className="my-pets-wrapper" data-simplebar>
@@ -208,7 +222,19 @@ class MyPets extends React.Component {
 
         <div className="pet-details">
           <p className="my-pet-name">
-            {currentPet.name}
+            <input
+              type="text"
+              className={`my-pet-details-name`}
+              onChange={this.handleNameChange}
+              onBlur={this.handleNameUpdate}
+              ref={this.nameInput}
+              value={this.state.name}
+              placeholder="Name can't be blank"
+              autoComplete="off" 
+              autoCorrect="off" 
+              autoCapitalize="off"
+              spellCheck="false"
+            />
           </p>
 
   
@@ -333,7 +359,9 @@ class MyPets extends React.Component {
         </div>
       </div>
     );
+    
   }
+  
 }
 
 export default MyPets;

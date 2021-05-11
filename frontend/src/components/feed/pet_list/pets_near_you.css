@@ -113,6 +113,7 @@
 }
 
 .pets-near-photo {
+  margin-left: 5px;
   width: 100%;
   max-width: 89px;
   max-height: 100px;

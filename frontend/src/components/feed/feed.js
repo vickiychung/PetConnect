@@ -278,7 +278,7 @@ class Feed extends React.Component {
           </div>
 
           <div className="my-pets-container">
-            <MyPetsContainer currentPet={currentPet}/>
+            <MyPetsContainer />
           </div>
         
           <div className="connections-container">
@@ -287,7 +287,7 @@ class Feed extends React.Component {
               <ConnectionRequests currentPetId={this.props.currentPetId}/>
             </div>
 
-            <div className="connections-req-wrapper">
+            <div className="connections-pend-wrapper">
               PENDING REQUESTS
               <PendingRequests currentPetId={this.props.currentPetId} />
             </div>
