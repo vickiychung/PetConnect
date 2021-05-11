@@ -22,6 +22,7 @@ class PetList extends React.Component {
               connectionRequests={this.props.connectionRequests}
               sentRequests={this.props.sentRequests}
               currentPet={this.props.currentPet}
+              users={this.props.users}
             />
           ))
         }

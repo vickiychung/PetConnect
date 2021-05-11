@@ -29,7 +29,7 @@ class ConnectionsItem extends React.Component {
     } else {
       friendId = this.props.friendId1;
     }
-
+    
     return (
       <li className='connections-item' key={this.props.connectionId}>
         <div onClick={() => this.props.fetchPet(friendId)}>
