@@ -182,7 +182,7 @@
 
 .connect-item {
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: rgb(77, 76, 76);
   font-size: 14px;
   display: flex;
@@ -208,7 +208,7 @@
 
 .request-name{
   font-size: 16px;
-  color:rgb(161, 119, 138)
+  color:rgb(161, 119, 138);
 }
 
 .request-name:hover{
@@ -217,7 +217,7 @@
 }
 
 .connect-button-wrapper {
-  margin-top: 15px;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
