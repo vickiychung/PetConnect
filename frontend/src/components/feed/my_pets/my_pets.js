@@ -2,7 +2,7 @@ import React from 'react';
 import 'simplebar';
 import './my_pets.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faPaw } from '@fortawesome/free-solid-svg-icons';
+import { faPaw, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 class MyPets extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class MyPets extends React.Component {
       shelter: this.props.currentPet.shelter,
       shelterZip: this.props.currentPet.shelterZip,
       file: this.props.currentPet.photoUrl,
-
+      tempURL: null
     }
 
     this.nameInput = React.createRef();
@@ -151,11 +151,10 @@ class MyPets extends React.Component {
   }
   
   fileSelectHandler = (e) => {   
-
-    //remains of a edit/reupload image. will get back to this later - Ali
-
+    e.preventDefault();
     this.setState({
-      file: e.target.files[0]
+      file: e.target.files[0],
+      tempURL: URL.createObjectURL(e.target.files[0])
     });
   }
 
@@ -164,11 +163,53 @@ class MyPets extends React.Component {
     const formData = new FormData();
 
     formData.set("id", this.props.currentPet._id);
-    if (this.state.file) {
-      formData.append("file", this.state.file);
-    }
+    formData.set("file", this.state.file);
     
     this.props.updatePet(formData)
+      .then(() => this.closeModal())
+      .then(() => this.props.fetchCurrentPet(this.props.currentPet._id))
+  }
+
+  closeModal() {
+    this.props.closeModal();
+    this.setState({tempURL: null})
+  }
+
+  modalContents() {
+    return (
+      <div className="create-pet-modal-background" onClick={() => this.closeModal()}>
+        <div className="edit-pet-modal"  onClick={e => e.stopPropagation()}>
+          <div className="close-icon-container">
+            <div className="close-icon" onClick={() => this.closeModal()}>
+              <FontAwesomeIcon icon={faTimes} />
+            </div>
+          </div>
+          <form onSubmit={this.handleSubmit} className="edit-image-form">
+            <span>
+              Upload New Image
+            </span>
+            <label htmlFor="upload-button">
+              <div className="edit-image-preview-container">
+                {
+                  this.state.tempURL ? 
+                    <img className="edit-preview-image" src={this.state.tempURL} /> :
+                    <FontAwesomeIcon icon={faPaw} />
+                }
+              </div>
+            </label>
+            <input 
+              type="file" 
+              id="upload-button"
+              style={{ display: "none" }}
+              onChange={this.fileSelectHandler}
+            />
+            <div className="submit-pet-entry">
+              <input type="submit" value="Confirm" />
+            </div>
+          </form>
+        </div>
+      </div>
+    )
   }
  
   render() {
@@ -177,27 +218,50 @@ class MyPets extends React.Component {
     let profilePhoto;
 
     if (!currentPet) return null;
+  
+    // if (currentPet.photoUrl) {
+    //   profilePhoto = <div>
+    //     <label htmlFor="upload-button">
+    //       <img 
+    //         className="profile-pic" 
+    //         src={currentPet.photoUrl} 
+    //         alt="profile" 
+    //       /> 
+    //     </label>
+    //       <input 
+    //         type="file" 
+    //         id="upload-button" 
+    //         style={{ display: "none" }} 
+    //         onChange={this.fileSelectHandler}
+    //       />
+    //     </div>
+    // } else {
+    //   profilePhoto = <div className="profile-pic-default">
+    //     <label htmlFor="upload-button">
+    //       <FontAwesomeIcon icon={faPaw} />
+    //     </label>
+    //       <input 
+    //         type="file" 
+    //         id="upload-button" 
+    //         style={{ display: "none" }} 
+    //         onChange={this.fileSelectHandler}
+    //       />
+    //     </div>
+    // }
 
     if (currentPet.photoUrl) {
       profilePhoto = <img 
-        className="profile-pic" 
-        src={currentPet.photoUrl} 
-        alt="profile" 
-      /> 
+            className="profile-pic" 
+            src={currentPet.photoUrl} 
+            alt="profile"
+            onClick={() => this.props.openModal()}
+          /> 
     } else {
-      
       profilePhoto = <div className="profile-pic-default">
-        <FontAwesomeIcon icon={faPaw} />
-        {/* remains of a edit/reupload image. will get back to this later - Ali
-        <label htmlFor="upload-button">
-          <FontAwesomeIcon icon={faPaw} />
-        </label>
-          <input 
-            type="file" 
-            id="upload-button" 
-            style={{ display: "none" }} 
-            onChange={this.fileSelectHandler}
-          /> */}
+        <FontAwesomeIcon 
+          icon={faPaw} 
+          onClick={() => this.props.openModal()} 
+        />
         </div>
     }
 
@@ -205,11 +269,12 @@ class MyPets extends React.Component {
       <div className="my-pets-wrapper">
         <div className="profile-pic-wrapper">
           {profilePhoto}
-          
         </div>
+
+        {this.props.showModal ? this.modalContents() : null}
         
-        {/* remains of a edit/reupload image. will get back to this later - Ali
-        <form onSubmit={this.handleSubmit}>
+        {/* remains of a edit/reupload image. will get back to this later - Ali */}
+        {/* <form onSubmit={this.handleSubmit}>
           <input 
             type="file" 
             id="upload-button" 
@@ -220,6 +285,8 @@ class MyPets extends React.Component {
           </div>
         </form> */}
 
+        {/* if we ever want to make the pet name editable. */}
+        {/* WARNING: this does cause issues with connections */}
         <div className="pet-details">
           {/* <p className="my-pet-name">
           
