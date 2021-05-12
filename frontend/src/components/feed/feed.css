@@ -207,19 +207,20 @@
 }
 
 .request-name{
-font-size: 16px;
-color:rgb(161, 119, 138)
+  font-size: 16px;
+  color:rgb(161, 119, 138)
 }
 
 .request-name:hover{
-font-weight: bold;
-cursor: pointer;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .connect-button-wrapper {
   margin-top: 15px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 /* .connect-button {
@@ -261,13 +262,12 @@ cursor: pointer;
 .connections-item{
   display: flex;
   justify-content: space-between;
-  align-content: center;
+  align-items: center;
   margin-bottom: 5px;
 }
 
 .connections-name{
   padding-right: 10px;
-  
 }
 
 .connections-name:hover{
