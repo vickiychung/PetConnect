@@ -159,3 +159,17 @@
   -webkit-appearance: none;
   margin: 0;
 }
+
+.edit-pet-modal {
+  width: 425px;
+	height: 300px;
+	background-color: white;
+	color: black;
+	position: relative;
+	z-index: 3000;
+	border-radius: 10px;
+}
+
+.edit-preview-image {
+  max-width: 200px;
+}

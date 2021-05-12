@@ -19,6 +19,7 @@ class MyPets extends React.Component {
       shelter: this.props.currentPet.shelter,
       shelterZip: this.props.currentPet.shelterZip,
       file: this.props.currentPet.photoUrl,
+      tempURL: null
     }
 
     this.nameInput = React.createRef();
@@ -152,7 +153,8 @@ class MyPets extends React.Component {
   fileSelectHandler = (e) => {   
     e.preventDefault();
     this.setState({
-      file: e.target.files[0]
+      file: e.target.files[0],
+      tempURL: URL.createObjectURL(e.target.files[0])
     });
   }
 
@@ -171,20 +173,30 @@ class MyPets extends React.Component {
   modalContents() {
     return (
       <div className="create-pet-modal-background" onClick={() => this.props.closeModal()}>
-        <div className="create-pet-modal"  onClick={e => e.stopPropagation()}>
+        <div className="edit-pet-modal"  onClick={e => e.stopPropagation()}>
           <div className="close-icon-container">
             <div className="close-icon" onClick={() => this.props.closeModal()}>
               <FontAwesomeIcon icon={faTimes} />
             </div>
           </div>
           <form onSubmit={this.handleSubmit}>
+            <label htmlFor="upload-button">
+              <span>
+                Choose Image
+              </span>
+            </label>
             <input 
               type="file" 
-              id="upload-button" 
+              id="upload-button"
+              style={{ display: "none" }}
               onChange={this.fileSelectHandler}
             />
+            <div >
+              {/* {this.state.file.name} */}
+              <img className="edit-preview-image" src={this.state.tempURL} />
+            </div>
             <div className="submit-pet-entry">
-              <input type="submit" value="Add" />
+              <input type="submit" value="Confirm" />
             </div>
           </form>
         </div>
