@@ -1,15 +1,15 @@
 
 .create-pet-form-wrapper {
   height: 100%;
+  position: relative;
+  margin-left: 0;
 }
 
 .create-pet-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 20px;
-  margin-right: 20px;
-  width: 2000px;
+  width: 100%;
 }
 
 .create-pet-form-title {
@@ -19,22 +19,32 @@
 }
 
 .create-pet-form-title h1{
-  font-size: 35px;
+  font-size: 28px;
   margin: 0;
   margin-bottom: 20px;
   margin-left: 20px;
 }
 
-.create-pet-entry {
-  width: 100%;
+.create-pet-entry,
+.create-pet-shelter,
+.create-pet-shelterzip
+{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.create-pet-entry input {
+.create-pet-entry input,
+.create-pet-shelter input,
+.create-pet-shelterzip input
+{
   cursor: pointer;
   border-radius: 6px;
   font-size: 15px;
   padding: 12px 14px;
-  width: 330px;
+  width: 80%;
   background: #FFFFFF;
   border: 1px solid #dddfe2;
   color: #1d2129;
@@ -44,12 +54,44 @@
   margin: 5px 10px;
 }
 
+.pet-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pet-image span {
+  margin-top: 5px;
+  color: #5d6472;
+}
+
+.age-gender {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.create-pet-age, .create-pet-gender {
+  width: 45%;
+  padding: 0px;
+}
+
+.create-pet-shelter {
+  width: 70%;
+}
+
+
 .create-pet-entry button::-webkit-outer-spin-button,
 .create-pet-entry button::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
+.submit-pet-entry {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
 .submit-pet-entry button {
   background-color: #00B9D3;
@@ -81,8 +123,35 @@
 }
 
 .pet-create-error {
-  margin-left: 5px;
+  margin-left: 10px;
+  margin-top: 5px;
   font-size: 12px;
   color: red;
   height: 12px;
+}
+
+.pet-create-error-cont {
+  width: 100%;
+}
+
+.create-pet-image-prev {
+  margin-top: 40px;
+  width: 30%;
+}
+
+.create-pet-details-cont {
+  display: flex;
+  margin: 0 20px;
+  margin-top: 10px;
+}
+
+.create-pet-details {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.create-pet-details-sub {
+  display: flex;
+  width: 100%;
 }

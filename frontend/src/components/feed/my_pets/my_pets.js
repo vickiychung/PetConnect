@@ -243,9 +243,10 @@ class MyPets extends React.Component {
 
         {this.props.showModal ? this.modalContents() : null}
 
-        {/* if we ever want to make the pet name editable. */}
-        {/* WARNING: this does cause issues with connections */}
         <div className="pet-details">
+
+        {/* if we ever want to make the pet name editable. */}
+        {/* WARNING: editing pet name causes issues with connections */}
           {/* <p className="my-pet-name">
           
             <input
