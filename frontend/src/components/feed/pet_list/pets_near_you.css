@@ -24,16 +24,17 @@
   height: 30px;
   position: absolute;
   top: -24px;
+  width: 100%;
 }
 
 .tabs {
   height: 50px;
-  width: 350px;
+  width: 100%;
   padding-top: 10px;
   border-radius: 10px;
   display: flex;
   z-index: 10;
-  padding-left: 25px;
+  /* padding-left: 25px; */
 }
 
 .tabs-1 {
