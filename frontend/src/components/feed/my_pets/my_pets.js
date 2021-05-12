@@ -19,7 +19,6 @@ class MyPets extends React.Component {
       shelter: this.props.currentPet.shelter,
       shelterZip: this.props.currentPet.shelterZip,
       file: this.props.currentPet.photoUrl,
-
     }
 
     this.nameInput = React.createRef();
@@ -187,8 +186,8 @@ class MyPets extends React.Component {
     } else {
       
       profilePhoto = <div className="profile-pic-default">
-        <FontAwesomeIcon icon={faPaw} />
-        {/* remains of a edit/reupload image. will get back to this later - Ali
+        {/* <FontAwesomeIcon icon={faPaw} /> */}
+        {/* remains of a edit/reupload image. will get back to this later - Ali */}
         <label htmlFor="upload-button">
           <FontAwesomeIcon icon={faPaw} />
         </label>
@@ -197,9 +196,12 @@ class MyPets extends React.Component {
             id="upload-button" 
             style={{ display: "none" }} 
             onChange={this.fileSelectHandler}
-          /> */}
+          />
         </div>
     }
+
+    console.log(this.props)
+    console.log(this.state)
 
     return (
       <div className="my-pets-wrapper" data-simplebar>
@@ -208,7 +210,7 @@ class MyPets extends React.Component {
           
         </div>
         
-        {/* remains of a edit/reupload image. will get back to this later - Ali
+        {/* remains of a edit/reupload image. will get back to this later - Ali */}
         <form onSubmit={this.handleSubmit}>
           <input 
             type="file" 
@@ -218,8 +220,10 @@ class MyPets extends React.Component {
           <div className="submit-pet-entry">
             <input type="submit" value="Add" />
           </div>
-        </form> */}
+        </form>
 
+        {/* if we ever want to make the pet name editable. */}
+        {/* WARNING: this does cause issues with connections */}
         <div className="pet-details">
           {/* <p className="my-pet-name">
           
