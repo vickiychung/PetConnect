@@ -46,8 +46,14 @@
 }
 
 .pet-list-element{
-  width: 300px;
+  /* width: 300px; */
   margin: 0px 0px 0px 63px;
+  /* width: auto; */
+  width: 200px;
+  /* margin-left: 0; */
+  display: block;
+  /* padding-right: 80px; */
+  cursor: auto;
 }
 
 .pet-icon {

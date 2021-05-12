@@ -9,19 +9,20 @@ class PickPetItem extends React.Component {
     return (
       
       <li className="pet-list-element">
-        <Link to={`/feed/${this.props.pet._id}`}>
+        
           <div className="pet-individual">
             <div>
               {
-                this.props.pet.photoUrl ? <div className="pet-img"><img src={this.props.pet.photoUrl} alt="pet" /></div>
+                this.props.pet.photoUrl ? <div className="pet-img"><Link to={`/feed/${this.props.pet._id}`}><img src={this.props.pet.photoUrl} alt="pet" /></Link></div>
                 : <div className="pet-icon"><FontAwesomeIcon icon={faPaw} /></div>
               }
             </div>
+            <Link to={`/feed/${this.props.pet._id}`}>
             <span className="home-newpet-name">
               {this.props.pet.name}
             </span>
+            </Link>
           </div>   
-        </Link>
       </li>
     )
   }

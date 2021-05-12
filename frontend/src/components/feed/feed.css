@@ -37,13 +37,15 @@
   align-items: center;
   margin-right: 10px;
   margin-bottom: 25px;
-  
+  width: 100%
 }
 
 .pets-shelter-list {
   background-color: rgb(241, 221, 197);
-  width: 50%;
-  min-width: 400px;
+  /* width: 50%; */
+  width: 100%;
+  /* min-width: 400px; */
+  min-width: 250px;
   height: 85vh;
   margin-top: 27px;
   border: 1.5px solid rgb(202,168,130);
@@ -124,6 +126,7 @@
 .my-pets-container {
   margin-left: 10px;
   margin-right: 10px;
+  width: 50%;
 }
 
 .connections-container {
@@ -138,7 +141,7 @@
   padding-left: 10px;
   /* margin-right: 10px; */
   margin-bottom: 25px;
-  padding-right: 30px;
+  /* padding-right: 30px; */
 }
 
 .connections-req-wrapper, .connections-pend-wrapper {
