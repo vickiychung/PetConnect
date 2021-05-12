@@ -1,13 +1,14 @@
 .tc-cont {
   height: 9vh;
   font-family: 'Montserrat', sans-serif;
+  display: flex;
 }
 
 .tc-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  /* height: 100%; */
   width: 400px;
   color: white;
   font-weight: 600;
