@@ -129,7 +129,7 @@ router.patch('/:id',
       return res.status(400).json(errors);
     }
 
-    const file = req.file;
+    const file = req.file;  
 
     if (file) {
       const s3FileURL = process.env.AWS_Uploaded_File_URL_LINK;
@@ -160,7 +160,7 @@ router.patch('/:id',
           };
   
           Pet.findByIdAndUpdate(
-            req.params.id, 
+            req.body.id, 
             {$set: req.body, photoUrl: newFileUploaded.fileLink }, 
             {new: true}, 
             (err, result) => {
@@ -174,7 +174,7 @@ router.patch('/:id',
       });
     } else {
       Pet.findByIdAndUpdate(
-        req.params.id, 
+        req.body.id, 
         // {$set: req.body, photoUrl: newFileUploaded.fileLink },
         {$set: req.body } ,
         {new: true}, 
