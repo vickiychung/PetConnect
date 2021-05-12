@@ -204,7 +204,7 @@ class MyPets extends React.Component {
     console.log(this.state)
 
     return (
-      <div className="my-pets-wrapper" data-simplebar>
+      <div className="my-pets-wrapper">
         <div className="profile-pic-wrapper">
           {profilePhoto}
           

@@ -1,3 +1,7 @@
+.navbar-container{
+  width: 100%;
+}
+
 .navbar {
   /* min-height: 9vh; */
   min-height: 50px;
@@ -10,7 +14,7 @@
   justify-content: space-around;
   align-items: center;
 
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0%;
@@ -20,10 +24,12 @@
 	box-shadow: 0 5px 20px 0 rgba(21, 27, 38, 8%);
 }
 
-.navbar-container{
+
+
+.navbar-inner{
   display: flex;
-  justify-content: space-between;
-  max-width: 1300px;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .feed-logo {
