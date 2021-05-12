@@ -156,10 +156,10 @@
   padding-right: 15px;
   margin-bottom: 30px;
   font-size: 16px;
+  text-align: center;
 }
 
 .connections-pend-wrapper {
-  
   background-color: rgb(247, 216, 247);
 }
 
@@ -177,6 +177,7 @@
   padding-left: 10px;
   padding-right: 15px;
   font-size: 16px;
+  text-align: center;
 }
 
 .connect-item {
