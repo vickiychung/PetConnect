@@ -44,7 +44,8 @@
   background-color: rgb(241, 221, 197);
   width: 50%;
   min-width: 400px;
-  height: 85vh;
+  /* height: 85vh; */
+  height: 102.5%;
   margin-top: 27px;
   border: 1.5px solid rgb(202,168,130);
   border-radius: 10px;
