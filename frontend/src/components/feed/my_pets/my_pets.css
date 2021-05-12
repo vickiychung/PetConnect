@@ -35,7 +35,6 @@
   min-height: 400px; */
   /* height: 100%; */
   width: 100%;
-  
 }
 
 .profile-pic {
@@ -46,6 +45,7 @@
   border-radius: 5px;
   border: 5px double white;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .profile-pic-default {
@@ -54,6 +54,7 @@
   justify-content: center;
   font-size: 360px;
   color: rgb(255, 142, 138);
+  cursor: pointer;
 }
 
 .pet-details {

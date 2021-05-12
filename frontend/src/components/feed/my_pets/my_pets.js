@@ -174,16 +174,23 @@ class MyPets extends React.Component {
     if (!currentPet) return null;
   
     if (currentPet.photoUrl) {
-      profilePhoto = <img 
-        className="profile-pic" 
-        src={currentPet.photoUrl} 
-        alt="profile" 
-      /> 
+      profilePhoto = <div>
+        <label htmlFor="upload-button">
+          <img 
+            className="profile-pic" 
+            src={currentPet.photoUrl} 
+            alt="profile" 
+          /> 
+        </label>
+          <input 
+            type="file" 
+            id="upload-button" 
+            style={{ display: "none" }} 
+            onChange={this.fileSelectHandler}
+          />
+        </div>
     } else {
-      
       profilePhoto = <div className="profile-pic-default">
-        {/* <FontAwesomeIcon icon={faPaw} /> */}
-        {/* remains of a edit/reupload image. will get back to this later - Ali */}
         <label htmlFor="upload-button">
           <FontAwesomeIcon icon={faPaw} />
         </label>

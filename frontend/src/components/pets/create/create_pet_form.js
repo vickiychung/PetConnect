@@ -187,9 +187,22 @@ class CreatePetForm extends React.Component {
           </div>
 
           <div className="create-pet-entry">
-            <input type="file" onChange={this.fileSelectHandler}/>
+          <div className="pet-create-error"></div>
+            <label htmlFor="upload-button">
+              <span>
+                Upload Image (optional)
+              </span>
+            </label>
+            <input 
+              type="file" 
+              id="upload-button"
+              style={{ display: "none" }}
+              onChange={this.fileSelectHandler}
+            />
+            {this.state.file.name}
           </div>
 
+          <div className="pet-create-error"></div>
           <div className="submit-pet-entry">
             <button>Add Pet</button>
           </div>
