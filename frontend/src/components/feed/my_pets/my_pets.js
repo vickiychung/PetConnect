@@ -2,7 +2,7 @@ import React from 'react';
 import 'simplebar';
 import './my_pets.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faPaw, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faPaw, faTimes, faEdit } from '@fortawesome/free-solid-svg-icons';
 
 class MyPets extends React.Component {
   constructor(props) {
@@ -203,7 +203,7 @@ class MyPets extends React.Component {
               style={{ display: "none" }}
               onChange={this.fileSelectHandler}
             />
-            <div className="submit-pet-entry">
+            <div className="submit-edit-entry">
               <input type="submit" value="Confirm" />
             </div>
           </form>
@@ -219,36 +219,6 @@ class MyPets extends React.Component {
 
     if (!currentPet) return null;
   
-    // if (currentPet.photoUrl) {
-    //   profilePhoto = <div>
-    //     <label htmlFor="upload-button">
-    //       <img 
-    //         className="profile-pic" 
-    //         src={currentPet.photoUrl} 
-    //         alt="profile" 
-    //       /> 
-    //     </label>
-    //       <input 
-    //         type="file" 
-    //         id="upload-button" 
-    //         style={{ display: "none" }} 
-    //         onChange={this.fileSelectHandler}
-    //       />
-    //     </div>
-    // } else {
-    //   profilePhoto = <div className="profile-pic-default">
-    //     <label htmlFor="upload-button">
-    //       <FontAwesomeIcon icon={faPaw} />
-    //     </label>
-    //       <input 
-    //         type="file" 
-    //         id="upload-button" 
-    //         style={{ display: "none" }} 
-    //         onChange={this.fileSelectHandler}
-    //       />
-    //     </div>
-    // }
-
     if (currentPet.photoUrl) {
       profilePhoto = <img 
             className="profile-pic" 
@@ -272,18 +242,6 @@ class MyPets extends React.Component {
         </div>
 
         {this.props.showModal ? this.modalContents() : null}
-        
-        {/* remains of a edit/reupload image. will get back to this later - Ali */}
-        {/* <form onSubmit={this.handleSubmit}>
-          <input 
-            type="file" 
-            id="upload-button" 
-            onChange={this.fileSelectHandler}
-          />
-          <div className="submit-pet-entry">
-            <input type="submit" value="Add" />
-          </div>
-        </form> */}
 
         {/* if we ever want to make the pet name editable. */}
         {/* WARNING: this does cause issues with connections */}
