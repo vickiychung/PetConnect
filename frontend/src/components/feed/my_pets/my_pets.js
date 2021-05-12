@@ -150,9 +150,7 @@ class MyPets extends React.Component {
   }
   
   fileSelectHandler = (e) => {   
-
-    //remains of a edit/reupload image. will get back to this later - Ali
-
+    e.preventDefault();
     this.setState({
       file: e.target.files[0]
     });
@@ -163,9 +161,7 @@ class MyPets extends React.Component {
     const formData = new FormData();
 
     formData.set("id", this.props.currentPet._id);
-    if (this.state.file) {
-      formData.append("file", this.state.file);
-    }
+    formData.set("file", this.state.file);
     
     this.props.updatePet(formData)
   }
@@ -176,7 +172,7 @@ class MyPets extends React.Component {
     let profilePhoto;
 
     if (!currentPet) return null;
-
+  
     if (currentPet.photoUrl) {
       profilePhoto = <img 
         className="profile-pic" 
@@ -199,9 +195,6 @@ class MyPets extends React.Component {
           />
         </div>
     }
-
-    console.log(this.props)
-    console.log(this.state)
 
     return (
       <div className="my-pets-wrapper">

@@ -59,7 +59,6 @@ class CreatePetForm extends React.Component {
     this.setState({
       file: e.target.files[0]
     });
-    
   }
 
   render() {
