@@ -166,24 +166,36 @@ class MyPets extends React.Component {
     formData.set("file", this.state.file);
     
     this.props.updatePet(formData)
-      .then(() => this.props.closeModal())
+      .then(() => this.closeModal())
       .then(() => this.props.fetchCurrentPet(this.props.currentPet._id))
+  }
+
+  closeModal() {
+    this.props.closeModal();
+    this.setState({tempURL: null})
   }
 
   modalContents() {
     return (
-      <div className="create-pet-modal-background" onClick={() => this.props.closeModal()}>
+      <div className="create-pet-modal-background" onClick={() => this.closeModal()}>
         <div className="edit-pet-modal"  onClick={e => e.stopPropagation()}>
           <div className="close-icon-container">
-            <div className="close-icon" onClick={() => this.props.closeModal()}>
+            <div className="close-icon" onClick={() => this.closeModal()}>
               <FontAwesomeIcon icon={faTimes} />
             </div>
           </div>
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit} className="edit-image-form">
+            <span>
+              Upload New Image
+            </span>
             <label htmlFor="upload-button">
-              <span>
-                Choose Image
-              </span>
+              <div className="edit-image-preview-container">
+                {
+                  this.state.tempURL ? 
+                    <img className="edit-preview-image" src={this.state.tempURL} /> :
+                    <FontAwesomeIcon icon={faPaw} />
+                }
+              </div>
             </label>
             <input 
               type="file" 
@@ -191,10 +203,6 @@ class MyPets extends React.Component {
               style={{ display: "none" }}
               onChange={this.fileSelectHandler}
             />
-            <div >
-              {/* {this.state.file.name} */}
-              <img className="edit-preview-image" src={this.state.tempURL} />
-            </div>
             <div className="submit-pet-entry">
               <input type="submit" value="Confirm" />
             </div>

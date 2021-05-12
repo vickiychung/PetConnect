@@ -161,8 +161,8 @@
 }
 
 .edit-pet-modal {
-  width: 425px;
-	height: 300px;
+  width: 350px;
+	height: 325px;
 	background-color: white;
 	color: black;
 	position: relative;
@@ -170,6 +170,24 @@
 	border-radius: 10px;
 }
 
+.edit-image-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.edit-image-preview-container {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 150px; 
+}
+
 .edit-preview-image {
-  max-width: 200px;
+  width: 200px;
+  height: 200px;
 }
