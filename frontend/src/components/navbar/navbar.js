@@ -15,7 +15,7 @@ class Navbar extends React.Component {
   render() {
     return (
       <header className="navbar">
-        <div className='navbar-container'>
+        <div className='navbar-inner'>
           <div className="feed-logo">
             <Link to="/feed">
               <img src={logo} alt="PetConnect" />
