@@ -1,7 +1,7 @@
 .pets-near-you-list {
   background-color: rgb(243, 213, 176);
-  width: 50%;
-  min-width: 400px;
+  width: 100%;
+  min-width: 250px;
   /* height: 85vh; */
   height: 102.5%;
   border: 1.5px solid rgb(202,168,130);
@@ -23,16 +23,17 @@
   height: 30px;
   position: absolute;
   top: -24px;
+  width: 100%;
 }
 
 .tabs {
   height: 50px;
-  width: 350px;
+  width: 100%;
   padding-top: 10px;
   border-radius: 10px;
   display: flex;
   z-index: 10;
-  padding-left: 25px;
+  /* padding-left: 25px; */
 }
 
 .tabs-1 {
