@@ -42,11 +42,10 @@
 
 .pets-shelter-list {
   background-color: rgb(241, 221, 197);
-  /* width: 50%; */
   width: 100%;
-  /* min-width: 400px; */
   min-width: 250px;
-  height: 85vh;
+  /* height: 85vh; */
+  height: 102.5%;
   margin-top: 27px;
   border: 1.5px solid rgb(202,168,130);
   border-radius: 10px;
@@ -111,6 +110,11 @@
   align-items: center;
   margin-bottom: 10px;
   text-transform: lowercase;
+}
+@media only screen and (max-width: 1400px) {
+  .selected-pet-details-list li{
+    display: block;
+  }
 }
 
 .selected-pet-details-list li:last-of-type, li:first-of-type {

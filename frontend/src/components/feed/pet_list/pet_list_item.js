@@ -77,13 +77,13 @@ class PetListItem extends React.Component {
       <li onClick={this.handleClick} className="pets-near-item">
           <div className="pets-near-photo-wrapper">
             {profilePhoto}
+            {connected()}
           </div>
 
           <div className="pets-near-detail-wrapper">
             <div className="pets-near-name">
               <span className='pets-near-name-container'>
                 {this.props.pet.name}
-                {connected()}
               </span>
             </div>
 

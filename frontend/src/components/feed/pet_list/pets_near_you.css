@@ -1,10 +1,9 @@
 .pets-near-you-list {
   background-color: rgb(243, 213, 176);
-  /* width: 50%; */
   width: 100%;
-  /* min-width: 400px; */
   min-width: 250px;
-  height: 85vh;
+  /* height: 85vh; */
+  height: 102.5%;
   border: 1.5px solid rgb(202,168,130);
   border-radius: 10px;
   box-shadow: inset 0 -3em 3em rgb(0 0 0 / 10%), 0 0 0 2px rgb(202,168,130), 0.3em 0.3em 1em rgb(202,168,130);
@@ -15,7 +14,8 @@
   margin-top: 27px;
   margin-left: 15px;
   padding-left: 0px;
-  padding-right: 10px;
+  padding-right: 30px;
+  /* margin-right: 15px; */
 }
 
 .tabs-wrapper {
@@ -34,6 +34,7 @@
   border-radius: 10px;
   display: flex;
   z-index: 10;
+  justify-content: center;
   /* padding-left: 25px; */
 }
 
@@ -92,13 +93,14 @@
 }
 
 .pets-near-item {
-  list-style :none;
+  list-style: none;
   cursor: pointer;
   padding-bottom: 10px;
   /* margin-bottom: 10px; */
   border-bottom: 2px solid rgb(202,168,130);
   display: flex;
-  justify-content: flex-start;
+  flex-direction: row;
+  /* justify-content:space-evenly; */
   align-items: center;
   /* width: 100%; */
   max-width: 375px;
@@ -110,10 +112,13 @@
 
 .pets-near-photo-wrapper {
   display: flex;
-  justify-content: center;
-  min-width: 89px;
-  min-height: 100px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: flex-start;
+  /* min-width: 89px; */
+  /* min-height: 100px; */
   margin-right: 20px;
+  padding-right: 0px;
 }
 
 .pets-near-photo {
@@ -122,6 +127,7 @@
   max-width: 89px;
   max-height: 100px;
   border-radius: 5px;
+  margin-bottom: 5px;
 }
 
 .pets-near-photo-default {
@@ -130,6 +136,10 @@
   justify-content: center;
   font-size: 70px;
   color: rgb(255, 142, 138);
+}
+
+.pets-near-detail-wrapper{
+  /* margin-right: 50px; */
 }
 
 .pets-near-name {
@@ -163,8 +173,8 @@
   text-shadow: none;
   border: 2px solid rgb(202,168,130);
   width: 100px;
-  position: absolute;
-  right: 30px;
+  /* position: absolute; */
+  /* right: 30px; */
 }
 
 .pets-connect-button-2 {
@@ -182,8 +192,8 @@
   text-shadow: none;
   border: 2px solid rgb(202,168,130);
   width: 100px;
-  position: absolute;
-  right: 30px;
+  /* position: absolute;
+  right: 30px; */
 }
 
 .pets-connect-button-3 {
@@ -201,13 +211,14 @@
   text-shadow: none;
   border: 2px solid rgb(202,168,130);
   width: 100px;
-  position: absolute;
-  right: 30px;
+  /* position: absolute;
+  right: 30px; */
 }
 
 .pets-connect-button:hover{
   background-color: rgb(133, 87, 87);
 }
+
 
 .pets-near-details {
   display: block;
