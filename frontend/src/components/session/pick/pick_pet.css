@@ -20,11 +20,12 @@
   /* position: absolute; */
   height: 400px;
   margin: auto;
+  overflow-y: hidden;
 }
 .pick-title-container{
   width: 1144px;
   margin: auto;
-  max-width: 100%;
+  /* max-width: 100%; */
 }
 .pick-title{
   font-size: 68px;
@@ -42,7 +43,7 @@
   padding: 0px;
   height: 250px;
   width: 1144px;
-  max-width: 100%;
+  /* max-width: 100%; */
 }
 
 .pet-list-element{
