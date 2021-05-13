@@ -37,14 +37,15 @@
   align-items: center;
   margin-right: 10px;
   margin-bottom: 25px;
-  
+  width: 100%
 }
 
 .pets-shelter-list {
   background-color: rgb(241, 221, 197);
-  width: 50%;
-  min-width: 400px;
-  height: 85vh;
+  width: 100%;
+  min-width: 250px;
+  /* height: 85vh; */
+  height: 102.5%;
   margin-top: 27px;
   border: 1.5px solid rgb(202,168,130);
   border-radius: 10px;
@@ -110,6 +111,11 @@
   margin-bottom: 10px;
   text-transform: lowercase;
 }
+@media only screen and (max-width: 1400px) {
+  .selected-pet-details-list li{
+    display: block;
+  }
+}
 
 .selected-pet-details-list li:last-of-type, li:first-of-type {
   text-transform: none;
@@ -124,6 +130,7 @@
 .my-pets-container {
   margin-left: 10px;
   margin-right: 10px;
+  width: 50%;
 }
 
 .connections-container {
@@ -156,10 +163,10 @@
   padding-right: 15px;
   margin-bottom: 30px;
   font-size: 16px;
+  text-align: center;
 }
 
 .connections-pend-wrapper {
-  
   background-color: rgb(247, 216, 247);
 }
 
@@ -177,11 +184,12 @@
   padding-left: 10px;
   padding-right: 15px;
   font-size: 16px;
+  text-align: center;
 }
 
 .connect-item {
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: rgb(77, 76, 76);
   font-size: 14px;
   display: flex;
@@ -190,7 +198,7 @@
   align-items: center;
 }
 
-.connection-item {
+/* .connections-item {
   margin-top: 10px;
   margin-bottom: 10px;
   color: rgb(77, 76, 76);
@@ -199,29 +207,30 @@
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-}
+} */
 
 .connect-item:first-child, .connections-item:first-child {
   margin-top: 25px;
 }
 
 .request-name{
-font-size: 16px;
-color:rgb(161, 119, 138)
+  font-size: 16px;
+  color:rgb(161, 119, 138);
 }
 
 .request-name:hover{
-font-weight: bold;
-cursor: pointer;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .connect-button-wrapper {
-  margin-top: 15px;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.connect-button {
+/* .connect-button {
   border-radius: 5px;
   border: 2px solid rgb(161, 119, 138);
   background-color: rgb(243, 230, 236);
@@ -229,7 +238,7 @@ cursor: pointer;
   cursor: pointer;
   font-weight: 600;
   padding: 5px 5px;
-}
+} */
 
 .request-accept:hover{
   background-color: rgb(176, 248, 176);
@@ -260,13 +269,12 @@ cursor: pointer;
 .connections-item{
   display: flex;
   justify-content: space-between;
-  align-content: center;
+  align-items: center;
   margin-bottom: 5px;
 }
 
 .connections-name{
   padding-right: 10px;
-  
 }
 
 .connections-name:hover{
@@ -275,7 +283,7 @@ cursor: pointer;
   padding-right: 7px;
 }
 
-.remove-connection-button{
+.remove-connection-button, .connect-button{
   border-radius: 5px;
   border: 2px solid rgb(161, 119, 138);
   background-color: rgb(243, 230, 236);
@@ -285,7 +293,6 @@ cursor: pointer;
   padding: 4px 4px;
   font-size: 10px;
   font-family: Arial, Helvetica, sans-serif;
-  
 }
 
 .remove-connection-button:hover{
