@@ -111,6 +111,11 @@
   margin-bottom: 10px;
   text-transform: lowercase;
 }
+@media only screen and (max-width: 1400px) {
+  .selected-pet-details-list li{
+    display: block;
+  }
+}
 
 .selected-pet-details-list li:last-of-type, li:first-of-type {
   text-transform: none;
