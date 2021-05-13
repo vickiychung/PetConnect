@@ -37,27 +37,27 @@ module.exports = function validatePetInput(data) {
   }
 
   if (Validator.isEmpty(data.species)) {
-    errors.species = 'Species field is required';
+    errors.species = 'Species is required';
   }
 
   if (Validator.isEmpty(data.breed)) {
-    errors.breed = 'Breed field is required';
+    errors.breed = 'Breed is required';
   }
 
   if (Validator.isEmpty(data.gender)) {
-    errors.gender = 'Gender field is required';
+    errors.gender = 'Gender is required';
   }
 
   if (Validator.isEmpty(data.size)) {
-    errors.size = 'Size field is required';
+    errors.size = 'Size is required';
   }
 
   if (Validator.isEmpty(data.name)) {
-    errors.name = 'Name field is required';
+    errors.name = 'Name is required';
   }
 
   if (Validator.isEmpty(data.age)) {
-    errors.age = 'Age field is required';
+    errors.age = 'Age is required';
   }
 
   return {
