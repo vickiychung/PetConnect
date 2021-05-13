@@ -39,6 +39,7 @@ class NavDropdown extends React.Component {
 
   deletePet() {
     this.props.deletePet(this.props.currentPetId)
+    .then(() => this.props.history.push("/pick_pet"))
   }
 
   render() {
@@ -94,11 +95,11 @@ class NavDropdown extends React.Component {
 
             
               <div onClick={()=>this.deletePet()} className="dd-logout">
-                <Link to="/pick_pet">
+                {/* <Link to="/pick_pet"> */}
                   <span>
                     Delete Pet
                   </span>
-                </Link>
+                {/* </Link> */}
               </div>
           </ul>
         )}

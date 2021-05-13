@@ -50,15 +50,27 @@
   border: 5px double white;
   margin-bottom: 20px;
   cursor: pointer;
+  transition: 400ms ease;
 }
 
 .profile-pic-default {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 360px;
+  font-size: 300px;
   color: rgb(255, 142, 138);
+  padding: 0 10px;
+  border: 5px double rgb(202, 202, 202);
   cursor: pointer;
+  margin-bottom: 20px;
+  transition: 400ms ease;
+}
+
+.profile-pic:hover, 
+.profile-pic-default:hover {
+  border: 5px double rgb(168, 168, 168);
+  transition: 400ms ease;
+  color: rgb(255, 103, 97);
 }
 
 .pet-details {
@@ -174,7 +186,7 @@
 
 .edit-pet-modal {
   width: 350px;
-	height: 325px;
+	height: 340px;
 	background-color: white;
 	color: black;
 	position: relative;
@@ -189,17 +201,59 @@
   flex-direction: column;
 }
 
+.edit-image-form span {
+  padding-bottom: 10px;
+  font-weight: 600;
+}
+
 .edit-image-preview-container {
   width: 200px;
   height: 200px;
-  border: 1px solid black;
+  border: 2px solid rgb(175, 175, 175);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 150px; 
+  font-size: 150px;
+  cursor: pointer;
+  color: rgb(255, 142, 138);
+  border-radius: 10px;
+  transition: 200ms ease;
+}
+
+.edit-image-preview-container:hover {
+  border: 2px solid rgb(116, 116, 116);
+  color: rgb(255, 103, 97);
+  transition: 200ms ease;
 }
 
 .edit-preview-image {
   width: 200px;
   height: 200px;
+  border-radius: 8px;
+}
+
+.submit-edit-entry {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit-edit-entry input {
+  cursor: pointer;
+  background-color: #00B9D3;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  transition: 400ms ease;
+  font-size: 16px;
+  line-height: 36px;
+  padding: 0 16px;
+  margin-top: 5px;
+  width: 120px;
+}
+
+.submit-edit-entry input:hover {
+  background-color: #009cb1;
+  transition: 400ms ease;
 }
