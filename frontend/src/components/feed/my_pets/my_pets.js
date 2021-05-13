@@ -2,7 +2,7 @@ import React from 'react';
 import 'simplebar';
 import './my_pets.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faPaw, faTimes, faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faPaw, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 class MyPets extends React.Component {
   constructor(props) {
@@ -192,7 +192,7 @@ class MyPets extends React.Component {
               <div className="edit-image-preview-container">
                 {
                   this.state.tempURL ? 
-                    <img className="edit-preview-image" src={this.state.tempURL} /> :
+                    <img alt="edit-preview" className="edit-preview-image" src={this.state.tempURL} /> :
                     <FontAwesomeIcon icon={faPaw} />
                 }
               </div>

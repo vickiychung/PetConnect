@@ -87,7 +87,7 @@ class CreatePetForm extends React.Component {
                   <div className="edit-image-preview-container">
                     {
                       this.state.tempURL ? 
-                        <img className="edit-preview-image" src={this.state.tempURL} /> :
+                        <img alt="edit-preview" className="edit-preview-image" src={this.state.tempURL} /> :
                         <FontAwesomeIcon icon={faPaw} />
                     }
                   </div>
