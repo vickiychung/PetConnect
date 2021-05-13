@@ -43,7 +43,7 @@ class NavDropdown extends React.Component {
   }
 
   render() {
-    console.log(this.props)
+    
     return (
       <div className="dd-wrapper" ref={this.wrapperRef}>
         <div 
