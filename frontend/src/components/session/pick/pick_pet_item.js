@@ -11,18 +11,22 @@ class PickPetItem extends React.Component {
       <li className="pet-list-element">
         
           <div className="pet-individual">
+          <Link to={`/feed/${this.props.pet._id}`}>
             <div>
               {
-                this.props.pet.photoUrl ? <div className="pet-img"><Link to={`/feed/${this.props.pet._id}`}><img src={this.props.pet.photoUrl} alt="pet" /></Link></div>
+                this.props.pet.photoUrl ? <div className="pet-img"><img src={this.props.pet.photoUrl} alt="pet" /></div>
                 : <div className="pet-icon"><FontAwesomeIcon icon={faPaw} /></div>
               }
             </div>
-            <Link to={`/feed/${this.props.pet._id}`}>
+          </Link>  
             <span className="home-newpet-name">
+            <Link to={`/feed/${this.props.pet._id}`}>
               {this.props.pet.name}
+            </Link> 
             </span>
-            </Link>
-          </div>   
+            
+          </div>
+            
       </li>
     )
   }
