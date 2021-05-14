@@ -1,7 +1,8 @@
 import React from 'react';
 import PickPetItem from './pick_pet_item'
 import CreatePetFormModal from '../../pets/create/create_pet_form_modal';
-import './pick_pet.css'
+import 'simplebar';
+import './pick_pet.css';
 import pickHeader from './pick_your_pet.png'
 
 class PickPet extends React.Component {
@@ -34,7 +35,7 @@ class PickPet extends React.Component {
     
     return (
       <div className="user-pet-list-wrapper">
-        <div className="user-pet-banner">
+        <div className="user-pet-banner" data-simplebar>
           <div className='pick-title-container'>
             <h1 className='pick-title'>
               <img src={pickHeader} alt="pick-header-img" />
